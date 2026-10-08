@@ -60,9 +60,10 @@ from the `rds-postgresql-instance-output` secret. Schema changes are managed by 
 ### Running tests
 
 ```bash
-docker compose up legal-status-db -d
 ./gradlew check
 ```
+
+The integration tests start their own PostgreSQL container using Testcontainers, so Docker must be running.
 
 ### Building and running the docker image locally
 
