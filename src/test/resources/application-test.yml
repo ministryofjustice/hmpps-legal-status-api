@@ -8,6 +8,17 @@ management.endpoint:
 hmpps-auth:
   url: "http://localhost:8090/auth"
 
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/legal_status"
+    username: "legal_status"
+    password: "legal_status"
+
 springdoc:
   api-docs:
     enabled: true

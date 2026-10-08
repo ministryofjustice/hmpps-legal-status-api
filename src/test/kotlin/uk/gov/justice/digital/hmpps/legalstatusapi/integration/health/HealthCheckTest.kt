@@ -19,6 +19,19 @@ class HealthCheckTest : IntegrationTestBase() {
   }
 
   @Test
+  fun `Health page reports database up`() {
+    stubPingWithResponse(200)
+
+    webTestClient.get()
+      .uri("/health")
+      .exchange()
+      .expectStatus()
+      .isOk
+      .expectBody()
+      .jsonPath("components.db.status").isEqualTo("UP")
+  }
+
+  @Test
   fun `Health page reports down`() {
     stubPingWithResponse(503)
 

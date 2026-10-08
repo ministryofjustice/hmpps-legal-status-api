@@ -6,6 +6,25 @@ spring:
   application:
     name: hmpps-legal-status-api
 
+  datasource:
+    url: "jdbc:postgresql://${db.server}/${db.name}?sslmode=${db.ssl.mode}"
+    username: "${db.user}"
+    password: "${db.pass}"
+    hikari:
+      pool-name: Legal-Status-DB-CP
+      connectionTimeout: 1000
+      validationTimeout: 500
+
+  flyway:
+    locations: classpath:/migration/common
+
+  jpa:
+    open-in-view: false
+    show-sql: false
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+
 #  This jackson configuration is only applied for java.util.Date.
 #  It is ignored for LocalDateTime, and therefore unnecessary for most projects
 #  jackson:
