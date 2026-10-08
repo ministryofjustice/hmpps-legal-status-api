@@ -46,8 +46,24 @@ will run the application and HMPPS Auth within a local docker instance.
 docker compose pull && docker compose up --scale hmpps-legal-status-api=0
 ```
 
-will just start a docker instance of HMPPS Auth. The application should then be started with a `dev` active profile
+will just start a docker instance of HMPPS Auth and the `legal-status-db` PostgreSQL database. The application should then be started with a `dev` active profile
 in Intellij.
+
+### Database
+
+The service uses PostgreSQL. Locally, a Postgres 18 container is provided by `docker-compose.yml`
+(`legal-status-db`, port 5432, user/password/db `legal_status`, local only).
+In Cloud Platform, an RDS instance is provisioned per namespace and its connection details are injected
+from the `rds-postgresql-instance-output` secret. Schema changes are managed by Flyway
+(`src/main/resources/migration/common`).
+
+### Running tests
+
+```bash
+./gradlew check
+```
+
+The integration tests start their own PostgreSQL container using Testcontainers, so Docker must be running.
 
 ### Building and running the docker image locally
 

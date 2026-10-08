@@ -1,4 +1,21 @@
 services:
+  legal-status-db:
+    image: postgres:18
+    networks:
+      - hmpps
+    container_name: legal-status-db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=legal_status
+      - POSTGRES_PASSWORD=legal_status
+      - POSTGRES_DB=legal_status
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U legal_status -d legal_status"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
   hmpps-legal-status-api:
     image: ghcr.io/ministryofjustice/hmpps-legal-status-api:latest
     networks:
@@ -12,6 +29,10 @@ services:
       - SERVER_PORT=8080
       - HMPPS_AUTH_URL=http://hmpps-auth:8080/auth
       - SPRING_PROFILES_ACTIVE=dev
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://legal-status-db:5432/legal_status
+    depends_on:
+      legal-status-db:
+        condition: service_healthy
 
   hmpps-auth:
     image: ghcr.io/ministryofjustice/hmpps-auth:latest
