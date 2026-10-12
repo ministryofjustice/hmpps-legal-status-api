@@ -1,4 +1,4 @@
-package uk.gov.justice.digital.hmpps.legalstatusapi.integration
+package uk.gov.justice.digital.hmpps.legalstatusapi
 
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,15 +10,15 @@ import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.reactive.server.WebTestClient
-import uk.gov.justice.digital.hmpps.legalstatusapi.integration.container.PostgresContainer
-import uk.gov.justice.digital.hmpps.legalstatusapi.integration.wiremock.HmppsAuthApiExtension
-import uk.gov.justice.digital.hmpps.legalstatusapi.integration.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
+import uk.gov.justice.digital.hmpps.legalstatusapi.container.PostgresContainer
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.hmpps.test.kotlin.auth.JwtAuthorisationHelper
 
 @ExtendWith(HmppsAuthApiExtension::class)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
-@ActiveProfiles("test")
-@AutoConfigureWebTestClient
+@ActiveProfiles("integration-test")
+@AutoConfigureWebTestClient(timeout = "PT5M")
 abstract class IntegrationTestBase {
 
   @Autowired

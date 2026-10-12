@@ -1,4 +1,4 @@
-package uk.gov.justice.digital.hmpps.legalstatusapi.integration.container
+package uk.gov.justice.digital.hmpps.legalstatusapi.container
 
 import org.testcontainers.postgresql.PostgreSQLContainer
 
