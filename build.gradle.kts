@@ -1,7 +1,14 @@
+import org.gradle.kotlin.dsl.withType
+import org.jlleitschuh.gradle.ktlint.tasks.KtLintCheckTask
+import org.jlleitschuh.gradle.ktlint.tasks.KtLintFormatTask
+import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
+
 plugins {
   id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.11"
   kotlin("plugin.spring") version "2.4.20"
   kotlin("plugin.jpa") version "2.4.20"
+
+  id("org.openapi.generator") version "7.24.0"
 
   id("name.remal.integration-tests") version "5.0.7"
   `java-test-fixtures`
@@ -65,4 +72,59 @@ tasks.named("check") {
 
 tasks.named<Test>("integrationTest") {
   dependsOn("copyAgent")
+}
+
+tasks.register<GenerateTask>("buildManageOffencesApiModel") {
+  dependsOn("processResources")
+  group = "openapi tools"
+  description = "Generate model from Manage Offences API YAML definition"
+  validateSpec.set(true)
+  generatorName.set("kotlin-spring")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-12.json")
+  outputDir.set("$buildDirectory/generated")
+  modelPackage.set("uk.gov.justice.digital.hmpps.manageoffences.resource.model")
+  configOptions.set(
+    mapOf(
+      "dateLibrary" to "java8",
+      "serializationLibrary" to "jackson",
+      "useBeanValidation" to "true",
+      "useSpringBoot4" to "true",
+      "useJackson3" to "true",
+      "openApiNullable" to "false",
+      "enumPropertyNaming" to "UPPERCASE",
+    ),
+  )
+  globalProperties.set(
+    mapOf(
+      "models" to "",
+    ),
+  )
+}
+
+tasks {
+  withType<KtLintCheckTask> {
+    // We must declare the dependency here, even if we're not going to be linting the model
+    mustRunAfter("buildManageOffencesApiModel")
+  }
+  withType<KtLintFormatTask> {
+    // We must declare the dependency here, even if we're not going to be linting the model
+    mustRunAfter("buildManageOffencesApiModel")
+  }
+}
+
+tasks.named("compileKotlin") {
+  dependsOn("buildManageOffencesApiModel")
+}
+
+kotlin {
+  sourceSets["main"].apply {
+    kotlin.srcDir("$buildDirectory/generated/src/main/kotlin")
+  }
+}
+
+// Exclude generated code from linting
+ktlint {
+  filter {
+    exclude { projectDir.toURI().relativize(it.file.toURI()).path.contains("/generated/") }
+  }
 }
