@@ -101,19 +101,46 @@ tasks.register<GenerateTask>("buildManageOffencesApiModel") {
   )
 }
 
+tasks.register<GenerateTask>("buildRemandAndSentencingApiModel") {
+  dependsOn("processResources")
+  group = "openapi tools"
+  description = "Generate model from Remand and Sentencing API YAML definition"
+  validateSpec.set(true)
+  generatorName.set("kotlin-spring")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/remand-and-sentencing-api-2026-10-13.json")
+  outputDir.set("$buildDirectory/generated")
+  modelPackage.set("uk.gov.justice.digital.hmpps.remandandsentencing.resource.model")
+  configOptions.set(
+    mapOf(
+      "dateLibrary" to "java8",
+      "serializationLibrary" to "jackson",
+      "useBeanValidation" to "true",
+      "useSpringBoot4" to "true",
+      "useJackson3" to "true",
+      "openApiNullable" to "false",
+      "enumPropertyNaming" to "UPPERCASE",
+    ),
+  )
+  globalProperties.set(
+    mapOf(
+      "models" to "",
+    ),
+  )
+}
+
 tasks {
   withType<KtLintCheckTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
   }
   withType<KtLintFormatTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
   }
 }
 
 tasks.named("compileKotlin") {
-  dependsOn("buildManageOffencesApiModel")
+  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
 }
 
 kotlin {
