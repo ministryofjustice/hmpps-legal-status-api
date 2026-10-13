@@ -14,8 +14,8 @@ generic-service:
 
   scheduledDowntime:
     enabled: true
-
-
+    startup: '30 6 * * 1-5' # Start at 6.30am UTC Monday-Friday
+    shutdown: '00 21 * * 1-5' # Stop at 9.00pm UTC Monday-Friday
 
   allowlist:
     # Configure groups as appropriate to give the minimum ingress access required:
@@ -39,4 +39,3 @@ generic-service:
 # See https://user-guide.cloud-platform.service.justice.gov.uk/documentation/monitoring-an-app/how-to-create-alarms.html#creating-your-own-custom-alerts
 generic-prometheus-alerts:
   businessHoursOnly: true
-  alertSeverity: hmpps_alerts_nonprod
