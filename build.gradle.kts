@@ -128,19 +128,46 @@ tasks.register<GenerateTask>("buildRemandAndSentencingApiModel") {
   )
 }
 
+tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
+  dependsOn("processResources")
+  group = "openapi tools"
+  description = "Generate model from Prisoner Search API YAML definition"
+  validateSpec.set(true)
+  generatorName.set("kotlin-spring")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/prisoner-search-api-2026-10-13.json")
+  outputDir.set("$buildDirectory/generated")
+  modelPackage.set("uk.gov.justice.digital.hmpps.prisonersearch.resource.model")
+  configOptions.set(
+    mapOf(
+      "dateLibrary" to "java8",
+      "serializationLibrary" to "jackson",
+      "useBeanValidation" to "true",
+      "useSpringBoot4" to "true",
+      "useJackson3" to "true",
+      "openApiNullable" to "false",
+      "enumPropertyNaming" to "UPPERCASE",
+    ),
+  )
+  globalProperties.set(
+    mapOf(
+      "models" to "Prisoner, PersonalCareNeed, Language, PrisonerAlias, PrisonerAlert, MainOffence, Offence, CurrentIncentive, IncentiveLevel, BodyPartDetail, Address, EmailAddress, PhoneNumber, Identifier",
+    ),
+  )
+}
+
 tasks {
   withType<KtLintCheckTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
   }
   withType<KtLintFormatTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
   }
 }
 
 tasks.named("compileKotlin") {
-  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel")
+  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
 }
 
 kotlin {
