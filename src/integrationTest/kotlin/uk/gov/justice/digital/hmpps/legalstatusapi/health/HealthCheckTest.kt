@@ -32,6 +32,19 @@ class HealthCheckTest : IntegrationTestBase() {
   }
 
   @Test
+  fun `Health page reports manage offences api up`() {
+    stubPingWithResponse(200)
+
+    webTestClient.get()
+      .uri("/health")
+      .exchange()
+      .expectStatus()
+      .isOk
+      .expectBody()
+      .jsonPath("components.manageOffencesApi.status").isEqualTo("UP")
+  }
+
+  @Test
   fun `Health page reports down`() {
     stubPingWithResponse(503)
 
@@ -43,6 +56,7 @@ class HealthCheckTest : IntegrationTestBase() {
       .expectBody()
       .jsonPath("status").isEqualTo("DOWN")
       .jsonPath("components.hmppsAuth.status").isEqualTo("DOWN")
+      .jsonPath("components.manageOffencesApi.status").isEqualTo("DOWN")
   }
 
   @Test

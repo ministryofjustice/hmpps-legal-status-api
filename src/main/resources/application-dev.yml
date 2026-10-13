@@ -1,6 +1,13 @@
 hmpps-auth:
   url: "http://localhost:8090/auth"
 
+manage-offences:
+  api:
+    url: "http://localhost:8091"
+    client:
+      id: "manage-offences-api-client"
+      secret: "manage-offences-api-secret"
+
 spring:
   datasource:
     url: "jdbc:postgresql://localhost:5432/legal_status"
