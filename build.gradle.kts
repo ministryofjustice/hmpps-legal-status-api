@@ -4,19 +4,19 @@ import org.jlleitschuh.gradle.ktlint.tasks.KtLintFormatTask
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.11"
-  kotlin("plugin.spring") version "2.4.20"
-  kotlin("plugin.jpa") version "2.4.20"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.12"
+  kotlin("plugin.spring") version "2.4.21"
+  kotlin("plugin.jpa") version "2.4.21"
 
-  id("org.openapi.generator") version "7.24.0"
+  id("org.openapi.generator") version "7.26.0"
 
-  id("name.remal.integration-tests") version "5.0.7"
+  id("name.remal.integration-tests") version "5.0.9"
   `java-test-fixtures`
 }
 
 val buildDirectory: Directory = layout.buildDirectory.get()
 
-val postgresqlVersion = "42.7.13"
+val postgresqlVersion = "42.7.14"
 val kotlinLoggingVersion = "3.0.5"
 val testContainersVersion = "2.0.5"
 val springdocOpenapiVersion = "3.1.1"
