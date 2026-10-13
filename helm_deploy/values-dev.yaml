@@ -11,6 +11,7 @@ generic-service:
   env:
     APPLICATIONINSIGHTS_CONFIGURATION_FILE: "applicationinsights.dev.json"
     HMPPS_AUTH_URL: "https://sign-in-dev.hmpps.service.justice.gov.uk/auth"
+    MANAGE_OFFENCES_API_URL: "https://manage-offences-api-dev.hmpps.service.justice.gov.uk"
     SPRINGDOC_API-DOCS_ENABLED: "true"
     SPRINGDOC_SWAGGER-UI_ENABLED: "true"
 
@@ -29,6 +30,15 @@ generic-service:
     groups:
       - digital_staff_and_mojo
       - moj_cloud_platform
+
+  # TODO: the Manage Offences HMPPS Auth client currently only exists in dev (HAAR-6226). Once the
+  #       MANAGE_OFFENCES_API_CLIENT_ID/SECRET keys are in the hmpps-legal-status-api-client-creds secret
+  #       in preprod and prod, move this mapping into namespace_secrets in hmpps-legal-status-api/values.yaml
+  #       and remove it from here.
+  namespace_secrets:
+    hmpps-legal-status-api-client-creds:
+      MANAGE_OFFENCES_API_CLIENT_ID: "MANAGE_OFFENCES_API_CLIENT_ID"
+      MANAGE_OFFENCES_API_CLIENT_SECRET: "MANAGE_OFFENCES_API_CLIENT_SECRET"
 
   # NOTE: Removing ALL allowlist groups will make the application accessible from the internet. 
   #       If you are intending to do this, please ensure you uncomment the 'modsecurity_enabled=true' 

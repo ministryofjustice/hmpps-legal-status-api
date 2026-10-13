@@ -40,6 +40,12 @@ spring:
         provider:
           hmpps-auth:
             token-uri: ${hmpps-auth.url}/oauth/token
+        registration:
+          manage-offences-api:
+            provider: hmpps-auth
+            client-id: ${manage-offences.api.client.id}
+            client-secret: ${manage-offences.api.client.secret}
+            authorization-grant-type: client_credentials
   http:
     codecs:
       max-in-memory-size: 10MB
