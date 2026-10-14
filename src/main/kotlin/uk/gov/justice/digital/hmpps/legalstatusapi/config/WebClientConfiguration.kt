@@ -13,16 +13,36 @@ import java.time.Duration
 class WebClientConfiguration(
   @param:Value("\${hmpps-auth.url}") val hmppsAuthBaseUri: String,
   @param:Value("\${manage-offences.api.url}") val manageOffencesApiBaseUri: String,
+  @param:Value("\${prisoner-search.api.url}") val prisonerSearchApiBaseUri: String,
   @param:Value("\${api.health-timeout:2s}") val healthTimeout: Duration,
   @param:Value("\${api.timeout:20s}") val timeout: Duration,
 ) {
   // HMPPS Auth health ping is required if your service calls HMPPS Auth to get a token to call other services
   @Bean
-  fun hmppsAuthHealthWebClient(builder: WebClient.Builder): WebClient = builder.healthWebClient(hmppsAuthBaseUri, healthTimeout)
+  fun hmppsAuthHealthWebClient(builder: WebClient.Builder): WebClient = builder.healthWebClient(
+    url = hmppsAuthBaseUri,
+    healthTimeout = healthTimeout,
+  )
 
   @Bean
   fun manageOffencesApiWebClient(
     authorizedClientManager: OAuth2AuthorizedClientManager,
     builder: WebClient.Builder,
-  ): WebClient = builder.authorisedWebClient(authorizedClientManager, "manage-offences-api", manageOffencesApiBaseUri, timeout)
+  ): WebClient = builder.authorisedWebClient(
+    authorizedClientManager = authorizedClientManager,
+    registrationId = "manage-offences-api",
+    url = manageOffencesApiBaseUri,
+    timeout = timeout,
+  )
+
+  @Bean
+  fun prisonerSearchApiWebClient(
+    authorizedClientManager: OAuth2AuthorizedClientManager,
+    builder: WebClient.Builder,
+  ): WebClient = builder.authorisedWebClient(
+    authorizedClientManager = authorizedClientManager,
+    registrationId = "prisoner-search-api",
+    url = prisonerSearchApiBaseUri,
+    timeout = timeout,
+  )
 }

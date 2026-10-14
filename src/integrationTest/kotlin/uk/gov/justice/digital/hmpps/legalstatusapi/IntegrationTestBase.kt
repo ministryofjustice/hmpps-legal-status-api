@@ -13,9 +13,13 @@ import org.springframework.test.web.reactive.server.WebTestClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.container.PostgresContainer
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension
 import uk.gov.justice.hmpps.test.kotlin.auth.JwtAuthorisationHelper
 
-@ExtendWith(HmppsAuthApiExtension::class)
+@ExtendWith(
+  HmppsAuthApiExtension::class,
+  HmppsPrisonerSearchApiExtension::class,
+)
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @ActiveProfiles("integration-test")
 @AutoConfigureWebTestClient(timeout = "PT5M")

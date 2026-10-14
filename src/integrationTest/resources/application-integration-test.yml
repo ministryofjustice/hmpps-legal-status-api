@@ -14,6 +14,12 @@ manage-offences:
     client:
       id: "manage-offences-api-client"
       secret: "manage-offences-api-secret"
+prisoner-search:
+  api:
+    url: "http://localhost:8092"
+    client:
+      id: "prisoner-search-api-client"
+      secret: "prisoner-search-api-secret"
 
 springdoc:
   api-docs:
