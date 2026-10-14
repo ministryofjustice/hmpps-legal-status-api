@@ -16,7 +16,11 @@ spring:
       validationTimeout: 500
 
   flyway:
-    locations: classpath:/migration/common
+    url: ${spring.datasource.url}
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    validateMigrationNaming: true
+    locations: classpath:/db/migration/common
 
   jpa:
     open-in-view: false
