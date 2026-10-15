@@ -32,17 +32,6 @@ generic-service:
       - digital_staff_and_mojo
       - moj_cloud_platform
 
-  # TODO: the Manage Offences and Prisoner Search HMPPS Auth clients currently only exists in dev (HAAR-6226/HAAR-6229). Once the
-  #       MANAGE_OFFENCES and PRISONER_SEARCH API_CLIENT_ID/SECRET keys are in the hmpps-legal-status-api-client-creds secret
-  #       in preprod and prod, move this mapping into namespace_secrets in hmpps-legal-status-api/values.yaml
-  #       and remove it from here.
-  namespace_secrets:
-    hmpps-legal-status-api-client-creds:
-      MANAGE_OFFENCES_API_CLIENT_ID: "MANAGE_OFFENCES_API_CLIENT_ID"
-      MANAGE_OFFENCES_API_CLIENT_SECRET: "MANAGE_OFFENCES_API_CLIENT_SECRET"
-      PRISONER_SEARCH_API_CLIENT_ID: "PRISONER_SEARCH_API_CLIENT_ID"
-      PRISONER_SEARCH_API_CLIENT_SECRET: "PRISONER_SEARCH_API_CLIENT_SECRET"
-
   # NOTE: Removing ALL allowlist groups will make the application accessible from the internet. 
   #       If you are intending to do this, please ensure you uncomment the 'modsecurity_enabled=true' 
   #       entry in the ingress above. This will enable WAF protection of the endpoint. You will need 

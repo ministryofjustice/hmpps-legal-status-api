@@ -43,6 +43,11 @@ generic-service:
       DB_NAME: "database_name"
       DB_USER: "database_username"
       DB_PASS: "database_password"
+    hmpps-legal-status-api-client-creds:
+      MANAGE_OFFENCES_API_CLIENT_ID: "MANAGE_OFFENCES_API_CLIENT_ID"
+      MANAGE_OFFENCES_API_CLIENT_SECRET: "MANAGE_OFFENCES_API_CLIENT_SECRET"
+      PRISONER_SEARCH_API_CLIENT_ID: "PRISONER_SEARCH_API_CLIENT_ID"
+      PRISONER_SEARCH_API_CLIENT_SECRET: "PRISONER_SEARCH_API_CLIENT_SECRET"
 
 generic-prometheus-alerts:
   targetApplication: hmpps-legal-status-api
