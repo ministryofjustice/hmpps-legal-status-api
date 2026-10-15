@@ -7,7 +7,7 @@
       "name": "HMPPS Digital Studio",
       "email": "feedback@digital.justice.gov.uk"
     },
-    "version": "2026-10-12.704.6484f04"
+    "version": "2026-10-15.713.e0811fb"
   },
   "servers": [
     {
@@ -647,6 +647,44 @@
                   "type": "array",
                   "items": {
                     "$ref": "#/components/schemas/Schedule"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/offences/severity-ratings": {
+      "get": {
+        "tags": [
+          "offence-controller"
+        ],
+        "summary": "Get the severity rating for each of the passed in offence codes",
+        "description": "Returns the severity rating for each offence code that exists. Offence codes that are not found are omitted from the response.",
+        "operationId": "getSeverityRatings",
+        "parameters": [
+          {
+            "name": "offenceCodes",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OffenceSeverityRating"
                   }
                 }
               }
@@ -1951,6 +1989,24 @@
         "required": [
           "offenceCode",
           "pcscMarkers"
+        ]
+      },
+      "OffenceSeverityRating": {
+        "type": "object",
+        "description": "Severity rating for an offence code",
+        "properties": {
+          "offenceCode": {
+            "type": "string",
+            "description": "The offence code"
+          },
+          "severityRating": {
+            "type": "string",
+            "description": "The NOMIS severity ranking for the offence"
+          }
+        },
+        "required": [
+          "offenceCode",
+          "severityRating"
         ]
       },
       "MostRecentLoadResult": {
