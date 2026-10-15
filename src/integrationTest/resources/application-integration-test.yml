@@ -20,6 +20,12 @@ prisoner-search:
     client:
       id: "prisoner-search-api-client"
       secret: "prisoner-search-api-secret"
+remand-and-sentencing:
+  api:
+    url: "http://localhost:8093"
+    client:
+      id: "remand-and-sentencing-api-client"
+      secret: "remand-and-sentencing-api-secret"
 
 springdoc:
   api-docs:
