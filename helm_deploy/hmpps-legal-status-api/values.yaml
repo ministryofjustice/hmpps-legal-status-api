@@ -13,12 +13,24 @@ generic-service:
     enabled: true
     host: app-hostname.local # override per environment
     tlsSecretName: hmpps-legal-status-api-cert
+    annotations:
+      # Secure the endpoints related to k8s jobs from outside the Kubernetes ingress
+      nginx.ingress.kubernetes.io/server-snippet: |
+        server_tokens off;
+        location /queue-admin/retry-all-dlqs {
+          deny all;
+          return 401;
+        }
+
+  # Used to access resources like SQS queues and SNS topics (IRSA service account created in cloud-platform-environments, IS-54)
+  serviceAccountName: hmpps-legal-status-api
 
   # Environment variables to load into the deployment
   env:
     SERVER_PORT: "8080"
     APPLICATIONINSIGHTS_CONFIGURATION_FILE: applicationinsights.json
     DB_SSL_MODE: "verify-full"
+    HMPPS_SQS_ENABLED: "true"
     # JAVA_TOOL_OPTIONS is set in the base image (hmpps-eclipse-temurin) with:
     #   -XX:MaxRAMPercentage=50.0
     # Uncomment below to override memory settings if needed.
@@ -48,6 +60,11 @@ generic-service:
       MANAGE_OFFENCES_API_CLIENT_SECRET: "MANAGE_OFFENCES_API_CLIENT_SECRET"
       PRISONER_SEARCH_API_CLIENT_ID: "PRISONER_SEARCH_API_CLIENT_ID"
       PRISONER_SEARCH_API_CLIENT_SECRET: "PRISONER_SEARCH_API_CLIENT_SECRET"
+    # Inbound domain events queue and DLQ (IS-54)
+    domain-events-queue-secret:
+      HMPPS_SQS_QUEUES_DOMAINEVENTS_QUEUE_NAME: "queue_name"
+    domain-events-dlq-secret:
+      HMPPS_SQS_QUEUES_DOMAINEVENTS_DLQ_NAME: "queue_name"
 
 generic-prometheus-alerts:
   targetApplication: hmpps-legal-status-api

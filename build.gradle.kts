@@ -24,9 +24,11 @@ val hmppsKotlinSpringBootStarterVersion = "3.0.3"
 val awaitilityVersion = "4.3.0"
 val swaggerParserVersion = "2.1.48"
 val wiremockVersion = "3.13.2"
+val hmppsSqsStarterVersion = "7.4.1"
 
 dependencies {
   implementation("uk.gov.justice.service.hmpps:hmpps-kotlin-spring-boot-starter:$hmppsKotlinSpringBootStarterVersion")
+  implementation("uk.gov.justice.service.hmpps:hmpps-sqs-spring-boot-starter:$hmppsSqsStarterVersion")
   implementation("org.springframework.boot:spring-boot-starter-webflux")
   implementation("org.springframework.boot:spring-boot-starter-webclient")
   implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:$springdocOpenapiVersion")
