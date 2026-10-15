@@ -66,6 +66,10 @@ tasks {
   }
 }
 
+tasks.named<Jar>("jar") {
+  enabled = true
+}
+
 tasks.named("check") {
   dependsOn("integrationTest")
 }
