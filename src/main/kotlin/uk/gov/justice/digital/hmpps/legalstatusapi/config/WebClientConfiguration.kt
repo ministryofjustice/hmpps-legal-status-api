@@ -14,6 +14,7 @@ class WebClientConfiguration(
   @param:Value("\${hmpps-auth.url}") val hmppsAuthBaseUri: String,
   @param:Value("\${manage-offences.api.url}") val manageOffencesApiBaseUri: String,
   @param:Value("\${prisoner-search.api.url}") val prisonerSearchApiBaseUri: String,
+  @param:Value("\${remand-and-sentencing.api.url}") val remandAndSentencingApiBaseUri: String,
   @param:Value("\${api.health-timeout:2s}") val healthTimeout: Duration,
   @param:Value("\${api.timeout:20s}") val timeout: Duration,
 ) {
@@ -43,6 +44,17 @@ class WebClientConfiguration(
     authorizedClientManager = authorizedClientManager,
     registrationId = "prisoner-search-api",
     url = prisonerSearchApiBaseUri,
+    timeout = timeout,
+  )
+
+  @Bean
+  fun remandAndSentencingApiWebClient(
+    authorizedClientManager: OAuth2AuthorizedClientManager,
+    builder: WebClient.Builder,
+  ): WebClient = builder.authorisedWebClient(
+    authorizedClientManager = authorizedClientManager,
+    registrationId = "remand-and-sentencing-api",
+    url = remandAndSentencingApiBaseUri,
     timeout = timeout,
   )
 }
