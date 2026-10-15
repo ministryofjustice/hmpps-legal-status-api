@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.CsvSource
 import org.springframework.beans.factory.annotation.Autowired
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
 
 /**
  * Temporary test class for ImprisonmentStatusMappingRepository whilst we do not have any other tests that test the

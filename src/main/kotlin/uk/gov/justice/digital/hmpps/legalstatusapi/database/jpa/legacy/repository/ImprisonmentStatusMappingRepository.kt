@@ -1,4 +1,4 @@
-package uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy
+package uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
