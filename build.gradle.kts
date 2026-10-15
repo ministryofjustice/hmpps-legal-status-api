@@ -85,7 +85,7 @@ tasks.register<GenerateTask>("buildManageOffencesApiModel") {
   description = "Generate model from Manage Offences API YAML definition"
   validateSpec.set(true)
   generatorName.set("kotlin-spring")
-  inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-12.json")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-15.json")
   outputDir.set("$buildDirectory/generated")
   modelPackage.set("uk.gov.justice.digital.hmpps.manageoffences.resource.model")
   configOptions.set(
