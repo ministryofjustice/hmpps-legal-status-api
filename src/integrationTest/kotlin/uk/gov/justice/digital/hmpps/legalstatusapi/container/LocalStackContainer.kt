@@ -1,6 +1,6 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.container
 
-import org.slf4j.LoggerFactory
+import mu.KotlinLogging
 import org.springframework.test.context.DynamicPropertyRegistry
 import org.testcontainers.containers.GenericContainer
 import org.testcontainers.containers.output.Slf4jLogConsumer
@@ -9,8 +9,9 @@ import org.testcontainers.utility.DockerImageName
 import java.io.IOException
 import java.net.ServerSocket
 
+private val log = KotlinLogging.logger {}
+
 object LocalStackContainer {
-  private val log = LoggerFactory.getLogger(this::class.java)
   val instance by lazy { startLocalstackIfNotRunning() }
 
   fun setLocalStackProperties(container: GenericContainer<*>, registry: DynamicPropertyRegistry) {

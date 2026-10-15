@@ -1,9 +1,11 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
-import org.slf4j.LoggerFactory
+import mu.KotlinLogging
 import org.springframework.stereotype.Component
 
 const val IMPRISONMENT_STATUS_CHANGED = "prison-offender-events.prisoner.imprisonment-status-changed"
+
+private val log = KotlinLogging.logger {}
 
 /**
  * Handles [IMPRISONMENT_STATUS_CHANGED], raised when NOMIS recalculates a booking's imprisonment status.
@@ -13,17 +15,9 @@ const val IMPRISONMENT_STATUS_CHANGED = "prison-offender-events.prisoner.impriso
 class ImprisonmentStatusChangedEventHandler {
 
   fun handle(messageId: String, event: HmppsDomainEvent) {
-    log.info(
-      "Processed {} event (no-op): messageId={}, prisonNumber={}, bookingId={}, occurredAt={}",
-      event.eventType,
-      messageId,
-      event.prisonNumber(),
-      event.additionalInformation?.get("bookingId"),
-      event.occurredAt,
-    )
-  }
-
-  private companion object {
-    private val log = LoggerFactory.getLogger(this::class.java)
+    log.info {
+      "Processed ${event.eventType} event (no-op): messageId=$messageId, prisonNumber=${event.prisonNumber()}, " +
+        "bookingId=${event.additionalInformation?.get("bookingId")}, occurredAt=${event.occurredAt}"
+    }
   }
 }
