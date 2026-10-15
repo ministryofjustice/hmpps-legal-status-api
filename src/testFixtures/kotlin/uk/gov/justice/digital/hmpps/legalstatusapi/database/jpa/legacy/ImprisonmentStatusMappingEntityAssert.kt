@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy
 import org.assertj.core.api.AbstractObjectAssert
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusMappingEntity
+import java.util.UUID
 
 fun assertThat(actual: ImprisonmentStatusMappingEntity?) = ImprisonmentStatusMappingEntityAssert(actual)
 
@@ -11,7 +12,7 @@ fun assertThat(actual: ImprisonmentStatusMappingEntity?) = ImprisonmentStatusMap
  */
 class ImprisonmentStatusMappingEntityAssert(actual: ImprisonmentStatusMappingEntity?) : AbstractObjectAssert<ImprisonmentStatusMappingEntityAssert, ImprisonmentStatusMappingEntity?>(actual, ImprisonmentStatusMappingEntityAssert::class.java) {
 
-  fun hasId(expected: Int): ImprisonmentStatusMappingEntityAssert {
+  fun hasId(expected: UUID): ImprisonmentStatusMappingEntityAssert {
     isNotNull
     with(actual!!) {
       if (id != expected) {

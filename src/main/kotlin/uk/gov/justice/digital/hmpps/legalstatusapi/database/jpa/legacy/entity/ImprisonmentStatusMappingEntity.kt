@@ -6,6 +6,7 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import org.hibernate.Hibernate
+import java.util.UUID
 
 /**
  * Maps either a sentence (category + calc type) or an offence result code to an Imprisonment Status.
@@ -16,7 +17,7 @@ import org.hibernate.Hibernate
 class ImprisonmentStatusMappingEntity(
   @Id
   @Column(name = "ID", nullable = false, updatable = false)
-  val id: Int,
+  val id: UUID,
 
   @ManyToOne(optional = false)
   @JoinColumn(name = "IMPRISONMENT_STATUS", nullable = false, updatable = false)
