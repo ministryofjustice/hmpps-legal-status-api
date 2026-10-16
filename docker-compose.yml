@@ -1,4 +1,32 @@
 services:
+  hmpps-legal-status-api:
+    image: ghcr.io/ministryofjustice/hmpps-legal-status-api:latest
+    profiles: [api]
+    networks:
+      - hmpps
+    container_name: hmpps-legal-status-api
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: ["CMD", "bash", "-c", "echo > /dev/tcp/localhost/8080"]
+    environment:
+      - SERVER_PORT=8080
+      - HMPPS_AUTH_URL=https://sign-in-dev.hmpps.service.justice.gov.uk/auth
+      - SPRING_PROFILES_ACTIVE=dev
+      - HMPPS_SQS_ENABLED=false
+      - DB_SERVER=legal-status-db:5432
+      - DB_NAME=legal_status
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://legal-status-db:5432/legal_status
+      - DB_USER=legal_status
+      - DB_PASS=legal_status
+      - PRISONER_SEARCH_API_URL=https://prisoner-search-dev.prison.service.justice.gov.uk
+      - MANAGE_OFFENCES_API_URL=https://manage-offences-api-dev.hmpps.service.justice.gov.uk
+      - REMAND_AND_SENTENCING_API_URL=https://remand-and-sentencing-api-dev.hmpps.service.justice.gov.uk
+    env_file: .env.docker
+    depends_on:
+      legal-status-db:
+        condition: service_healthy
+
   legal-status-db:
     image: postgres:18
     networks:
@@ -15,38 +43,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-
-  hmpps-legal-status-api:
-    image: ghcr.io/ministryofjustice/hmpps-legal-status-api:latest
-    networks:
-      - hmpps
-    container_name: hmpps-legal-status-api
-    ports:
-      - "8080:8080"
-    healthcheck:
-      test: ["CMD", "bash", "-c", "echo > /dev/tcp/localhost/8080"]
-    environment:
-      - SERVER_PORT=8080
-      - HMPPS_AUTH_URL=http://hmpps-auth:8080/auth
-      - SPRING_PROFILES_ACTIVE=dev
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://legal-status-db:5432/legal_status
-    depends_on:
-      legal-status-db:
-        condition: service_healthy
-
-  hmpps-auth:
-    image: ghcr.io/ministryofjustice/hmpps-auth:latest
-    networks:
-      - hmpps
-    container_name: hmpps-auth
-    ports:
-      - "8090:8080"
-    healthcheck:
-      test: ["CMD", "bash", "-c", "echo > /dev/tcp/localhost/8080"]
-    environment:
-      - SERVER_PORT=8080
-      - SPRING_PROFILES_ACTIVE=dev
-      - APPLICATION_AUTHENTICATION_UI_ALLOWLIST=0.0.0.0/0
 
 networks:
   hmpps:
