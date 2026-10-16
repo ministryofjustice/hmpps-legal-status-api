@@ -27,29 +27,85 @@ The application has a ping endpoint found at `/ping` which indicates that the ap
 
 ### Running the application locally
 
-The application comes with a `dev` spring profile that includes default settings for running locally. This is not
-necessary when deploying to kubernetes as these values are included in the helm configuration templates -
-e.g. `values-dev.yaml`.
+#### Preparation
 
-There is also a `docker-compose.yml` that can be used to run a local instance of the template in docker and also an
-instance of HMPPS Auth (required if your service calls out to other services using a token).
+Obtain API client credentials
 
-```bash
-docker compose pull && docker compose up
-```
+- populate those value from kubernetes secrets `hmpps-legal-status-api`.
 
-will run the application and HMPPS Auth within a local docker instance.
+  ```shell
+  kubectl -n hmpps-legal-status-dev get secret hmpps-legal-status-api-client-creds -o json | jq '.data | map_values(@base64d)' 
+  ```
 
-### Running the application in Intellij
+- fill in the API client credentials in these files: `*_CLIENT_ID` and `*_CLIENT_SECRET`
+    - `.env` for running outside docker
+    - `.env.docker` for running in docker
 
-```bash
-docker compose pull && docker compose up --scale hmpps-legal-status-api=0
-```
+---
 
-will just start a docker instance of HMPPS Auth and the `legal-status-db` PostgreSQL database. The application should then be started with a `dev` active profile
-in Intellij.
+#### Running with Docker Compose
 
-### Database
+The easiest way to run the app is to use docker compose to create the service and all dependencies.
+
+1. Prepare `.env.docker` (from `.env.docker.sample`)
+
+    ```shell
+    cp .env.docker.sample .env.docker
+    ```
+
+    - fill in the API client credentials in `.env.docker`
+      see above to obtain these
+    - in case of `$` in value, escape them (with `$$`)
+2. Then run
+
+   ```shell
+   docker compose --profile api up
+   ```
+
+   will run the application (from latest image) and PostgreSQL within a local docker instance.
+3. Check if application is up and running
+    - See `http://localhost:8081/health` to check the app is running.
+    - See `http://localhost:8081/swagger-ui/index.html?configUrl=/v3/api-docs` to explore the OpenAPI spec document.
+    - See `http://localhost:8081/info` to check the app info
+
+It connects HMPPS Auth and other upstream APIs in `dev` environment. Thus, a set of valid dev API clients are required to run the application.
+
+#### Running the application in IntelliJ
+
+1. Prepare `.env` (from `.env.local.sample`)
+
+    ```shell
+    cp .env.local.sample .env
+    ```
+
+    - fill in the API client credentials in `.env`:
+      see above to obtain these
+2. Run this
+
+    ```shell
+   docker compose up -d 
+    ```
+
+    - will start dependencies only without the API application
+    - `-d` for detached run
+3. Run `bootRun` with  `.env` file prepared above
+    - either IntelliJ
+        - in the run configuration for `bootRun`
+            - tick `enable EnvFile`
+            - tick `Substitute Environment Variables`
+            - tick `Enable experimental integrations`
+            - add a new item to the run configuration list and point it to your `.env` file
+        - run `bootRun`
+    - or Gradle wrapper
+
+      ```shell
+      export $(grep -v '^#' .env | xargs)
+      ./gradlew bootRun
+      ```
+
+---
+
+#### Database
 
 The service uses PostgreSQL. Locally, a Postgres 18 container is provided by `docker-compose.yml`
 (`legal-status-db`, port 5432, user/password/db `legal_status`, local only).
@@ -57,30 +113,83 @@ In Cloud Platform, an RDS instance is provisioned per namespace and its connecti
 from the `rds-postgresql-instance-output` secret. Schema changes are managed by Flyway
 (`src/main/resources/migration/common`).
 
-### Running tests
+#### Running tests
+
+To run the test suite (unit and integration):
 
 ```bash
-./gradlew check
+./gradlew clean check
 ```
 
-The integration tests start their own PostgreSQL container using Testcontainers, so Docker must be running.
+#### Integration test dependencies
 
-### Building and running the docker image locally
+The integration tests spin up the following docker containers, therefore a docker runtime is required on local
+development environments in order to run the tests.
 
-The `Dockerfile` relies on the application being built first. Steps to build the docker image:
-1. Build the jar files
-```
-./gradlew clean assemble
-```
-2. Copy the jar files to the base directory so that the docker build can find them
-```
-cp build/libs/*.jar .
-```
-3. Build the docker image with required arguments
-```
-docker build --build-arg GIT_REF=21345 --build-arg GIT_BRANCH=bob --build-arg BUILD_NUMBER=$(date '+%Y-%m-%d') .
-```
-4. Run the docker image, setting the auth url so that it starts up
-```
-docker run -e HMPPS_AUTH_URL="https://sign-in-dev.hmpps.service.justice.gov.uk/auth" <sha from step 3>
-```
+- postgres - A real postgres instance is used rather than h2 in order to properly test various constraints etc. (h2 is more forgiving that postgres in this respect)
+
+### Configuring the project
+
+#### JDK
+
+To develop and build the application locally you will need JDK 25 installed and configured.
+
+#### Ktlint formatting
+
+Ktlint is used to format the source code and a task runs in the GitHub Actions build to check the formatting.
+
+You should run the following commands to make sure that the source code is formatted locally before it breaks the GHA build.
+
+##### Apply ktlint formatting rules to Intellij
+
+`./gradlew ktlintApplyToIdea`
+
+Or to apply to all Intellij projects:
+
+`./gradlew ktlintApplyToIdeaGlobally`
+
+##### Run ktlint formatter on git commit
+
+`./gradlew addKtlintFormatGitPreCommitHook`
+
+### Environment variables
+
+The following environment variables are required in order for the app to start:
+
+#### General
+
+| Name           | Description                                |
+|----------------|--------------------------------------------|
+| SERVER_PORT    | The port that the application will run on  |
+| HMPPS_AUTH_URL | The URL for OAuth 2.0 authorisation server |
+
+#### Database
+
+| Name      | Description                       |
+|-----------|-----------------------------------|
+| DB_SERVER | The host of the DB server         |
+| DB_NAME   | The name of the database instance |
+| DB_USER   | The application's DB username     |
+| DB_PASS   | The DB user's password            |
+
+#### Application Insights
+
+| Name                                   | Description                              |
+|----------------------------------------|------------------------------------------|
+| APPINSIGHTS_INSTRUMENTATIONKEY         | The instrumentation key for App Insights |
+| APPLICATIONINSIGHTS_CONNECTION_STRING  | The connection string for App Insights   |
+| APPLICATIONINSIGHTS_CONFIGURATION_FILE | A configuration file for App Insights    |
+
+#### APIs
+
+| Name                                    | Description                                                                     |
+|-----------------------------------------|---------------------------------------------------------------------------------|
+| PRISONER_SEARCH_API_URL                 | The URL of the Prisoner Search API                                              |
+| PRISONER_SEARCH_API_CLIENT_ID           | hmpps-auth oauth2 client-id for connecting to the Prisoner Search API           |
+| PRISONER_SEARCH_API_CLIENT_SECRET       | hmpps-auth oauth2 client-secret for connecting to the Prisoner Search API       |
+| MANAGE_OFFENCES_API_URL                 | The URL of the Manage Offences API                                              |
+| MANAGE_OFFENCES_API_CLIENT_ID           | hmpps-auth oauth2 client-id for connecting to the Manage Offences API           |
+| MANAGE_OFFENCES_API_CLIENT_SECRET       | hmpps-auth oauth2 client-secret for connecting to the Manage Offences API       |
+| REMAND_AND_SENTENCING_API_URL           | The URL of the Remand and Sentencing API                                        |
+| REMAND_AND_SENTENCING_API_CLIENT_ID     | hmpps-auth oauth2 client-id for connecting to the Remand and Sentencing API     |
+| REMAND_AND_SENTENCING_API_CLIENT_SECRET | hmpps-auth oauth2 client-secret for connecting to the Remand and Sentencing API |
