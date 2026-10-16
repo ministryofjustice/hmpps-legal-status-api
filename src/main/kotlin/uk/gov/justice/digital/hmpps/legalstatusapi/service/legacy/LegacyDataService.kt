@@ -1,12 +1,19 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
+import mu.KotlinLogging
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
+import java.time.LocalDate
+
+private val log = KotlinLogging.logger {}
 
 /**
  * Service class for handling NOMIS legacy data operations.
  */
 @Service
-class LegacyDataService {
+class LegacyDataService(
+  private val prisonerSearchApiClient: PrisonerSearchApiClient
+) {
 
   /**
    * Calculates the NOMIS legacy Imprisonment Status for the prisoner identified by their prison number.
@@ -15,6 +22,8 @@ class LegacyDataService {
    * @return The calculated Imprisonment Status.
    */
   fun calculateImprisonmentStatus(prisonNumber: String): String {
+    val receptionDate = getReceptionDate(prisonNumber)
+
     TODO("Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.")
 
     /*
@@ -27,4 +36,9 @@ class LegacyDataService {
     5. Return the Imprisonment Status from the Imprisonment Status Mapping record
      */
   }
+
+  private fun getReceptionDate(prisonNumber: String): LocalDate? = prisonerSearchApiClient.getPrisoner(prisonNumber).receptionDate
+    .also {
+      log.info { "Retrieved prisoner [$prisonNumber] from Prisoner Search API" }
+    }
 }
