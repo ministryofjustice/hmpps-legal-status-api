@@ -175,6 +175,10 @@ tasks.named("compileKotlin") {
   dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
 }
 
+tasks.named("test") {
+  dependsOn("copyAgent")
+}
+
 kotlin {
   sourceSets["main"].apply {
     kotlin.srcDir("$buildDirectory/generated/src/main/kotlin")
