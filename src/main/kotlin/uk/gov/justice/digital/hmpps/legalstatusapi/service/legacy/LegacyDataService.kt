@@ -12,7 +12,7 @@ private val log = KotlinLogging.logger {}
  */
 @Service
 class LegacyDataService(
-  private val prisonerSearchApiClient: PrisonerSearchApiClient
+  private val prisonerSearchApiClient: PrisonerSearchApiClient,
 ) {
 
   /**
@@ -24,9 +24,9 @@ class LegacyDataService(
   fun calculateImprisonmentStatus(prisonNumber: String): String {
     val receptionDate = getReceptionDate(prisonNumber)
 
-    TODO("Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.")
-
     /*
+    TODO - Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.
+
     Steps to implement:
     1. Retrieve the prisoner's receptionDate (which we assume at this point to be the booking start date)
     2. Get the prisoner's sentence(s) and offence(s) from RaS, using the prisonNumber to identify the prisoner along with a date range comprised of receptionDate to current date
@@ -35,6 +35,7 @@ class LegacyDataService(
     4. Use the sentenceCalcType and sentenceCategory, or offenceType, to lookup the correct Imprisonment Status Mapping
     5. Return the Imprisonment Status from the Imprisonment Status Mapping record
      */
+    return ""
   }
 
   private fun getReceptionDate(prisonNumber: String): LocalDate? = prisonerSearchApiClient.getPrisoner(prisonNumber).receptionDate

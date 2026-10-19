@@ -1,51 +1,88 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
-import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.DisplayName
-import org.junit.jupiter.api.Nested
+import org.assertj.core.api.Assertions.catchThrowableOfType
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.jupiter.MockitoExtension
+import org.mockito.kotlin.any
 import org.mockito.kotlin.given
+import org.mockito.kotlin.verify
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerNotFoundException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
-import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiException
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.assertThat
+import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
+import uk.gov.justice.digital.hmpps.legalstatusapi.uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import java.time.LocalDate
 
 @ExtendWith(MockitoExtension::class)
 class LegacyDataServiceTest {
 
   @InjectMocks
-  private lateinit var legacyDataService: LegacyDataService;
+  private lateinit var legacyDataService: LegacyDataService
 
   @Mock
   private lateinit var prisonerSearchApiClient: PrisonerSearchApiClient
 
-  @Nested
-  @DisplayName("Given a prisoner with a reception date")
-  inner class GivenPrisonerReceivedBeforePesContract {
-    private lateinit var prisoner: Prisoner
-    private lateinit var receptionDate: LocalDate
+  @Test
+  fun `should calculate Imprisonment Status`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+    val receptionDate = LocalDate.now().minusMonths(3)
+    val imprisonmentStatus = "14FTRHDC_ORA"
 
-    @BeforeEach
-    internal fun setUp() {
-      val prisonNumber = "123456"
-      val receptionDate = LocalDate.now()
-      val prisoner = Prisoner(
-        prisonerNumber = prisonNumber,
-        receptionDate = receptionDate
-      )
-      given(prisonerSearchApiClient.getPrisoner(prisonNumber)).willReturn(prisoner)
+    val prisoner = aValidPrisoner(
+      prisonNumber = prisonNumber,
+      receptionDate = receptionDate,
+      imprisonmentStatus = imprisonmentStatus,
+    )
+    given(prisonerSearchApiClient.getPrisoner(any())).willReturn(prisoner)
+
+    // When
+    val actual = legacyDataService.calculateImprisonmentStatus(prisonNumber)
+
+    // Then
+    verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
+
+    // Assert 'actual' here once the full implementation is complete
+  }
+
+  @Test
+  fun `should not calculate Imprisonment Status given prisoner-search throws not found exception`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+
+    given(prisonerSearchApiClient.getPrisoner(any())).willThrow(PrisonerNotFoundException(prisonNumber))
+
+    // When
+    val actual = catchThrowableOfType(PrisonerNotFoundException::class.java) {
+      legacyDataService.calculateImprisonmentStatus(prisonNumber)
     }
 
-    @Test
-    fun `should not be implemented`() {
-      assertThrows<NotImplementedError>("Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.") {
-        legacyDataService.calculateImprisonmentStatus("123456")
-      }
+    // Then
+    assertThat(actual).hasPrisonNumber(prisonNumber)
+    verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
+  }
+
+  @Test
+  fun `should not calculate Imprisonment Status given prisoner-search throws API exception`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+
+    val cause = RuntimeException("Some exception thrown by the API")
+    given(prisonerSearchApiClient.getPrisoner(any())).willThrow(PrisonerSearchApiException("Error retrieving prisoner by prisonNumber $prisonNumber", cause))
+
+    // When
+    val actual = catchThrowableOfType(PrisonerSearchApiException::class.java) {
+      legacyDataService.calculateImprisonmentStatus(prisonNumber)
     }
 
+    // Then
+    assertThat(actual)
+      .hasMessage("Error retrieving prisoner by prisonNumber $prisonNumber")
+      .hasCause(cause)
+    verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
   }
 }
