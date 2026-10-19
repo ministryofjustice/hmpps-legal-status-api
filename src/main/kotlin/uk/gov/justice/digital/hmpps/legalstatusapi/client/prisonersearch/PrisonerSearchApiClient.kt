@@ -21,6 +21,7 @@ class PrisonerSearchApiClient(
 
   private companion object {
     val RESPONSE_FIELDS = listOf(
+      "prisonerNumber",
       "receptionDate",
       "imprisonmentStatus",
     ).joinToString(",")
