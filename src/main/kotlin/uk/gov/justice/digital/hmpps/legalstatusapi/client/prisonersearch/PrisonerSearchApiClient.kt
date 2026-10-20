@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 import org.springframework.web.reactive.function.client.WebClientRequestException
 import org.springframework.web.reactive.function.client.WebClientResponseException
+import org.springframework.web.reactive.function.client.bodyToMono
 import reactor.util.retry.Retry
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import java.time.Duration
@@ -42,7 +43,7 @@ class PrisonerSearchApiClient(
         it.contentType = MediaType.APPLICATION_JSON
       }
       .retrieve()
-      .bodyToMono(Prisoner::class.java)
+      .bodyToMono<Prisoner>()
       .retryWhen(
         Retry.backoff(3, Duration.ofMillis(500))
           .filter { ex -> ex is WebClientRequestException }

@@ -2,10 +2,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import org.assertj.core.api.Assertions.catchThrowableOfType
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
-import org.mockito.InjectMocks
-import org.mockito.Mock
-import org.mockito.junit.jupiter.MockitoExtension
+import org.mockito.Mockito.mock
 import org.mockito.kotlin.any
 import org.mockito.kotlin.given
 import org.mockito.kotlin.verify
@@ -13,18 +10,28 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.Prisone
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.assertThat
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.legalstatusapi.uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
+import java.time.Clock
+import java.time.Instant
 import java.time.LocalDate
+import java.time.ZoneId
 
-@ExtendWith(MockitoExtension::class)
 class LegacyDataServiceTest {
 
-  @InjectMocks
-  private lateinit var legacyDataService: LegacyDataService
+  private val prisonerSearchApiClient: PrisonerSearchApiClient = mock()
 
-  @Mock
-  private lateinit var prisonerSearchApiClient: PrisonerSearchApiClient
+  private val remandAndSentencingApiClient: RemandAndSentencingApiClient = mock()
+
+  private val fixedTimestamp = Instant.parse("2026-04-17T09:13:22.123Z")
+  private val clock = Clock.fixed(fixedTimestamp, ZoneId.of("UTC"))
+
+  private val legacyDataService = LegacyDataService(
+    prisonerSearchApiClient,
+    remandAndSentencingApiClient,
+    clock,
+  )
 
   @Test
   fun `should calculate Imprisonment Status`() {

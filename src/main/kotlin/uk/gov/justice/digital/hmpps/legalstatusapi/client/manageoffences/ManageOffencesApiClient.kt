@@ -3,6 +3,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.client
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
+import org.springframework.web.reactive.function.client.bodyToFlux
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.manageoffences.ManageOffencesApiException
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
 
@@ -22,7 +23,7 @@ class ManageOffencesApiClient(
           .build()
       }
       .retrieve()
-      .bodyToFlux(OffenceSeverityRating::class.java)
+      .bodyToFlux<OffenceSeverityRating>()
       .collectList()
       .block()!!
   } catch (e: Exception) {
