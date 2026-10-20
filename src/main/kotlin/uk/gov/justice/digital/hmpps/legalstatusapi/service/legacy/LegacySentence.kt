@@ -9,5 +9,5 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 data class LegacySentence(
   val sentenceCalcType: String,
   val sentenceCategory: String,
-  val offenceCode: String,
+  val offence: LegacyOffence,
 )
