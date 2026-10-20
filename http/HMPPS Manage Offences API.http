@@ -1,0 +1,10 @@
+# HMPPS Manage Offences API
+
+###
+# @name Get the severity rating for each of the passed in offence codes
+# URL encoded comma delimited list of offence codes to look up
+@offenceCodes = CL67011%2CRR84216%2CRT88136
+GET {{manage_offences_base_url}}//offences/severity-ratings?offenceCodes={{offenceCodes}}
+Authorization: Bearer {{$auth.token("Manage Offences API")}}
+Accept: application/json
+
