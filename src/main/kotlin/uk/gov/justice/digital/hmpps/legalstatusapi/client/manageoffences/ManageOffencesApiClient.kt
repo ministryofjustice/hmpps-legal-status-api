@@ -19,7 +19,7 @@ class ManageOffencesApiClient(
       .get()
       .uri {
         it.path("/offences/severity-ratings")
-          .queryParam("offenceCodes", offenceCodes.toTypedArray())
+          .queryParam("offenceCodes", *offenceCodes.toTypedArray())
           .build()
       }
       .retrieve()
