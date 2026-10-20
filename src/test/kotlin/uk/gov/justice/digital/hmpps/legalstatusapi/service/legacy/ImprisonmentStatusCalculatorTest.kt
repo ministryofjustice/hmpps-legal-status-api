@@ -50,7 +50,7 @@ class ImprisonmentStatusCalculatorTest {
       givenSeverities("TH68010" to 50)
       val sentencingData = LegacySentencingData(
         sentences = listOf(aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "TH68010")),
-        charges = listOf(aCharge(offenceCode = "TH68010")),
+        offences = listOf(anOffence(offenceCode = "TH68010")),
       )
 
       // When
@@ -188,7 +188,7 @@ class ImprisonmentStatusCalculatorTest {
       givenSeverities()
       val sentencingData = LegacySentencingData(
         sentences = listOf(aSentence(offenceCode = "SX56087-088N"), aSentence(offenceCode = "SX56025-029N")),
-        charges = listOf(aCharge(offenceCode = "SX56025-029N", resultCode = "4565")),
+        offences = listOf(anOffence(offenceCode = "SX56025-029N", outcomeCode = "4565")),
       )
 
       // When
@@ -223,7 +223,7 @@ class ImprisonmentStatusCalculatorTest {
       givenResultCodeMapping("4565", TRL)
       val sentencingData = LegacySentencingData(
         sentences = listOf(aSentence(sentenceCalcType = "UNMAPPED", offenceCode = "TH68010")),
-        charges = listOf(aCharge(offenceCode = "TH68010", resultCode = "4565")),
+        offences = listOf(anOffence(offenceCode = "TH68010", outcomeCode = "4565")),
       )
 
       // When
@@ -250,15 +250,15 @@ class ImprisonmentStatusCalculatorTest {
     }
 
     @Test
-    fun `should choose the charge whose result code maps to the status with the lowest rank`() {
+    fun `should choose the charge whose outcome code maps to the status with the lowest rank`() {
       // Given
       givenResultCodeMapping("4565", TRL) // rank 560
       givenResultCodeMapping("1501", LR) // rank 200
       givenSeverities("MORE01" to 1, "LESS01" to 99)
       val sentencingData = LegacySentencingData(
-        charges = listOf(
-          aCharge(offenceCode = "MORE01", resultCode = "4565"),
-          aCharge(offenceCode = "LESS01", resultCode = "1501"),
+        offences = listOf(
+          anOffence(offenceCode = "MORE01", outcomeCode = "4565"),
+          anOffence(offenceCode = "LESS01", outcomeCode = "1501"),
         ),
       )
 
@@ -270,15 +270,15 @@ class ImprisonmentStatusCalculatorTest {
     }
 
     @Test
-    fun `should choose a charge with a mapped result code over ones without`() {
+    fun `should choose an offence with a mapped outcome code over ones without`() {
       // Given
       givenResultCodeMapping("4565", TRL)
       givenSeverities("MORE01" to 1, "MORE02" to 1, "LESS01" to 99)
       val sentencingData = LegacySentencingData(
-        charges = listOf(
-          aCharge(offenceCode = "MORE01", resultCode = "UNMAPPED"),
-          aCharge(offenceCode = "MORE02", resultCode = null),
-          aCharge(offenceCode = "LESS01", resultCode = "4565"),
+        offences = listOf(
+          anOffence(offenceCode = "MORE01", outcomeCode = "UNMAPPED"),
+          anOffence(offenceCode = "MORE02", outcomeCode = "UNMAPPED2"),
+          anOffence(offenceCode = "LESS01", outcomeCode = "4565"),
         ),
       )
 
@@ -290,13 +290,13 @@ class ImprisonmentStatusCalculatorTest {
     }
 
     @Test
-    fun `should return UNKNOWN with the most severe charge as main offence given no result codes are mapped`() {
+    fun `should return UNKNOWN with the most severe charge as main offence given no outcome codes are mapped`() {
       // Given
       givenSeverities("MORE01" to 1, "LESS01" to 99)
       val sentencingData = LegacySentencingData(
-        charges = listOf(
-          aCharge(offenceCode = "LESS01", resultCode = "UNMAPPED"),
-          aCharge(offenceCode = "MORE01", resultCode = null),
+        offences = listOf(
+          anOffence(offenceCode = "LESS01", outcomeCode = "UNMAPPED"),
+          anOffence(offenceCode = "MORE01", outcomeCode = "UNMAPPED2"),
         ),
       )
 
@@ -313,10 +313,10 @@ class ImprisonmentStatusCalculatorTest {
       givenResultCodeMapping("4565", TRL)
       givenSeverities("LESS01" to 99, "MORE01" to 1, "MORE02" to 1)
       val sentencingData = LegacySentencingData(
-        charges = listOf(
-          aCharge(offenceCode = "LESS01", resultCode = "4565"),
-          aCharge(offenceCode = "MORE02", resultCode = "4565"),
-          aCharge(offenceCode = "MORE01", resultCode = "4565"),
+        offences = listOf(
+          anOffence(offenceCode = "LESS01", outcomeCode = "4565"),
+          anOffence(offenceCode = "MORE02", outcomeCode = "4565"),
+          anOffence(offenceCode = "MORE01", outcomeCode = "4565"),
         ),
       )
 
@@ -334,9 +334,9 @@ class ImprisonmentStatusCalculatorTest {
       givenResultCodeMapping("4565", TRL)
       givenSeverities("LESS01" to 99)
       val sentencingData = LegacySentencingData(
-        charges = listOf(
-          aCharge(offenceCode = "SX56025-029N", resultCode = "4565"),
-          aCharge(offenceCode = "LESS01", resultCode = "4565"),
+        offences = listOf(
+          anOffence(offenceCode = "SX56025-029N", outcomeCode = "4565"),
+          anOffence(offenceCode = "LESS01", outcomeCode = "4565"),
         ),
       )
 
@@ -354,7 +354,7 @@ class ImprisonmentStatusCalculatorTest {
     givenSeverities()
     val sentencingData = LegacySentencingData(
       sentences = listOf(aSentence(offenceCode = "TH68010")),
-      charges = listOf(aCharge(offenceCode = "TH68010"), aCharge(offenceCode = "SX56025-029N")),
+      offences = listOf(anOffence(offenceCode = "TH68010"), anOffence(offenceCode = "SX56025-029N")),
     )
 
     // When

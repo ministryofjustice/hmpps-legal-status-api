@@ -2,12 +2,12 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import java.time.LocalDate
 
-fun aCharge(
+fun anOffence(
   offenceCode: String = "TH68010",
-  resultCode: String? = null,
-): LegacyCharge = LegacyCharge(
+  outcomeCode: String = "1002",
+): LegacyOffence = LegacyOffence(
   offenceCode = offenceCode,
-  resultCode = resultCode,
+  outcomeCode = outcomeCode,
 )
 
 fun aSentence(
@@ -19,7 +19,7 @@ fun aSentence(
 ): LegacySentence = LegacySentence(
   sentenceCalcType = sentenceCalcType,
   sentenceCategory = sentenceCategory,
-  offenceCode = offenceCode,
+  offence = anOffence(offenceCode = offenceCode),
   startDate = startDate,
   endDate = endDate,
 )

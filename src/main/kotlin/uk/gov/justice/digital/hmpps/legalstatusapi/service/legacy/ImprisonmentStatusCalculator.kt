@@ -19,7 +19,8 @@ private val log = KotlinLogging.logger {}
  * - Step 3: getStatusAndMainOffenceViaSentenceByBookingId is used first. It considers each mapped sentence and its
  *   charge.
  * - Step 3.1: getStatusAndMainOffenceViaChargeOutcomeByBookingId is used if that gives no result (e.g. the prisoner is
- *   not sentenced). It considers every charge and its court outcome (result code).
+ *   not sentenced). It considers every charge and its court outcome (NOMIS
+ *   OFFENDER_CHARGES.RESULT_CODE_1, which is the RaS outcome code).
  *
  * Each NOMIS query filters its rows down to one, in a fixed order of precedence (e.g. lowest status rank, then longest
  * sentence, then most severe offence ...). That is the same as sorting the rows by those values and taking the first,
@@ -33,12 +34,12 @@ class ImprisonmentStatusCalculator(
 
   fun calculate(sentencingData: LegacySentencingData): ImprisonmentStatusCalculation {
     val severities = offenceSeverityProvider.getSeverities(
-      sentencingData.sentences.map { it.offenceCode } + sentencingData.charges.map { it.offenceCode },
+      sentencingData.sentences.map { it.offence.offenceCode } + sentencingData.offences.map { it.offenceCode },
     )
 
     return (
       calculateFromSentences(sentencingData.sentences, severities)
-        ?: calculateFromChargeOutcomes(sentencingData.charges, severities)
+        ?: calculateFromChargeOutcomes(sentencingData.offences, severities)
       ).also {
       log.info { "Calculated Imprisonment Status [${it.imprisonmentStatus}] from [${it.calculatedFrom}] with main offence [${it.mainOffenceCode}]" }
     }
@@ -53,30 +54,30 @@ class ImprisonmentStatusCalculator(
   private fun calculateFromSentences(sentences: List<LegacySentence>, severities: Map<String, Int>): ImprisonmentStatusCalculation? {
     val candidates = sentences.mapNotNull { sentence ->
       imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(sentence.sentenceCategory, sentence.sentenceCalcType)
-        ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[sentence.offenceCode]) }
+        ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[sentence.offence.offenceCode]) }
         .also { if (it == null) log.info { "No Imprisonment Status Mapping for sentence with category [${sentence.sentenceCategory}] and calc type [${sentence.sentenceCalcType}]" } }
     }
 
     return candidates.minWithOrNull(SENTENCE_PRECEDENCE)?.let {
-      ImprisonmentStatusCalculation(it.status.imprisonmentStatus, it.sentence.offenceCode, CalculatedFrom.SENTENCE)
+      ImprisonmentStatusCalculation(it.status.imprisonmentStatus, it.sentence.offence.offenceCode, CalculatedFrom.SENTENCE)
     }
   }
 
   /**
-   * Step 3.1: Used when no sentence gives a result. Choose the main charge, and return the Imprisonment Status mapped from
-   * its result code; or UNKNOWN if its result code has no mapping or there are no charges.
+   * Step 3.1: Used when no sentence gives a result. Choose the main offence, and return the Imprisonment Status mapped
+   * from its outcome code; or UNKNOWN if its outcome code has no mapping or there are no offences.
    */
-  private fun calculateFromChargeOutcomes(charges: List<LegacyCharge>, severities: Map<String, Int>): ImprisonmentStatusCalculation {
-    val resultCodeMappings = charges.mapNotNull { it.resultCode }.distinct()
+  private fun calculateFromChargeOutcomes(offences: List<LegacyOffence>, severities: Map<String, Int>): ImprisonmentStatusCalculation {
+    val outcomeCodeMappings = offences.map { it.outcomeCode }.distinct()
       .associateWith { imprisonmentStatusMappingRepository.findByOffenceResultCode(it)?.imprisonmentStatus }
 
-    val mainCharge = charges
-      .map { ChargeOutcome(it, it.resultCode?.let { code -> resultCodeMappings[code] }, severities[it.offenceCode]) }
+    val mainOffence = offences
+      .map { ChargeOutcome(it, outcomeCodeMappings[it.outcomeCode], severities[it.offenceCode]) }
       .minWithOrNull(CHARGE_OUTCOME_PRECEDENCE)
 
     return ImprisonmentStatusCalculation(
-      imprisonmentStatus = mainCharge?.status?.imprisonmentStatus ?: ImprisonmentStatus.UNKNOWN,
-      mainOffenceCode = mainCharge?.charge?.offenceCode,
+      imprisonmentStatus = mainOffence?.status?.imprisonmentStatus ?: ImprisonmentStatus.UNKNOWN,
+      mainOffenceCode = mainOffence?.offence?.offenceCode,
       calculatedFrom = CalculatedFrom.CHARGE_OUTCOME,
     )
   }
@@ -92,7 +93,7 @@ class ImprisonmentStatusCalculator(
   }
 
   private data class ChargeOutcome(
-    val charge: LegacyCharge,
+    val offence: LegacyOffence,
     val status: ImprisonmentStatusEntity?,
     val severity: Int?,
   )
@@ -121,7 +122,7 @@ class ImprisonmentStatusCalculator(
 
     /*
     The order of precedence in getStatusAndMainOffenceViaChargeOutcomeByBookingId:
-      1. The lowest status rank. Charges whose result code has no mapping are only chosen when no charge has one, which is
+      1. The lowest status rank. Charges whose outcome code has no mapping are only chosen when no charge has one, which is
          the same as putting them last.
       2. The most severe offence (lowest SEVERITY_RANKING), with charges that have no severity last.
          Deliberate difference: when the chosen rank has charges both with and without a severity, NOMIS keeps one of each

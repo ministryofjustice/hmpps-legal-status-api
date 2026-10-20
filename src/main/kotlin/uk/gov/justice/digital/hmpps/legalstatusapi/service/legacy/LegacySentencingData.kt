@@ -10,20 +10,11 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
  *   - all charges on those cases, regardless of charge status (NOMIS does not filter on OFFENDER_CHARGES.CHARGE_STATUS)
  *
  * @property sentences The prisoner's sentences, one per sentenced charge.
- * @property charges Every charge on the prisoner's active court cases, whether sentenced or not. NOMIS uses all of them
- * when the prisoner has no mapped sentences.
+ * @property offences The offences of every charge on the prisoner's active court cases, whether sentenced or not. NOMIS
+ * uses all of them, with their outcome codes (NOMIS OFFENDER_CHARGES.RESULT_CODE_1), when the prisoner has no mapped
+ * sentences.
  */
 data class LegacySentencingData(
   val sentences: List<LegacySentence> = emptyList(),
-  val charges: List<LegacyCharge> = emptyList(),
-)
-
-/**
- * @property offenceCode The offence code, used to look up the offence severity.
- * @property resultCode The charge's court outcome code (NOMIS OFFENDER_CHARGES.RESULT_CODE_1), used to look up the
- * Imprisonment Status Mapping when the prisoner has no mapped sentences.
- */
-data class LegacyCharge(
-  val offenceCode: String,
-  val resultCode: String? = null,
+  val offences: List<LegacyOffence> = emptyList(),
 )
