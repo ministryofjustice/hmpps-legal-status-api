@@ -37,7 +37,7 @@ class LegacyDataService(
       toDate = LocalDate.now(clock),
     )
     val prisonerSentences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.sentence() }
-    val unSentencedOffences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.unSentencedOffence() }
+    val unSentencedOffences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.offence() }
 
     // Step 3 goes here ...
 
@@ -72,7 +72,7 @@ class LegacyDataService(
       LegacySentence(
         sentenceCalcType = it.nomisSentenceCalcType,
         sentenceCategory = it.nomisCjaCode,
-        offenceCode = offenceCode,
+        offence = offence()!!,
       ).also {
         log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
       }
@@ -81,11 +81,17 @@ class LegacyDataService(
     LegacySentence(
       sentenceCalcType = legacyData.sentenceCalcType!!,
       sentenceCategory = legacyData.sentenceCategory!!,
-      offenceCode = offenceCode,
+      offence = offence()!!,
     ).also {
       log.debug { "LegacySentence mapped using legacy data fields from RaS response" }
     }
   }
 
-  private fun Charge.unSentencedOffence(): String? = if (sentence == null) offenceCode else null
+  private fun Charge.offence(): LegacyOffence? = sentence?.let {
+    LegacyOffence(
+      offenceCode = offenceCode,
+      outcomeCode = outcome?.nomisCode.also { log.debug { "LegacyOffence mapped from looking up RaS sentenceType" } }
+        ?: legacyData?.nomisOutcomeCode!!.also { log.debug { "LegacyOffence mapped using legacy data fields from RaS response" } },
+    )
+  }
 }
