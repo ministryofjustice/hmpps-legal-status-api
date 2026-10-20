@@ -3,6 +3,9 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.Charge
+import java.time.Clock
 import java.time.LocalDate
 
 private val log = KotlinLogging.logger {}
@@ -13,6 +16,8 @@ private val log = KotlinLogging.logger {}
 @Service
 class LegacyDataService(
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
+  private val remandAndSentencingApiClient: RemandAndSentencingApiClient,
+  private val clock: Clock,
 ) {
 
   /**
@@ -22,7 +27,19 @@ class LegacyDataService(
    * @return The calculated Imprisonment Status.
    */
   fun calculateImprisonmentStatus(prisonNumber: String): String {
+    // Step 1
     val receptionDate = getReceptionDate(prisonNumber)
+
+    // Step 2
+    val prisonerChargesFromRemandAndSentencing: List<Charge> = remandAndSentencingApiClient.getPrisonerCharges(
+      prisonNumber = prisonNumber,
+      fromDate = receptionDate,
+      toDate = LocalDate.now(clock),
+    )
+    val prisonerSentences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.sentence() }
+    val unSentencedOffences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.unSentencedOffence() }
+
+    // Step 3 goes here ...
 
     /*
     TODO - Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.
@@ -42,4 +59,33 @@ class LegacyDataService(
     .also {
       log.info { "Retrieved prisoner [$prisonNumber] from Prisoner Search API" }
     }
+
+  /**
+   * Returns a [LegacySentence] or null from a Ras [Charge]
+   *
+   * If the Charge has a Sentence, the primary strategy should be to create a LegacySentence by looking up the sentenceType
+   * from the RaS sentence reference data endpoint.
+   * If Sentence does not have a sentenceType property, the LegacySentence should be created from the legacyData property.
+   */
+  private fun Charge.sentence(): LegacySentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
+    remandAndSentencingApiClient.getSentenceTypeDetails(sentenceTypeUuid).let {
+      LegacySentence(
+        sentenceCalcType = it.nomisSentenceCalcType,
+        sentenceCategory = it.nomisCjaCode,
+        offenceCode = offenceCode,
+      ).also {
+        log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
+      }
+    }
+  } ?: sentence?.legacyData?.let { legacyData ->
+    LegacySentence(
+      sentenceCalcType = legacyData.sentenceCalcType!!,
+      sentenceCategory = legacyData.sentenceCategory!!,
+      offenceCode = offenceCode,
+    ).also {
+      log.debug { "LegacySentence mapped using legacy data fields from RaS response" }
+    }
+  }
+
+  private fun Charge.unSentencedOffence(): String? = if (sentence == null) offenceCode else null
 }
