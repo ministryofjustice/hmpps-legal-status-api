@@ -1,0 +1,45 @@
+# HMPPS Legal Status API
+
+###
+# @name Temp development endpoint for invoking the imprisonment status calculation on demand - localhost
+< {%
+    request.variables.set("prisonNumber", "A3390EC")
+%}
+GET http://localhost:8081/temp/legacy/imprisonment-status/{{prisonNumber}}
+Authorization: Bearer {{$auth.token("Legal Status API")}}
+Accept: application/json
+
+###
+# @name Temp development endpoint for invoking the imprisonment status calculation on demand - dev deployed env
+< {%
+    request.variables.set("prisonNumber", "A3390EC")
+%}
+GET {{legal_status_base_url}}/temp/legacy/imprisonment-status/{{prisonNumber}}
+Authorization: Bearer {{$auth.token("Legal Status API")}}
+Accept: application/json
+
+###
+# @name Temp development endpoint for invoking the imprisonment status calculation on demand - dev deployed env
+POST {{legal_status_base_url}}/temp/legacy/imprisonment-status/calculate
+Authorization: Bearer {{$auth.token("Legal Status API")}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "sentences": [
+    {
+      "sentenceCalcType": "",
+      "sentenceCategory": "",
+      "offence": "",
+      "startDate": "",
+      "endDate": ""
+    }
+  ],
+  "offences": [
+    {
+      "offenceCode": "",
+      "outcomeCode": ""
+    }
+  ]
+}
+
