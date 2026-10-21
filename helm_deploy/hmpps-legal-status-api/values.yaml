@@ -70,3 +70,4 @@ generic-service:
 
 generic-prometheus-alerts:
   targetApplication: hmpps-legal-status-api
+  sqsAlertsTotalMessagesThreshold: "0"
