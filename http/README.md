@@ -24,3 +24,8 @@ Obtain API client credentials
 
 Assuming you have the intellij HTTP Client plugin installed, open one of the `.http` files from this folder, and click
 the green 'play' arrow for a given request.
+
+
+## Further reading
+The intellij HTTP Client is well documented, but this was a particularly comprehensive but concise guide:  
+[Crafting software - The definitive guide to the IntelliJ IDEA HTTP Client](https://emmanuelvalverderamos.substack.com/p/the-definitive-guide-to-the-intellij)

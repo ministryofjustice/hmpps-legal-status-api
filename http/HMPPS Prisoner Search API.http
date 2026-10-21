@@ -2,9 +2,10 @@
 
 ###
 # @name Get prisoner by prisoner number (AKA NOMS number)
-@id = A3390EC
-# URL encoded comma delimited list of response fields
-@responseFields = prisonerNumber%2CreceptionDate%2CimprisonmentStatus
+< {%
+    request.variables.set("id", "A3390EC")
+    request.variables.set("responseFields", "prisonerNumber,receptionDate,imprisonmentStatus")
+%}
 GET {{prisoner_search_base_url}}/prisoner/{{id}}?responseFields={{responseFields}}
 Authorization: Bearer {{$auth.token("Prisoner Search API")}}
 Accept: application/json
