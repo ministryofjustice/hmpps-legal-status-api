@@ -4,7 +4,7 @@ import mu.KotlinLogging
 import org.springframework.stereotype.Service
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.Charge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
 import java.time.Clock
 import java.time.LocalDate
 
@@ -45,7 +45,7 @@ class LegacyDataService(
     val receptionDate = getReceptionDate(prisonNumber)
 
     // Step 2
-    val prisonerChargesFromRemandAndSentencing: List<Charge> = remandAndSentencingApiClient.getPrisonerCharges(
+    val prisonerChargesFromRemandAndSentencing: List<PersonCharge> = remandAndSentencingApiClient.getPrisonerCharges(
       prisonNumber = prisonNumber,
       fromDate = receptionDate,
       toDate = LocalDate.now(clock),
@@ -72,7 +72,7 @@ class LegacyDataService(
    * from the RaS sentence reference data endpoint.
    * If Sentence does not have a sentenceType property, the LegacySentence should be created from the legacyData property.
    */
-  private fun Charge.sentence(): LegacySentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
+  private fun PersonCharge.sentence(): LegacySentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
     remandAndSentencingApiClient.getSentenceTypeDetails(sentenceTypeUuid).let {
       LegacySentence(
         sentenceCalcType = it.nomisSentenceCalcType,
@@ -93,19 +93,19 @@ class LegacyDataService(
   }
 
   /**
-   * Returns a [LegacyOffence] from a RaS [Charge], sentenced or not. NOMIS uses every charge on the active court cases
+   * Returns a [LegacyOffence] from a RaS [PersonCharge], sentenced or not. NOMIS uses every charge on the active court cases
    * (not just the unsentenced ones) when the prisoner has no mapped sentences (step 3.1).
    *
    * The outcome code is the NOMIS code of the DPS charge outcome or, if the outcome is not supported by DPS, the legacy
    * NOMIS outcome code.
    */
-  private fun Charge.offence() = LegacyOffence(
+  private fun PersonCharge.offence() = LegacyOffence(
     offenceCode = offenceCode,
     outcomeCode = outcomeCode(),
   )
 
   // Logs where the outcome code came from, to help investigate calculations that do not match NOMIS
-  private fun Charge.outcomeCode(): String? {
+  private fun PersonCharge.outcomeCode(): String? {
     outcome?.let {
       log.debug { "Outcome code [${it.nomisCode}] for charge [$chargeUuid] mapped from the RaS outcome" }
       return it.nomisCode

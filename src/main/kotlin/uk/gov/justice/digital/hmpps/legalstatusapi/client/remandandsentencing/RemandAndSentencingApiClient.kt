@@ -4,9 +4,9 @@ import mu.KotlinLogging
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
-import org.springframework.web.reactive.function.client.bodyToFlux
 import org.springframework.web.reactive.function.client.bodyToMono
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.Charge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.LocalDate
 import java.util.UUID
@@ -18,7 +18,7 @@ class RemandAndSentencingApiClient(
   @Qualifier("remandAndSentencingApiWebClient") private val webClient: WebClient,
 ) {
 
-  fun getPrisonerCharges(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?): List<Charge> = try {
+  fun getPrisonerCharges(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?): List<PersonCharge> = try {
     webClient
       .get()
       .uri { uri ->
@@ -28,9 +28,9 @@ class RemandAndSentencingApiClient(
         uri.build(prisonNumber)
       }
       .retrieve()
-      .bodyToFlux<Charge>()
-      .collectList()
+      .bodyToMono<PersonCharges>()
       .block()!!
+      .charges
   } catch (e: Exception) {
     throw RemandAndSentencingApiException("Failed to retrieve charges for prisoner: $prisonNumber", e)
   }

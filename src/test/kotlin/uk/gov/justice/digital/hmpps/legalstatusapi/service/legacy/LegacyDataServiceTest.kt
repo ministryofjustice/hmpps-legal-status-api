@@ -16,17 +16,16 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.Re
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.legalstatusapi.uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.Charge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.Sentence
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
-import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
 
@@ -130,12 +129,11 @@ class LegacyDataServiceTest {
     offenceCode: String,
     outcome: ChargeOutcome? = null,
     legacyData: ChargeLegacyData? = null,
-    sentence: Sentence? = null,
-  ) = Charge(
+    sentence: PersonSentence? = null,
+  ) = PersonCharge(
     chargeUuid = UUID.randomUUID(),
     offenceCode = offenceCode,
     aggravatingFactors = emptyList(),
-    createdAt = OffsetDateTime.now(clock),
     outcome = outcome,
     legacyData = legacyData,
     sentence = sentence,
@@ -151,12 +149,12 @@ class LegacyDataServiceTest {
     status = ChargeOutcome.Status.ACTIVE,
   )
 
-  private fun aRasSentence(sentenceType: SentenceType? = null, legacyData: SentenceLegacyData? = null) = Sentence(
+  private fun aRasSentence(sentenceType: SentenceType? = null, legacyData: SentenceLegacyData? = null) = PersonSentence(
     sentenceUuid = UUID.randomUUID(),
     periodLengths = emptyList(),
     sentenceServeType = "FORTHWITH",
     hasRecall = false,
-    status = Sentence.Status.ACTIVE,
+    status = PersonSentence.Status.ACTIVE,
     sentenceType = sentenceType,
     legacyData = legacyData,
   )
