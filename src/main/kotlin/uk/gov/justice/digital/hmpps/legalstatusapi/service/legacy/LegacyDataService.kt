@@ -18,10 +18,24 @@ class LegacyDataService(
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
   private val remandAndSentencingApiClient: RemandAndSentencingApiClient,
   private val clock: Clock,
+  private val imprisonmentStatusCalculator: ImprisonmentStatusCalculator,
 ) {
 
   /**
    * Calculates the NOMIS legacy Imprisonment Status for the prisoner identified by their prison number.
+   *
+   * Steps:
+   * 1. Retrieve the prisoner's receptionDate (which we assume at this point to be the booking start date)
+   * 2. Get the prisoner's sentence(s) and offence(s) from RaS, using the prisonNumber to identify the prisoner along
+   *    with a date range comprised of receptionDate to current date
+   * 3. Choose the sentence that determines the status: lowest status rank, then longest, then most severe offence
+   *    1. If there are no sentences (or none has a mapping), choose the main offence instead: lowest status rank (from
+   *       its outcome code), then most severe offence
+   * 4. Use the sentenceCategory and sentenceCalcType, or the offence's outcomeCode, to look up the Imprisonment Status
+   *    Mapping
+   * 5. Return the Imprisonment Status from the Imprisonment Status Mapping record (or UNKNOWN)
+   *
+   * Steps 3 to 5 are implemented by [ImprisonmentStatusCalculator].
    *
    * @param prisonNumber The prison number of the prisoner.
    * @return The calculated Imprisonment Status.
@@ -36,23 +50,14 @@ class LegacyDataService(
       fromDate = receptionDate,
       toDate = LocalDate.now(clock),
     )
-    val prisonerSentences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.sentence() }
-    val unSentencedOffences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.offence() }
+    val sentencingData = LegacySentencingData(
+      sentences = prisonerChargesFromRemandAndSentencing.mapNotNull { it.sentence() },
+      offences = prisonerChargesFromRemandAndSentencing.map { it.offence() },
+    )
 
-    // Step 3 goes here ...
-
-    /*
-    TODO - Implement logic to calculate imprisonment status based on NOMIS legacy data for the given prison number.
-
-    Steps to implement:
-    1. Retrieve the prisoner's receptionDate (which we assume at this point to be the booking start date)
-    2. Get the prisoner's sentence(s) and offence(s) from RaS, using the prisonNumber to identify the prisoner along with a date range comprised of receptionDate to current date
-    3. Find the correct sentenceCalcType & sentenceCategory from the list of sentences
-      1. If there are no sentences, select the correct offenceType from the list of offences
-    4. Use the sentenceCalcType and sentenceCategory, or offenceType, to lookup the correct Imprisonment Status Mapping
-    5. Return the Imprisonment Status from the Imprisonment Status Mapping record
-     */
-    return ""
+    // Steps 3 to 5
+    // TODO - Decide whether to return ImprisonmentStatus (or ImprisonmentStatusCalculation) rather than a String
+    return imprisonmentStatusCalculator.calculate(sentencingData).imprisonmentStatus.nomisCode
   }
 
   private fun getReceptionDate(prisonNumber: String): LocalDate? = prisonerSearchApiClient.getPrisoner(prisonNumber).receptionDate
@@ -72,7 +77,7 @@ class LegacyDataService(
       LegacySentence(
         sentenceCalcType = it.nomisSentenceCalcType,
         sentenceCategory = it.nomisCjaCode,
-        offence = offence()!!,
+        offence = offence(),
       ).also {
         log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
       }
@@ -81,17 +86,35 @@ class LegacyDataService(
     LegacySentence(
       sentenceCalcType = legacyData.sentenceCalcType!!,
       sentenceCategory = legacyData.sentenceCategory!!,
-      offence = offence()!!,
+      offence = offence(),
     ).also {
       log.debug { "LegacySentence mapped using legacy data fields from RaS response" }
     }
   }
 
-  private fun Charge.offence(): LegacyOffence? = sentence?.let {
-    LegacyOffence(
-      offenceCode = offenceCode,
-      outcomeCode = outcome?.nomisCode.also { log.debug { "LegacyOffence mapped from looking up RaS sentenceType" } }
-        ?: legacyData?.nomisOutcomeCode!!.also { log.debug { "LegacyOffence mapped using legacy data fields from RaS response" } },
-    )
+  /**
+   * Returns a [LegacyOffence] from a RaS [Charge], sentenced or not. NOMIS uses every charge on the active court cases
+   * (not just the unsentenced ones) when the prisoner has no mapped sentences (step 3.1).
+   *
+   * The outcome code is the NOMIS code of the DPS charge outcome or, if the outcome is not supported by DPS, the legacy
+   * NOMIS outcome code.
+   */
+  private fun Charge.offence() = LegacyOffence(
+    offenceCode = offenceCode,
+    outcomeCode = outcomeCode(),
+  )
+
+  // Logs where the outcome code came from, to help investigate calculations that do not match NOMIS
+  private fun Charge.outcomeCode(): String? {
+    outcome?.let {
+      log.debug { "Outcome code [${it.nomisCode}] for charge [$chargeUuid] mapped from the RaS outcome" }
+      return it.nomisCode
+    }
+    legacyData?.nomisOutcomeCode?.let {
+      log.debug { "Outcome code [$it] for charge [$chargeUuid] mapped using legacy data fields from RaS response" }
+      return it
+    }
+    log.debug { "No outcome code for charge [$chargeUuid]" }
+    return null
   }
 }

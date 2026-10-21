@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 fun anOffence(
   offenceCode: String = "TH68010",
-  outcomeCode: String = "1002",
+  outcomeCode: String? = "1002",
 ): LegacyOffence = LegacyOffence(
   offenceCode = offenceCode,
   outcomeCode = outcomeCode,

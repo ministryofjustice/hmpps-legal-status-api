@@ -68,11 +68,11 @@ class ImprisonmentStatusCalculator(
    * from its outcome code; or UNKNOWN if its outcome code has no mapping or there are no offences.
    */
   private fun calculateFromChargeOutcomes(offences: List<LegacyOffence>, severities: Map<String, Int>): ImprisonmentStatusCalculation {
-    val outcomeCodeMappings = offences.map { it.outcomeCode }.distinct()
+    val outcomeCodeMappings = offences.mapNotNull { it.outcomeCode }.distinct()
       .associateWith { imprisonmentStatusMappingRepository.findByOffenceResultCode(it)?.imprisonmentStatus }
 
     val mainOffence = offences
-      .map { ChargeOutcome(it, outcomeCodeMappings[it.outcomeCode], severities[it.offenceCode]) }
+      .map { ChargeOutcome(it, it.outcomeCode?.let { code -> outcomeCodeMappings[code] }, severities[it.offenceCode]) }
       .minWithOrNull(CHARGE_OUTCOME_PRECEDENCE)
 
     return ImprisonmentStatusCalculation(
