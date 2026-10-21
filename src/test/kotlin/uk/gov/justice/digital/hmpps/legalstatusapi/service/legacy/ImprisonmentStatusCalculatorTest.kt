@@ -277,7 +277,7 @@ class ImprisonmentStatusCalculatorTest {
       val sentencingData = LegacySentencingData(
         offences = listOf(
           anOffence(offenceCode = "MORE01", outcomeCode = "UNMAPPED"),
-          anOffence(offenceCode = "MORE02", outcomeCode = "UNMAPPED2"),
+          anOffence(offenceCode = "MORE02", outcomeCode = null),
           anOffence(offenceCode = "LESS01", outcomeCode = "4565"),
         ),
       )
@@ -296,7 +296,7 @@ class ImprisonmentStatusCalculatorTest {
       val sentencingData = LegacySentencingData(
         offences = listOf(
           anOffence(offenceCode = "LESS01", outcomeCode = "UNMAPPED"),
-          anOffence(offenceCode = "MORE01", outcomeCode = "UNMAPPED2"),
+          anOffence(offenceCode = "MORE01", outcomeCode = null),
         ),
       )
 
