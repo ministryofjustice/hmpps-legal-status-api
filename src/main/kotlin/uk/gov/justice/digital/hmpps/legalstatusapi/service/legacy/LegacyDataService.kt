@@ -101,6 +101,20 @@ class LegacyDataService(
    */
   private fun Charge.offence() = LegacyOffence(
     offenceCode = offenceCode,
-    outcomeCode = outcome?.nomisCode ?: legacyData?.nomisOutcomeCode,
+    outcomeCode = outcomeCode(),
   )
+
+  // Logs where the outcome code came from, to help investigate calculations that do not match NOMIS
+  private fun Charge.outcomeCode(): String? {
+    outcome?.let {
+      log.debug { "Outcome code [${it.nomisCode}] for charge [$chargeUuid] mapped from the RaS outcome" }
+      return it.nomisCode
+    }
+    legacyData?.nomisOutcomeCode?.let {
+      log.debug { "Outcome code [$it] for charge [$chargeUuid] mapped using legacy data fields from RaS response" }
+      return it
+    }
+    log.debug { "No outcome code for charge [$chargeUuid]" }
+    return null
+  }
 }
