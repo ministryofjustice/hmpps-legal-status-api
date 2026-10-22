@@ -2,8 +2,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Component
-
-const val IMPRISONMENT_STATUS_CHANGED = "prison-offender-events.prisoner.imprisonment-status-changed"
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
 
 private val log = KotlinLogging.logger {}
 
@@ -17,7 +16,7 @@ class ImprisonmentStatusChangedEventHandler {
   fun handle(event: HmppsDomainEvent) {
     log.info {
       "Processed ${event.eventType} event (no-op): prisonNumber=${event.prisonNumber()}, " +
-        "bookingId=${event.additionalInformation?.get("bookingId")}, occurredAt=${event.occurredAt}"
+        "bookingId=${event.additionalInformation.get("bookingId")}, occurredAt=${event.occurredAt}"
     }
   }
 }

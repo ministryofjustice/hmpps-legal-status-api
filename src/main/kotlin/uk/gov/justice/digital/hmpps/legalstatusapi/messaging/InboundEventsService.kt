@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
 
 private val log = KotlinLogging.logger {}
 
@@ -20,7 +21,6 @@ class InboundEventsService(
 
     when (eventType) {
       IMPRISONMENT_STATUS_CHANGED -> imprisonmentStatusChangedEventHandler.handle(domainEvent)
-      else -> log.warn { "Ignoring message with unexpected eventType ${domainEvent.eventType}" }
     }
   }
 }
