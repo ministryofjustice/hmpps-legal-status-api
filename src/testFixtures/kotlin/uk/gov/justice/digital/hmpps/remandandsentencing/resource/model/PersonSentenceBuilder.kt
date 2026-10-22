@@ -9,8 +9,8 @@ fun aValidPersonSentence(
   hasRecall: Boolean = false,
   status: PersonSentence.Status = PersonSentence.Status.ACTIVE,
   periodLengths: List<PersonPeriodLength> = emptyList(),
-  sentenceType: SentenceType = aValidSentenceType(),            // Used in calculation
-  legacyData: SentenceLegacyData = aValidSentenceLegacyData(),  // Used in calculation
+  sentenceType: SentenceType = aValidSentenceType(), // Used in calculation
+  legacyData: SentenceLegacyData = aValidSentenceLegacyData(), // Used in calculation
 ): PersonSentence = PersonSentence(
   sentenceUuid = sentenceUuid,
   sentenceServeType = sentenceServeType,
@@ -18,5 +18,5 @@ fun aValidPersonSentence(
   status = status,
   periodLengths = periodLengths,
   legacyData = legacyData,
-  sentenceType = sentenceType
+  sentenceType = sentenceType,
 )

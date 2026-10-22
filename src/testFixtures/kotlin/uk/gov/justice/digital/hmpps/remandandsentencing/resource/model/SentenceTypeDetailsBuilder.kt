@@ -7,8 +7,8 @@ fun aValidSentenceTypeDetails(
   sentenceTypeUuid: UUID = aValidReference(),
   description: String = "ORA SDS (Offender rehabilitation act standard determinate sentence)",
   classification: SentenceTypeDetails.Classification = SentenceTypeDetails.Classification.STANDARD,
-  nomisCjaCode: String = "2020",                    // Used in calculation
-  nomisSentenceCalcType: String = "ADIMP_ORA",      // Used in calculation
+  nomisCjaCode: String = "2020", // Used in calculation
+  nomisSentenceCalcType: String = "ADIMP_ORA", // Used in calculation
   displayOrder: Int = 40,
   status: SentenceTypeDetails.Status = SentenceTypeDetails.Status.ACTIVE,
   isRecallable: Boolean = true,

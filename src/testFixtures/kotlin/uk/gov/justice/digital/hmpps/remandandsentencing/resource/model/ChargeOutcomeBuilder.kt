@@ -6,16 +6,16 @@ import java.util.UUID
 fun aValidChargeOutcome(
   outcomeUuid: UUID = aValidReference(),
   outcomeName: String = "Imprisonment",
-  nomisCode: String = "1002",             // Used in calculation
+  nomisCode: String = "1002", // Used in calculation
   outcomeType: String = "SENTENCING",
   displayOrder: Int = 10,
   dispositionCode: String = "FINAL",
-  status: ChargeOutcome.Status = ChargeOutcome.Status.ACTIVE
+  status: ChargeOutcome.Status = ChargeOutcome.Status.ACTIVE,
 ): ChargeOutcome = ChargeOutcome(
   outcomeUuid = outcomeUuid,
   outcomeName = outcomeName,
   nomisCode = nomisCode,
-  outcomeType= outcomeType,
+  outcomeType = outcomeType,
   displayOrder = displayOrder,
   dispositionCode = dispositionCode,
   status = status,

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder.responseDefinition
-import com.github.tomakehurst.wiremock.client.WireMock.*
+import com.github.tomakehurst.wiremock.client.WireMock.equalTo
+import com.github.tomakehurst.wiremock.client.WireMock.get
+import com.github.tomakehurst.wiremock.client.WireMock.urlPathMatching
 import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
@@ -51,11 +53,11 @@ class HmppsRemandAndSentencingApiMockServer : WireMockServer(WIREMOCK_PORT) {
       get(urlPathMatching("/person/$prisonNumber/charges"))
         .withQueryParam(
           "fromDate",
-          equalTo(ISO_DATE.format(fromDate))
+          equalTo(ISO_DATE.format(fromDate)),
         )
         .withQueryParam(
           "toDate",
-          equalTo(ISO_DATE.format(toDate))
+          equalTo(ISO_DATE.format(toDate)),
         )
         .willReturn(
           responseDefinition()
