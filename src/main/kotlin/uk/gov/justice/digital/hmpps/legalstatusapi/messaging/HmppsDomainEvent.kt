@@ -1,29 +1,22 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import com.fasterxml.jackson.annotation.JsonProperty
-
-/**
- * The SNS envelope around a message that reached our queue via a topic subscription.
- */
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class SqsMessage(
-  @param:JsonProperty("Type") val type: String,
-  @param:JsonProperty("Message") val message: String,
-  @param:JsonProperty("MessageId") val messageId: String,
-)
+import java.time.Instant
 
 /**
  * An HMPPS domain event (the SNS `Message`). Only the fields we currently use are mapped.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class HmppsDomainEvent(
-  val eventType: String,
-  val occurredAt: String? = null,
-  val personReference: PersonReference? = null,
-  val additionalInformation: Map<String, Any?>? = null,
+  val eventType: EventType,
+  val personReference: PersonReference,
+  val additionalInformation: Map<String, Any?>,
+  val occurredAt: Instant,
+  val publishedAt: Instant,
+  val description: String,
+  val version: String,
 ) {
-  fun prisonNumber(): String? = personReference?.identifiers?.firstOrNull { it.type == "NOMS" }?.value
+  fun prisonNumber(): String? = personReference.identifiers.firstOrNull { it.type == "NOMS" }?.value
 }
 
 @JsonIgnoreProperties(ignoreUnknown = true)
