@@ -15,7 +15,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.assertT
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
-import uk.gov.justice.digital.hmpps.legalstatusapi.uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
+import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
