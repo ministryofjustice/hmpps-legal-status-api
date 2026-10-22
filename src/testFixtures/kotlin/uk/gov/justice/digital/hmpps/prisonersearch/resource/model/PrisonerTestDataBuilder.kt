@@ -1,7 +1,6 @@
-package uk.gov.justice.digital.hmpps.legalstatusapi.uk.gov.justice.digital.hmpps.prisonersearch.resource.model
+package uk.gov.justice.digital.hmpps.prisonersearch.resource.model
 
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
-import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import java.time.LocalDate
 
 fun aValidPrisoner(

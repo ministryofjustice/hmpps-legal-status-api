@@ -66,7 +66,7 @@ class LegacyDataService(
     }
 
   /**
-   * Returns a [LegacySentence] or null from a Ras [Charge]
+   * Returns a [LegacySentence] or null from a Ras [PersonCharge]
    *
    * If the Charge has a Sentence, the primary strategy should be to create a LegacySentence by looking up the sentenceType
    * from the RaS sentence reference data endpoint.
