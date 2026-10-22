@@ -1,0 +1,20 @@
+# HMPPS Remand And Sentencing API
+
+###
+# @name Get prisoner charges
+< {%
+    request.variables.set("prisonNumber", "A5502DZ")
+%}
+GET {{ras_base_url}}/person/{{prisonNumber}}/charges
+Authorization: Bearer {{$auth.token("Remand and Sentencing API")}}
+Accept: application/json
+
+
+###
+# @name Get sentence type details
+< {%
+    request.variables.set("sentenceTypeId", "e138374d-810f-4718-a81a-1c9d4745031e")
+%}
+GET {{ras_base_url}}/sentence-type/{{sentenceTypeId}}/details
+Authorization: Bearer {{$auth.token("Remand and Sentencing API")}}
+Accept: application/json
