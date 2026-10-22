@@ -14,9 +14,9 @@ private val log = KotlinLogging.logger {}
 @Component
 class ImprisonmentStatusChangedEventHandler {
 
-  fun handle(messageId: String, event: HmppsDomainEvent) {
+  fun handle(event: HmppsDomainEvent) {
     log.info {
-      "Processed ${event.eventType} event (no-op): messageId=$messageId, prisonNumber=${event.prisonNumber()}, " +
+      "Processed ${event.eventType} event (no-op): prisonNumber=${event.prisonNumber()}, " +
         "bookingId=${event.additionalInformation?.get("bookingId")}, occurredAt=${event.occurredAt}"
     }
   }

@@ -21,23 +21,18 @@ private val log = KotlinLogging.logger {}
  */
 @Component
 @ConditionalOnProperty(name = ["hmpps.sqs.enabled"], havingValue = "true")
-class DomainEventsListener(
+class InboundEventsListener(
   private val jsonMapper: JsonMapper,
-  private val imprisonmentStatusChangedEventHandler: ImprisonmentStatusChangedEventHandler,
+  private val inboundEventsService: InboundEventsService,
 ) {
 
   @SqsListener(DOMAIN_EVENTS_QUEUE_ID, factory = "hmppsQueueContainerFactoryProxy")
-  fun onMessage(rawMessage: String) {
-    val sqsMessage = jsonMapper.readValue(rawMessage, SqsMessage::class.java)
-    if (sqsMessage.type != NOTIFICATION) {
-      log.warn { "Ignoring message ${sqsMessage.messageId} with unexpected type ${sqsMessage.type}" }
-      return
-    }
+  fun onMessage(sqsMessage: SqsMessage) {
+    log.debug { "Inbound event message: ${sqsMessage.type}" }
 
-    val event = jsonMapper.readValue(sqsMessage.message, HmppsDomainEvent::class.java)
-    when (event.eventType) {
-      IMPRISONMENT_STATUS_CHANGED -> imprisonmentStatusChangedEventHandler.handle(sqsMessage.messageId, event)
-      else -> log.warn { "Ignoring message ${sqsMessage.messageId} with unexpected eventType ${event.eventType}" }
+    when (sqsMessage.type) {
+      NOTIFICATION -> inboundEventsService.process(jsonMapper.readValue(sqsMessage.message, HmppsDomainEvent::class.java))
+      else -> log.info { "Unrecognised message type: ${sqsMessage.type}" }
     }
   }
 }
