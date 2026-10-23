@@ -43,3 +43,14 @@ Accept: application/json
   ]
 }
 
+###
+# @name Temp development endpoint for invoking the slack notification of imprisonment status mismatch - localhost
+POST http://localhost:8081/temp/legacy/imprisonment-status/slack-notification
+Authorization: Bearer {{$auth.token("Legal Status API")}}
+Accept: application/json
+
+###
+# @name Temp development endpoint for invoking the slack notification of imprisonment status mismatch - dev deployed env
+POST {{legal_status_base_url}}/temp/legacy/imprisonment-status/slack-notification
+Authorization: Bearer {{$auth.token("Legal Status API")}}
+Accept: application/json
