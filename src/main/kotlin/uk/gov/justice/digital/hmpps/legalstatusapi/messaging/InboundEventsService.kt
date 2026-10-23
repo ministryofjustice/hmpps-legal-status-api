@@ -2,6 +2,8 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
+import tools.jackson.databind.json.JsonMapper
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.AdditionalInformation.ImprisonmentStatusChangedAdditionalInformation
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
 
 private val log = KotlinLogging.logger {}
@@ -13,6 +15,7 @@ private val log = KotlinLogging.logger {}
  */
 @Service
 class InboundEventsService(
+  private val jsonMapper: JsonMapper,
   private val imprisonmentStatusChangedEventHandler: ImprisonmentStatusChangedEventHandler,
 ) {
 
@@ -20,7 +23,12 @@ class InboundEventsService(
     log.info { "Processing inbound event $eventType" }
 
     when (eventType) {
-      IMPRISONMENT_STATUS_CHANGED -> imprisonmentStatusChangedEventHandler.handle(domainEvent)
+      IMPRISONMENT_STATUS_CHANGED -> {
+        val additionalInformation = eventAdditionalInformation<ImprisonmentStatusChangedAdditionalInformation>(domainEvent)
+        imprisonmentStatusChangedEventHandler.handle(domainEvent, additionalInformation)
+      }
     }
   }
+
+  private inline fun <reified T : AdditionalInformation> eventAdditionalInformation(domainEvent: HmppsDomainEvent): T = jsonMapper.readValue(domainEvent.additionalInformation, T::class.java)
 }
