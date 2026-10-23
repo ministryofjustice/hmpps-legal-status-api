@@ -27,6 +27,10 @@ remand-and-sentencing:
       id: "remand-and-sentencing-api-client"
       secret: "remand-and-sentencing-api-secret"
 
+slack:
+  webhook:
+    url: "http://localhost:8094"
+
 springdoc:
   api-docs:
     enabled: true
