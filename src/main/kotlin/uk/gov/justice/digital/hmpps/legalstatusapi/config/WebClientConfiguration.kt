@@ -3,8 +3,10 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.config
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.http.client.reactive.ReactorClientHttpConnector
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager
 import org.springframework.web.reactive.function.client.WebClient
+import reactor.netty.http.client.HttpClient
 import uk.gov.justice.hmpps.kotlin.auth.authorisedWebClient
 import uk.gov.justice.hmpps.kotlin.auth.healthWebClient
 import java.time.Duration
@@ -15,6 +17,7 @@ class WebClientConfiguration(
   @param:Value("\${manage-offences.api.url}") val manageOffencesApiBaseUri: String,
   @param:Value("\${prisoner-search.api.url}") val prisonerSearchApiBaseUri: String,
   @param:Value("\${remand-and-sentencing.api.url}") val remandAndSentencingApiBaseUri: String,
+  @param:Value("\${slack.webhook.url}") val slackWebhookUrl: String,
   @param:Value("\${api.health-timeout:2s}") val healthTimeout: Duration,
   @param:Value("\${api.timeout:20s}") val timeout: Duration,
 ) {
@@ -57,4 +60,12 @@ class WebClientConfiguration(
     url = remandAndSentencingApiBaseUri,
     timeout = timeout,
   )
+
+  @Bean
+  fun slackApiWebClient(
+    builder: WebClient.Builder,
+  ): WebClient = builder
+    .baseUrl(slackWebhookUrl)
+    .clientConnector(ReactorClientHttpConnector(HttpClient.create().responseTimeout(timeout)))
+    .build()
 }
