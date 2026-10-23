@@ -1,16 +1,16 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties
+import tools.jackson.databind.annotation.JsonDeserialize
+import uk.gov.justice.digital.hmpps.legalstatusapi.config.RawJsonDeserializer
 import java.time.Instant
 
 /**
  * An HMPPS domain event (the SNS `Message`). Only the fields we currently use are mapped.
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 data class HmppsDomainEvent(
   val eventType: EventType,
   val personReference: PersonReference,
-  val additionalInformation: Map<String, Any?>,
+  @param:JsonDeserialize(using = RawJsonDeserializer::class) val additionalInformation: String,
   val occurredAt: Instant,
   val publishedAt: Instant,
   val description: String,
@@ -19,13 +19,6 @@ data class HmppsDomainEvent(
   fun prisonNumber(): String? = personReference.identifiers.firstOrNull { it.type == "NOMS" }?.value
 }
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class PersonReference(
-  val identifiers: List<Identifier> = emptyList(),
-)
+data class PersonReference(val identifiers: List<Identifier>)
 
-@JsonIgnoreProperties(ignoreUnknown = true)
-data class Identifier(
-  val type: String,
-  val value: String,
-)
+data class Identifier(val type: String, val value: String)
