@@ -12,61 +12,49 @@ import org.springframework.boot.test.system.CapturedOutput
 import org.springframework.boot.test.system.OutputCaptureExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
-import uk.gov.justice.hmpps.sqs.publish
-import uk.gov.justice.hmpps.sqs.sendMessage
 import java.util.UUID
 
 @ExtendWith(OutputCaptureExtension::class)
 class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
 
   @BeforeEach
-  fun clearQueues() = purgeDomainEventsQueues()
+  fun clearQueues() = messagingHelper.purgeDomainEventsQueues()
 
   @Test
   fun `imprisonment-status-changed event published to the domain events topic is processed and removed from the queue`(output: CapturedOutput) {
-    domainEventsTopic.publish(
-      eventType = IMPRISONMENT_STATUS_CHANGED.eventType,
-      event = domainEvent(eventType = IMPRISONMENT_STATUS_CHANGED.eventType, prisonNumber = "A7316ED", bookingId = 1240469),
+    // Given
+    val sqsMessage = aValidHmppsDomainEventsSqsMessage(
+      prisonNumber = "A7316ED",
+      eventType = IMPRISONMENT_STATUS_CHANGED,
+      additionalInformation = aValidImprisonmentStatusChangedAdditionalInformation(bookingId = "1240469"),
     )
 
+    // When
+    messagingHelper.sendDomainEvent(sqsMessage)
+
+    // Then
     await untilAsserted {
       assertThat(output.out)
         .contains("Processed IMPRISONMENT_STATUS_CHANGED event (no-op)")
         .contains("prisonNumber=A7316ED, bookingId=1240469")
     }
-    await untilCallTo { messagesOnDomainEventsQueue() } matches { it == 0 }
-    assertThat(messagesOnDomainEventsDlq()).isZero()
+    await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
+    assertThat(messagingHelper.messagesOnDomainEventsDlq()).isZero()
   }
 
   @Test
   fun `message that cannot be read is moved to the DLQ`() {
-    domainEventsQueue.sendMessage(eventType = IMPRISONMENT_STATUS_CHANGED.eventType, event = "this is not json")
+    // Given
+    val sqsMessage = SqsMessage(
+      type = "Notification",
+      message = "this is not json",
+      messageId = UUID.randomUUID(),
+    )
+    // When
+    messagingHelper.sendDomainEvent(sqsMessage)
 
-    await untilCallTo { messagesOnDomainEventsDlq() } matches { it == 1 }
-    assertThat(messagesOnDomainEventsQueue()).isZero()
+    // Then
+    await untilCallTo { messagingHelper.messagesOnDomainEventsDlq() } matches { it == 1 }
+    assertThat(messagingHelper.messagesOnDomainEventsQueue()).isZero()
   }
-
-  private fun domainEvent(eventType: String, prisonNumber: String, bookingId: Long) =
-    """
-    {
-      "eventType": "$eventType",
-      "version": 1,
-      "description": "A prisoner's imprisonment status has been changed",
-      "occurredAt": "2026-09-28T12:37:46+01:00",
-      "publishedAt": "2026-09-28T12:37:46.175375149+01:00",
-      "personReference": { "identifiers": [ { "type": "NOMS", "value": "$prisonNumber" } ] },
-      "additionalInformation": { "bookingId": $bookingId }
-    }
-    """.trimIndent()
-
-  private fun snsEnvelope(message: String) =
-    """
-    {
-      "Type": "Notification",
-      "MessageId": "${UUID.randomUUID()}",
-      "Message": ${jsonString(message)}
-    }
-    """.trimIndent()
-
-  private fun jsonString(value: String) = "\"" + value.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n") + "\""
 }

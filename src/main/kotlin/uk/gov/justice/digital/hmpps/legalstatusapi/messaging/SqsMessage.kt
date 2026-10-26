@@ -2,6 +2,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
+import java.util.UUID
 
 /**
  * The SQS envelope around a message that reached our queue via a topic subscription.
@@ -10,5 +11,5 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class SqsMessage(
   @param:JsonProperty("Type") val type: String,
   @param:JsonProperty("Message") val message: String,
-  @param:JsonProperty("MessageId") val messageId: String,
+  @param:JsonProperty("MessageId") val messageId: UUID,
 )
