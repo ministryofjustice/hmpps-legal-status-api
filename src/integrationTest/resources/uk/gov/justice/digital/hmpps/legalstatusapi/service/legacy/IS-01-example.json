@@ -1,0 +1,35 @@
+{
+  "jiraReference": "IS-01-example",
+  "receptionDate": "2026-06-23",
+  "expectedStatus": "UNKNOWN",
+  "rasChargeData": {
+    "charges": [
+      {
+        "chargeUuid": "6816000f-9ab9-43f8-8b18-17943b4be542",
+        "offenceCode": "AE07024",
+        "offenceStartDate": "2026-01-01",
+        "offenceEndDate": "2026-01-02",
+        "outcome": {
+          "outcomeUuid": "23e9e49c-96ec-4493-8768-6fbc0247ace3",
+          "outcomeName": "Adjourned",
+          "nomisCode": "4506",
+          "outcomeType": "REMAND",
+          "displayOrder": 510,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "AE07024",
+      "severityRating": "153"
+    }
+  ]
+}

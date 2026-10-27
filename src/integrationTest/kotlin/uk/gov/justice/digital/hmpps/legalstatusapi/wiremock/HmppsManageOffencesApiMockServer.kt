@@ -46,7 +46,7 @@ class HmppsManageOffencesApiMockServer : WireMockServer(WIREMOCK_PORT) {
       .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
   }
 
-  fun stubGetOffenceSeverities(vararg offenceCodes: String, response: List<OffenceSeverityRating>) {
+  fun stubGetOffenceSeverities(offenceCodes: Set<String>, response: List<OffenceSeverityRating>) {
     stubFor(
       get(urlPathMatching("/offences/severity-ratings"))
         .withQueryParam(

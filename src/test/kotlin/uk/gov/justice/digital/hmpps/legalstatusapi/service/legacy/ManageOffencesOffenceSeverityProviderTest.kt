@@ -10,7 +10,7 @@ import org.mockito.kotlin.any
 import org.mockito.kotlin.given
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoInteractions
-import uk.gov.justice.digital.hmpps.legalstatusapi.client.ManageOffencesApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.manageoffences.ManageOffencesApiClient
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
 
 @ExtendWith(MockitoExtension::class)
@@ -25,7 +25,7 @@ class ManageOffencesOffenceSeverityProviderTest {
   @Test
   fun `should get severities for the distinct offence codes in sorted order`() {
     // Given
-    given(manageOffencesApiClient.getOffenceSeverities(any<List<String>>())).willReturn(
+    given(manageOffencesApiClient.getOffenceSeverities(any<Set<String>>())).willReturn(
       listOf(OffenceSeverityRating("AB12345", "20"), OffenceSeverityRating("TH68010", "46")),
     )
 
@@ -34,13 +34,13 @@ class ManageOffencesOffenceSeverityProviderTest {
 
     // Then
     assertThat(actual).isEqualTo(mapOf("AB12345" to 20, "TH68010" to 46))
-    verify(manageOffencesApiClient).getOffenceSeverities(listOf("AB12345", "TH68010"))
+    verify(manageOffencesApiClient).getOffenceSeverities(setOf("AB12345", "TH68010"))
   }
 
   @Test
   fun `should not include offences with no severity or a non-numeric severity`() {
     // Given
-    given(manageOffencesApiClient.getOffenceSeverities(any<List<String>>())).willReturn(
+    given(manageOffencesApiClient.getOffenceSeverities(any<Set<String>>())).willReturn(
       listOf(OffenceSeverityRating("AB12345", "not a number"), OffenceSeverityRating("TH68010", "46")),
     )
 

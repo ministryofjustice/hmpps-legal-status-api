@@ -12,7 +12,7 @@ import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter.ISO_DATE
@@ -48,7 +48,7 @@ class HmppsRemandAndSentencingApiMockServer : WireMockServer(WIREMOCK_PORT) {
       .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS)
   }
 
-  fun stubGetPrisonerCharges(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?, response: List<PersonCharge>) {
+  fun stubGetPrisonerCharges(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?, response: PersonCharges) {
     stubFor(
       get(urlPathMatching("/person/$prisonNumber/charges"))
         .withQueryParam(
@@ -68,9 +68,9 @@ class HmppsRemandAndSentencingApiMockServer : WireMockServer(WIREMOCK_PORT) {
     )
   }
 
-  fun stubGetSentenceTypeDetails(sentenceTypeId: String, response: SentenceTypeDetails) {
+  fun stubGetSentenceTypeDetails(response: SentenceTypeDetails) {
     stubFor(
-      get(urlPathMatching("/sentence-type/$sentenceTypeId/details"))
+      get(urlPathMatching("/sentence-type/${response.sentenceTypeUuid}/details"))
         .willReturn(
           responseDefinition()
             .withStatus(200)

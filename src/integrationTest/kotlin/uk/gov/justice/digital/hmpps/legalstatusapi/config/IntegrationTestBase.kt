@@ -17,10 +17,18 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.container.PostgresContainer
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension.Companion.hmppsPrisonerSearchApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
+import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import uk.gov.justice.hmpps.sqs.HmppsQueueService
 import uk.gov.justice.hmpps.test.kotlin.auth.JwtAuthorisationHelper
+import java.time.LocalDate
 
 @ExtendWith(
   HmppsAuthApiExtension::class,
@@ -56,6 +64,16 @@ abstract class IntegrationTestBase {
   fun stubPingWithResponse(status: Int) {
     hmppsAuth.stubHealthPing(status)
   }
+
+  fun stubGetTokenFromHmppsAuth() = hmppsAuth.stubGrantToken()
+
+  fun stubGetPrisonerFromPrisonerSearchApi(response: Prisoner) = hmppsPrisonerSearchApi.stubGetPrisoner(response.prisonerNumber!!, response)
+
+  fun stubGetChargesFromRemandAndSentencingApi(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?, response: PersonCharges) = hmppsRemandAndSentencingApi.stubGetPrisonerCharges(prisonNumber, fromDate, toDate, response)
+
+  fun stubGetSentenceTypeDetails(response: SentenceTypeDetails) = hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(response)
+
+  fun stubGetOffenceSeverities(offenceCodes: Set<String>, response: List<OffenceSeverityRating>) = hmppsManageOffencesApi.stubGetOffenceSeverities(offenceCodes, response)
 
   companion object {
     private val postgres = PostgresContainer.instance

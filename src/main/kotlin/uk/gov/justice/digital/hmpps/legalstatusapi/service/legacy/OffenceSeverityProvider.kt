@@ -2,7 +2,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import mu.KotlinLogging
 import org.springframework.stereotype.Component
-import uk.gov.justice.digital.hmpps.legalstatusapi.client.ManageOffencesApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.manageoffences.ManageOffencesApiClient
 
 private val log = KotlinLogging.logger {}
 
@@ -26,7 +26,7 @@ class ManageOffencesOffenceSeverityProvider(
     if (offenceCodes.isEmpty()) return emptyMap()
 
     // Sorted so that the request is deterministic
-    val distinctOffenceCodes = offenceCodes.distinct().sorted()
+    val distinctOffenceCodes = offenceCodes.distinct().sorted().toSet()
     val severities = manageOffencesApiClient.getOffenceSeverities(distinctOffenceCodes)
       .mapNotNull { rating ->
         rating.severityRating.toIntOrNull()

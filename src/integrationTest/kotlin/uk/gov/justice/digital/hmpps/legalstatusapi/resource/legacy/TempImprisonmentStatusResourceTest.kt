@@ -25,8 +25,7 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
   fun `should calculate status from the sentence given a prisoner with a sentence and a remand charge`() {
     // Given
     hmppsManageOffencesApi.stubGetOffenceSeverities(
-      "CJ88116",
-      "TH68010",
+      offenceCodes = setOf("CJ88116", "TH68010"),
       response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
     )
     val sentencingData = LegacySentencingData(
@@ -52,8 +51,7 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
   fun `should calculate status from the charge outcome with the lowest ranked status given a prisoner with no sentences`() {
     // Given
     hmppsManageOffencesApi.stubGetOffenceSeverities(
-      "CJ88116",
-      "TH68010",
+      offenceCodes = setOf("CJ88116", "TH68010"),
       response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
     )
     val sentencingData = LegacySentencingData(
