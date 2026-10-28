@@ -102,3 +102,7 @@ springdoc:
     enabled: false
   swagger-ui:
     enabled: false
+
+slack:
+  # Turned off until the Slack app's webhook URL is available
+  enabled: false

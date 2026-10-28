@@ -6,12 +6,16 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.mock
 import org.mockito.kotlin.any
+import org.mockito.kotlin.anyOrNull
 import org.mockito.kotlin.argumentCaptor
 import org.mockito.kotlin.given
 import org.mockito.kotlin.inOrder
 import org.mockito.kotlin.never
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoInteractions
+import org.springframework.transaction.PlatformTransactionManager
+import org.springframework.transaction.support.SimpleTransactionStatus
+import org.springframework.transaction.support.TransactionTemplate
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.slack.SlackApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.ImprisonmentStatusRepository
@@ -38,25 +42,21 @@ class ImprisonmentStatusComparisonServiceTest {
 
   private val slackApiClient: SlackApiClient = mock()
 
+  private val transactionManager: PlatformTransactionManager = mock()
+
   private val fixedTimestamp = Instant.parse("2026-04-17T09:13:22.123Z")
   private val clock = Clock.fixed(fixedTimestamp, ZoneId.of("UTC"))
 
   private val savedMismatchId = UUID.randomUUID()
 
-  private val imprisonmentStatusComparisonService = ImprisonmentStatusComparisonService(
-    legacyDataService,
-    offenceSeverityProvider,
-    imprisonmentStatusRepository,
-    imprisonmentStatusMismatchRepository,
-    slackApiClient,
-    clock,
-  )
+  private val imprisonmentStatusComparisonService = anImprisonmentStatusComparisonService(slackEnabled = true)
 
   @BeforeEach
   fun setUp() {
+    given(transactionManager.getTransaction(anyOrNull())).willReturn(SimpleTransactionStatus())
     given(imprisonmentStatusRepository.getReferenceById(any())).willAnswer { anImprisonmentStatusEntity(it.getArgument(0)) }
     // Hibernate would generate the ID on save
-    given(imprisonmentStatusMismatchRepository.save(any<ImprisonmentStatusMismatchEntity>())).willAnswer { it.getArgument<ImprisonmentStatusMismatchEntity>(0).withId(savedMismatchId) }
+    given(imprisonmentStatusMismatchRepository.saveAndFlush(any<ImprisonmentStatusMismatchEntity>())).willAnswer { it.getArgument<ImprisonmentStatusMismatchEntity>(0).withId(savedMismatchId) }
   }
 
   @Test
@@ -73,7 +73,7 @@ class ImprisonmentStatusComparisonServiceTest {
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.Match("SENT03"))
     verify(legacyDataService).calculate(prisonNumber)
-    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient)
+    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient, transactionManager)
   }
 
   @Test
@@ -127,7 +127,7 @@ class ImprisonmentStatusComparisonServiceTest {
 
     // Then
     verify(offenceSeverityProvider).getSeverities(listOf("TH68010", "TH68010", "CJ88116"))
-    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).save(capture()) }.firstValue
+    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
     assertThat(mismatch.id).isNull()
     assertThat(mismatch.prisonNumber).isEqualTo(prisonNumber)
     assertThat(mismatch.bookingId).isEqualTo(1234567L)
@@ -159,7 +159,7 @@ class ImprisonmentStatusComparisonServiceTest {
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.Mismatch(savedMismatchId, nomisImprisonmentStatus = "LR", dpsImprisonmentStatus = "UNKNOWN"))
     inOrder(imprisonmentStatusMismatchRepository, slackApiClient) {
-      verify(imprisonmentStatusMismatchRepository).save(any<ImprisonmentStatusMismatchEntity>())
+      verify(imprisonmentStatusMismatchRepository).saveAndFlush(any<ImprisonmentStatusMismatchEntity>())
       verify(slackApiClient).postToSlackApp(prisonNumber = prisonNumber, nomisStatus = "LR", dpsStatus = "UNKNOWN", dbReference = savedMismatchId)
     }
   }
@@ -176,7 +176,7 @@ class ImprisonmentStatusComparisonServiceTest {
     imprisonmentStatusComparisonService.compare(prisonNumber)
 
     // Then
-    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).save(capture()) }.firstValue
+    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
     assertThat(mismatch.bookingId).isNull()
     assertThat(mismatch.nomisCalculatedAt).isNull()
   }
@@ -193,25 +193,85 @@ class ImprisonmentStatusComparisonServiceTest {
 
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.Mismatch(savedMismatchId, nomisImprisonmentStatus = "UNK_SENT", dpsImprisonmentStatus = "SENT03"))
-    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).save(capture()) }.firstValue
+    val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
     assertThat(mismatch.nomisImprisonmentStatus).isEqualTo("UNK_SENT")
   }
 
   @Test
-  fun `should still return the mismatch given Slack cannot be notified`() {
+  fun `should commit the mismatch after notifying Slack`() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
     given(legacyDataService.calculate(any())).willReturn(
       aLegacyImprisonmentStatusResult(prisonNumber = prisonNumber, nomisImprisonmentStatus = "LR", calculation = aCalculation(ImprisonmentStatus.UNKNOWN)),
     )
-    given(slackApiClient.postToSlackApp(any(), any(), any(), any())).willThrow(RuntimeException("Slack is unavailable"))
 
     // When
-    val actual = imprisonmentStatusComparisonService.compare(prisonNumber)
+    imprisonmentStatusComparisonService.compare(prisonNumber)
+
+    // Then
+    inOrder(transactionManager, imprisonmentStatusMismatchRepository, slackApiClient) {
+      verify(transactionManager).getTransaction(anyOrNull())
+      verify(imprisonmentStatusMismatchRepository).saveAndFlush(any<ImprisonmentStatusMismatchEntity>())
+      verify(slackApiClient).postToSlackApp(any(), any(), any(), any())
+      verify(transactionManager).commit(any())
+    }
+    verify(transactionManager, never()).rollback(any())
+  }
+
+  @Test
+  fun `should look up offence severities before starting the transaction`() {
+    // Given
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(nomisImprisonmentStatus = "LR", calculation = aCalculation(ImprisonmentStatus.UNKNOWN)),
+    )
+
+    // When
+    imprisonmentStatusComparisonService.compare(randomValidPrisonNumber())
+
+    // Then
+    inOrder(offenceSeverityProvider, transactionManager) {
+      verify(offenceSeverityProvider).getSeverities(any())
+      verify(transactionManager).getTransaction(anyOrNull())
+    }
+  }
+
+  @Test
+  fun `should roll back the mismatch and throw the error given Slack cannot be notified`() {
+    // Given
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(nomisImprisonmentStatus = "LR", calculation = aCalculation(ImprisonmentStatus.UNKNOWN)),
+    )
+    val exception = RuntimeException("Slack is unavailable")
+    given(slackApiClient.postToSlackApp(any(), any(), any(), any())).willThrow(exception)
+
+    // When
+    val actual = catchThrowableOfType(RuntimeException::class.java) {
+      imprisonmentStatusComparisonService.compare(randomValidPrisonNumber())
+    }
+
+    // Then
+    assertThat(actual).isSameAs(exception)
+    verify(imprisonmentStatusMismatchRepository).saveAndFlush(any<ImprisonmentStatusMismatchEntity>())
+    verify(transactionManager).rollback(any())
+    verify(transactionManager, never()).commit(any())
+  }
+
+  @Test
+  fun `should record the mismatch without notifying Slack given Slack notifications are disabled`() {
+    // Given
+    val service = anImprisonmentStatusComparisonService(slackEnabled = false)
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(nomisImprisonmentStatus = "LR", calculation = aCalculation(ImprisonmentStatus.UNKNOWN)),
+    )
+
+    // When
+    val actual = service.compare(randomValidPrisonNumber())
 
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.Mismatch(savedMismatchId, nomisImprisonmentStatus = "LR", dpsImprisonmentStatus = "UNKNOWN"))
-    verify(imprisonmentStatusMismatchRepository).save(any<ImprisonmentStatusMismatchEntity>())
+    verify(imprisonmentStatusMismatchRepository).saveAndFlush(any<ImprisonmentStatusMismatchEntity>())
+    verify(transactionManager).commit(any())
+    verifyNoInteractions(slackApiClient)
   }
 
   @Test
@@ -226,7 +286,7 @@ class ImprisonmentStatusComparisonServiceTest {
 
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.NoNomisStatus)
-    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient)
+    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient, transactionManager)
   }
 
   @Test
@@ -243,9 +303,20 @@ class ImprisonmentStatusComparisonServiceTest {
 
     // Then
     assertThat(actual).isSameAs(exception)
-    verify(imprisonmentStatusMismatchRepository, never()).save(any<ImprisonmentStatusMismatchEntity>())
+    verify(imprisonmentStatusMismatchRepository, never()).saveAndFlush(any<ImprisonmentStatusMismatchEntity>())
     verifyNoInteractions(slackApiClient)
   }
+
+  private fun anImprisonmentStatusComparisonService(slackEnabled: Boolean) = ImprisonmentStatusComparisonService(
+    legacyDataService,
+    offenceSeverityProvider,
+    imprisonmentStatusRepository,
+    imprisonmentStatusMismatchRepository,
+    slackApiClient,
+    TransactionTemplate(transactionManager),
+    clock,
+    slackEnabled,
+  )
 
   private fun aCalculation(imprisonmentStatus: ImprisonmentStatus) = ImprisonmentStatusCalculation(imprisonmentStatus, "TH68010", CalculatedFrom.SENTENCE)
 
