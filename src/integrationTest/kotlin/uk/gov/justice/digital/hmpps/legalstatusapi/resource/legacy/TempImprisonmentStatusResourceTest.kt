@@ -4,12 +4,24 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.http.MediaType
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
+import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.LegacySentencingData
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.aSentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.anOffence
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension.Companion.hmppsPrisonerSearchApi
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidChargeOutcome
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonSentence
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceType
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceTypeDetails
+import java.time.LocalDate
+import java.util.UUID
 
 /**
  * Tests steps 3 to 5 of the calculation against the real Imprisonment Status and mapping reference data.
@@ -86,6 +98,44 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
       .jsonPath("$.imprisonmentStatus").isEqualTo("UNKNOWN")
       .jsonPath("$.mainOffenceCode").doesNotExist()
       .jsonPath("$.calculatedFrom").isEqualTo("CHARGE_OUTCOME")
+  }
+
+  @Test
+  fun `should calculate status from the prisoner's RaS charges and sentences`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+    val receptionDate = LocalDate.now().minusMonths(3)
+    hmppsPrisonerSearchApi.stubGetPrisoner(prisonNumber, aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate))
+    val sentenceTypeUuid = UUID.randomUUID()
+    hmppsRemandAndSentencingApi.stubGetPrisonerCharges(
+      prisonNumber,
+      fromDate = receptionDate,
+      toDate = LocalDate.now(),
+      response = PersonCharges(
+        charges = listOf(
+          aValidPersonCharge(
+            offenceCode = "TH68010",
+            outcome = aValidChargeOutcome(nomisCode = "1002"),
+            sentence = aValidPersonSentence(sentenceType = aValidSentenceType(sentenceTypeUuid = sentenceTypeUuid)),
+          ),
+          aValidPersonCharge(offenceCode = "CJ88116", outcome = aValidChargeOutcome(nomisCode = "4565"), sentence = null),
+        ),
+      ),
+    )
+    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(aValidSentenceTypeDetails(sentenceTypeUuid = sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    hmppsManageOffencesApi.stubGetOffenceSeverities(
+      offenceCodes = setOf("CJ88116", "TH68010"),
+      response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
+    )
+
+    // When
+    val response = webTestClient.get().uri("/temp/legacy/imprisonment-status/$prisonNumber")
+      .headers(setAuthorisation())
+      .exchange()
+
+    // Then
+    response.expectStatus().isOk
+      .expectBody(String::class.java).isEqualTo("SENT03")
   }
 
   @Test
