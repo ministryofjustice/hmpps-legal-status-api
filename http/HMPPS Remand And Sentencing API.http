@@ -4,8 +4,9 @@
 # @name Get prisoner charges
 < {%
     request.variables.set("prisonNumber", "A5502DZ")
+    request.variables.set("fromDate", "2026-01-20")
 %}
-GET {{ras_base_url}}/person/{{prisonNumber}}/charges
+GET {{ras_base_url}}/person/{{prisonNumber}}/charges?fromDate={{fromDate}}
 Authorization: Bearer {{$auth.token("Remand and Sentencing API")}}
 Accept: application/json
 
