@@ -14,12 +14,12 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchA
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidChargeOutcome
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonSentence
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceType
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceTypeDetails
 import java.time.LocalDate
 import java.util.UUID
 
@@ -113,12 +113,16 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
       toDate = LocalDate.now(),
       response = PersonCharges(
         charges = listOf(
-          aRasCharge(offenceCode = "TH68010", outcomeNomisCode = "1002", sentence = aRasSentence(sentenceTypeUuid)),
-          aRasCharge(offenceCode = "CJ88116", outcomeNomisCode = "4565"),
+          aValidPersonCharge(
+            offenceCode = "TH68010",
+            outcome = aValidChargeOutcome(nomisCode = "1002"),
+            sentence = aValidPersonSentence(sentenceType = aValidSentenceType(sentenceTypeUuid = sentenceTypeUuid)),
+          ),
+          aValidPersonCharge(offenceCode = "CJ88116", outcome = aValidChargeOutcome(nomisCode = "4565"), sentence = null),
         ),
       ),
     )
-    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(aValidSentenceTypeDetails(sentenceTypeUuid = sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
     hmppsManageOffencesApi.stubGetOffenceSeverities(
       offenceCodes = setOf("CJ88116", "TH68010"),
       response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
@@ -148,45 +152,4 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
     .contentType(MediaType.APPLICATION_JSON)
     .bodyValue(sentencingData)
     .exchange()
-
-  private fun aRasCharge(offenceCode: String, outcomeNomisCode: String, sentence: PersonSentence? = null) = PersonCharge(
-    chargeUuid = UUID.randomUUID(),
-    offenceCode = offenceCode,
-    aggravatingFactors = emptyList(),
-    outcome = ChargeOutcome(
-      outcomeUuid = UUID.randomUUID(),
-      outcomeName = "An outcome",
-      nomisCode = outcomeNomisCode,
-      outcomeType = "SENTENCING",
-      displayOrder = 1,
-      dispositionCode = "FINAL",
-      status = ChargeOutcome.Status.ACTIVE,
-    ),
-    sentence = sentence,
-  )
-
-  private fun aRasSentence(sentenceTypeUuid: UUID) = PersonSentence(
-    sentenceUuid = UUID.randomUUID(),
-    periodLengths = emptyList(),
-    sentenceServeType = "FORTHWITH",
-    hasRecall = false,
-    status = PersonSentence.Status.ACTIVE,
-    sentenceType = SentenceType(
-      sentenceTypeUuid = sentenceTypeUuid,
-      description = "A sentence type",
-      classification = SentenceType.Classification.STANDARD,
-      displayOrder = 1,
-    ),
-  )
-
-  private fun aRasSentenceTypeDetails(sentenceTypeUuid: UUID, nomisCjaCode: String, nomisSentenceCalcType: String) = SentenceTypeDetails(
-    sentenceTypeUuid = sentenceTypeUuid,
-    description = "A sentence type",
-    classification = SentenceTypeDetails.Classification.STANDARD,
-    displayOrder = 1,
-    isRecallable = true,
-    nomisCjaCode = nomisCjaCode,
-    nomisSentenceCalcType = nomisSentenceCalcType,
-    status = SentenceTypeDetails.Status.ACTIVE,
-  )
 }
