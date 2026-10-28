@@ -12,6 +12,7 @@ import org.junit.jupiter.api.extension.AfterAllCallback
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.BeforeEachCallback
 import org.junit.jupiter.api.extension.ExtensionContext
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.LocalDate
@@ -63,7 +64,7 @@ class HmppsRemandAndSentencingApiMockServer : WireMockServer(WIREMOCK_PORT) {
           responseDefinition()
             .withStatus(200)
             .withHeader("Content-Type", "application/json")
-            .withBody(objectMapper.writeValueAsString(response)),
+            .withBody(objectMapper.writeValueAsString(PersonCharges(charges = response))),
         ),
     )
   }

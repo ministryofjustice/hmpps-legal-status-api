@@ -4,12 +4,23 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.http.MediaType
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
+import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.LegacySentencingData
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.aSentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.anOffence
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension.Companion.hmppsPrisonerSearchApi
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
+import java.time.LocalDate
+import java.util.UUID
 
 /**
  * Tests steps 3 to 5 of the calculation against the real Imprisonment Status and mapping reference data.
@@ -89,6 +100,39 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
   }
 
   @Test
+  fun `should calculate status from the prisoner's RaS charges and sentences`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+    val receptionDate = LocalDate.now().minusMonths(3)
+    hmppsPrisonerSearchApi.stubGetPrisoner(prisonNumber, aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate))
+    val sentenceTypeUuid = UUID.randomUUID()
+    hmppsRemandAndSentencingApi.stubGetPrisonerCharges(
+      prisonNumber,
+      fromDate = receptionDate,
+      toDate = LocalDate.now(),
+      response = listOf(
+        aRasCharge(offenceCode = "TH68010", outcomeNomisCode = "1002", sentence = aRasSentence(sentenceTypeUuid)),
+        aRasCharge(offenceCode = "CJ88116", outcomeNomisCode = "4565"),
+      ),
+    )
+    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(sentenceTypeUuid.toString(), aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    hmppsManageOffencesApi.stubGetOffenceSeverities(
+      "CJ88116",
+      "TH68010",
+      response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
+    )
+
+    // When
+    val response = webTestClient.get().uri("/temp/legacy/imprisonment-status/$prisonNumber")
+      .headers(setAuthorisation())
+      .exchange()
+
+    // Then
+    response.expectStatus().isOk
+      .expectBody(String::class.java).isEqualTo("SENT03")
+  }
+
+  @Test
   fun `should return unauthorized given no auth token`() {
     webTestClient.post().uri("/temp/legacy/imprisonment-status/calculate")
       .contentType(MediaType.APPLICATION_JSON)
@@ -102,4 +146,45 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
     .contentType(MediaType.APPLICATION_JSON)
     .bodyValue(sentencingData)
     .exchange()
+
+  private fun aRasCharge(offenceCode: String, outcomeNomisCode: String, sentence: PersonSentence? = null) = PersonCharge(
+    chargeUuid = UUID.randomUUID(),
+    offenceCode = offenceCode,
+    aggravatingFactors = emptyList(),
+    outcome = ChargeOutcome(
+      outcomeUuid = UUID.randomUUID(),
+      outcomeName = "An outcome",
+      nomisCode = outcomeNomisCode,
+      outcomeType = "SENTENCING",
+      displayOrder = 1,
+      dispositionCode = "FINAL",
+      status = ChargeOutcome.Status.ACTIVE,
+    ),
+    sentence = sentence,
+  )
+
+  private fun aRasSentence(sentenceTypeUuid: UUID) = PersonSentence(
+    sentenceUuid = UUID.randomUUID(),
+    periodLengths = emptyList(),
+    sentenceServeType = "FORTHWITH",
+    hasRecall = false,
+    status = PersonSentence.Status.ACTIVE,
+    sentenceType = SentenceType(
+      sentenceTypeUuid = sentenceTypeUuid,
+      description = "A sentence type",
+      classification = SentenceType.Classification.STANDARD,
+      displayOrder = 1,
+    ),
+  )
+
+  private fun aRasSentenceTypeDetails(sentenceTypeUuid: UUID, nomisCjaCode: String, nomisSentenceCalcType: String) = SentenceTypeDetails(
+    sentenceTypeUuid = sentenceTypeUuid,
+    description = "A sentence type",
+    classification = SentenceTypeDetails.Classification.STANDARD,
+    displayOrder = 1,
+    isRecallable = true,
+    nomisCjaCode = nomisCjaCode,
+    nomisSentenceCalcType = nomisSentenceCalcType,
+    status = SentenceTypeDetails.Status.ACTIVE,
+  )
 }
