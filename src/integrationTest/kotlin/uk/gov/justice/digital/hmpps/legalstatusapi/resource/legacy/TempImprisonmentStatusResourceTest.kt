@@ -16,6 +16,7 @@ import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverit
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
@@ -110,15 +111,16 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
       prisonNumber,
       fromDate = receptionDate,
       toDate = LocalDate.now(),
-      response = listOf(
-        aRasCharge(offenceCode = "TH68010", outcomeNomisCode = "1002", sentence = aRasSentence(sentenceTypeUuid)),
-        aRasCharge(offenceCode = "CJ88116", outcomeNomisCode = "4565"),
+      response = PersonCharges(
+        charges = listOf(
+          aRasCharge(offenceCode = "TH68010", outcomeNomisCode = "1002", sentence = aRasSentence(sentenceTypeUuid)),
+          aRasCharge(offenceCode = "CJ88116", outcomeNomisCode = "4565"),
+        ),
       ),
     )
-    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(sentenceTypeUuid.toString(), aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    hmppsRemandAndSentencingApi.stubGetSentenceTypeDetails(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
     hmppsManageOffencesApi.stubGetOffenceSeverities(
-      "CJ88116",
-      "TH68010",
+      offenceCodes = setOf("CJ88116", "TH68010"),
       response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
     )
 
