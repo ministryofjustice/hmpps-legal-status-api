@@ -1,0 +1,526 @@
+{
+  "jiraReference": "IS-00-example",
+  "receptionDate": "2014-08-01",
+  "expectedStatus": "SENT03",
+  "rasChargeData": {
+    "charges": [
+      {
+        "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
+        "offenceCode": "AI04004",
+        "offenceStartDate": "2015-08-26",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": {
+          "sentenceUuid": "6c6e6edd-2dc3-422e-abc7-cb6ec9a78b0d",
+          "chargeNumber": null,
+          "sentenceServeType": "CONCURRENT",
+          "sentenceType": {
+            "sentenceTypeUuid": "8d04557c-8e54-4e2a-844f-272163fca833",
+            "description": "SDS (Standard Determinate Sentence)",
+            "classification": "STANDARD",
+            "hintText": null,
+            "displayOrder": 10
+          },
+          "convictionDate": null,
+          "fineAmount": null,
+          "legacyData": {
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "postedDate": "2016-03-08T15:40:39.896082",
+            "active": false,
+            "nomisLineReference": "2",
+            "bookingId": 1027630
+          },
+          "consecutiveToSentenceUuid": null,
+          "hasRecall": false,
+          "status": "INACTIVE",
+          "periodLengths": [
+            {
+              "years": 6,
+              "months": null,
+              "weeks": null,
+              "days": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodLengthUuid": "7ae9fa94-8859-4f6d-b664-aca3cb0503b8"
+            }
+          ]
+        }
+      },
+      {
+        "chargeUuid": "50785540-b253-435d-9346-8b8c622b25f1",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2014-08-21",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": {
+          "sentenceUuid": "db4703dd-c9f3-43eb-891d-9272f033fdb3",
+          "chargeNumber": null,
+          "sentenceServeType": "CONCURRENT",
+          "sentenceType": {
+            "sentenceTypeUuid": "8d04557c-8e54-4e2a-844f-272163fca833",
+            "description": "SDS (Standard Determinate Sentence)",
+            "classification": "STANDARD",
+            "hintText": null,
+            "displayOrder": 10
+          },
+          "convictionDate": null,
+          "fineAmount": null,
+          "legacyData": {
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "postedDate": "2016-03-08T15:39:45.573239",
+            "active": false,
+            "nomisLineReference": "1",
+            "bookingId": 1027630
+          },
+          "consecutiveToSentenceUuid": null,
+          "hasRecall": false,
+          "status": "INACTIVE",
+          "periodLengths": [
+            {
+              "years": 5,
+              "months": null,
+              "weeks": null,
+              "days": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodLengthUuid": "6f1d570b-c662-4c5c-831a-dc1ab893b22e"
+            }
+          ]
+        }
+      },
+      {
+        "chargeUuid": "22deca13-a047-4ab3-b1c9-a5fd7753d2c1",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2015-09-20",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": {
+          "sentenceUuid": "239d173c-4260-43d2-aa34-3781fcac8b47",
+          "chargeNumber": null,
+          "sentenceServeType": "CONCURRENT",
+          "sentenceType": {
+            "sentenceTypeUuid": "8d04557c-8e54-4e2a-844f-272163fca833",
+            "description": "SDS (Standard Determinate Sentence)",
+            "classification": "STANDARD",
+            "hintText": null,
+            "displayOrder": 10
+          },
+          "convictionDate": null,
+          "fineAmount": null,
+          "legacyData": {
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "postedDate": "2016-03-08T16:27:25.116410",
+            "active": false,
+            "nomisLineReference": "3",
+            "bookingId": 1027630
+          },
+          "consecutiveToSentenceUuid": null,
+          "hasRecall": false,
+          "status": "INACTIVE",
+          "periodLengths": [
+            {
+              "years": 8,
+              "months": null,
+              "weeks": null,
+              "days": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodLengthUuid": "09fbb533-72e7-4521-92a7-f0451e200886"
+            }
+          ]
+        }
+      },
+      {
+        "chargeUuid": "88f9c2ef-7719-4ffc-b3af-3201200dae33",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2015-02-23",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "75722d2f-a692-4e94-b26a-6f200797d869",
+        "offenceCode": "SX03119",
+        "offenceStartDate": "2015-09-26",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "76ec0de0-da17-44a8-9184-790770d16d46",
+          "outcomeName": "Lie on file",
+          "nomisCode": "2008",
+          "outcomeType": "NON_CUSTODIAL",
+          "displayOrder": 60,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": false,
+          "offenceDescription": "Control prostitution for gain - SOA 2003"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
+        "offenceCode": "AI04004",
+        "offenceStartDate": "2015-09-24",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "nomisCode": "4560",
+          "outcomeType": "REMAND",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": false,
+          "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
+        "offenceCode": "AI04004",
+        "offenceStartDate": "2015-09-18",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "nomisCode": "4560",
+          "outcomeType": "REMAND",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": false,
+          "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
+        "offenceCode": "AI04004",
+        "offenceStartDate": "2015-10-11",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "0828e8a8-c734-4c7f-8f66-a65302170f5c",
+          "outcomeName": "Guilty",
+          "nomisCode": "G",
+          "outcomeType": "REMAND",
+          "displayOrder": 560,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "50785540-b253-435d-9346-8b8c622b25f1",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2014-09-08",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "0828e8a8-c734-4c7f-8f66-a65302170f5c",
+          "outcomeName": "Guilty",
+          "nomisCode": "G",
+          "outcomeType": "REMAND",
+          "displayOrder": 560,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "22deca13-a047-4ab3-b1c9-a5fd7753d2c1",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2015-09-20",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "0828e8a8-c734-4c7f-8f66-a65302170f5c",
+          "outcomeName": "Guilty",
+          "nomisCode": "G",
+          "outcomeType": "REMAND",
+          "displayOrder": 560,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "88f9c2ef-7719-4ffc-b3af-3201200dae33",
+        "offenceCode": "CL77040",
+        "offenceStartDate": "2015-01-18",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "0828e8a8-c734-4c7f-8f66-a65302170f5c",
+          "outcomeName": "Guilty",
+          "nomisCode": "G",
+          "outcomeType": "REMAND",
+          "displayOrder": 560,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "75722d2f-a692-4e94-b26a-6f200797d869",
+        "offenceCode": "SX03119",
+        "offenceStartDate": "2015-09-21",
+        "offenceEndDate": "2015-09-18",
+        "outcome": {
+          "outcomeUuid": "0828e8a8-c734-4c7f-8f66-a65302170f5c",
+          "outcomeName": "Guilty",
+          "nomisCode": "G",
+          "outcomeType": "REMAND",
+          "displayOrder": 560,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Control prostitution for gain - SOA 2003"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
+        "offenceCode": "AI04004",
+        "offenceStartDate": "2015-09-21",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "nomisCode": "4560",
+          "outcomeType": "REMAND",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-01-30",
+          "nomisOutcomeCode": null,
+          "outcomeDescription": null,
+          "outcomeDispositionCode": null,
+          "outcomeConvictionFlag": false,
+          "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "6816000f-9ab9-43f8-8b18-17943b4be542",
+        "offenceCode": "AE07024",
+        "offenceStartDate": "2026-01-01",
+        "offenceEndDate": "2026-01-02",
+        "outcome": {
+          "outcomeUuid": "23e9e49c-96ec-4493-8768-6fbc0247ace3",
+          "outcomeName": "Adjourned",
+          "nomisCode": "4506",
+          "outcomeType": "REMAND",
+          "displayOrder": 510,
+          "dispositionCode": "INTERIM",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "sentenceTypeUuid": "8d04557c-8e54-4e2a-844f-272163fca833",
+      "description": "SDS (Standard Determinate Sentence)",
+      "minAgeInclusive": 18,
+      "maxAgeExclusive": null,
+      "minDateInclusive": null,
+      "maxDateExclusive": "2020-12-01",
+      "minOffenceDateInclusive": null,
+      "maxOffenceDateExclusive": null,
+      "classification": "STANDARD",
+      "hintText": null,
+      "nomisCjaCode": "2003",
+      "nomisSentenceCalcType": "ADIMP",
+      "displayOrder": 10,
+      "status": "ACTIVE",
+      "isRecallable": true
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "AI04004",
+      "severityRating": "78"
+    },
+    {
+      "offenceCode": "AE07024",
+      "severityRating": "153"
+    },
+    {
+      "offenceCode": "CL77040",
+      "severityRating": "99"
+    },
+    {
+      "offenceCode": "SX03119",
+      "severityRating": "24"
+    }
+  ]
+}
