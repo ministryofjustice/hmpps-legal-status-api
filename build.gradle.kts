@@ -3,7 +3,7 @@ import org.jlleitschuh.gradle.ktlint.tasks.KtLintFormatTask
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.13"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.14"
   kotlin("plugin.spring") version "2.4.21"
   kotlin("plugin.jpa") version "2.4.21"
 
@@ -18,7 +18,7 @@ val buildDirectory: Directory = layout.buildDirectory.get()
 val postgresqlVersion = "42.7.14"
 val kotlinLoggingVersion = "3.0.5"
 val testContainersVersion = "2.0.5"
-val springdocOpenapiVersion = "3.1.1"
+val springdocOpenapiVersion = "3.2.0"
 val hmppsKotlinSpringBootStarterVersion = "3.0.3"
 val awaitilityVersion = "4.3.0"
 val swaggerParserVersion = "2.1.48"
