@@ -5,7 +5,7 @@
 < {%
     request.variables.set("offenceCodes", "CL67011,RR84216,RT88136")
 %}
-GET {{manage_offences_base_url}}//offences/severity-ratings?offenceCodes={{offenceCodes}}
+GET {{manage_offences_base_url}}/offences/severity-ratings?offenceCodes={{offenceCodes}}
 Authorization: Bearer {{$auth.token("Manage Offences API")}}
 Accept: application/json
 
