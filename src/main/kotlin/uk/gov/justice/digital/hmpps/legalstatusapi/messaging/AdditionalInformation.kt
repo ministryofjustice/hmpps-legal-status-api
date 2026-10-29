@@ -14,6 +14,6 @@ sealed class AdditionalInformation {
    * Additional Information for IMPRISONMENT_STATUS_CHANGED (prison-offender-events.prisoner.imprisonment-status-changed) HMPPS Domain Event
    */
   data class ImprisonmentStatusChangedAdditionalInformation(
-    val bookingId: String,
+    val bookingId: Long,
   ) : AdditionalInformation()
 }

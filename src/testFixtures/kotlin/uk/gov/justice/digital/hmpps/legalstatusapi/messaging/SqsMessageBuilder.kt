@@ -13,10 +13,10 @@ fun aValidHmppsDomainEventsSqsMessage(
   publishedAt: Instant = Instant.now(),
   description: String = "A prisoner's imprisonment status has been changed",
   version: String = "1.0",
-  bookingId: String? = null,
+  bookingId: Long? = null,
   additionalInformation: AdditionalInformation =
     when (eventType) {
-      IMPRISONMENT_STATUS_CHANGED -> aValidImprisonmentStatusChangedAdditionalInformation(bookingId = bookingId ?: "1240469")
+      IMPRISONMENT_STATUS_CHANGED -> aValidImprisonmentStatusChangedAdditionalInformation(bookingId = bookingId ?: 1240469)
     },
 ): SqsMessage = SqsMessage(
   type = "Notification",
