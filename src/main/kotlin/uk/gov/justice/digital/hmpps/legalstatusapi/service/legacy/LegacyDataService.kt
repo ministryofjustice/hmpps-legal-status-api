@@ -22,6 +22,7 @@ private val log = KotlinLogging.logger {}
 class LegacyDataService(
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
   private val remandAndSentencingApiClient: RemandAndSentencingApiClient,
+  private val sentenceTypeDetailsProvider: SentenceTypeDetailsProvider,
   private val clock: Clock,
   private val imprisonmentStatusCalculator: ImprisonmentStatusCalculator,
   private val jsonMapper: JsonMapper,
@@ -103,11 +104,14 @@ class LegacyDataService(
    * Returns a [LegacySentence] or null from a Ras [PersonCharge]
    *
    * If the Charge has a Sentence, the primary strategy should be to create a LegacySentence by looking up the sentenceType
-   * from the RaS sentence reference data endpoint.
+   * with the [SentenceTypeDetailsProvider] (which caches the RaS sentence reference data).
    * If Sentence does not have a sentenceType property, the LegacySentence should be created from the legacyData property.
+   *
+   * Each sentence type looked up is also put in [sentenceTypeDetailsByUuid], so that the sentence types used in the
+   * calculation can be recorded.
    */
   private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): LegacySentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
-    sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { remandAndSentencingApiClient.getSentenceTypeDetails(sentenceTypeUuid) }.let {
+    sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
       LegacySentence(
         sentenceCalcType = it.nomisSentenceCalcType,
         sentenceCategory = it.nomisCjaCode,

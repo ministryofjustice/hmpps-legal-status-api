@@ -1,6 +1,11 @@
 server:
   shutdown: immediate
 
+# No caching, so that tests can stub different reference data (e.g. offence severities) for the same values
+spring:
+  cache:
+    type: none
+
 management.endpoint:
   health.cache.time-to-live: 0
   info.cache.time-to-live: 0
