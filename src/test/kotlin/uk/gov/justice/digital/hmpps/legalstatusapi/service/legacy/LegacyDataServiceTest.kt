@@ -38,6 +38,8 @@ class LegacyDataServiceTest {
 
   private val remandAndSentencingApiClient: RemandAndSentencingApiClient = mock()
 
+  private val sentenceTypeDetailsProvider: SentenceTypeDetailsProvider = mock()
+
   private val imprisonmentStatusCalculator: ImprisonmentStatusCalculator = mock()
 
   private val fixedTimestamp = Instant.parse("2026-04-17T09:13:22.123Z")
@@ -48,6 +50,7 @@ class LegacyDataServiceTest {
   private val legacyDataService = LegacyDataService(
     prisonerSearchApiClient,
     remandAndSentencingApiClient,
+    sentenceTypeDetailsProvider,
     clock,
     imprisonmentStatusCalculator,
     jsonMapper,
@@ -68,7 +71,7 @@ class LegacyDataServiceTest {
         aRasCharge(offenceCode = "SX56025-029N"),
       ),
     )
-    given(remandAndSentencingApiClient.getSentenceTypeDetails(any())).willReturn(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    given(sentenceTypeDetailsProvider.getSentenceTypeDetails(any())).willReturn(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
     given(imprisonmentStatusCalculator.calculate(any())).willReturn(ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE))
 
     // When
@@ -78,7 +81,7 @@ class LegacyDataServiceTest {
     assertThat(actual).isEqualTo("SENT03")
     verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
     verify(remandAndSentencingApiClient).getPrisonerCharges(prisonNumber, receptionDate, LocalDate.now(clock))
-    verify(remandAndSentencingApiClient).getSentenceTypeDetails(sentenceTypeUuid)
+    verify(sentenceTypeDetailsProvider).getSentenceTypeDetails(sentenceTypeUuid)
     verify(imprisonmentStatusCalculator).calculate(
       LegacySentencingData(
         sentences = listOf(
@@ -137,7 +140,7 @@ class LegacyDataServiceTest {
         rawJson = rawJson,
       ),
     )
-    given(remandAndSentencingApiClient.getSentenceTypeDetails(any())).willReturn(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    given(sentenceTypeDetailsProvider.getSentenceTypeDetails(any())).willReturn(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
     given(imprisonmentStatusCalculator.calculate(any())).willReturn(ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE))
 
     // When
@@ -150,7 +153,7 @@ class LegacyDataServiceTest {
     assertThat(rasData["sentenceTypeDetails"][sentenceTypeUuid.toString()]["nomisSentenceCalcType"].asString()).isEqualTo("ADIMP")
     assertThat(rasData["sentenceTypeDetails"][sentenceTypeUuid.toString()]["nomisCjaCode"].asString()).isEqualTo("2003")
     // Both sentences have the same sentence type, so it is only looked up once
-    verify(remandAndSentencingApiClient, times(1)).getSentenceTypeDetails(sentenceTypeUuid)
+    verify(sentenceTypeDetailsProvider, times(1)).getSentenceTypeDetails(sentenceTypeUuid)
   }
 
   @Test
