@@ -26,7 +26,7 @@ class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
     val sqsMessage = aValidHmppsDomainEventsSqsMessage(
       prisonNumber = "A7316ED",
       eventType = IMPRISONMENT_STATUS_CHANGED,
-      additionalInformation = aValidImprisonmentStatusChangedAdditionalInformation(bookingId = "1240469"),
+      additionalInformation = aValidImprisonmentStatusChangedAdditionalInformation(bookingId = 1240469),
     )
 
     // When
@@ -35,7 +35,7 @@ class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
     // Then
     await untilAsserted {
       assertThat(output.out)
-        .contains("Processed IMPRISONMENT_STATUS_CHANGED event (no-op)")
+        .contains("Processed IMPRISONMENT_STATUS_CHANGED event")
         .contains("prisonNumber=A7316ED, bookingId=1240469")
     }
     await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
