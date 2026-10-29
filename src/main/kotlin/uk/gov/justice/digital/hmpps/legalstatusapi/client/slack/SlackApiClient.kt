@@ -16,66 +16,13 @@ class SlackApiClient(
   private val clock: Clock,
 ) {
   fun postToSlackApp(prisonNumber: String, nomisStatus: String, dpsStatus: String, dbReference: UUID) {
-    val slackMessage = """
-      {
-        "blocks": [
-          {
-            "type": "header",
-            "text": {
-              "type": "plain_text",
-              "text": "Mismatched Imprisonment Status Calculation",
-              "emoji": true
-            }
-          },
-          {
-            "type": "section",
-            "fields": [
-              {
-                "type": "mrkdwn",
-                "text": "*PRN:*\n$prisonNumber"
-              }
-            ]
-          },
-          {
-            "type": "section",
-            "fields": [
-              {
-                "type": "mrkdwn",
-                "text": "*NOMIS:*\n$nomisStatus"
-              },
-              {
-                "type": "mrkdwn",
-                "text": "*DPS Legal Status:*\n$dpsStatus"
-              }
-            ]
-          },
-          {
-            "type": "section",
-            "fields": [
-              {
-                "type": "mrkdwn",
-                "text": "*When:*\n${LocalDateTime.now(clock).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME)}"
-              }
-            ]
-          },
-          {
-            "type": "actions",
-            "elements": [
-              {
-                "type": "button",
-                "text": {
-                  "type": "plain_text",
-                  "emoji": true,
-                  "text": "Create Jira ticket"
-                },
-                "style": "primary",
-                "value": "$dbReference"
-              }
-            ]
-          }
-        ]  
-      }
-    """.trimIndent()
+    val slackMessage = mapOf(
+      "prisonNumber" to prisonNumber,
+      "nomisStatus" to nomisStatus,
+      "dpsStatus" to dpsStatus,
+      "dbReference" to dbReference,
+      "when" to LocalDateTime.now(clock).format(DateTimeFormatter.ISO_LOCAL_DATE_TIME),
+    )
 
     webClient.post()
       .headers {
