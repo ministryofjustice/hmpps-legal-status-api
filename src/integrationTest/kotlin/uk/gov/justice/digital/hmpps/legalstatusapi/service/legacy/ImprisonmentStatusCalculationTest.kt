@@ -32,6 +32,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
       // each record is a Jira ticket number, with the corresponding json data file in resources/uk/gov/justice/digital/hmpps/legalstatusapi/service/legacy
       "IS-00-example",
       "IS-01-example",
+      "IS-120",
     ],
   )
   fun `should calculate Imprisonment Status`(jiraReference: String) {

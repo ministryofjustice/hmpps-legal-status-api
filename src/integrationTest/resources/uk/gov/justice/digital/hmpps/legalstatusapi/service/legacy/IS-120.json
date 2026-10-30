@@ -1,0 +1,361 @@
+{
+  "jiraReference": "IS-120",
+  "receptionDate": "2026-09-07",
+  "expectedStatus": "UNK_SENT",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "806f3c50-9015-42c9-850b-4d3118c031b6",
+        "legacyData": null,
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4c5ad0b3-63d3-48c2-9aa5-bd4ae889b769",
+        "legacyData": null,
+        "offenceCode": "CJ88001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "ce016ce8-8523-4496-bf52-34ac12249fb2",
+        "legacyData": null,
+        "offenceCode": "PL96003",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4068c75f-5347-4bf5-a96e-4a9cce71d940",
+        "legacyData": null,
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4588",
+          "outcomeName": "Remittal for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "a41c4f3a-6de8-486b-ad6f-c3a26bb9e840",
+          "displayOrder": 590,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "806f3c50-9015-42c9-850b-4d3118c031b6",
+        "legacyData": null,
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4588",
+          "outcomeName": "Remittal for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "a41c4f3a-6de8-486b-ad6f-c3a26bb9e840",
+          "displayOrder": 590,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4c5ad0b3-63d3-48c2-9aa5-bd4ae889b769",
+        "legacyData": null,
+        "offenceCode": "CJ88001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "ce016ce8-8523-4496-bf52-34ac12249fb2",
+        "legacyData": null,
+        "offenceCode": "PL96003",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4068c75f-5347-4bf5-a96e-4a9cce71d940",
+        "legacyData": null,
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4588",
+          "outcomeName": "Remittal for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "a41c4f3a-6de8-486b-ad6f-c3a26bb9e840",
+          "displayOrder": 590,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "806f3c50-9015-42c9-850b-4d3118c031b6",
+        "legacyData": null,
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4588",
+          "outcomeName": "Remittal for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "a41c4f3a-6de8-486b-ad6f-c3a26bb9e840",
+          "displayOrder": 590,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4c5ad0b3-63d3-48c2-9aa5-bd4ae889b769",
+        "legacyData": null,
+        "offenceCode": "CJ88001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "ce016ce8-8523-4496-bf52-34ac12249fb2",
+        "legacyData": null,
+        "offenceCode": "PL96003",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4068c75f-5347-4bf5-a96e-4a9cce71d940",
+        "legacyData": null,
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "ce016ce8-8523-4496-bf52-34ac12249fb2",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Obstruct / resist a constable in execution of duty",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "PL96003",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "806f3c50-9015-42c9-850b-4d3118c031b6",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "4068c75f-5347-4bf5-a96e-4a9cce71d940",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-09-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "4c5ad0b3-63d3-48c2-9aa5-bd4ae889b769",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Common assault",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "sentenceTypeDetails": {},
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CJ88001",
+      "severityRating": "105"
+    },
+    {
+      "offenceCode": "PL96003",
+      "severityRating": "104"
+    },
+    {
+      "offenceCode": "OF61102",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "CD98067",
+      "severityRating": "8"
+    }
+  ]
+}
