@@ -1,0 +1,102 @@
+{
+  "jiraReference": "IS-121",
+  "receptionDate": "2026-10-29",
+  "expectedStatus": "UNK_SENT",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "1bd1aad0-5f34-4b17-83a4-c707e2049d4c",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-01-31",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "1b6d02f5-2488-4251-8b9d-a6d594c46851",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-01-31",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "f45a79b5-e400-4d75-a0e3-10827783a819",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Use threatening / abusive / insulting words / behaviour to cause harassment / alarm / distress",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "PU86116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-01-31",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CD98067",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "CJ88116",
+      "severityRating": "105"
+    },
+    {
+      "offenceCode": "PU86116",
+      "severityRating": "125"
+    }
+  ]
+}
