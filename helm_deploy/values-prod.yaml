@@ -11,7 +11,7 @@ generic-service:
     MANAGE_OFFENCES_API_URL: "https://manage-offences-api.hmpps.service.justice.gov.uk"
     PRISONER_SEARCH_API_URL: https://prisoner-search.prison.service.justice.gov.uk
     REMAND_AND_SENTENCING_API_URL: "https://remand-and-sentencing-api.hmpps.service.justice.gov.uk"
-    SLACK_ENABLED: "true"
+    SLACK_ENABLED: "false"
 
   allowlist:
     # Configure groups as appropriate to give the minimum ingress access required:
