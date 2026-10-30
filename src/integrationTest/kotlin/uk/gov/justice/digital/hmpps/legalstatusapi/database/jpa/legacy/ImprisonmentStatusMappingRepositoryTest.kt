@@ -28,7 +28,7 @@ class ImprisonmentStatusMappingRepositoryTest : IntegrationTestBase() {
     val actual = repository.count()
 
     // Then
-    Assertions.assertThat(actual).isEqualTo(324)
+    Assertions.assertThat(actual).isEqualTo(340)
   }
 
   @ParameterizedTest
@@ -70,20 +70,6 @@ class ImprisonmentStatusMappingRepositoryTest : IntegrationTestBase() {
     assertThat(actual)
       .hasOffenceResultCode(offenceResultCode)
       .isMappedTo(expected)
-  }
-
-  @Test
-  fun `should not retrieve mappings to inactive NOMIS Imprisonment Statuses`() {
-    // Given
-    val resultCodeMappedToUnkSent = "1002"
-
-    // When
-    val byResultCode = repository.findByOffenceResultCode(resultCodeMappedToUnkSent)
-    val bySentence = repository.findBySentenceCategoryAndSentenceCalcType("2003", "LIFE/IPP")
-
-    // Then
-    assertThat(byResultCode).isNull()
-    assertThat(bySentence).isNull()
   }
 
   @Test

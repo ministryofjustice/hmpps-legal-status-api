@@ -1,7 +1,7 @@
 {
   "jiraReference": "IS-01-example",
   "receptionDate": "2026-06-23",
-  "expectedStatus": "UNKNOWN",
+  "expectedStatus": "UNK_CUST",
   "rasChargeData": {
     "charges": [
       {

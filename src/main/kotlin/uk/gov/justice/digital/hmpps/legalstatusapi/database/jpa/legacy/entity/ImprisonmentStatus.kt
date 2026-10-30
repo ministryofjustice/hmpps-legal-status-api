@@ -8,6 +8,7 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity
 enum class ImprisonmentStatus(
   val nomisCode: String, // The native NOMIS code is modeled as a field because some NOMIS codes are not valid Kotlin enum identifiers (e.g., "FTR/08" and "SINE DIE").
 ) {
+  // Active statuses
   FTR_14_HDC_ORA("14FTRHDC_ORA"),
   FTR_14_ORA("14FTR_ORA"),
   ADIMP_ORA("ADIMP_ORA"),
@@ -160,6 +161,28 @@ enum class ImprisonmentStatus(
   YOI("YOI"),
   YOI_ORA("YOI_ORA"),
   YO_CFINE("YO_CFINE"),
+
+  // Inactive statuses
+  A_FINE1("A_FINE1"),
+  A_FINE2("A_FINE2"),
+  CFLIFE("CFLIFE"),
+  CIVIL_CON("CIVIL_CON"),
+  CRIM_CON("CRIM_CON"),
+  CUSTPLUS("CUSTPLUS"),
+  INT_CUST("INT_CUST"),
+  LIFE("LIFE"),
+  POLICE("POLICE"),
+  RECEP_REMAND("RECEP_REMAND"),
+  REFER("REFER"),
+  SEC17_3("SEC17_3"),
+  SEC43("SEC43"),
+  SEC90("SEC90"),
+  SEC90_03("SEC90_03"),
+  SENT_EXL("SENT_EXL"),
+  UNK_CONV("UNK_CONV"),
+  UNK_CUST("UNK_CUST"),
+  UNK_SENT("UNK_SENT"),
+  YOC_CONT("YOC_CONT"),
   ;
 
   companion object {
