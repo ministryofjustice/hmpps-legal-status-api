@@ -95,7 +95,7 @@ class ImprisonmentStatusComparisonService(
         ),
       )
       mismatch.id!!.also { notifySlack(prisonNumber, nomisStatus, dpsStatus, it) }
-    }!!
+    }
     log.info { "Imprisonment Status [$dpsStatus] for prisoner [$prisonNumber] does not match NOMIS [$nomisStatus], recorded as mismatch [$mismatchId]" }
 
     return ImprisonmentStatusComparisonResult.Mismatch(mismatchId, nomisStatus, dpsStatus)
