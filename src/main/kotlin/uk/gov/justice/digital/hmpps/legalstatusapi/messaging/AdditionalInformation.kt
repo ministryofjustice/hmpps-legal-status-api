@@ -1,5 +1,7 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
+import java.util.UUID
+
 /**
  * Classes modeling the different structures of Additional Information data for different HMPPS Domain Events.
  *
@@ -15,5 +17,31 @@ sealed class AdditionalInformation {
    */
   data class ImprisonmentStatusChangedAdditionalInformation(
     val bookingId: Long,
+  ) : AdditionalInformation()
+
+  /**
+   * Additional Information for SENTENCE_INSERTED (sentence.inserted), SENTENCE_DELETED (sentence.deleted),
+   * SENTENCE_UPDATED (sentence.updated) HMPPS Domain Event
+   */
+  data class SentenceAdditionalInformation(
+    val sentenceId: UUID,
+    val courtChargeId: UUID,
+    val courtCaseId: UUID,
+    val courtAppearanceId: UUID,
+    val source: MessageSource,
+    val isBreach: Boolean,
+  ) : AdditionalInformation()
+
+  /**
+   * Additional Information for CHARGE_INSERTED (charge.inserted), CHARGE_DELETED (charge.deleted),
+   * CHARGE_UPDATED (charge.updated) HMPPS Domain Event
+   */
+  data class ChargeAdditionalInformation(
+    val courtChargeId: UUID,
+    val courtCaseId: UUID,
+    val source: MessageSource,
+    val courtAppearanceId: UUID,
+    val isOnFutureAppearance: Boolean,
+    val isBreach: Boolean,
   ) : AdditionalInformation()
 }

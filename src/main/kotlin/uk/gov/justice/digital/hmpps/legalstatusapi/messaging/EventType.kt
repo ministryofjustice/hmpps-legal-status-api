@@ -7,4 +7,10 @@ import com.fasterxml.jackson.annotation.JsonValue
  */
 enum class EventType(@JsonValue val eventType: String) {
   IMPRISONMENT_STATUS_CHANGED("prison-offender-events.prisoner.imprisonment-status-changed"),
+  SENTENCE_INSERTED("sentence.inserted"),
+  SENTENCE_DELETED("sentence.deleted"),
+  SENTENCE_UPDATED("sentence.updated"),
+  CHARGE_INSERTED("charge.inserted"),
+  CHARGE_DELETED("charge.deleted"),
+  CHARGE_UPDATED("charge.updated"),
 }
