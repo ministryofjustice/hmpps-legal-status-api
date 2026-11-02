@@ -17,6 +17,12 @@ fun aValidHmppsDomainEventsSqsMessage(
   additionalInformation: AdditionalInformation =
     when (eventType) {
       IMPRISONMENT_STATUS_CHANGED -> aValidImprisonmentStatusChangedAdditionalInformation(bookingId = bookingId ?: 1240469)
+      EventType.SENTENCE_INSERTED -> aValidSentenceAdditionalInformation()
+      EventType.SENTENCE_DELETED -> aValidSentenceAdditionalInformation()
+      EventType.SENTENCE_UPDATED -> aValidSentenceAdditionalInformation()
+      EventType.CHARGE_INSERTED -> aValidChargeAdditionalInformation()
+      EventType.CHARGE_DELETED -> aValidChargeAdditionalInformation()
+      EventType.CHARGE_UPDATED -> aValidChargeAdditionalInformation()
     },
 ): SqsMessage = SqsMessage(
   type = "Notification",
