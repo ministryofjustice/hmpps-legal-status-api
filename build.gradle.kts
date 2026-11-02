@@ -7,7 +7,7 @@ plugins {
   kotlin("plugin.spring") version "2.4.21"
   kotlin("plugin.jpa") version "2.4.21"
 
-  id("org.openapi.generator") version "7.26.0"
+  id("org.openapi.generator") version "7.27.0"
 
   id("name.remal.integration-tests") version "5.0.9"
   `java-test-fixtures`
