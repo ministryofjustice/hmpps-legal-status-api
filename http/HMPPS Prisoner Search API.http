@@ -4,7 +4,7 @@
 # @name Get prisoner by prisoner number (AKA NOMS number)
 < {%
     request.variables.set("id", "A3390EC")
-    request.variables.set("responseFields", "prisonerNumber,receptionDate,imprisonmentStatus")
+    request.variables.set("responseFields", "prisonerNumber,receptionDate,imprisonmentStatus,bookingId")
 %}
 GET {{prisoner_search_base_url}}/prisoner/{{id}}?responseFields={{responseFields}}
 Authorization: Bearer {{$auth.token("Prisoner Search API")}}

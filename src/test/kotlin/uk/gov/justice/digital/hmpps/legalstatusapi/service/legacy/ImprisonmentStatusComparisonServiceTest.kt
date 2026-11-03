@@ -130,7 +130,7 @@ class ImprisonmentStatusComparisonServiceTest {
     val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
     assertThat(mismatch.id).isNull()
     assertThat(mismatch.prisonNumber).isEqualTo(prisonNumber)
-    assertThat(mismatch.bookingId).isEqualTo(1234567L)
+    assertThat(mismatch.bookingId).isEqualTo("1226669")
     assertThat(mismatch.receptionDate).isEqualTo(receptionDate)
     assertThat(mismatch.nomisImprisonmentStatus).isEqualTo("LR")
     assertThat(mismatch.nomisCalculatedAt).isEqualTo(nomisCalculatedAt)
@@ -165,7 +165,7 @@ class ImprisonmentStatusComparisonServiceTest {
   }
 
   @Test
-  fun `should record a mismatch without a booking ID or NOMIS calculation time given only the prison number`() {
+  fun `should record a mismatch without NOMIS calculation time given only the prison number`() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
     given(legacyDataService.calculate(any())).willReturn(
@@ -177,7 +177,6 @@ class ImprisonmentStatusComparisonServiceTest {
 
     // Then
     val mismatch = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
-    assertThat(mismatch.bookingId).isNull()
     assertThat(mismatch.nomisCalculatedAt).isNull()
   }
 

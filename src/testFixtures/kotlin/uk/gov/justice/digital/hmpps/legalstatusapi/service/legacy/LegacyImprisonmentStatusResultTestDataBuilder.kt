@@ -16,6 +16,7 @@ fun aLegacyImprisonmentStatusResult(
   calculation: ImprisonmentStatusCalculation = ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE),
   rasData: String = """{"personCharges": {"charges": []}, "sentenceTypeDetails": {}}""",
   calculatedAt: Instant = Instant.now(),
+  bookingId: String? = "1226669",
 ): LegacyImprisonmentStatusResult = LegacyImprisonmentStatusResult(
   prisonNumber = prisonNumber,
   nomisImprisonmentStatus = nomisImprisonmentStatus,
@@ -24,4 +25,5 @@ fun aLegacyImprisonmentStatusResult(
   calculation = calculation,
   rasData = rasData,
   calculatedAt = calculatedAt,
+  bookingId = bookingId,
 )

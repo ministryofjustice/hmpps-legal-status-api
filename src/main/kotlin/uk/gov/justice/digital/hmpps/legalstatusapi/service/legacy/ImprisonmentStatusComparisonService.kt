@@ -79,7 +79,7 @@ class ImprisonmentStatusComparisonService(
       val mismatch = imprisonmentStatusMismatchRepository.saveAndFlush(
         ImprisonmentStatusMismatchEntity(
           prisonNumber = prisonNumber,
-          bookingId = bookingId,
+          bookingId = result.bookingId,
           receptionDate = result.receptionDate,
           nomisImprisonmentStatus = nomisStatus,
           nomisCalculatedAt = nomisCalculatedAt,

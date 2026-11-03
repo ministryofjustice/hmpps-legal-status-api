@@ -42,7 +42,7 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     // Then
     with(actual) {
       assertThat(prisonNumber).isEqualTo("A1234BC")
-      assertThat(bookingId).isEqualTo(1234567L)
+      assertThat(bookingId).isEqualTo("1234567")
       assertThat(receptionDate).isEqualTo(LocalDate.of(2026, 9, 1))
       assertThat(nomisImprisonmentStatus).isEqualTo("SENT03")
       assertThat(nomisCalculatedAt).isEqualTo(Instant.parse("2026-10-26T09:00:00Z"))
@@ -110,7 +110,7 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
 
   private fun aValidImprisonmentStatusMismatch(
     nomisImprisonmentStatus: String = "SENT03",
-    bookingId: Long? = 1234567L,
+    bookingId: String? = "1234567",
     receptionDate: LocalDate? = LocalDate.of(2026, 9, 1),
     nomisCalculatedAt: Instant? = Instant.parse("2026-10-26T09:00:00Z"),
     dpsMainOffenceCode: String? = "TH68010",

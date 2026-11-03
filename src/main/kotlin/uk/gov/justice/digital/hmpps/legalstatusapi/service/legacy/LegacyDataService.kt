@@ -84,6 +84,7 @@ class LegacyDataService(
       calculation = calculation,
       rasData = rasData(prisonerCharges.rawJson, sentenceTypeDetailsByUuid),
       calculatedAt = Instant.now(clock),
+      bookingId = prisoner.bookingId,
     )
   }
 

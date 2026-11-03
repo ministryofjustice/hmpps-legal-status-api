@@ -20,4 +20,5 @@ data class LegacyImprisonmentStatusResult(
   val calculation: ImprisonmentStatusCalculation,
   val rasData: String,
   val calculatedAt: Instant,
+  val bookingId: String?,
 )

@@ -39,7 +39,7 @@ class ImprisonmentStatusMismatchEntity(
   val prisonNumber: String,
 
   @Column(name = "BOOKING_ID", nullable = true, updatable = false)
-  val bookingId: Long? = null,
+  val bookingId: String? = null,
 
   @Column(name = "RECEPTION_DATE", nullable = true, updatable = false)
   val receptionDate: LocalDate? = null,
