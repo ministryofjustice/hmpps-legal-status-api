@@ -123,7 +123,7 @@ class ImprisonmentStatusComparisonServiceTest {
     given(offenceSeverityProvider.getSeverities(any())).willReturn(mapOf("TH68010" to 46, "CJ88116" to 50))
 
     // When
-    imprisonmentStatusComparisonService.compare(prisonNumber, bookingId = 1234567L, nomisCalculatedAt = nomisCalculatedAt)
+    imprisonmentStatusComparisonService.compare(prisonNumber, nomisCalculatedAt = nomisCalculatedAt)
 
     // Then
     verify(offenceSeverityProvider).getSeverities(listOf("TH68010", "TH68010", "CJ88116"))

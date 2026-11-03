@@ -48,12 +48,10 @@ class ImprisonmentStatusComparisonService(
    * is recorded when an error is thrown.
    *
    * @param prisonNumber The prison number of the prisoner.
-   * @param bookingId The NOMIS booking ID, if known (e.g. from the imprisonment-status-changed event).
    * @param nomisCalculatedAt When NOMIS calculated its Imprisonment Status, if known (e.g. the event's occurredAt).
    */
   fun compare(
     prisonNumber: String,
-    bookingId: Long? = null,
     nomisCalculatedAt: Instant? = null,
   ): ImprisonmentStatusComparisonResult {
     val result = legacyDataService.calculate(prisonNumber)
