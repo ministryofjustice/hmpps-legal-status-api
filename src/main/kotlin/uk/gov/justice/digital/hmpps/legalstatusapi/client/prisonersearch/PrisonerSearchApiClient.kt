@@ -25,6 +25,7 @@ class PrisonerSearchApiClient(
       "prisonerNumber",
       "receptionDate",
       "imprisonmentStatus",
+      "bookingId",
     ).joinToString(",")
   }
 
