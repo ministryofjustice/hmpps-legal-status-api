@@ -1,0 +1,27 @@
+{
+  "jiraReference": "IS-123",
+  "receptionDate": "2026-10-29",
+  "expectedStatus": "TRL",
+  "rasChargeData": {
+    "charges": [
+      {
+        "chargeUuid": "267ac153-9ec6-4eb9-a418-463ca3d1887f",
+        "offenceCode": "TH68023",
+        "offenceStartDate": "2026-10-26",
+        "offenceEndDate": null,
+        "outcome": null,
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "TH68023",
+      "severityRating": "34"
+    }
+  ]
+}
