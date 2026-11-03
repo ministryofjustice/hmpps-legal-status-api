@@ -18,7 +18,7 @@ import java.time.LocalDate
 data class LegacySentence(
   val sentenceCalcType: String,
   val sentenceCategory: String,
-  val offence: LegacyOffence,
+  val offence: Offence,
   val startDate: LocalDate? = null,
   val endDate: LocalDate? = null,
 )

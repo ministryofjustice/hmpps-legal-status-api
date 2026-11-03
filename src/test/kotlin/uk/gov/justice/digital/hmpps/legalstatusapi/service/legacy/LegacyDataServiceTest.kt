@@ -85,13 +85,13 @@ class LegacyDataServiceTest {
     verify(imprisonmentStatusCalculator).calculate(
       LegacySentencingData(
         sentences = listOf(
-          LegacySentence(sentenceCalcType = "ADIMP", sentenceCategory = "2003", offence = LegacyOffence(offenceCode = "TH68010", outcomeCode = "1002")),
-          LegacySentence(sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020", offence = LegacyOffence(offenceCode = "CJ88116", outcomeCode = "4565")),
+          LegacySentence(sentenceCalcType = "ADIMP", sentenceCategory = "2003", offence = Offence(offenceCode = "TH68010", outcomeCode = "1002")),
+          LegacySentence(sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020", offence = Offence(offenceCode = "CJ88116", outcomeCode = "4565")),
         ),
         offences = listOf(
-          LegacyOffence(offenceCode = "TH68010", outcomeCode = "1002"),
-          LegacyOffence(offenceCode = "CJ88116", outcomeCode = "4565"),
-          LegacyOffence(offenceCode = "SX56025-029N", outcomeCode = null),
+          Offence(offenceCode = "TH68010", outcomeCode = "1002"),
+          Offence(offenceCode = "CJ88116", outcomeCode = "4565"),
+          Offence(offenceCode = "SX56025-029N", outcomeCode = null),
         ),
       ),
     )
@@ -117,7 +117,7 @@ class LegacyDataServiceTest {
     assertThat(actual.nomisImprisonmentStatus).isEqualTo("LR")
     assertThat(actual.receptionDate).isEqualTo(receptionDate)
     assertThat(actual.calculation).isEqualTo(calculation)
-    assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(offences = listOf(LegacyOffence(offenceCode = "TH68010", outcomeCode = "1002"))))
+    assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(offences = listOf(Offence(offenceCode = "TH68010", outcomeCode = "1002"))))
     assertThat(actual.calculatedAt).isEqualTo(fixedTimestamp)
   }
 

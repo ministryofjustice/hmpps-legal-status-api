@@ -132,13 +132,13 @@ class LegacyDataService(
   }
 
   /**
-   * Returns a [LegacyOffence] from a RaS [PersonCharge], sentenced or not. NOMIS uses every charge on the active court cases
+   * Returns a [Offence] from a RaS [PersonCharge], sentenced or not. NOMIS uses every charge on the active court cases
    * (not just the unsentenced ones) when the prisoner has no mapped sentences (step 3.1).
    *
    * The outcome code is the NOMIS code of the DPS charge outcome or, if the outcome is not supported by DPS, the legacy
    * NOMIS outcome code.
    */
-  private fun PersonCharge.offence() = LegacyOffence(
+  private fun PersonCharge.offence() = Offence(
     offenceCode = offenceCode,
     outcomeCode = outcomeCode(),
   )

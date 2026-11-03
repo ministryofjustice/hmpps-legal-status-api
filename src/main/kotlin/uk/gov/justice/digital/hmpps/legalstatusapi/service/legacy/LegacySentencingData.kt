@@ -16,5 +16,5 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
  */
 data class LegacySentencingData(
   val sentences: List<LegacySentence> = emptyList(),
-  val offences: List<LegacyOffence> = emptyList(),
+  val offences: List<Offence> = emptyList(),
 )
