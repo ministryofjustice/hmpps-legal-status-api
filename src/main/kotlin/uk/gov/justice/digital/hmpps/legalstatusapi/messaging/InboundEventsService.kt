@@ -10,6 +10,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_INSERTED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.ImprisonmentStatusChangedEventHandler
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.SentenceOrChargeEventHandler
 
 private val log = KotlinLogging.logger {}
 
@@ -21,6 +22,7 @@ private val log = KotlinLogging.logger {}
 @Service
 class InboundEventsService(
   private val imprisonmentStatusChangedEventHandler: ImprisonmentStatusChangedEventHandler,
+  private val sentenceOrChargeEventHandler: SentenceOrChargeEventHandler,
 ) {
 
   fun process(domainEvent: HmppsDomainEvent) = with(domainEvent) {
@@ -31,22 +33,22 @@ class InboundEventsService(
         imprisonmentStatusChangedEventHandler.handle(domainEvent)
       }
       SENTENCE_INSERTED -> {
-        log.info { "Received sentence.inserted event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
       SENTENCE_DELETED -> {
-        log.info { "Received sentence.deleted event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
       SENTENCE_UPDATED -> {
-        log.info { "Received sentence.updated event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
       CHARGE_INSERTED -> {
-        log.info { "Received charge.inserted event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
       CHARGE_DELETED -> {
-        log.info { "Received charge.deleted event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
       CHARGE_UPDATED -> {
-        log.info { "Received charge.updated event with additionalInformation $additionalInformation" }
+        sentenceOrChargeEventHandler.handle(domainEvent)
       }
     }
   }

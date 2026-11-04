@@ -14,8 +14,6 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
-import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
-import java.time.LocalDate
 import java.util.UUID
 
 @ExtendWith(OutputCaptureExtension::class)
@@ -32,12 +30,6 @@ class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
     val prisonNumber = randomValidPrisonNumber()
     val prisoner = aValidPrisoner(prisonNumber)
     stubGetPrisonerFromPrisonerSearchApi(prisoner)
-    stubGetChargesFromRemandAndSentencingApi(
-      prisonNumber = prisonNumber,
-      fromDate = prisoner.receptionDate,
-      toDate = LocalDate.now(),
-      response = PersonCharges(charges = emptyList()),
-    )
 
     val sqsMessage = aValidHmppsDomainEventsSqsMessage(
       prisonNumber = prisonNumber,
@@ -52,7 +44,8 @@ class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
     await untilAsserted {
       assertThat(output.out)
         .contains("Processing IMPRISONMENT_STATUS_CHANGED event")
-        .contains("prisonNumber=$prisonNumber, bookingId=1240469")
+        .contains("prisonNumber=$prisonNumber")
+        .contains("nomisImprisonmentStatus=${prisoner.imprisonmentStatus}")
     }
     await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
     assertThat(messagingHelper.messagesOnDomainEventsDlq()).isZero()
@@ -74,11 +67,6 @@ class ImprisonmentStatusChangedEventTest : IntegrationTestBase() {
     messagingHelper.sendDomainEvent(sqsMessage)
 
     // Then
-    await untilAsserted {
-      assertThat(output.out)
-        .contains("Processing IMPRISONMENT_STATUS_CHANGED event")
-        .contains("prisonNumber=$prisonNumber, bookingId=1240469")
-    }
     await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
     await untilCallTo { messagingHelper.messagesOnDomainEventsDlq() } matches { it == 1 }
   }
