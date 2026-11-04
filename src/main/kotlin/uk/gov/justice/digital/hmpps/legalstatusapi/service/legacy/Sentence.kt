@@ -36,7 +36,7 @@ sealed class Sentence(
   abstract val legacySentenceCalcTypeForImprisonmentStatusCalculation: String
 
   /**
-   * Returns the legacy sentence calc type to be used for the Imprisonment Status calculation.
+   * Returns the legacy sentence category to be used for the Imprisonment Status calculation.
    * Depending on implementation this *may* be a different value to the value that the class was constructed with.
    */
   abstract val legacySentenceCategoryForImprisonmentStatusCalculation: String
@@ -66,8 +66,8 @@ sealed class Sentence(
   ) : Sentence(offence, startDate, endDate) {
 
     /**
-     * Returns the legacy sentence category to be used in the Imprisonment Status calculation
-     * This will either be the legacy sentence category that the instance was constructed with, or if there
+     * Returns the legacy sentence calc type to be used in the Imprisonment Status calculation
+     * This will either be the legacy sentence calc type that the instance was constructed with, or if there
      * is a recall on this sentence, it will be the derived legacy sentence type based on the combination of
      * the sentence classification and recall type.
      */
