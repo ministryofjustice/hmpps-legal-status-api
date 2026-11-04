@@ -51,11 +51,11 @@ class ImprisonmentStatusCalculator(
    *
    * @return null if no sentence has an Imprisonment Status Mapping.
    */
-  private fun calculateFromSentences(sentences: List<LegacySentence>, severities: Map<String, Int>): ImprisonmentStatusCalculation? {
+  private fun calculateFromSentences(sentences: List<Sentence>, severities: Map<String, Int>): ImprisonmentStatusCalculation? {
     val candidates = sentences.mapNotNull { sentence ->
-      imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(sentence.sentenceCategory, sentence.sentenceCalcType)
+      imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(sentence.legacySentenceCategoryForImprisonmentStatusCalculation, sentence.legacySentenceCalcTypeForImprisonmentStatusCalculation)
         ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[sentence.offence.offenceCode]) }
-        .also { if (it == null) log.info { "No Imprisonment Status Mapping for sentence with category [${sentence.sentenceCategory}] and calc type [${sentence.sentenceCalcType}]" } }
+        .also { if (it == null) log.info { "No Imprisonment Status Mapping for sentence with category [${sentence.legacySentenceCategoryForImprisonmentStatusCalculation}] and calc type [${sentence.legacySentenceCalcTypeForImprisonmentStatusCalculation}]" } }
     }
 
     return candidates.minWithOrNull(SENTENCE_PRECEDENCE)?.let {
@@ -83,7 +83,7 @@ class ImprisonmentStatusCalculator(
   }
 
   private data class SentenceCandidate(
-    val sentence: LegacySentence,
+    val sentence: Sentence,
     val status: ImprisonmentStatusEntity,
     val severity: Int?,
   ) {

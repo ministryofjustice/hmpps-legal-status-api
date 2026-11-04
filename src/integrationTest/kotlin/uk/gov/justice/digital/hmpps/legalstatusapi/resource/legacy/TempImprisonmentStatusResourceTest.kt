@@ -6,7 +6,7 @@ import org.springframework.http.MediaType
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.LegacySentencingData
-import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.aSentence
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.aLegacySentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.anOffence
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
@@ -41,7 +41,7 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
       response = listOf(OffenceSeverityRating("CJ88116", "50"), OffenceSeverityRating("TH68010", "46")),
     )
     val sentencingData = LegacySentencingData(
-      sentences = listOf(aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "TH68010")),
+      sentences = listOf(aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "TH68010"))),
       offences = listOf(
         anOffence(offenceCode = "TH68010", outcomeCode = "1002"),
         anOffence(offenceCode = "CJ88116", outcomeCode = "4565"),

@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service
 import tools.jackson.databind.json.JsonMapper
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.LegacySentence
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
@@ -111,11 +113,12 @@ class LegacyDataService(
    * Each sentence type looked up is also put in [sentenceTypeDetailsByUuid], so that the sentence types used in the
    * calculation can be recorded.
    */
-  private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): LegacySentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
+  private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): Sentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
     sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
-      LegacySentence(
-        sentenceCalcType = it.nomisSentenceCalcType,
-        sentenceCategory = it.nomisCjaCode,
+      RasSentence(
+        classification = it.classification,
+        legacySentenceCalcType = it.nomisSentenceCalcType,
+        legacySentenceCategory = it.nomisCjaCode,
         offence = offence(),
       ).also {
         log.debug { "LegacySentence mapped from looking up RaS sentenceType" }

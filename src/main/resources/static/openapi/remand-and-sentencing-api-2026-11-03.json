@@ -7,7 +7,7 @@
       "name": "HMPPS Digital Studio",
       "email": "feedback@digital.justice.gov.uk"
     },
-    "version": "2026-10-21.2733.f31d4e3"
+    "version": "2026-11-03.2821.68b43ee"
   },
   "servers": [
     {
@@ -103,6 +103,10 @@
     {
       "name": "Aggravating Factors",
       "description": "Aggravating factors are used to determine the seriousness of an offence and the appropriate sentence. They are used in conjunction with mitigating factors to determine the overall seriousness of an offence."
+    },
+    {
+      "name": "hmcts-result-code-controller",
+      "description": "Hmcts Result Codes"
     },
     {
       "name": "sentence-type-controller",
@@ -294,6 +298,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -310,16 +324,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SentenceTypeDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2010,6 +2014,79 @@
         }
       }
     },
+    "/hmcts-result-code/{hmctsResultCodeUuid}": {
+      "put": {
+        "tags": [
+          "hmcts-result-code-controller"
+        ],
+        "summary": "Update hmcts result code",
+        "description": "This endpoint will update hmcts result code that will be used to map court data to charge outcome",
+        "operationId": "updateHmctsResultCode",
+        "parameters": [
+          {
+            "name": "hmctsResultCodeUuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHmctsResultCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/court-case/{courtCaseUuid}": {
       "get": {
         "tags": [
@@ -2099,6 +2176,16 @@
           "required": true
         },
         "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCourtCaseResponse"
+                }
+              }
+            }
+          },
           "201": {
             "description": "Returns court case UUID",
             "content": {
@@ -2121,16 +2208,6 @@
           },
           "403": {
             "description": "Forbidden, requires an appropriate role",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateCourtCaseResponse"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2420,6 +2497,9 @@
           "200": {
             "description": "Returns court appearance schedules"
           },
+          "204": {
+            "description": "No Content"
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token"
           },
@@ -2428,9 +2508,6 @@
           },
           "404": {
             "description": "No court appearance schedule found"
-          },
-          "204": {
-            "description": "No Content"
           }
         }
       }
@@ -2599,6 +2676,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2615,16 +2702,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ChargeOutcome"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2672,6 +2749,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2688,16 +2775,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourtAppearanceOutcome"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2827,6 +2904,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2843,16 +2930,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SentenceTypeDetails"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -3083,16 +3160,6 @@
               }
             }
           },
-          "422": {
-            "description": "Unprocessable entity, charge must not be already sentenced",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LegacySentenceCreatedResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -3105,6 +3172,16 @@
           },
           "403": {
             "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegacySentenceCreatedResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable entity, charge must not be already sentenced",
             "content": {
               "application/json": {
                 "schema": {
@@ -3614,6 +3691,68 @@
         }
       }
     },
+    "/hmcts-result-code": {
+      "post": {
+        "tags": [
+          "hmcts-result-code-controller"
+        ],
+        "summary": "Create hmcts result code",
+        "description": "This endpoint will create a new hmcts result code that will be used to map court data to charge outcome",
+        "operationId": "createHmctsResultCode",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHmctsResultCode"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/hmcts-court-data/hearing-autopopulate-eligibility": {
       "post": {
         "tags": [
@@ -4031,6 +4170,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -4047,16 +4196,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ChargeOutcome"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -4093,6 +4232,16 @@
               }
             }
           },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -4109,16 +4258,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourtAppearanceOutcome"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -4901,7 +5040,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -5108,7 +5248,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -6402,8 +6543,8 @@
         "tags": [
           "immigration-detention-controller"
         ],
-        "summary": "Retrieve all active immigration detention records for a person",
-        "description": "This endpoint will retrieve  all active immigration detention records for a person",
+        "summary": "Retrieve active immigration detention records for a person. optionally filtered by dates",
+        "description": "This endpoint will retrieve active immigration detention records for a person, optional startDate and endDate filter on record date",
         "operationId": "getImmigrationDetentionByPrisonerId",
         "parameters": [
           {
@@ -6415,12 +6556,23 @@
             }
           },
           {
-            "name": "bookingId",
+            "name": "startDate",
             "in": "query",
             "required": false,
             "schema": {
               "type": "string",
-              "default": ""
+              "format": "date",
+              "default": "0001-01-01"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "default": "9999-12-31"
             }
           }
         ],
@@ -6637,6 +6789,203 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ImmigrationDetention"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hmcts-result-code/{outcomeUuid}": {
+      "get": {
+        "tags": [
+          "hmcts-result-code-controller"
+        ],
+        "summary": "Get hmcts result code by UUID",
+        "description": "This endpoint will retrieve hmcts result code by UUID",
+        "operationId": "getHmctsResultCodeByUuid",
+        "parameters": [
+          {
+            "name": "outcomeUuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns hmcts result code",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found if no hmcts result code at uuid",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hmcts-result-code/uuid/multiple": {
+      "get": {
+        "tags": [
+          "hmcts-result-code-controller"
+        ],
+        "summary": "get all hmcts result codes by uuids",
+        "description": "This endpoint will get all hmcts result codes by uuids",
+        "operationId": "getHmctsResultCodesByIds",
+        "parameters": [
+          {
+            "name": "uuids",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns hmcts result codes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/hmcts-result-code/status": {
+      "get": {
+        "tags": [
+          "hmcts-result-code-controller"
+        ],
+        "summary": "Get all hmcts result codes by statuses",
+        "description": "This endpoint will get all hmcts result codes by statuses",
+        "operationId": "getAllHmctsResultCodes",
+        "parameters": [
+          {
+            "name": "statuses",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "ACTIVE",
+                  "INACTIVE",
+                  "LEGACY"
+                ]
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns hmcts result codes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/HmctsResultCode"
+                  }
                 }
               }
             }
@@ -7384,8 +7733,8 @@
               }
             }
           },
-          "404": {
-            "description": "Appearance type not found",
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
               "application/json": {
                 "schema": {
@@ -7394,8 +7743,8 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorised, requires a valid Oauth2 token",
+          "404": {
+            "description": "Appearance type not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7426,7 +7775,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -7672,7 +8022,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -7751,8 +8102,8 @@
               }
             }
           },
-          "404": {
-            "description": "Appearance type not found",
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
               "application/json": {
                 "schema": {
@@ -7761,8 +8112,8 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorised, requires a valid Oauth2 token",
+          "404": {
+            "description": "Appearance type not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7793,7 +8144,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -7911,7 +8263,8 @@
                 "type": "string",
                 "enum": [
                   "ACTIVE",
-                  "INACTIVE"
+                  "INACTIVE",
+                  "LEGACY"
                 ]
               }
             }
@@ -8214,7 +8567,8 @@
             ],
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           },
           "isRecallable": {
@@ -8386,7 +8740,8 @@
             "type": "string",
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           },
           "isRecallable": {
@@ -8885,10 +9240,23 @@
               "boolean",
               "null"
             ]
+          },
+          "nomisRecall": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "sentenceDeleted": {
+            "type": [
+              "boolean",
+              "null"
+            ]
           }
         },
         "required": [
           "eventType",
+          "isBreach",
           "prisonerId"
         ]
       },
@@ -9042,7 +9410,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "outcomeDispositionCode": {
             "type": [
@@ -9175,6 +9543,12 @@
           "offenceCode": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
               "null"
             ]
           }
@@ -9314,6 +9688,119 @@
           "immigrationDetentionUuid"
         ]
       },
+      "CreateHmctsResultCode": {
+        "type": "object",
+        "properties": {
+          "resultUuid": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "uuid"
+          },
+          "resultName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "resultCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "outcomeUuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "LEGACY"
+            ]
+          }
+        },
+        "required": [
+          "outcomeUuid",
+          "resultCode",
+          "resultName",
+          "status"
+        ]
+      },
+      "ChargeOutcome": {
+        "type": "object",
+        "properties": {
+          "outcomeUuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "outcomeName": {
+            "type": "string"
+          },
+          "nomisCode": {
+            "type": "string"
+          },
+          "outcomeType": {
+            "type": "string"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dispositionCode": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "LEGACY"
+            ]
+          }
+        },
+        "required": [
+          "displayOrder",
+          "dispositionCode",
+          "nomisCode",
+          "outcomeName",
+          "outcomeType",
+          "outcomeUuid",
+          "status"
+        ]
+      },
+      "HmctsResultCode": {
+        "type": "object",
+        "properties": {
+          "resultUuid": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "resultName": {
+            "type": "string"
+          },
+          "resultCode": {
+            "type": "string"
+          },
+          "outcome": {
+            "$ref": "#/components/schemas/ChargeOutcome"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "ACTIVE",
+              "INACTIVE",
+              "LEGACY"
+            ]
+          }
+        },
+        "required": [
+          "outcome",
+          "resultCode",
+          "resultName",
+          "resultUuid",
+          "status"
+        ]
+      },
       "AggravatingFactor": {
         "type": "object",
         "properties": {
@@ -9430,6 +9917,12 @@
             "items": {
               "$ref": "#/components/schemas/AggravatingFactor"
             }
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -9605,7 +10098,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "courtCode": {
             "type": "string"
@@ -9958,13 +10451,16 @@
             "type": [
               "string",
               "null"
-            ]
+            ],
+            "deprecated": true,
+            "description": "HMCTS Code no longer required, remove after frontend update"
           },
           "status": {
             "type": "string",
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           }
         },
@@ -9974,53 +10470,6 @@
           "nomisCode",
           "outcomeName",
           "outcomeType",
-          "status"
-        ]
-      },
-      "ChargeOutcome": {
-        "type": "object",
-        "properties": {
-          "outcomeUuid": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "outcomeName": {
-            "type": "string"
-          },
-          "nomisCode": {
-            "type": "string"
-          },
-          "outcomeType": {
-            "type": "string"
-          },
-          "displayOrder": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "dispositionCode": {
-            "type": "string"
-          },
-          "hmctsCode": {
-            "type": [
-              "string",
-              "null"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "enum": [
-              "ACTIVE",
-              "INACTIVE"
-            ]
-          }
-        },
-        "required": [
-          "displayOrder",
-          "dispositionCode",
-          "nomisCode",
-          "outcomeName",
-          "outcomeType",
-          "outcomeUuid",
           "status"
         ]
       },
@@ -10070,7 +10519,8 @@
             "type": "string",
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           }
         },
@@ -10120,7 +10570,8 @@
             "type": "string",
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           },
           "warrantType": {
@@ -11807,6 +12258,12 @@
           "performedByUser": {
             "type": [
               "string",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
               "null"
             ]
           }
@@ -13620,6 +14077,12 @@
               "null"
             ],
             "format": "uuid"
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -13893,7 +14356,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "courtCode": {
             "type": "string"
@@ -14497,6 +14960,22 @@
           "hasRecall": {
             "type": "boolean"
           },
+          "latestRecallType": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "enum": [
+              "LR",
+              "FTR_14",
+              "FTR_28",
+              "FTR_56",
+              "FTR_HDC_14",
+              "FTR_HDC_28",
+              "CUR_HDC",
+              "IN_HDC"
+            ]
+          },
           "status": {
             "type": "string",
             "enum": [
@@ -14876,7 +15355,8 @@
             "type": "string",
             "enum": [
               "ACTIVE",
-              "INACTIVE"
+              "INACTIVE",
+              "LEGACY"
             ]
           }
         },
@@ -15164,7 +15644,7 @@
           },
           "appearanceTime": {
             "type": "string",
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "nomisOutcomeCode": {
             "type": [
@@ -15281,7 +15761,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "courtId": {
             "type": "string"
@@ -15460,6 +15940,12 @@
                 "type": "null"
               }
             ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -15497,7 +15983,7 @@
           },
           "appearanceTime": {
             "type": "string",
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "charges": {
             "type": "array",
@@ -15555,7 +16041,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "courtId": {
             "type": "string"
@@ -15659,18 +16145,43 @@
               "null"
             ]
           },
-          "offenceCodes": {
+          "offences": {
             "type": "array",
             "items": {
-              "type": "string"
+              "$ref": "#/components/schemas/F986EligibleCourtAppearanceOffence"
             }
           }
         },
         "required": [
           "appearanceUuid",
           "courtCode",
-          "offenceCodes",
+          "offences",
           "warrantDate"
+        ]
+      },
+      "F986EligibleCourtAppearanceOffence": {
+        "type": "object",
+        "properties": {
+          "offenceCode": {
+            "type": "string"
+          },
+          "offenceStartDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          },
+          "offenceEndDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date"
+          }
+        },
+        "required": [
+          "offenceCode"
         ]
       },
       "RecallableCourtCase": {
@@ -16178,6 +16689,12 @@
               "boolean",
               "null"
             ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -16281,11 +16798,18 @@
           },
           "hasUnconfirmedConsecutiveToFixSentences": {
             "type": "boolean"
+          },
+          "hasRecalls": {
+            "type": "boolean"
+          },
+          "canAddHearing": {
+            "type": "boolean"
           }
         },
         "required": [
           "allAppearancesHaveRecall",
           "appearanceCount",
+          "canAddHearing",
           "canAppeal",
           "canBreach",
           "caseReferences",
@@ -16293,6 +16817,7 @@
           "courtCaseUuid",
           "firstDayInCustody",
           "firstDayInCustodyWarrantType",
+          "hasRecalls",
           "hasUnconfirmedConsecutiveToFixSentences",
           "latestCourtAppearance",
           "mergedFromCases",
@@ -16459,7 +16984,7 @@
               "string",
               "null"
             ],
-            "example": "09:54:02.909977831"
+            "example": "06:44:44.357631772"
           },
           "courtCode": {
             "type": [

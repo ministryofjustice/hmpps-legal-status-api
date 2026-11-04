@@ -10,7 +10,7 @@ fun aLegacyImprisonmentStatusResult(
   nomisImprisonmentStatus: String? = "SENT03",
   receptionDate: LocalDate? = LocalDate.now().minusMonths(6),
   sentencingData: LegacySentencingData = LegacySentencingData(
-    sentences = listOf(aSentence(offenceCode = "TH68010")),
+    sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),
     offences = listOf(anOffence(offenceCode = "TH68010"), anOffence(offenceCode = "CJ88116", outcomeCode = "4565")),
   ),
   calculation: ImprisonmentStatusCalculation = ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE),
