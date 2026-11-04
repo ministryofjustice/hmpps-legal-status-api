@@ -112,7 +112,7 @@ class ImprisonmentStatusComparisonServiceTest {
         nomisImprisonmentStatus = "LR",
         receptionDate = receptionDate,
         sentencingData = LegacySentencingData(
-          sentences = listOf(aSentence(sentenceCategory = "UNKNOWN", sentenceCalcType = "UNKNOWN", offenceCode = "TH68010")),
+          sentences = listOf(aLegacySentence(sentenceCategory = "UNKNOWN", sentenceCalcType = "UNKNOWN", offence = anOffence(offenceCode = "TH68010"))),
           offences = listOf(anOffence(offenceCode = "TH68010"), anOffence(offenceCode = "CJ88116", outcomeCode = "1056")),
         ),
         calculation = ImprisonmentStatusCalculation(ImprisonmentStatus.UNKNOWN, "CJ88116", CalculatedFrom.CHARGE_OUTCOME),

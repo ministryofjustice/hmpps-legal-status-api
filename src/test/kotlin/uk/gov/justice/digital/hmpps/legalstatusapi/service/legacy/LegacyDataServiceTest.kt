@@ -26,6 +26,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSen
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails.Classification.STANDARD
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
@@ -85,8 +86,8 @@ class LegacyDataServiceTest {
     verify(imprisonmentStatusCalculator).calculate(
       LegacySentencingData(
         sentences = listOf(
-          LegacySentence(sentenceCalcType = "ADIMP", sentenceCategory = "2003", offence = Offence(offenceCode = "TH68010", outcomeCode = "1002")),
-          LegacySentence(sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020", offence = Offence(offenceCode = "CJ88116", outcomeCode = "4565")),
+          aRasSentence(classification = STANDARD, legacySentenceCalcType = "ADIMP", legacySentenceCategory = "2003", offence = Offence(offenceCode = "TH68010", outcomeCode = "1002")),
+          aLegacySentence(sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020", offence = Offence(offenceCode = "CJ88116", outcomeCode = "4565")),
         ),
         offences = listOf(
           Offence(offenceCode = "TH68010", outcomeCode = "1002"),
@@ -242,7 +243,7 @@ class LegacyDataServiceTest {
   private fun aRasSentenceTypeDetails(sentenceTypeUuid: UUID, nomisCjaCode: String, nomisSentenceCalcType: String) = SentenceTypeDetails(
     sentenceTypeUuid = sentenceTypeUuid,
     description = "A sentence type",
-    classification = SentenceTypeDetails.Classification.STANDARD,
+    classification = STANDARD,
     displayOrder = 1,
     isRecallable = true,
     nomisCjaCode = nomisCjaCode,

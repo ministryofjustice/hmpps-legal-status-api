@@ -49,7 +49,7 @@ class ImprisonmentStatusCalculatorTest {
       givenSentenceMapping("2003", "ADIMP", SENT03)
       givenSeverities("TH68010" to 50)
       val sentencingData = LegacySentencingData(
-        sentences = listOf(aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "TH68010")),
+        sentences = listOf(aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "TH68010"))),
         offences = listOf(anOffence(offenceCode = "TH68010")),
       )
 
@@ -69,8 +69,8 @@ class ImprisonmentStatusCalculatorTest {
       val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "OFF001", startDate = start, endDate = start.plusYears(5)),
-          aSentence(sentenceCategory = "1991", sentenceCalcType = "ALP", offenceCode = "OFF002"),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = start.plusYears(5)),
+          aLegacySentence(sentenceCategory = "1991", sentenceCalcType = "ALP", offence = anOffence(offenceCode = "OFF002")),
         ),
       )
 
@@ -90,8 +90,8 @@ class ImprisonmentStatusCalculatorTest {
       val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "OFF001", startDate = start, endDate = start.plusYears(1)),
-          aSentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offenceCode = "OFF002", startDate = start, endDate = start.plusYears(2)),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = start.plusYears(1)),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), startDate = start, endDate = start.plusYears(2)),
         ),
       )
 
@@ -111,8 +111,8 @@ class ImprisonmentStatusCalculatorTest {
       val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "OFF001", startDate = start, endDate = null),
-          aSentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offenceCode = "OFF002", startDate = start, endDate = start.plusDays(1)),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = null),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), startDate = start, endDate = start.plusDays(1)),
         ),
       )
 
@@ -131,8 +131,8 @@ class ImprisonmentStatusCalculatorTest {
       givenSeverities("LESS01" to 80, "MORE01" to 20)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "LESS01"),
-          aSentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offenceCode = "MORE01"),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "LESS01")),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "MORE01")),
         ),
       )
 
@@ -151,8 +151,8 @@ class ImprisonmentStatusCalculatorTest {
       givenSeverities("OFF001" to 50, "OFF002" to 50)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offenceCode = "OFF002"),
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "OFF001"),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002")),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001")),
         ),
       )
 
@@ -169,7 +169,7 @@ class ImprisonmentStatusCalculatorTest {
       givenSentenceMapping("2003", "ADIMP", SENT03)
       givenSeverities("TH68010" to 90)
       val sentencingData = LegacySentencingData(
-        sentences = listOf(aSentence(offenceCode = "SX56025-029N"), aSentence(offenceCode = "TH68010")),
+        sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "SX56025-029N")), aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),
       )
 
       // When
@@ -187,7 +187,7 @@ class ImprisonmentStatusCalculatorTest {
       givenResultCodeMapping("4565", TRL)
       givenSeverities()
       val sentencingData = LegacySentencingData(
-        sentences = listOf(aSentence(offenceCode = "SX56087-088N"), aSentence(offenceCode = "SX56025-029N")),
+        sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "SX56087-088N")), aLegacySentence(offence = anOffence(offenceCode = "SX56025-029N"))),
         offences = listOf(anOffence(offenceCode = "SX56025-029N", outcomeCode = "4565")),
       )
 
@@ -205,8 +205,8 @@ class ImprisonmentStatusCalculatorTest {
       givenSeverities("OFF001" to 1, "OFF002" to 99)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "UNMAPPED", offenceCode = "OFF001"),
-          aSentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offenceCode = "OFF002"),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "UNMAPPED", offence = anOffence(offenceCode = "OFF001")),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF002")),
         ),
       )
 
@@ -222,7 +222,7 @@ class ImprisonmentStatusCalculatorTest {
       // Given
       givenResultCodeMapping("4565", TRL)
       val sentencingData = LegacySentencingData(
-        sentences = listOf(aSentence(sentenceCalcType = "UNMAPPED", offenceCode = "TH68010")),
+        sentences = listOf(aLegacySentence(sentenceCalcType = "UNMAPPED", offence = anOffence(offenceCode = "TH68010"))),
         offences = listOf(anOffence(offenceCode = "TH68010", outcomeCode = "4565")),
       )
 
@@ -353,7 +353,7 @@ class ImprisonmentStatusCalculatorTest {
     // Given
     givenSeverities()
     val sentencingData = LegacySentencingData(
-      sentences = listOf(aSentence(offenceCode = "TH68010")),
+      sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),
       offences = listOf(anOffence(offenceCode = "TH68010"), anOffence(offenceCode = "SX56025-029N")),
     )
 
