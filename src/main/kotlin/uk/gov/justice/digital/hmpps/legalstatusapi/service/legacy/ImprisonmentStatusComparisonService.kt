@@ -54,6 +54,8 @@ class ImprisonmentStatusComparisonService(
     prisonNumber: String,
     nomisCalculatedAt: Instant? = null,
   ): ImprisonmentStatusComparisonResult {
+    log.info { "Starting Imprisonment Status comparison for prisoner $prisonNumber]" }
+
     val result = legacyDataService.calculate(prisonNumber)
     val nomisStatus = result.nomisImprisonmentStatus
     val dpsStatus = result.calculation.imprisonmentStatus.nomisCode
