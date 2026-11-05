@@ -1,0 +1,639 @@
+{
+  "jiraReference": "IS-125",
+  "receptionDate": "2025-11-10",
+  "expectedStatus": "LR_ORA",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1015",
+          "outcomeName": "Fine",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "16a76712-0312-4069-a595-ce2d0698bcd5",
+          "displayOrder": 50,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "0c338b0d-e764-4a71-b286-583e4a7b396e",
+        "legacyData": {
+          "postedDate": "2026-10-21",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-10",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": false,
+          "latestRecallType": null,
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-10-21T12:16:56.355273",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "13"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "0c71fafa-fb53-44f2-9bee-bedce8b78ea9",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 24,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "c9161459-1771-4cc1-baec-f301eb79dfe7"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "62d42ec8-321c-4919-8485-a8f7ced54b7d",
+        "legacyData": {
+          "postedDate": "2026-10-21",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Common assault of an emergency worker",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88159",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1057",
+          "outcomeName": "No separate penalty",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "f9042ecc-6bed-4872-bbed-1b0938bcecd7",
+          "displayOrder": 80,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "fc53b84e-2ee0-41a7-9617-bf88f4aeed91",
+        "legacyData": {
+          "postedDate": "2026-10-21",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1015",
+          "outcomeName": "Fine",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "16a76712-0312-4069-a595-ce2d0698bcd5",
+          "displayOrder": 50,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "13335c6f-a5b1-4124-943e-434b63802fca",
+        "legacyData": {
+          "postedDate": "2026-10-21",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a constable in the execution of his / her duty",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "PL96001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "LR",
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-05-14T14:34:06.990532",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "11"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "Unknown pre-recall sentence",
+            "displayOrder": 0,
+            "classification": "LEGACY_RECALL",
+            "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+          },
+          "sentenceUuid": "3647a1bc-c3f4-47e3-953e-8f14258ea0f8",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 34,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "6e450528-90ca-44b8-a754-d59c1e049c15"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "69c56c0b-30a8-4c0f-8254-ad008d4a2b5a",
+        "legacyData": {
+          "postedDate": "2026-01-19",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "LR",
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-05-14T14:32:53.362523",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "8"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "Unknown pre-recall sentence",
+            "displayOrder": 0,
+            "classification": "LEGACY_RECALL",
+            "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+          },
+          "sentenceUuid": "3899a7fc-8898-439b-a8b7-5e71c93dbe4f",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 16,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "9de58679-46fd-450c-99f5-03feb7118739"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "622d2952-7bcc-44fb-b901-07eaa4ee516f"
+        },
+        "chargeUuid": "4d4b8f43-48b7-41ce-a4eb-89597ab5a53d",
+        "legacyData": {
+          "postedDate": "2026-01-19",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "LR",
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-05-14T14:33:45.114926",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "10"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "Unknown pre-recall sentence",
+            "displayOrder": 0,
+            "classification": "LEGACY_RECALL",
+            "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+          },
+          "sentenceUuid": "0825a0b5-e458-4c90-b09a-0f5ac4347ed0",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 34,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "6934ee48-e0fb-4bbd-be69-fe05354cc9ea"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "c506054a-1303-4a1f-9f33-b86b97e767b5",
+        "legacyData": {
+          "postedDate": "2026-01-19",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "LR",
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-05-14T14:33:18.298643",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "9"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "Unknown pre-recall sentence",
+            "displayOrder": 0,
+            "classification": "LEGACY_RECALL",
+            "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+          },
+          "sentenceUuid": "c231b8f0-8234-461e-a68f-ccbc5809b6c0",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 16,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "ace0117f-aaae-4dc7-99eb-1160a77af259"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "b5fddbc7-04ff-4b31-8a01-38090908d05c",
+        "legacyData": {
+          "postedDate": "2026-01-19",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "LR",
+          "fineAmount": null,
+          "legacyData": {
+            "active": true,
+            "bookingId": 3059772,
+            "postedDate": "2026-05-14T14:32:22.214752",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "7"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "Unknown pre-recall sentence",
+            "displayOrder": 0,
+            "classification": "LEGACY_RECALL",
+            "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+          },
+          "sentenceUuid": "622d2952-7bcc-44fb-b901-07eaa4ee516f",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 34,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "0c56fc9f-00db-4834-b16f-55a613a716fb"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "11dcf739-95a8-44f9-8fa3-c0b910124bbd",
+        "legacyData": {
+          "postedDate": "2026-01-19",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "69c56c0b-30a8-4c0f-8254-ad008d4a2b5a",
+        "legacyData": {
+          "postedDate": "2026-05-14",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "c506054a-1303-4a1f-9f33-b86b97e767b5",
+        "legacyData": {
+          "postedDate": "2026-05-14",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "4d4b8f43-48b7-41ce-a4eb-89597ab5a53d",
+        "legacyData": {
+          "postedDate": "2026-05-14",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "11dcf739-95a8-44f9-8fa3-c0b910124bbd",
+        "legacyData": {
+          "postedDate": "2026-05-14",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault by beating of an emergency worker",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CJ88160",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "b5fddbc7-04ff-4b31-8a01-38090908d05c",
+        "legacyData": {
+          "postedDate": "2026-05-14",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Racially / religiously aggravated intentional harassment / alarm / distress - words / writing",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CD98067",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-11-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+      "displayOrder": 40,
+      "isRecallable": true,
+      "nomisCjaCode": "2020",
+      "classification": "STANDARD",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": 21,
+      "maxDateExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+      "nomisSentenceCalcType": "ADIMP_ORA",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": "2015-02-01"
+    },
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "Unknown pre-recall sentence",
+      "displayOrder": 0,
+      "isRecallable": true,
+      "nomisCjaCode": "UNKNOWN",
+      "classification": "LEGACY_RECALL",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": null,
+      "maxDateExclusive": null,
+      "minDateInclusive": null,
+      "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+      "nomisSentenceCalcType": "UNKNOWN",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": null
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CD98067",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "CJ88159",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "CJ88160",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "PL96001",
+      "severityRating": "104"
+    }
+  ]
+}
