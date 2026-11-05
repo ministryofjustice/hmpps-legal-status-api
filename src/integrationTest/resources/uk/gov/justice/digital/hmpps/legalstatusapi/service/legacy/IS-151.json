@@ -1,0 +1,197 @@
+{
+  "jiraReference": "IS-151",
+  "receptionDate": "2026-10-30",
+  "expectedStatus": "ADIMP_ORA20",
+  "rasChargeData": {
+    "charges": [
+      {
+        "chargeUuid": "395627dc-657e-4ba9-96d1-769c56b13ca4",
+        "offenceCode": "TH68023",
+        "offenceStartDate": "2020-10-18",
+        "offenceEndDate": null,
+        "outcome": null,
+        "aggravatingFactors": [],
+        "legacyData": {
+          "postedDate": "2026-11-05",
+          "nomisOutcomeCode": "1501",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeDispositionCode": "F",
+          "outcomeConvictionFlag": true,
+          "offenceDescription": "Robbery"
+        },
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "acfab417-276c-4c5e-ab8d-e8491c2780a3",
+        "offenceCode": "CD71039",
+        "offenceStartDate": "2026-10-30",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": {
+          "sentenceUuid": "a6960d70-9037-4e80-ba91-86d9d96a9a05",
+          "chargeNumber": "1",
+          "sentenceServeType": "CONCURRENT",
+          "sentenceType": {
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "classification": "STANDARD",
+            "hintText": null,
+            "displayOrder": 40
+          },
+          "convictionDate": "2026-10-30",
+          "fineAmount": null,
+          "legacyData": {
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "postedDate": "2026-11-05T11:51:03.152767",
+            "active": true,
+            "nomisLineReference": "3",
+            "bookingId": 3138363
+          },
+          "consecutiveToSentenceUuid": null,
+          "hasRecall": false,
+          "latestRecallType": null,
+          "status": "ACTIVE",
+          "periodLengths": [
+            {
+              "years": null,
+              "months": null,
+              "weeks": 3,
+              "days": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "legacyData": null,
+              "periodLengthUuid": "66babee1-0a94-420f-a1c6-39925f15f053"
+            }
+          ]
+        }
+      },
+      {
+        "chargeUuid": "0c6031ab-9775-4949-abcf-8e151a86d222",
+        "offenceCode": "CJ88160",
+        "offenceStartDate": "2026-10-29",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+          "outcomeName": "Withdrawn",
+          "nomisCode": "2051",
+          "outcomeType": "NON_CUSTODIAL",
+          "displayOrder": 150,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": null
+      },
+      {
+        "chargeUuid": "f81e9f9d-ab69-4115-a1ca-54682fd8a03d",
+        "offenceCode": "PL96001",
+        "offenceStartDate": "2026-10-29",
+        "offenceEndDate": null,
+        "outcome": {
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "outcomeName": "Imprisonment",
+          "nomisCode": "1002",
+          "outcomeType": "SENTENCING",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL",
+          "status": "ACTIVE"
+        },
+        "aggravatingFactors": [],
+        "legacyData": null,
+        "findingOfDomesticAbuse": null,
+        "sentence": {
+          "sentenceUuid": "3968db82-7589-49b1-895f-cb4d8c1d4922",
+          "chargeNumber": "3",
+          "sentenceServeType": "FORTHWITH",
+          "sentenceType": {
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "classification": "STANDARD",
+            "hintText": null,
+            "displayOrder": 40
+          },
+          "convictionDate": "2026-10-30",
+          "fineAmount": null,
+          "legacyData": {
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "postedDate": "2026-11-05T11:51:02.218122",
+            "active": true,
+            "nomisLineReference": "2",
+            "bookingId": 3138363
+          },
+          "consecutiveToSentenceUuid": null,
+          "hasRecall": false,
+          "latestRecallType": null,
+          "status": "ACTIVE",
+          "periodLengths": [
+            {
+              "years": null,
+              "months": null,
+              "weeks": 12,
+              "days": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "legacyData": null,
+              "periodLengthUuid": "b9fa2fcd-2b80-42d3-84d2-fe52d36b4bed"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+      "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+      "minAgeInclusive": 21,
+      "maxAgeExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "maxDateExclusive": null,
+      "minOffenceDateInclusive": "2015-02-01",
+      "maxOffenceDateExclusive": null,
+      "classification": "STANDARD",
+      "hintText": null,
+      "nomisCjaCode": "2020",
+      "nomisSentenceCalcType": "ADIMP_ORA",
+      "displayOrder": 40,
+      "status": "ACTIVE",
+      "isRecallable": true
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "PL96001",
+      "severityRating": "104"
+    },
+    {
+      "offenceCode": "CJ88160",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "CD71039",
+      "severityRating": "149"
+    },
+    {
+      "offenceCode": "TH68023",
+      "severityRating": "34"
+    }
+  ]
+}

@@ -37,6 +37,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
       "IS-124",
       "IS-144",
       "IS-147",
+      "IS-151",
     ],
   )
   fun `should calculate Imprisonment Status`(jiraReference: String) {
