@@ -31,8 +31,7 @@ Accept: application/json
       "sentenceCalcType": "",
       "sentenceCategory": "",
       "offence": "",
-      "startDate": "",
-      "endDate": ""
+      "sentenceLengthDays": null
     }
   ],
   "offences": [

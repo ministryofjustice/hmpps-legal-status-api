@@ -24,7 +24,6 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.Im
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom.CHARGE_OUTCOME
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom.SENTENCE
-import java.time.LocalDate
 import java.util.UUID
 
 @ExtendWith(MockitoExtension::class)
@@ -66,10 +65,9 @@ class ImprisonmentStatusCalculatorTest {
       givenSentenceMapping("2003", "ADIMP", SENT03) // rank 110
       givenSentenceMapping("1991", "ALP", ALP) // rank 10
       givenSeverities("OFF001" to 1, "OFF002" to 99)
-      val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = start.plusYears(5)),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), sentenceLengthDays = 1826),
           aLegacySentence(sentenceCategory = "1991", sentenceCalcType = "ALP", offence = anOffence(offenceCode = "OFF002")),
         ),
       )
@@ -87,11 +85,10 @@ class ImprisonmentStatusCalculatorTest {
       givenSentenceMapping("2003", "ADIMP", SENT03) // rank 110
       givenSentenceMapping("2020", "ADIMP_ORA", ADIMP_ORA20) // rank 110
       givenSeverities("OFF001" to 1, "OFF002" to 99)
-      val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = start.plusYears(1)),
-          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), startDate = start, endDate = start.plusYears(2)),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), sentenceLengthDays = 365),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), sentenceLengthDays = 730),
         ),
       )
 
@@ -108,11 +105,10 @@ class ImprisonmentStatusCalculatorTest {
       givenSentenceMapping("2003", "ADIMP", SENT03)
       givenSentenceMapping("2020", "ADIMP_ORA", ADIMP_ORA20)
       givenSeverities("OFF001" to 1, "OFF002" to 99)
-      val start = LocalDate.of(2026, 1, 1)
       val sentencingData = LegacySentencingData(
         sentences = listOf(
-          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), startDate = start, endDate = null),
-          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), startDate = start, endDate = start.plusDays(1)),
+          aLegacySentence(sentenceCategory = "2003", sentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001"), sentenceLengthDays = null),
+          aLegacySentence(sentenceCategory = "2020", sentenceCalcType = "ADIMP_ORA", offence = anOffence(offenceCode = "OFF002"), sentenceLengthDays = 1),
         ),
       )
 

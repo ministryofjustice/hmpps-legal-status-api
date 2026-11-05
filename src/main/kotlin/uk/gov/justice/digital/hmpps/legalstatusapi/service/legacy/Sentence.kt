@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo
 import mu.KotlinLogging
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
-import java.time.LocalDate
 
 private val log = KotlinLogging.logger {}
 
@@ -16,10 +15,10 @@ private val log = KotlinLogging.logger {}
  * Both implementations should return a NOMIS (legacy) sentence calc type and sentence category.
  *
  * @property offence The offence of the sentenced charge, used to look up the offence severity.
- * @property startDate With [endDate], gives the sentence length (NOMIS END_DATE - START_DATE), used as the second
- * tie-break when choosing between sentences.
- * TODO - RaS does not return sentence start/end dates. Confirm how to get the sentence length (e.g. from the RaS
- *   sentence periodLengths, or the NOMIS sentence dates). Until then these are null, so sentence length is not used.
+ * @property sentenceLengthDays The sentence length in days, used as the second tie-break when choosing between
+ * sentences (the longest wins), or null if the sentence has no period lengths. NOMIS uses END_DATE - START_DATE, but
+ * RaS gives us neither date, so this is derived from the RaS period lengths instead. It is only good for comparing
+ * sentences, not as a real length. See [SentenceLength] for how, and its assumptions and caveats.
  */
 @JsonTypeInfo(
   use = JsonTypeInfo.Id.NAME,
@@ -28,8 +27,7 @@ private val log = KotlinLogging.logger {}
 )
 sealed class Sentence(
   open val offence: Offence,
-  open val startDate: LocalDate? = null,
-  open val endDate: LocalDate? = null,
+  open val sentenceLengthDays: Long? = null,
 ) {
 
   /**
@@ -60,13 +58,12 @@ sealed class Sentence(
    */
   data class RasSentence(
     override val offence: Offence,
-    override val startDate: LocalDate? = null,
-    override val endDate: LocalDate? = null,
+    override val sentenceLengthDays: Long? = null,
     val classification: SentenceTypeDetails.Classification,
     val legacySentenceCalcType: String,
     val legacySentenceCategory: String,
     val latestRecallType: PersonSentence.LatestRecallType? = null,
-  ) : Sentence(offence, startDate, endDate) {
+  ) : Sentence(offence, sentenceLengthDays) {
 
     /**
      * Returns the legacy sentence calc type to be used in the Imprisonment Status calculation
@@ -175,11 +172,10 @@ sealed class Sentence(
    */
   data class LegacySentence(
     override val offence: Offence,
-    override val startDate: LocalDate? = null,
-    override val endDate: LocalDate? = null,
+    override val sentenceLengthDays: Long? = null,
     val sentenceCalcType: String,
     val sentenceCategory: String,
-  ) : Sentence(offence, startDate, endDate) {
+  ) : Sentence(offence, sentenceLengthDays) {
 
     /**
      * Returns the legacy sentence calc type that the instance was constructed with
