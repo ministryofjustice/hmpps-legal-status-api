@@ -119,6 +119,7 @@ class LegacyDataService(
         classification = it.classification,
         legacySentenceCalcType = it.nomisSentenceCalcType,
         legacySentenceCategory = it.nomisCjaCode,
+        latestRecallType = sentence.latestRecallType,
         offence = offence(),
       ).also {
         log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
