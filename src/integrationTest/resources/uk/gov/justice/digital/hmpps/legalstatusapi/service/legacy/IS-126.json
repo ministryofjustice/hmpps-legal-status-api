@@ -1,0 +1,188 @@
+{
+  "jiraReference": "IS-126",
+  "receptionDate": "2026-04-17",
+  "expectedStatus": "ADIMP_ORA20",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "96e4a1e8-56a8-40c0-8f79-6e26c9128856",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Aggravated vehicle taking - (driver did not take) and vehicle damage under £5000",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68152",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-03-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "048956a1-f724-417c-a9b5-5369dbeafde1",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Fail to surrender to police / court bail at the appointed time",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "BA76001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-05-30",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "c40d9caf-7bdf-4404-980a-ca7b7f969be3",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Drive a motor vehicle dangerously",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "RT88026",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-03-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "43c1d6cf-3b91-4c02-8e54-250177c7d1de",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Going equipped for theft of a motor vehicle",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68079",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-11-30",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "a6efdbb8-193d-4239-8759-65c8ae55bbe8",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft of motor vehicle",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68013",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-06-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "09c4d47b-aedc-41b1-8c66-1b03e54efa83",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Aggravated vehicle taking - ( driver did not take ) and property damage £5000 or over",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68149",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-03-07",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "1786bf02-7c99-4aa0-9b1d-b58d6dae9633",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Drive whilst disqualified",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "RT88333",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-11-14",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "f0aeb640-209b-46f2-b931-d5012ea0eacc",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Fail to attend for / remain for duration of initial assessment following test for class A drug",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "DA05001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-05-13",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "BA76001",
+      "severityRating": "83"
+    },
+    {
+      "offenceCode": "DA05001",
+      "severityRating": "193"
+    },
+    {
+      "offenceCode": "RT88026",
+      "severityRating": "802"
+    },
+    {
+      "offenceCode": "RT88333",
+      "severityRating": "807"
+    },
+    {
+      "offenceCode": "TH68013",
+      "severityRating": "48"
+    },
+    {
+      "offenceCode": "TH68079",
+      "severityRating": "33"
+    },
+    {
+      "offenceCode": "TH68149",
+      "severityRating": "37"
+    },
+    {
+      "offenceCode": "TH68152",
+      "severityRating": "131"
+    }
+  ]
+}
