@@ -1,0 +1,120 @@
+{
+  "jiraReference": "IS-147",
+  "receptionDate": "2025-07-02",
+  "expectedStatus": "FTR_56ORA",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3026962,
+            "postedDate": "2026-07-16T14:41:13.292864",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "10"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "a76b334f-5a3a-4581-9e48-0d546399311c",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 24,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "54dc44d3-b6d4-4229-84bd-050b4b859334"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
+        "legacyData": {
+          "postedDate": "2026-07-16",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "SX03204",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-12",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "SX03204",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-12",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+      "displayOrder": 40,
+      "isRecallable": true,
+      "nomisCjaCode": "2020",
+      "classification": "STANDARD",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": 21,
+      "maxDateExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+      "nomisSentenceCalcType": "ADIMP_ORA",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": "2015-02-01"
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "SX03204",
+      "severityRating": "66"
+    }
+  ]
+}
