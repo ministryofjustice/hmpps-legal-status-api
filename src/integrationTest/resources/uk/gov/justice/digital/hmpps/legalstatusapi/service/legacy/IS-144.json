@@ -1,0 +1,394 @@
+{
+  "jiraReference": "IS-144",
+  "receptionDate": "2024-07-30",
+  "expectedStatus": "FTR_56ORA",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4004",
+          "outcomeName": "Convicted awaiting sentence",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+          "displayOrder": 550,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "b7584ffa-1ed2-47b9-b711-13f44a81c99e",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4004",
+          "outcomeName": "Convicted awaiting sentence",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+          "displayOrder": 550,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4560",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "b7584ffa-1ed2-47b9-b711-13f44a81c99e",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4560",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4560",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "b7584ffa-1ed2-47b9-b711-13f44a81c99e",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4560",
+          "outcomeName": "Commit to Crown Court for trial in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+          "displayOrder": 540,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "2008",
+          "outcomeName": "Lie on file",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "76ec0de0-da17-44a8-9184-790770d16d46",
+          "displayOrder": 60,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "b7584ffa-1ed2-47b9-b711-13f44a81c99e",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 2944960,
+            "postedDate": "2025-02-13T11:22:17.113539",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "3"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "dacd1320-b5a2-4bb7-9dec-590967fb9272",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": null,
+              "years": null,
+              "months": 27,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "543e83ae-5c5a-449c-b327-c232375eaaf4"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-07-13",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4016",
+          "outcomeName": "Commit to Crown Court for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+          "displayOrder": 530,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "b7584ffa-1ed2-47b9-b711-13f44a81c99e",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4016",
+          "outcomeName": "Commit to Crown Court for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+          "displayOrder": 530,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-01-18",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "47b315a1-21c6-4128-9d6c-d30e83a1a983",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault a person thereby occasioning them actual bodily harm",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "OF61102",
+        "offenceEndDate": null,
+        "offenceStartDate": "2024-07-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "SDS (Standard Determinate Sentence)",
+      "displayOrder": 10,
+      "isRecallable": true,
+      "nomisCjaCode": "2020",
+      "classification": "STANDARD",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": 21,
+      "maxDateExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e",
+      "nomisSentenceCalcType": "ADIMP",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": null
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CJ88116",
+      "severityRating": "105"
+    },
+    {
+      "offenceCode": "OF61102",
+      "severityRating": "8"
+    }
+  ]
+}
