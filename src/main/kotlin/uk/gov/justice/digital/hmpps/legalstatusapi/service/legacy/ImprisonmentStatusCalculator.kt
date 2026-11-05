@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
-import java.time.temporal.ChronoUnit
 
 private val log = KotlinLogging.logger {}
 
@@ -86,11 +85,7 @@ class ImprisonmentStatusCalculator(
     val sentence: Sentence,
     val status: ImprisonmentStatusEntity,
     val severity: Int?,
-  ) {
-    // NOMIS uses END_DATE - START_DATE, which is a number of days
-    val sentenceLengthDays: Long? =
-      if (sentence.startDate != null && sentence.endDate != null) ChronoUnit.DAYS.between(sentence.startDate, sentence.endDate) else null
-  }
+  )
 
   private data class ChargeOutcome(
     val offence: Offence,
@@ -102,8 +97,11 @@ class ImprisonmentStatusCalculator(
     /*
     The order of precedence in getStatusAndMainOffenceViaSentenceByBookingId:
       1. The lowest status rank (RANK_VALUE)
-      2. The longest sentence. NOMIS only keeps sentences with no length when none of them have a length, which is the
-         same as putting them last.
+      2. The longest sentence (END_DATE - START_DATE in NOMIS). NOMIS only keeps sentences with no length when none of
+         them have a length, which is the same as putting them last.
+         Deliberate difference: the length is derived from the RaS period lengths, as RaS gives us no sentence dates
+         (see SentenceLength). NOMIS has no END_DATE, so no length, for most DPS-created sentences, but here they have
+         one. So where NOMIS drops a DPS-created sentence for having no length, it may be chosen here.
       3. The most severe offence (lowest SEVERITY_RANKING).
          Deliberate difference: NOMIS drops charges with no severity, and returns no result if none have one. Here they
          are put last instead. In NOMIS a missing severity is rare, but for us it is common because Manage Offences has no
@@ -117,7 +115,7 @@ class ImprisonmentStatusCalculator(
      */
     val SENTENCE_PRECEDENCE: Comparator<SentenceCandidate> =
       compareBy<SentenceCandidate> { it.status.rank }
-        .thenBy(nullsLast(reverseOrder())) { it.sentenceLengthDays }
+        .thenBy(nullsLast(reverseOrder())) { it.sentence.sentenceLengthDays }
         .thenBy(nullsLast()) { it.severity }
 
     /*

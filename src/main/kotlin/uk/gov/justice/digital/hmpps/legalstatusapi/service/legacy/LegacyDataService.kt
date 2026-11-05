@@ -112,26 +112,34 @@ class LegacyDataService(
    *
    * Each sentence type looked up is also put in [sentenceTypeDetailsByUuid], so that the sentence types used in the
    * calculation can be recorded.
+   *
+   * Either way, the sentence length is derived from the sentence's period lengths (see [SentenceLength]).
    */
-  private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): Sentence? = sentence?.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
-    sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
-      RasSentence(
-        classification = it.classification,
-        legacySentenceCalcType = it.nomisSentenceCalcType,
-        legacySentenceCategory = it.nomisCjaCode,
-        latestRecallType = sentence.latestRecallType,
-        offence = offence(),
-      ).also {
-        log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
+  private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): Sentence? {
+    val personSentence = sentence ?: return null
+    val sentenceLengthDays = SentenceLength.inDays(personSentence.periodLengths)
+    return personSentence.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
+      sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
+        RasSentence(
+          classification = it.classification,
+          legacySentenceCalcType = it.nomisSentenceCalcType,
+          legacySentenceCategory = it.nomisCjaCode,
+          offence = offence(),
+          sentenceLengthDays = sentenceLengthDays,
+          latestRecallType = sentence.latestRecallType,
+        ).also {
+          log.debug { "LegacySentence mapped from looking up RaS sentenceType" }
+        }
       }
-    }
-  } ?: sentence?.legacyData?.let { legacyData ->
-    LegacySentence(
-      sentenceCalcType = legacyData.sentenceCalcType!!,
-      sentenceCategory = legacyData.sentenceCategory!!,
-      offence = offence(),
-    ).also {
-      log.debug { "LegacySentence mapped using legacy data fields from RaS response" }
+    } ?: personSentence.legacyData?.let { legacyData ->
+      LegacySentence(
+        sentenceCalcType = legacyData.sentenceCalcType!!,
+        sentenceCategory = legacyData.sentenceCategory!!,
+        offence = offence(),
+        sentenceLengthDays = sentenceLengthDays,
+      ).also {
+        log.debug { "LegacySentence mapped using legacy data fields from RaS response" }
+      }
     }
   }
 

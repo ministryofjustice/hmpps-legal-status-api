@@ -22,11 +22,13 @@ import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeOutcome
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonPeriodLength
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceLegacyData
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails.Classification.STANDARD
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonPeriodLength
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
@@ -120,6 +122,40 @@ class LegacyDataServiceTest {
     assertThat(actual.calculation).isEqualTo(calculation)
     assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(offences = listOf(Offence(offenceCode = "TH68010", outcomeCode = "1002"))))
     assertThat(actual.calculatedAt).isEqualTo(fixedTimestamp)
+  }
+
+  @Test
+  fun `should derive each sentence's length from its period lengths`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+    given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+
+    val sentenceTypeUuid = UUID.randomUUID()
+    given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(
+      aRasPrisonerCharges(
+        aRasCharge(offenceCode = "TH68010", sentence = aRasSentence(sentenceType = aRasSentenceType(sentenceTypeUuid), periodLengths = listOf(aValidPersonPeriodLength(years = 2)))),
+        aRasCharge(
+          offenceCode = "CJ88116",
+          sentence = aRasSentence(
+            legacyData = SentenceLegacyData(postedDate = "2026-01-01", sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020"),
+            periodLengths = listOf(aValidPersonPeriodLength(weeks = 3), aValidPersonPeriodLength(days = 4)),
+          ),
+        ),
+        aRasCharge(offenceCode = "SX56025-029N", sentence = aRasSentence(legacyData = SentenceLegacyData(postedDate = "2026-01-01", sentenceCalcType = "ADIMP", sentenceCategory = "2003"))),
+      ),
+    )
+    given(sentenceTypeDetailsProvider.getSentenceTypeDetails(any())).willReturn(aRasSentenceTypeDetails(sentenceTypeUuid, nomisCjaCode = "2003", nomisSentenceCalcType = "ADIMP"))
+    given(imprisonmentStatusCalculator.calculate(any())).willReturn(ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE))
+
+    // When
+    val actual = legacyDataService.calculate(prisonNumber)
+
+    // Then
+    assertThat(actual.sentencingData.sentences.map { it.sentenceLengthDays }).containsExactly(
+      731, // 2 years from 2000-01-01, which includes 29 Feb 2000
+      25, // 3 weeks + 4 days, summed across both period lengths
+      null, // no period lengths
+    )
   }
 
   @Test
@@ -223,9 +259,13 @@ class LegacyDataServiceTest {
     status = ChargeOutcome.Status.ACTIVE,
   )
 
-  private fun aRasSentence(sentenceType: SentenceType? = null, legacyData: SentenceLegacyData? = null) = PersonSentence(
+  private fun aRasSentence(
+    sentenceType: SentenceType? = null,
+    legacyData: SentenceLegacyData? = null,
+    periodLengths: List<PersonPeriodLength> = emptyList(),
+  ) = PersonSentence(
     sentenceUuid = UUID.randomUUID(),
-    periodLengths = emptyList(),
+    periodLengths = periodLengths,
     sentenceServeType = "FORTHWITH",
     hasRecall = false,
     status = PersonSentence.Status.ACTIVE,
