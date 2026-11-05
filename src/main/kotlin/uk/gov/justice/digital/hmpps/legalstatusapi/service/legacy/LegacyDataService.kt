@@ -9,6 +9,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.Legac
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence.Status.ACTIVE
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.Clock
 import java.time.Instant
@@ -106,7 +107,7 @@ class LegacyDataService(
   /**
    * Returns a [LegacySentence] or null from a Ras [PersonCharge]
    *
-   * If the Charge has a Sentence, the primary strategy should be to create a LegacySentence by looking up the sentenceType
+   * If the Charge has a ACTIVE Sentence, the primary strategy should be to create a LegacySentence by looking up the sentenceType
    * with the [SentenceTypeDetailsProvider] (which caches the RaS sentence reference data).
    * If Sentence does not have a sentenceType property, the LegacySentence should be created from the legacyData property.
    *
@@ -116,7 +117,12 @@ class LegacyDataService(
    * Either way, the sentence length is derived from the sentence's period lengths (see [SentenceLength]).
    */
   private fun PersonCharge.sentence(sentenceTypeDetailsByUuid: MutableMap<UUID, SentenceTypeDetails>): Sentence? {
-    val personSentence = sentence ?: return null
+    val personSentence = if (sentence?.status == ACTIVE) {
+      sentence
+    } else {
+      return null.also { log.debug { "Ignoring null or non-active sentence" } }
+    }
+
     val sentenceLengthDays = SentenceLength.inDays(personSentence.periodLengths)
     return personSentence.sentenceType?.sentenceTypeUuid?.let { sentenceTypeUuid ->
       sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
