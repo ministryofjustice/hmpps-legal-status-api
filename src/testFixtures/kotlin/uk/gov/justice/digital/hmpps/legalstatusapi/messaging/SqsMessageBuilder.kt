@@ -10,7 +10,6 @@ fun aValidHmppsDomainEventsSqsMessage(
   prisonNumber: String = randomValidPrisonNumber(),
   eventType: EventType = IMPRISONMENT_STATUS_CHANGED,
   occurredAt: Instant = Instant.now().minusSeconds(10),
-  publishedAt: Instant = Instant.now(),
   description: String = "A prisoner's imprisonment status has been changed",
   version: String = "1.0",
   bookingId: Long? = null,
@@ -31,7 +30,6 @@ fun aValidHmppsDomainEventsSqsMessage(
           "eventType": "${eventType.eventType}",
           "personReference": { "identifiers": [ { "type": "NOMS", "value": "$prisonNumber" } ] },
           "occurredAt": "$occurredAt",
-          "publishedAt": "$publishedAt",
           "description": "$description",
           "version": "$version",
           "additionalInformation": ${jacksonObjectMapper().writeValueAsString(additionalInformation)}
