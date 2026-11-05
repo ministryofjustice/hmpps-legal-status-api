@@ -1,0 +1,2490 @@
+{
+  "jiraReference": "IS-136",
+  "receptionDate": "2026-08-13",
+  "expectedStatus": "UNK_SENT",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "fd8d3e31-3063-4b6f-b24d-c89e37b7daef",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "35ec422d-9c8b-420e-a8f7-3d6bf821e291",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "440c8e40-e572-4ff5-b467-fea11dd76220",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-25",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "f0208bc7-8b7d-49cd-9116-79c48c500191",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "633e86e2-64ae-4cd5-9a8d-0c902c5d6e4d",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "02853a57-eff2-4345-962c-75e80e43410f",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-12",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4029d42f-cb15-4649-aac1-262bf7a4c04b",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "91119b42-2ab8-4c6a-929c-2f81e0a64f1a",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "35f829d9-7f9b-4deb-9e5c-34bfa476fcd8",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "c54bb9bb-475e-4ed5-bb55-e5e4ddb087c5",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "00bf1cde-2940-4a72-a017-41de7a6c36e2",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-20",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "1b7f99d0-05d7-41b3-8bb9-9be57e825ceb",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "a5f71112-bcf9-499d-9b25-013d43ffc3fb",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-13",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "a002004f-0a7f-4dfa-a620-7751f8cee90f",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "484f42d0-661d-4119-b1fb-d48b57c1acdf",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "3fcf0b83-7c4e-4467-afbb-a3886c44c186",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-08-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "e8b4fc25-a1b3-4367-be8e-a49bfd4fbdb1",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-18",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "83f26a32-95c9-4a02-a6f5-e81d15b8e501",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-17",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "35f829d9-7f9b-4deb-9e5c-34bfa476fcd8",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "77edb0c1-0ae0-4c95-af90-e64cc6a85dfa",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-31",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "4029d42f-cb15-4649-aac1-262bf7a4c04b",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "752664ba-3e0b-4f67-8060-48ac6714766f",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "c54bb9bb-475e-4ed5-bb55-e5e4ddb087c5",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "a5f71112-bcf9-499d-9b25-013d43ffc3fb",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-13",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "6829318e-0a9b-4184-bb9d-66f05f892768",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-14",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "9a3c2cea-a5da-45cd-95e0-ad58de7007fd",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-09",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "1b7f99d0-05d7-41b3-8bb9-9be57e825ceb",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "35ec422d-9c8b-420e-a8f7-3d6bf821e291",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "633e86e2-64ae-4cd5-9a8d-0c902c5d6e4d",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "5d15b73c-56a0-4f91-b046-4412244f181e",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-08-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "02853a57-eff2-4345-962c-75e80e43410f",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-12",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "69ff2532-8c67-457c-808d-0df78ed30583",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "91119b42-2ab8-4c6a-929c-2f81e0a64f1a",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "fee2376d-84d6-4f87-9493-6b62c8ea83c1",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-17",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "00bf1cde-2940-4a72-a017-41de7a6c36e2",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-20",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "e1997974-3c97-4a39-b863-80da0c76bdad",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-12-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "516c657e-f17b-44d2-9cc0-b9fc2b82fd6c",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-19",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "440c8e40-e572-4ff5-b467-fea11dd76220",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-25",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "e1df9681-508a-4f5f-9a7c-ab23fee4a0ee",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "fd8d3e31-3063-4b6f-b24d-c89e37b7daef",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "f0208bc7-8b7d-49cd-9116-79c48c500191",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "a002004f-0a7f-4dfa-a620-7751f8cee90f",
+        "legacyData": {
+          "postedDate": "2026-09-11",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.630752",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "12"
+          },
+          "chargeNumber": "11",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "bc7e2dd9-875a-41af-9310-f2b28d8f2292",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "78e7fc1b-d5e4-43ac-ae83-355a68bc803f"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "FORTHWITH",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "fee2376d-84d6-4f87-9493-6b62c8ea83c1",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-17",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:31.280968",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "17"
+          },
+          "chargeNumber": "1",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "f512d6ef-236c-47dc-87ed-1a3894bdce26",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "36393f3b-f1dd-4448-a317-87d7bcb6fe14"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "bc7e2dd9-875a-41af-9310-f2b28d8f2292"
+        },
+        "chargeUuid": "fd8d3e31-3063-4b6f-b24d-c89e37b7daef",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.370532",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "9"
+          },
+          "chargeNumber": "2",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "b7ab2b10-176f-4d2d-9338-ea40e03433f1",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "ee2a982c-22f8-4b37-a558-7ba64a2611cc"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "35ec422d-9c8b-420e-a8f7-3d6bf821e291",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:31.976253",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "20"
+          },
+          "chargeNumber": "3",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "6f9e5dc0-a639-47c2-8cca-fae4205fba37",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "d49eda6a-f52e-44ac-beaa-95db394ae618"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "440c8e40-e572-4ff5-b467-fea11dd76220",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-25",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "2051",
+          "outcomeName": "Withdrawn",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+          "displayOrder": 150,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "f0208bc7-8b7d-49cd-9116-79c48c500191",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.455593",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "10"
+          },
+          "chargeNumber": "4",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "8b6e2db0-d536-48f4-bccb-3542df031710",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "29081b76-5555-4fcf-9133-515360c7e2e1"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "633e86e2-64ae-4cd5-9a8d-0c902c5d6e4d",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "2051",
+          "outcomeName": "Withdrawn",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+          "displayOrder": 150,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "02853a57-eff2-4345-962c-75e80e43410f",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-12",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:31.352621",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "18"
+          },
+          "chargeNumber": "5",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "6e2d8ab5-92a6-4cf8-8849-0e88045f801a",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f5469bbd-79d9-495a-b529-961ccdf4dd79"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "4029d42f-cb15-4649-aac1-262bf7a4c04b",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:32.287498",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "24"
+          },
+          "chargeNumber": "6",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "99b5e53d-7a90-483a-a2e0-c94c02731258",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "afbe6439-f2a2-4f80-b915-fe6f75897693"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "91119b42-2ab8-4c6a-929c-2f81e0a64f1a",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "2051",
+          "outcomeName": "Withdrawn",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+          "displayOrder": 150,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "35f829d9-7f9b-4deb-9e5c-34bfa476fcd8",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.543289",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "11"
+          },
+          "chargeNumber": "7",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "c5667b27-d072-4ecb-bdcc-eb4f38ee245b",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "81cbb596-7f59-4c0e-9366-a8b4dbf39fe6"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "c54bb9bb-475e-4ed5-bb55-e5e4ddb087c5",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:31.207221",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "16"
+          },
+          "chargeNumber": "8",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "1b8b41ef-e837-4654-81f2-2aa49cd6c4f1",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "ebac6880-8a28-4641-8eed-bd07d63a0472"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "00bf1cde-2940-4a72-a017-41de7a6c36e2",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-20",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:32.147111",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "22"
+          },
+          "chargeNumber": "9",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "0c5b293f-97cf-41e1-87c3-235055fb070d",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "e2d98d40-c832-4ff5-a379-e8e41c4292f4"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "1b7f99d0-05d7-41b3-8bb9-9be57e825ceb",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-06-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.716905",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "13"
+          },
+          "chargeNumber": "10",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "c0745cff-f7ef-4f27-aeb2-dd8dffb425d7",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "e37c8403-3244-4caa-b399-06ab28611be7"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "a5f71112-bcf9-499d-9b25-013d43ffc3fb",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-07-13",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "2051",
+          "outcomeName": "Withdrawn",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+          "displayOrder": 150,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": null,
+        "chargeUuid": "a002004f-0a7f-4dfa-a620-7751f8cee90f",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-22",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.284075",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "8"
+          },
+          "chargeNumber": "12",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "3c941c20-de19-4e14-8677-0ffa3dbaf85b",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "921bce26-92c3-4577-af80-c3551401f841"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "77edb0c1-0ae0-4c95-af90-e64cc6a85dfa",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-31",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:29.898241",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "6"
+          },
+          "chargeNumber": "13",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "4694a87f-ccb3-423c-861b-a12c51b85bee",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "0453ab9f-1d68-4300-b6b2-c2075e5bcf29"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "9a3c2cea-a5da-45cd-95e0-ad58de7007fd",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-09",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:28.341943",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "1"
+          },
+          "chargeNumber": "14",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "4257e651-ffd2-4ec5-b984-b58400c40466",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "35673096-7808-4177-9a65-780816220d37"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "e1df9681-508a-4f5f-9a7c-ab23fee4a0ee",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.207318",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "7"
+          },
+          "chargeNumber": "15",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "ceb2cea2-00cd-4d3c-9655-ce9db762ebf2",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "0a7ea3f7-013d-40e2-8505-709bd0be9e9f"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "752664ba-3e0b-4f67-8060-48ac6714766f",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:32.063650",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "21"
+          },
+          "chargeNumber": "16",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "da55f362-17e4-4177-a595-39ca0840206f",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "120c2993-8d25-4af1-827c-d0d2d2acab18"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "83f26a32-95c9-4a02-a6f5-e81d15b8e501",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-03-17",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.930695",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "15"
+          },
+          "chargeNumber": "17",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "bef3f2d5-cb7e-41ba-8da2-3ded0dee76fd",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f608551e-4e1d-4e4b-ae4d-b7c0f80b0669"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "6829318e-0a9b-4184-bb9d-66f05f892768",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-14",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:31.903348",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "19"
+          },
+          "chargeNumber": "18",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "4a26c35e-4ce7-4f9c-9657-f4326bfe5b18",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "263d2174-3df4-497d-b5fb-f58c27a84910"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "484f42d0-661d-4119-b1fb-d48b57c1acdf",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:28.451563",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "2"
+          },
+          "chargeNumber": "19",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "e9ea21ae-3005-4061-ba93-975f5fed0ead",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "08f5afc2-5e47-493e-bd8a-5d5ad052c346"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "69ff2532-8c67-457c-808d-0df78ed30583",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:29.363485",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "5"
+          },
+          "chargeNumber": "20",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "babff507-f190-4176-862e-64f149595d34",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "80542304-e2ae-4c3e-af25-d0dffdba3e5d"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "5d15b73c-56a0-4f91-b046-4412244f181e",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-08-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:29.261260",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "4"
+          },
+          "chargeNumber": "21",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "ab6fb124-ddf8-42d0-bd83-1b5c4d94cd98",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "58e0779a-158a-4dca-915c-01cf8ba2e675"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "3fcf0b83-7c4e-4467-afbb-a3886c44c186",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-08-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:30.827923",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "14"
+          },
+          "chargeNumber": "22",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "95bab0df-c56b-4e37-9b1c-e56c301c8783",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "2897a767-6864-411b-81b6-3ceefa167272"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "e8b4fc25-a1b3-4367-be8e-a49bfd4fbdb1",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-18",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:32.218664",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "23"
+          },
+          "chargeNumber": "23",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "f851b80a-0ff1-485c-a86e-a983d66088ce",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "073c5f9c-36f7-44a7-bf95-cdb2e109815e"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "516c657e-f17b-44d2-9cc0-b9fc2b82fd6c",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-02-19",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "INACTIVE",
+          "hasRecall": false,
+          "fineAmount": null,
+          "legacyData": {
+            "active": false,
+            "bookingId": 3122013,
+            "postedDate": "2026-08-21T09:19:29.179086",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "3"
+          },
+          "chargeNumber": "24",
+          "sentenceType": {
+            "hintText": null,
+            "description": "SDS (Standard Determinate Sentence)",
+            "displayOrder": 10,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
+          },
+          "sentenceUuid": "31028a21-0e40-457e-9247-faa51e725eda",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 8,
+              "years": null,
+              "months": null,
+              "legacyData": null,
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f1d12b2c-f297-423c-ba50-4f37c77df9dd"
+            }
+          ],
+          "convictionDate": "2026-08-20",
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "e1997974-3c97-4a39-b863-80da0c76bdad",
+        "legacyData": null,
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-12-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "75b2c3dc-9001-4387-b7c5-c4a04ab0ca43",
+        "legacyData": null,
+        "offenceCode": "TH68036",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-05-15",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4530",
+          "outcomeName": "Remand on conditional bail",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+          "displayOrder": 110,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "75b2c3dc-9001-4387-b7c5-c4a04ab0ca43",
+        "legacyData": null,
+        "offenceCode": "TH68036",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-05-15",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "SDS (Standard Determinate Sentence)",
+      "displayOrder": 10,
+      "isRecallable": true,
+      "nomisCjaCode": "2020",
+      "classification": "STANDARD",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": 21,
+      "maxDateExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e",
+      "nomisSentenceCalcType": "ADIMP",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": null
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "TH68010",
+      "severityRating": "46"
+    },
+    {
+      "offenceCode": "TH68036",
+      "severityRating": "28"
+    }
+  ]
+}

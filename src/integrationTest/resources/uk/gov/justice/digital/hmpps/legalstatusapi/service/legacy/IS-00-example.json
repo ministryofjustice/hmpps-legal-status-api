@@ -1,7 +1,7 @@
 {
   "jiraReference": "IS-00-example",
   "receptionDate": "2014-08-01",
-  "expectedStatus": "SENT03",
+  "expectedStatus": "UNK_SENT",
   "rasChargeData": {
     "charges": [
       {
