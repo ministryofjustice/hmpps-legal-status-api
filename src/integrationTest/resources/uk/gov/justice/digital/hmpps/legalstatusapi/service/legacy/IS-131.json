@@ -1,0 +1,1132 @@
+{
+  "jiraReference": "IS-131",
+  "receptionDate": "2026-05-18",
+  "expectedStatus": "LR_ORA",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "fcc08a5d-bccd-41aa-965b-bca1f2fe19fd",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Criminal damage to property - value under £5000",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CD71039",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-07-03",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "f6f20348-b7ee-49b5-a6a8-f462eba80863",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Criminal damage to property - value under £5000",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CD71039",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-07-03",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "7197d4df-6563-421b-a83b-049b95a132ef",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Common assault of an emergency worker",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "CJ88159",
+        "offenceEndDate": null,
+        "offenceStartDate": "2025-08-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:34:49.906353",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "11"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "0af2cd40-7e54-4c5e-b6ce-1016921d5a54",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "e4883063-4d1f-4d9b-b7c6-075b36e40bfc"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "c7f16474-7784-4172-b8a0-4df3cdcfce03"
+        },
+        "chargeUuid": "62710a8f-78c6-45a6-888e-1650afa24108",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:35:53.969085",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "13"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "cc256288-eb52-4852-b881-3c29f09b6eba",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f7b3f351-7ea9-4be4-a828-fa007cf00ab6"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "82b76307-c545-4b2a-8b07-ce9242270bcf"
+        },
+        "chargeUuid": "b2394c40-d189-4e65-88aa-27c8b2207aa5",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:33:20.018548",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "8"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "a6554140-706e-4582-a16c-104ee1e9d079",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f9386e67-da19-4cca-9852-0b0b59bdd342"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "a34a13e3-bc4a-47d4-97e2-1e156721068f"
+        },
+        "chargeUuid": "788f2743-b7d0-4dfc-bec1-5f78e271c9bf",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:37:05.575418",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "15"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "ad54c7d1-2d2b-403a-ba31-28a7d54f2479",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "820cefe1-4e05-49e1-b0eb-5867c879627b"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "3042f210-63ae-4149-95e7-063059cee3e4"
+        },
+        "chargeUuid": "9e39c950-6757-4864-a9c6-beac27fd185d",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-15",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:31:17.204441",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "5"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "9ea5edfc-0383-4316-8ccb-ca6900d6ceed",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "c08fa749-b32e-488b-9390-0a9125bc488a"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONCURRENT",
+          "consecutiveToSentenceUuid": null
+        },
+        "chargeUuid": "c5736399-a197-43f4-9e0c-2587cd64d3ae",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:36:32.604602",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "14"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "3042f210-63ae-4149-95e7-063059cee3e4",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "d6042195-832d-4edf-b92d-12bdedec9c5f"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "cc256288-eb52-4852-b881-3c29f09b6eba"
+        },
+        "chargeUuid": "561b1f53-4b2a-44e3-862e-671cb2fa1e7e",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:31:49.610966",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "6"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "191f2176-a17e-4942-b37e-87f17678da29",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "02a95080-3895-4eaa-9476-21f933806b57"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "9ea5edfc-0383-4316-8ccb-ca6900d6ceed"
+        },
+        "chargeUuid": "700e3203-226b-4e2e-a5af-fa935c71a26f",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:34:23.490933",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "10"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "c7f16474-7784-4172-b8a0-4df3cdcfce03",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "f45bb381-3c6a-49c0-8c7f-715f0b536d12"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "daf74759-ce0f-431b-a076-6a99c6fe91ce"
+        },
+        "chargeUuid": "c562564f-f225-4fb1-909e-f6b68eeca48f",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:35:21.365235",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "12"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "82b76307-c545-4b2a-8b07-ce9242270bcf",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "e78370f4-3519-4211-9869-2cf22195fb3c"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "0af2cd40-7e54-4c5e-b6ce-1016921d5a54"
+        },
+        "chargeUuid": "8571be2c-fd43-4ab8-875e-245ba9e1d79c",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:32:28.638024",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "7"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "a34a13e3-bc4a-47d4-97e2-1e156721068f",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "4b1e76a7-7fb6-4f10-a8c8-ec923642c595"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "191f2176-a17e-4942-b37e-87f17678da29"
+        },
+        "chargeUuid": "7cdd23eb-d8c9-4e49-b911-87e3c535a983",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-02",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:33:52.954994",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "9"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "daf74759-ce0f-431b-a076-6a99c6fe91ce",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 2,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "fb5b8186-e1b7-4693-8f94-f173c9d212ad"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "a6554140-706e-4582-a16c-104ee1e9d079"
+        },
+        "chargeUuid": "2b554a1e-430a-4c88-a564-375a9efdfc8e",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1002",
+          "outcomeName": "Imprisonment",
+          "outcomeType": "SENTENCING",
+          "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+          "displayOrder": 10,
+          "dispositionCode": "FINAL"
+        },
+        "sentence": {
+          "status": "ACTIVE",
+          "hasRecall": true,
+          "latestRecallType": "FTR_56",
+          "fineAmount": null,
+          "legacyData": {
+            "active": null,
+            "bookingId": 3103162,
+            "postedDate": "2026-05-25T10:37:36.413083",
+            "sentenceCalcType": null,
+            "sentenceCategory": null,
+            "sentenceTypeDesc": null,
+            "nomisLineReference": "16"
+          },
+          "chargeNumber": null,
+          "sentenceType": {
+            "hintText": null,
+            "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+            "displayOrder": 40,
+            "classification": "STANDARD",
+            "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
+          },
+          "sentenceUuid": "94407250-221e-4d9b-8173-756078ebbc4e",
+          "periodLengths": [
+            {
+              "days": null,
+              "weeks": 4,
+              "years": null,
+              "months": null,
+              "legacyData": {
+                "lifeSentence": false,
+                "sentenceTermCode": "IMP",
+                "sentenceTermDescription": "Imprisonment"
+              },
+              "periodOrder": "years,months,weeks,days",
+              "periodLengthType": "SENTENCE_LENGTH",
+              "periodLengthUuid": "add0ce19-0c47-47eb-80b7-9fe505814e74"
+            }
+          ],
+          "convictionDate": null,
+          "sentenceServeType": "CONSECUTIVE",
+          "consecutiveToSentenceUuid": "ad54c7d1-2d2b-403a-ba31-28a7d54f2479"
+        },
+        "chargeUuid": "8099e68a-24db-448b-9c59-db7f9730fcae",
+        "legacyData": {
+          "postedDate": "2026-05-25",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Assault a constable in the execution of his / her duty",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "PL96001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "62710a8f-78c6-45a6-888e-1650afa24108",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "8099e68a-24db-448b-9c59-db7f9730fcae",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Assault a constable in the execution of his / her duty",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "PL96001",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-16",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "8571be2c-fd43-4ab8-875e-245ba9e1d79c",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-29",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "700e3203-226b-4e2e-a5af-fa935c71a26f",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "7cdd23eb-d8c9-4e49-b911-87e3c535a983",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-02",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "c5736399-a197-43f4-9e0c-2587cd64d3ae",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-08",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "788f2743-b7d0-4dfc-bec1-5f78e271c9bf",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "2b554a1e-430a-4c88-a564-375a9efdfc8e",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "c562564f-f225-4fb1-909e-f6b68eeca48f",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "561b1f53-4b2a-44e3-862e-671cb2fa1e7e",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-04-28",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "b2394c40-d189-4e65-88aa-27c8b2207aa5",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-11",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "9e39c950-6757-4864-a9c6-beac27fd185d",
+        "legacyData": {
+          "postedDate": "2026-08-19",
+          "nomisOutcomeCode": "1501",
+          "offenceDescription": "Theft from a shop",
+          "outcomeDescription": "Recall to Prison",
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": "F"
+        },
+        "offenceCode": "TH68010",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-05-15",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [
+    {
+      "status": "ACTIVE",
+      "hintText": null,
+      "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+      "displayOrder": 40,
+      "isRecallable": true,
+      "nomisCjaCode": "2020",
+      "classification": "STANDARD",
+      "maxAgeExclusive": null,
+      "minAgeInclusive": 21,
+      "maxDateExclusive": null,
+      "minDateInclusive": "2020-12-01",
+      "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+      "nomisSentenceCalcType": "ADIMP_ORA",
+      "maxOffenceDateExclusive": null,
+      "minOffenceDateInclusive": "2015-02-01"
+    }
+  ],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CD71039",
+      "severityRating": "149"
+    },
+    {
+      "offenceCode": "CJ88159",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "PL96001",
+      "severityRating": "104"
+    },
+    {
+      "offenceCode": "TH68010",
+      "severityRating": "46"
+    }
+  ]
+}
