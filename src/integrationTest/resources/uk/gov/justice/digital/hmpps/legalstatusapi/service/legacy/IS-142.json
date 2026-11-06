@@ -1,0 +1,138 @@
+{
+  "jiraReference": "IS-142",
+  "receptionDate": "2026-10-28",
+  "expectedStatus": "UNKNOWN",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4530",
+          "outcomeName": "Remand on conditional bail",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+          "displayOrder": 110,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "55ba50f9-936b-4334-9934-0aa22d3d86a3",
+        "legacyData": null,
+        "offenceCode": "SC15004",
+        "offenceEndDate": "2026-10-27",
+        "offenceStartDate": "2024-11-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4530",
+          "outcomeName": "Remand on conditional bail",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+          "displayOrder": 110,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "277e6ea1-6f93-46ee-bee0-c9f7f6912909",
+        "legacyData": null,
+        "offenceCode": "SC15005",
+        "offenceEndDate": "2026-06-30",
+        "offenceStartDate": "2024-03-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4530",
+          "outcomeName": "Remand on conditional bail",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+          "displayOrder": 110,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "e6ba1d73-8fd0-446c-8c84-5f85d6af2721",
+        "legacyData": null,
+        "offenceCode": "OF61131",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-26",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4534",
+          "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+          "displayOrder": 571,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "55ba50f9-936b-4334-9934-0aa22d3d86a3",
+        "legacyData": null,
+        "offenceCode": "SC15004",
+        "offenceEndDate": "2026-10-27",
+        "offenceStartDate": "2024-11-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4534",
+          "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+          "displayOrder": 571,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "277e6ea1-6f93-46ee-bee0-c9f7f6912909",
+        "legacyData": null,
+        "offenceCode": "SC15005",
+        "offenceEndDate": "2026-06-30",
+        "offenceStartDate": "2024-03-01",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4534",
+          "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+          "displayOrder": 571,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "e6ba1d73-8fd0-446c-8c84-5f85d6af2721",
+        "legacyData": null,
+        "offenceCode": "OF61131",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-26",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "OF61131",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "SC15004",
+      "severityRating": "8"
+    },
+    {
+      "offenceCode": "SC15005",
+      "severityRating": "8"
+    }
+  ]
+}
