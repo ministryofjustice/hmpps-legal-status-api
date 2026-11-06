@@ -69,11 +69,26 @@ class LegacyDataService(
       fromDate = prisoner.receptionDate,
       toDate = LocalDate.now(clock),
     )
+
     // The sentence types looked up, recorded so that they can be stored with a mismatched calculation
     val sentenceTypeDetailsByUuid = mutableMapOf<UUID, SentenceTypeDetails>()
+    val sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) }
+
+    // The charges array contains charges each with a single outcome. If a charge has multiple outcomes
+    // there will be multiple charges with the same chargeUuid, one for each of the outcomes
+    // To get the list of offences we need to group all charges by the chargeUuid.
+    // For each chargeUuid we will have a list of charges. We need to sort that list by the outcome displayOrder
+    // and then select the first. This will be the offence with the outcome code that we need for the Imprisonment Status
+    // mapping.
+    val offences = prisonerCharges.charges
+      .groupBy { it.chargeUuid }
+      .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
+      .values
+      .map { it.offence() }
+
     val sentencingData = LegacySentencingData(
-      sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) },
-      offences = prisonerCharges.charges.map { it.offence() },
+      sentences = sentences,
+      offences = offences,
     )
 
     // Steps 3 to 5
