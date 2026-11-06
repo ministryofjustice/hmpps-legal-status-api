@@ -69,11 +69,30 @@ class LegacyDataService(
       fromDate = prisoner.receptionDate,
       toDate = LocalDate.now(clock),
     )
+
     // The sentence types looked up, recorded so that they can be stored with a mismatched calculation
     val sentenceTypeDetailsByUuid = mutableMapOf<UUID, SentenceTypeDetails>()
+    val sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) }
+
+    // The charges array contains charges, each with a single outcome. If a charge has multiple outcomes
+    // there will be multiple charges with the same chargeUuid, one for each of the outcomes.
+    // To get the list of offences we need to group all charges by the chargeUuid.
+    // For each chargeUuid we will then have a list of charges.
+    // The NOMIS algorithm for Imprisonment Status uses the first outcome for each. In order to use the same outcome
+    // as NOMIS, we need to sort the outcomes by `displayOrder` and then select the first. This will give us the outcome
+    // code that we need for the Imprisonment Status mapping.
+    // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
+    // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
+    // current NOMIS algorithm.
+    val offences = prisonerCharges.charges
+      .groupBy { it.chargeUuid }
+      .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
+      .values
+      .map { it.offence() }
+
     val sentencingData = LegacySentencingData(
-      sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) },
-      offences = prisonerCharges.charges.map { it.offence() },
+      sentences = sentences,
+      offences = offences,
     )
 
     // Steps 3 to 5
