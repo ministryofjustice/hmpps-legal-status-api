@@ -1,0 +1,120 @@
+{
+  "jiraReference": "IS-137",
+  "receptionDate": "2026-10-08",
+  "expectedStatus": "NON-CUST",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "590c6775-293d-47e6-af58-0f17595277dd",
+        "legacyData": {
+          "postedDate": "2026-10-09",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88144",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "590c6775-293d-47e6-af58-0f17595277dd",
+        "legacyData": {
+          "postedDate": "2026-10-09",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": null,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88144",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "1116",
+          "outcomeName": "Community order",
+          "outcomeType": "NON_CUSTODIAL",
+          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+          "displayOrder": 10,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "590c6775-293d-47e6-af58-0f17595277dd",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88144",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4012",
+          "outcomeName": "Remittal for sentence in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+          "displayOrder": 585,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "590c6775-293d-47e6-af58-0f17595277dd",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": null,
+          "offenceDescription": "Possess knife blade / sharp pointed article in a public place - Criminal Justice Act 1988",
+          "outcomeDescription": null,
+          "outcomeConvictionFlag": true,
+          "outcomeDispositionCode": null
+        },
+        "offenceCode": "CJ88144",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-06",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CJ88144",
+      "severityRating": "8"
+    }
+  ]
+}
