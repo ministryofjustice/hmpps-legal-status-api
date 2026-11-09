@@ -1,0 +1,54 @@
+{
+  "jiraReference": "IS-143",
+  "receptionDate": "2026-10-06",
+  "expectedStatus": "DISCONT",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "118a273a-1ca5-4516-a05a-71b19d88b21c",
+        "legacyData": null,
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "118a273a-1ca5-4516-a05a-71b19d88b21c",
+        "legacyData": null,
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-05",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CJ88116",
+      "severityRating": "105"
+    }
+  ]
+}
