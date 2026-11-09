@@ -84,6 +84,9 @@ class LegacyDataService(
     // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
     // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
     // current NOMIS algorithm.
+    // TODO - sorting on displayOrder is not the correct approach, but is the best we have at the moment and allows
+    // current mismatch case tests to pass. The RaS API will be updated with more suitable fields to sort on, at which
+    // point we have IS-160 which will update this code and the fields it sorts on.
     val offences = prisonerCharges.charges
       .groupBy { it.chargeUuid }
       .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
