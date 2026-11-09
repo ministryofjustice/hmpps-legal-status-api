@@ -35,6 +35,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
       "IS-120",
       "IS-121",
       "IS-124",
+      "IS-127",
       "IS-128",
       "IS-134",
       "IS-136",
