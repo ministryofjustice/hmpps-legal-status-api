@@ -1,0 +1,90 @@
+{
+  "jiraReference": "IS-149",
+  "receptionDate": "2026-10-29",
+  "expectedStatus": "UNKNOWN",
+  "rasChargeData": {
+    "charges": [
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "e62fa73d-568c-4cf8-9591-30b1599b1d8b",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "4575",
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": "Warrant for Offence Backed for Bail (Dated)",
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": "I"
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": null,
+        "sentence": null,
+        "chargeUuid": "4faa8f38-85ce-4334-acf5-0f1fb83332c7",
+        "legacyData": {
+          "postedDate": "2026-10-30",
+          "nomisOutcomeCode": "4575",
+          "offenceDescription": "Assault by beating",
+          "outcomeDescription": "Warrant for Offence Backed for Bail (Dated)",
+          "outcomeConvictionFlag": false,
+          "outcomeDispositionCode": "I"
+        },
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "e62fa73d-568c-4cf8-9591-30b1599b1d8b",
+        "legacyData": null,
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      },
+      {
+        "outcome": {
+          "status": "ACTIVE",
+          "nomisCode": "4531",
+          "outcomeName": "Remand in custody",
+          "outcomeType": "REMAND",
+          "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+          "displayOrder": 570,
+          "dispositionCode": "INTERIM"
+        },
+        "sentence": null,
+        "chargeUuid": "4faa8f38-85ce-4334-acf5-0f1fb83332c7",
+        "legacyData": null,
+        "offenceCode": "CJ88116",
+        "offenceEndDate": null,
+        "offenceStartDate": "2026-10-27",
+        "aggravatingFactors": [],
+        "findingOfDomesticAbuse": null
+      }
+    ]
+  },
+  "rasSentenceTypeDetails": [],
+  "offenceSeverityRatings": [
+    {
+      "offenceCode": "CJ88116",
+      "severityRating": "105"
+    }
+  ]
+}
