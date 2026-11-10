@@ -65,6 +65,11 @@ spring:
             client-id: ${remand-and-sentencing.api.client.id}
             client-secret: ${remand-and-sentencing.api.client.secret}
             authorization-grant-type: client_credentials
+          person-location-api:
+            provider: hmpps-auth
+            client-id: ${person-location.api.client.id}
+            client-secret: ${person-location.api.client.secret}
+            authorization-grant-type: client_credentials
   http:
     codecs:
       max-in-memory-size: 10MB
