@@ -55,7 +55,10 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     scenario.rasSentenceTypeDetails.forEach { stubGetSentenceTypeDetails(it) }
 
     val scenarioOffenceCodes = scenario.rasChargeData.charges.map { it.offenceCode }.toSet()
-    stubGetOffenceSeverities(scenarioOffenceCodes, scenario.offenceSeverityRatings)
+    stubGetOffenceSeverities(
+      offenceCodes = scenarioOffenceCodes,
+      response = scenario.offenceSeverities.map { (offenceCode, severityRating) -> OffenceSeverityRating(offenceCode, severityRating.toString()) },
+    )
 
     val prisonNumber = randomValidPrisonNumber()
     val prisoner = aValidPrisoner(prisonNumber, receptionDate = scenario.receptionDate)
@@ -78,7 +81,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val expectedStatus: String,
     val rasChargeData: PersonCharges,
     val rasSentenceTypeDetails: List<SentenceTypeDetails>,
-    val offenceSeverityRatings: List<OffenceSeverityRating>,
+    val offenceSeverities: Map<String, Int>,
   ) {
     override fun toString() = jiraReference
   }

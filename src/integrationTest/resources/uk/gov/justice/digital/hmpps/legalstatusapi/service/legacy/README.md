@@ -42,7 +42,7 @@ Each json file must have the following properties:
   "expectedStatus": <String>
   "rasChargeData": <PersonCharges>
   "rasSentenceTypeDetails": <Array[SentenceTypeDetails]>
-  "offenceSeverityRatings": <Array[OffenceSeverityRating]>        
+  "offenceSeverities": <Map<Sring, Int>>        
 }
 ```
 
@@ -62,13 +62,9 @@ Each json file must have the following properties:
   Paste the response data into the `rasSentenceTypeDetails` property.    
   There may be duplicate sentence types - a prisoner may have been sentenced with multiple counts of the same sentence. 
   You only need one of each type in the `rasSentenceTypeDetails` property.
-* `offenceSeverityRatings`  
-  As part of processing the scenario, the calculation implementation will lookup the offence severity rating for each
-  offence in the `rasChargeData`.  
-  Find the `offenceCode` properties (one for each charge), then call the `manage-offences-api` to get the severity data.   
-  Paste the response data into the `offenceSeverityRatings` property.    
-  There may be duplicate offence codes - a prisoner may have been charged with multiple counts of the same offence. You
-  only need one of each type in the `offenceSeverityRatings` property.
+* `offenceSeverities`  
+  The offence severity data as looked up by the calculation implementation when the scenario was first run.  
+  The Jira ticket will contain a DB record from which you can get this data.
 
 ### Examples
 The files `IS-00-example.json` and `IS-01-example.json` are worked examples.

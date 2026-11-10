@@ -26,10 +26,7 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "AE07024",
-      "severityRating": "153"
-    }
-  ]
+  "offenceSeverities": {
+    "AE07024": 153
+  }
 }
