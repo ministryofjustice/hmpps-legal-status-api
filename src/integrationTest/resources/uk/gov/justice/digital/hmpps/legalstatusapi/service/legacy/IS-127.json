@@ -2,1337 +2,1339 @@
   "jiraReference": "IS-127",
   "receptionDate": "2026-03-07",
   "expectedStatus": "NON-CUST",
-  "rasChargeData": {
-    "charges": [
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71530",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71440",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71530",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71440",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "664c6794-3214-48d8-ba0c-8993cbff8352",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "9935ae17-4cb2-44aa-92a5-d262ad8b4abf",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "ffe8a559-887a-4330-9c99-1fa92b457be7",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71440",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71530",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "2053",
-          "outcomeName": "Discontinuance",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
-          "displayOrder": 30,
-          "dispositionCode": "FINAL"
-        },
-        "sentence": null,
-        "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "2053",
-          "outcomeName": "Discontinuance",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
-          "displayOrder": 30,
-          "dispositionCode": "FINAL"
-        },
-        "sentence": null,
-        "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-02-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "2053",
-          "outcomeName": "Discontinuance",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
-          "displayOrder": 30,
-          "dispositionCode": "FINAL"
-        },
-        "sentence": null,
-        "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4016",
-          "outcomeName": "Commit to Crown Court for sentence in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
-          "displayOrder": 530,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-02-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-03-09",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-04-10",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-04-10",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-04-10",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-02-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-04-10",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
-        "legacyData": {
-          "postedDate": "2026-09-07",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "9935ae17-4cb2-44aa-92a5-d262ad8b4abf",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "664c6794-3214-48d8-ba0c-8993cbff8352",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Resist court officer executing process to re-possess",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CL77006",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "ffe8a559-887a-4330-9c99-1fa92b457be7",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "OW19013",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71440",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess an offensive weapon in private place",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "CJ88153",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "MD71530",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "1116",
-          "outcomeName": "Community order",
-          "outcomeType": "NON_CUSTODIAL",
-          "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-          "displayOrder": 10,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Affray",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "PU86003",
-        "offenceEndDate": null,
-        "offenceStartDate": "2026-03-05",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      }
-    ]
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71530",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71440",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71530",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71440",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "664c6794-3214-48d8-ba0c-8993cbff8352",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "9935ae17-4cb2-44aa-92a5-d262ad8b4abf",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ffe8a559-887a-4330-9c99-1fa92b457be7",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71440",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71530",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "2053",
+            "outcomeName": "Discontinuance",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
+            "displayOrder": 30,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": null,
+          "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "2053",
+            "outcomeName": "Discontinuance",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
+            "displayOrder": 30,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": null,
+          "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-02-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "2053",
+            "outcomeName": "Discontinuance",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "6ff42a7a-6e88-42ef-8671-5438bd221324",
+            "displayOrder": 30,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": null,
+          "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-02-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-03-09",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-04-10",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-04-10",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "2d6e66af-0268-42b6-a65f-3598920bb5c8",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-04-10",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "89e266e9-9a7a-4a90-88e9-af85312f7c9f",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-02-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-04-10",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "9207c129-0442-4eba-8b0c-9a804cfb34a7",
+          "legacyData": {
+            "postedDate": "2026-09-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "9935ae17-4cb2-44aa-92a5-d262ad8b4abf",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "664c6794-3214-48d8-ba0c-8993cbff8352",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "14aad8b2-d89a-47e6-be4e-137724bc1c6f",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "fea080e0-577b-40a0-bb08-14b5e6715cdb",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Resist court officer executing process to re-possess",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CL77006",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ffe8a559-887a-4330-9c99-1fa92b457be7",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Threaten a person with an offensive weapon / bladed article / corrosive substance in a private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "OW19013",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "921aa558-9c52-4ce0-bdaa-634c619f1634",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Cultivate cannabis plant a class B controlled drug",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71440",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "3732ec78-14d6-45fb-b37e-e4acd75bbc9c",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess an offensive weapon in private place",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CJ88153",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f72aa61-4ff6-4a86-97b3-39acf81d21c1",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Possess a controlled drug of Class B - Cannabis / Cannabis Resin",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71530",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1116",
+            "outcomeName": "Community order",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6f508d8d-243f-4702-8eb2-2678b55f8b1b",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Affray",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "PU86003",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-03-05",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
   },
-  "rasSentenceTypeDetails": [],
   "offenceSeverities": {
     "CJ88153": 197,
     "CL77006": 195,

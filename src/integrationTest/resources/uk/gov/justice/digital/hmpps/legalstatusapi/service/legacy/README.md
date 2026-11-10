@@ -40,8 +40,10 @@ Each json file must have the following properties:
   "jiraReference": <String>
   "receptionDate": <String>
   "expectedStatus": <String>
-  "rasChargeData": <PersonCharges>
-  "rasSentenceTypeDetails": <Array[SentenceTypeDetails]>
+  "rasData": <
+    "personCharges": <PersonCharges>
+    "sentenceTypeDetails": Map<UUID, SentenceTypeDetails>
+  >
   "offenceSeverities": <Map<Sring, Int>>        
 }
 ```
@@ -52,19 +54,14 @@ Each json file must have the following properties:
   The receptionDate property for the prisoner from prisoner-search-api
 * `expectedStatus`  
   The expected Imprisonment Status
-* `rasChargeData`  
-  The prisoner's charge data from RaS. The Jira ticket will contain a DB record from which you can get this data
-* `rasSentenceTypeDetails`  
-  As part of processing the scenario, the calculation implementation will lookup the sentence type for each sentence in 
-  the `rasChargeData`.  
-  Find the `sentenceTypeUuid` property for each sentence (each charge will have 0 or 1 sentences), then call the RaS API
-  to lookup the sentence type data.
-  Paste the response data into the `rasSentenceTypeDetails` property.    
-  There may be duplicate sentence types - a prisoner may have been sentenced with multiple counts of the same sentence. 
-  You only need one of each type in the `rasSentenceTypeDetails` property.
+* `rasData`  
+  The data from the RaS API as looked up by the calculation implementation when the scenario was first run.  
+  The Jira ticket will contain a DB record from which you can get this data. Copy the contents of the `ras_data`
+  database field into this property.
 * `offenceSeverities`  
   The offence severity data as looked up by the calculation implementation when the scenario was first run.  
-  The Jira ticket will contain a DB record from which you can get this data.
+  The Jira ticket will contain a DB record from which you can get this data. Copy the contents of the `offence_severities`
+  database field into this property.
 
 ### Examples
 The files `IS-00-example.json` and `IS-01-example.json` are worked examples.
