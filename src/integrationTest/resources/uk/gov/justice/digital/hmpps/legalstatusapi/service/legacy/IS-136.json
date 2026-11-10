@@ -2477,14 +2477,8 @@
       "minOffenceDateInclusive": null
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "TH68010",
-      "severityRating": "46"
-    },
-    {
-      "offenceCode": "TH68036",
-      "severityRating": "28"
-    }
-  ]
+  "offenceSeverities": {
+    "TH68010": 46,
+    "TH68036": 28
+  }
 }

@@ -215,10 +215,7 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "SE20002",
-      "severityRating": "8"
-    }
-  ]
+  "offenceSeverities": {
+    "SE20002": 8
+  }
 }

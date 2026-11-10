@@ -381,14 +381,8 @@
       "minOffenceDateInclusive": null
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "CJ88116",
-      "severityRating": "105"
-    },
-    {
-      "offenceCode": "OF61102",
-      "severityRating": "8"
-    }
-  ]
+  "offenceSeverities": {
+    "CJ88116": 105,
+    "OF61102": 8
+  }
 }

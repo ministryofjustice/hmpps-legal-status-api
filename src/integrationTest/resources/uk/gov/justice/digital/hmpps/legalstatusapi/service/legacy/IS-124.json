@@ -224,10 +224,7 @@
       "minOffenceDateInclusive": null
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "OF61131",
-      "severityRating": "8"
-    }
-  ]
+  "offenceSeverities": {
+    "OF61131": 8
+  }
 }

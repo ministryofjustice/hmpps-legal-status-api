@@ -339,22 +339,10 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "CJ88001",
-      "severityRating": "105"
-    },
-    {
-      "offenceCode": "PL96003",
-      "severityRating": "104"
-    },
-    {
-      "offenceCode": "OF61102",
-      "severityRating": "8"
-    },
-    {
-      "offenceCode": "CD98067",
-      "severityRating": "8"
-    }
-  ]
+  "offenceSeverities": {
+    "CJ88001": 105,
+    "PL96003": 104,
+    "OF61102": 8,
+    "CD98067": 8
+  }
 }

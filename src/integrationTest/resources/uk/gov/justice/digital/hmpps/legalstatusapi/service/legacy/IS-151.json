@@ -176,22 +176,10 @@
       "isRecallable": true
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "PL96001",
-      "severityRating": "104"
-    },
-    {
-      "offenceCode": "CJ88160",
-      "severityRating": "8"
-    },
-    {
-      "offenceCode": "CD71039",
-      "severityRating": "149"
-    },
-    {
-      "offenceCode": "TH68023",
-      "severityRating": "34"
-    }
-  ]
+  "offenceSeverities": {
+    "PL96001": 104,
+    "CJ88160": 8,
+    "CD71039": 149,
+    "TH68023": 34
+  }
 }

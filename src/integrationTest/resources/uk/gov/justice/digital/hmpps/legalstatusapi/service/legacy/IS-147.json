@@ -111,10 +111,7 @@
       "minOffenceDateInclusive": "2015-02-01"
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "SX03204",
-      "severityRating": "66"
-    }
-  ]
+  "offenceSeverities": {
+    "SX03204": 66
+  }
 }

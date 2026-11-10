@@ -1333,30 +1333,12 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "CJ88153",
-      "severityRating": "197"
-    },
-    {
-      "offenceCode": "CL77006",
-      "severityRating": "195"
-    },
-    {
-      "offenceCode": "MD71440",
-      "severityRating": "92"
-    },
-    {
-      "offenceCode": "MD71530",
-      "severityRating": "92"
-    },
-    {
-      "offenceCode": "OW19013",
-      "severityRating": "8"
-    },
-    {
-      "offenceCode": "PU86003",
-      "severityRating": "66"
-    }
-  ]
+  "offenceSeverities": {
+    "CJ88153": 197,
+    "CL77006": 195,
+    "MD71440": 92,
+    "MD71530": 92,
+    "OW19013": 8,
+    "PU86003": 66
+  }
 }

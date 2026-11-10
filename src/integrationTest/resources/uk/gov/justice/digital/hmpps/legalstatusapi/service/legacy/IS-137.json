@@ -111,10 +111,7 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "CJ88144",
-      "severityRating": "8"
-    }
-  ]
+  "offenceSeverities": {
+    "CJ88144": 8
+  }
 }

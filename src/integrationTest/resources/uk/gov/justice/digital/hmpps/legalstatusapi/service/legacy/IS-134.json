@@ -60,10 +60,7 @@
   },
   "sentenceTypeDetails": {},
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "PH97004",
-      "severityRating": "195"
-    }
-  ]
+  "offenceSeverities": {
+    "PH97004": 195
+  }
 }

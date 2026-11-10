@@ -81,10 +81,7 @@
     ]
   },
   "rasSentenceTypeDetails": [],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "CJ88116",
-      "severityRating": "105"
-    }
-  ]
+  "offenceSeverities": {
+    "CJ88116": 105
+  }
 }

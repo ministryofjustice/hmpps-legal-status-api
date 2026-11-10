@@ -505,22 +505,10 @@
       "isRecallable": true
     }
   ],
-  "offenceSeverityRatings": [
-    {
-      "offenceCode": "AI04004",
-      "severityRating": "78"
-    },
-    {
-      "offenceCode": "AE07024",
-      "severityRating": "153"
-    },
-    {
-      "offenceCode": "CL77040",
-      "severityRating": "99"
-    },
-    {
-      "offenceCode": "SX03119",
-      "severityRating": "24"
-    }
-  ]
+  "offenceSeverities": {
+    "AI04004": 78,
+    "AE07024": 153,
+    "CL77040": 99,
+    "SX03119": 24
+  }
 }
