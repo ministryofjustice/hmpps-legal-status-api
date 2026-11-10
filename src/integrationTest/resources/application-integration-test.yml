@@ -31,6 +31,12 @@ remand-and-sentencing:
     client:
       id: "remand-and-sentencing-api-client"
       secret: "remand-and-sentencing-api-secret"
+person-location:
+  api:
+    url: "http://localhost:8095"
+    client:
+      id: "person-location-api-client"
+      secret: "person-location-api-secret"
 
 slack:
   webhook:

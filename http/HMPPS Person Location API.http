@@ -1,0 +1,10 @@
+# HMPPS Person Location API
+
+###
+# @name Get latest period of custody
+< {%
+    request.variables.set("personIdentifier", "A3390EC")
+%}
+GET {{person_location_base_url}}/integrations/people/{{personIdentifier}}/periods-of-custody/latest
+Authorization: Bearer {{$auth.token("Person Location API")}}
+Accept: application/json

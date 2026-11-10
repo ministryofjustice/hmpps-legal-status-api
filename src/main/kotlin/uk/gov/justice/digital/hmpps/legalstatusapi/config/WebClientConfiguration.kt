@@ -17,6 +17,7 @@ class WebClientConfiguration(
   @param:Value("\${manage-offences.api.url}") val manageOffencesApiBaseUri: String,
   @param:Value("\${prisoner-search.api.url}") val prisonerSearchApiBaseUri: String,
   @param:Value("\${remand-and-sentencing.api.url}") val remandAndSentencingApiBaseUri: String,
+  @param:Value("\${person-location.api.url}") val personLocationApiBaseUri: String,
   @param:Value("\${slack.webhook.url}") val slackWebhookUrl: String,
   @param:Value("\${api.health-timeout:2s}") val healthTimeout: Duration,
   @param:Value("\${api.timeout:20s}") val timeout: Duration,
@@ -58,6 +59,17 @@ class WebClientConfiguration(
     authorizedClientManager = authorizedClientManager,
     registrationId = "remand-and-sentencing-api",
     url = remandAndSentencingApiBaseUri,
+    timeout = timeout,
+  )
+
+  @Bean
+  fun personLocationApiWebClient(
+    authorizedClientManager: OAuth2AuthorizedClientManager,
+    builder: WebClient.Builder,
+  ): WebClient = builder.authorisedWebClient(
+    authorizedClientManager = authorizedClientManager,
+    registrationId = "person-location-api",
+    url = personLocationApiBaseUri,
     timeout = timeout,
   )
 

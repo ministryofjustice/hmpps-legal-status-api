@@ -193,4 +193,7 @@ The following environment variables are required in order for the app to start:
 | REMAND_AND_SENTENCING_API_URL           | The URL of the Remand and Sentencing API                                        |
 | REMAND_AND_SENTENCING_API_CLIENT_ID     | hmpps-auth oauth2 client-id for connecting to the Remand and Sentencing API     |
 | REMAND_AND_SENTENCING_API_CLIENT_SECRET | hmpps-auth oauth2 client-secret for connecting to the Remand and Sentencing API |
+| PERSON_LOCATION_API_URL                 | The URL of the Person Location API                                              |
+| PERSON_LOCATION_API_CLIENT_ID           | hmpps-auth oauth2 client-id for connecting to the Person Location API           |
+| PERSON_LOCATION_API_CLIENT_SECRET       | hmpps-auth oauth2 client-secret for connecting to the Person Location API       |
 | SLACK_WEBHOOK_URL                       | The URL of the slack webhook to post notifications                              |

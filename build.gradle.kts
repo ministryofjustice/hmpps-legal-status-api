@@ -161,19 +161,47 @@ tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
   )
 }
 
+tasks.register<GenerateTask>("buildPersonLocationApiModel") {
+  dependsOn("processResources")
+  group = "openapi tools"
+  description = "Generate model from Person Location API YAML definition"
+  validateSpec.set(true)
+  generatorName.set("kotlin-spring")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/person-location-api-2026-11-04.json")
+  outputDir.set("$buildDirectory/generated")
+  modelPackage.set("uk.gov.justice.digital.hmpps.personlocation.resource.model")
+  configOptions.set(
+    mapOf(
+      "dateLibrary" to "java8",
+      "serializationLibrary" to "jackson",
+      "useBeanValidation" to "true",
+      "useSpringBoot4" to "true",
+      "useJackson3" to "true",
+      "openApiNullable" to "false",
+      "enumPropertyNaming" to "UPPERCASE",
+    ),
+  )
+  globalProperties.set(
+    mapOf(
+      // Only the models used by the periods-of-custody endpoints. The spec's polymorphic sync models are not needed.
+      "models" to "PeriodOfCustody, PeriodsOfCustody, CodedDescription, PreviousPeriod, ErrorResponse",
+    ),
+  )
+}
+
 tasks {
   withType<KtLintCheckTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
   }
   withType<KtLintFormatTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
+    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
   }
 }
 
 tasks.named("compileKotlin") {
-  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel")
+  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
 }
 
 tasks.named("test") {
