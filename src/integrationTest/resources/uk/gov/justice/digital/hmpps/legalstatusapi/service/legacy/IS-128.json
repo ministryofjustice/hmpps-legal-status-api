@@ -2,219 +2,221 @@
   "jiraReference": "IS-128",
   "receptionDate": "2026-07-29",
   "expectedStatus": "TRL",
-  "rasChargeData": {
-    "charges": [
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
+          "legacyData": {
+            "postedDate": "2026-08-27",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-29",
+          "offenceStartDate": "2026-06-15",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "sentence": null,
-        "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
-        "legacyData": {
-          "postedDate": "2026-08-27",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4004",
+            "outcomeName": "Convicted awaiting sentence",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+            "displayOrder": 550,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
+          "legacyData": {
+            "postedDate": "2026-08-27",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-26",
+          "offenceStartDate": "2026-06-17",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-29",
-        "offenceStartDate": "2026-06-15",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4004",
-          "outcomeName": "Convicted awaiting sentence",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
-          "displayOrder": 550,
-          "dispositionCode": "INTERIM"
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4004",
+            "outcomeName": "Convicted awaiting sentence",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+            "displayOrder": 550,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
+          "legacyData": {
+            "postedDate": "2026-09-22",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-26",
+          "offenceStartDate": "2026-06-17",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "sentence": null,
-        "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
-        "legacyData": {
-          "postedDate": "2026-08-27",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
+          "legacyData": {
+            "postedDate": "2026-09-22",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-29",
+          "offenceStartDate": "2026-06-15",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-26",
-        "offenceStartDate": "2026-06-17",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4004",
-          "outcomeName": "Convicted awaiting sentence",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
-          "displayOrder": 550,
-          "dispositionCode": "INTERIM"
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-29",
+          "offenceStartDate": "2026-06-15",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "sentence": null,
-        "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
-        "legacyData": {
-          "postedDate": "2026-09-22",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": true,
-          "outcomeDispositionCode": null
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-26",
+          "offenceStartDate": "2026-06-17",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-26",
-        "offenceStartDate": "2026-06-17",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
+          "legacyData": {
+            "postedDate": "2026-07-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-07-26",
+          "offenceStartDate": "2026-06-18",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
         },
-        "sentence": null,
-        "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
-        "legacyData": {
-          "postedDate": "2026-09-22",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-29",
-        "offenceStartDate": "2026-06-15",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-29",
-        "offenceStartDate": "2026-06-15",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4565",
-          "outcomeName": "Send to Crown Court for trial ",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
-          "displayOrder": 600,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
-        "legacyData": {
-          "postedDate": "2026-10-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-26",
-        "offenceStartDate": "2026-06-17",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "1e97b47b-fcef-448c-83a5-4abb83f29b76",
-        "legacyData": {
-          "postedDate": "2026-07-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-07-26",
-        "offenceStartDate": "2026-06-18",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      },
-      {
-        "outcome": {
-          "status": "ACTIVE",
-          "nomisCode": "4560",
-          "outcomeName": "Commit to Crown Court for trial in custody",
-          "outcomeType": "REMAND",
-          "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
-          "displayOrder": 540,
-          "dispositionCode": "INTERIM"
-        },
-        "sentence": null,
-        "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
-        "legacyData": {
-          "postedDate": "2026-07-30",
-          "nomisOutcomeCode": null,
-          "offenceDescription": "Harassment - breach of a restraining order on conviction",
-          "outcomeDescription": null,
-          "outcomeConvictionFlag": false,
-          "outcomeDispositionCode": null
-        },
-        "offenceCode": "SE20002",
-        "offenceEndDate": "2026-06-19",
-        "offenceStartDate": "2026-06-15",
-        "aggravatingFactors": [],
-        "findingOfDomesticAbuse": null
-      }
-    ]
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5c6115d3-df6e-4c13-97ac-f1c088a0b62c",
+          "legacyData": {
+            "postedDate": "2026-07-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Harassment - breach of a restraining order on conviction",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SE20002",
+          "offenceEndDate": "2026-06-19",
+          "offenceStartDate": "2026-06-15",
+          "aggravatingFactors": [],
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
   },
-  "rasSentenceTypeDetails": [],
   "offenceSeverities": {
     "SE20002": 8
   }

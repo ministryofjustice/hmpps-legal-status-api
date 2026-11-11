@@ -11,6 +11,7 @@ import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.LocalDate
+import java.util.UUID
 
 /**
  * Integration tests with scenarios taken from production to prove the [LegacyDataService]
@@ -52,9 +53,9 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val scenarioFile = this::class.java.getResourceAsStream("$jiraReference.json")
     val scenario = objectMapper.readValue(scenarioFile, Scenario::class.java)
 
-    scenario.rasSentenceTypeDetails.forEach { stubGetSentenceTypeDetails(it) }
+    scenario.rasData.sentenceTypeDetails.values.forEach { stubGetSentenceTypeDetails(it) }
 
-    val scenarioOffenceCodes = scenario.rasChargeData.charges.map { it.offenceCode }.toSet()
+    val scenarioOffenceCodes = scenario.rasData.personCharges.charges.map { it.offenceCode }.toSet()
     stubGetOffenceSeverities(
       offenceCodes = scenarioOffenceCodes,
       response = scenario.offenceSeverities.map { (offenceCode, severityRating) -> OffenceSeverityRating(offenceCode, severityRating.toString()) },
@@ -64,7 +65,12 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val prisoner = aValidPrisoner(prisonNumber, receptionDate = scenario.receptionDate)
     stubGetPrisonerFromPrisonerSearchApi(prisoner)
 
-    stubGetChargesFromRemandAndSentencingApi(prisonNumber, fromDate = scenario.receptionDate, toDate = today, scenario.rasChargeData)
+    stubGetChargesFromRemandAndSentencingApi(
+      prisonNumber = prisonNumber,
+      fromDate = scenario.receptionDate,
+      toDate = today,
+      response = scenario.rasData.personCharges,
+    )
 
     stubGetTokenFromHmppsAuth()
 
@@ -79,10 +85,14 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val jiraReference: String,
     val receptionDate: LocalDate,
     val expectedStatus: String,
-    val rasChargeData: PersonCharges,
-    val rasSentenceTypeDetails: List<SentenceTypeDetails>,
+    val rasData: RasData,
     val offenceSeverities: Map<String, Int>,
   ) {
     override fun toString() = jiraReference
   }
+
+  data class RasData(
+    val personCharges: PersonCharges,
+    val sentenceTypeDetails: Map<UUID, SentenceTypeDetails>,
+  )
 }
