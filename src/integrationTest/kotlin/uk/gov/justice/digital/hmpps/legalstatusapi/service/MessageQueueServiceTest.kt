@@ -15,6 +15,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.Identifier
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.PersonReference
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import java.time.Instant
+import java.time.temporal.ChronoUnit
 
 class MessageQueueServiceTest : IntegrationTestBase() {
   @Autowired
@@ -33,7 +34,7 @@ class MessageQueueServiceTest : IntegrationTestBase() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
     val eventType = EventType.IMPRISONMENT_STATUS_CHANGED
-    val occurredAt = Instant.now(clock).minusSeconds(10)
+    val occurredAt = Instant.now(clock).minusSeconds(10).truncatedTo(ChronoUnit.MILLIS)
 
     val hmppsDomainEvent = HmppsDomainEvent(
       eventType = eventType,
