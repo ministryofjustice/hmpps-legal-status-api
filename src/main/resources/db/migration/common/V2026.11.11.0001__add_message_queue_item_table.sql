@@ -1,0 +1,13 @@
+--- Create the MESSAGE_QUEUE_ITEM table
+
+CREATE TABLE MESSAGE_QUEUE_ITEM
+(
+    ID            UUID        NOT NULL DEFAULT gen_random_uuid() PRIMARY KEY,
+    PRISON_NUMBER VARCHAR(10) NOT NULL,
+    EVENT_TYPE    VARCHAR(80) NOT NULL,
+    OCCURRED_AT   TIMESTAMP   NOT NULL
+);
+COMMENT
+ON TABLE MESSAGE_QUEUE_ITEM IS 'Table containing messages from other services that are to be deduplicated before processing';
+
+CREATE INDEX MESSAGE_QUEUE_ITEM_OCCURRED_AT ON MESSAGE_QUEUE_ITEM(OCCURRED_AT);

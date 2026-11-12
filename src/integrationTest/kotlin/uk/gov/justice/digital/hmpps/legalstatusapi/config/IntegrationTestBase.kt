@@ -29,6 +29,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCha
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import uk.gov.justice.hmpps.sqs.HmppsQueueService
 import uk.gov.justice.hmpps.test.kotlin.auth.JwtAuthorisationHelper
+import java.time.Clock
 import java.time.LocalDate
 
 @ExtendWith(
@@ -54,6 +55,9 @@ abstract class IntegrationTestBase {
 
   @Autowired
   lateinit var objectMapper: ObjectMapper
+
+  @Autowired
+  lateinit var clock: Clock
 
   val messagingHelper by lazy { MessagingHelper(hmppsQueueService, objectMapper) }
 
