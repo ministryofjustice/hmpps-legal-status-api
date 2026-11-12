@@ -1,7 +1,14 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import tools.jackson.module.kotlin.jacksonObjectMapper
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_DELETED
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_INSERTED
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_COMPUTABLE
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_DELETED
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_INSERTED
+import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import java.time.Instant
 import java.util.UUID
@@ -16,12 +23,8 @@ fun aValidHmppsDomainEventsSqsMessage(
   additionalInformation: AdditionalInformation =
     when (eventType) {
       IMPRISONMENT_STATUS_CHANGED -> aValidImprisonmentStatusChangedAdditionalInformation(bookingId = bookingId ?: 1240469)
-      EventType.SENTENCE_INSERTED -> aValidSentenceAdditionalInformation()
-      EventType.SENTENCE_DELETED -> aValidSentenceAdditionalInformation()
-      EventType.SENTENCE_UPDATED -> aValidSentenceAdditionalInformation()
-      EventType.CHARGE_INSERTED -> aValidChargeAdditionalInformation()
-      EventType.CHARGE_DELETED -> aValidChargeAdditionalInformation()
-      EventType.CHARGE_UPDATED -> aValidChargeAdditionalInformation()
+      SENTENCE_INSERTED, SENTENCE_DELETED, SENTENCE_UPDATED, CHARGE_INSERTED, CHARGE_DELETED, CHARGE_UPDATED -> aValidSentenceAdditionalInformation()
+      IMPRISONMENT_STATUS_COMPUTABLE -> aValidImprisonmentStatusComputableAdditionalInformation()
     },
 ): SqsMessage = SqsMessage(
   type = "Notification",

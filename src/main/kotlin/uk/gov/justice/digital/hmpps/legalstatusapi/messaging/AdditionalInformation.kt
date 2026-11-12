@@ -44,4 +44,9 @@ sealed class AdditionalInformation {
     val isOnFutureAppearance: Boolean,
     val isBreach: Boolean,
   ) : AdditionalInformation()
+
+  /**
+   * Additional Information for IMPRISONMENT_STATUS_COMPUTABLE (internal.legal-status.imprisonment-status.computable)
+   */
+  class ImprisonmentStatusComputableAdditionalInformation : AdditionalInformation()
 }
