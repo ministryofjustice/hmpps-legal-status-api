@@ -7,7 +7,7 @@
       "name": "HMPPS Digital Studio",
       "email": "feedback@digital.justice.gov.uk"
     },
-    "version": "2026-11-03.2821.68b43ee"
+    "version": "2026-11-12.2916.58d05cd"
   },
   "servers": [
     {
@@ -298,16 +298,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -327,6 +317,16 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -337,7 +337,7 @@
           "recall-controller"
         ],
         "summary": "Retrieve a recall",
-        "description": "This endpoint will retrieve the details of a recall",
+        "description": "This endpoint will retrieve the details of a recall. Pass groupNomisRecalls=true to group NOMIS recalls",
         "operationId": "getRecall",
         "parameters": [
           {
@@ -347,6 +347,15 @@
             "schema": {
               "type": "string",
               "format": "uuid"
+            }
+          },
+          {
+            "name": "groupNomisRecalls",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
             }
           }
         ],
@@ -2054,16 +2063,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2080,6 +2079,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2176,16 +2185,6 @@
           "required": true
         },
         "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CreateCourtCaseResponse"
-                }
-              }
-            }
-          },
           "201": {
             "description": "Returns court case UUID",
             "content": {
@@ -2208,6 +2207,16 @@
           },
           "403": {
             "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCourtCaseResponse"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK",
             "content": {
               "application/json": {
                 "schema": {
@@ -2497,9 +2506,6 @@
           "200": {
             "description": "Returns court appearance schedules"
           },
-          "204": {
-            "description": "No Content"
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token"
           },
@@ -2508,6 +2514,9 @@
           },
           "404": {
             "description": "No court appearance schedule found"
+          },
+          "204": {
+            "description": "No Content"
           }
         }
       }
@@ -2676,16 +2685,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2702,6 +2701,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ChargeOutcome"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2749,16 +2758,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2775,6 +2774,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourtAppearanceOutcome"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -2904,16 +2913,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -2930,6 +2929,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/SentenceTypeDetails"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -3093,6 +3102,68 @@
         }
       }
     },
+    "/person/statuses": {
+      "post": {
+        "tags": [
+          "person-controller"
+        ],
+        "summary": "Retrieve person status indicators for a list of people",
+        "description": "PeopleStatus contains a map of statuses linked to a person",
+        "operationId": "getPeopleStatus",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PeopleStatusRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Returns person status indicators for a list of people",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleStatus"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Malformed request such as empty personIds",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleStatus"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleStatus"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/person-admin/fix-many-charges-to-sentence": {
       "post": {
         "tags": [
@@ -3160,6 +3231,16 @@
               }
             }
           },
+          "422": {
+            "description": "Unprocessable entity, charge must not be already sentenced",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LegacySentenceCreatedResponse"
+                }
+              }
+            }
+          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -3172,16 +3253,6 @@
           },
           "403": {
             "description": "Forbidden, requires an appropriate role",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LegacySentenceCreatedResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Unprocessable entity, charge must not be already sentenced",
             "content": {
               "application/json": {
                 "schema": {
@@ -3720,16 +3791,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -3746,6 +3807,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HmctsResultCode"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -4170,16 +4241,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -4196,6 +4257,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ChargeOutcome"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -4232,16 +4303,6 @@
               }
             }
           },
-          "400": {
-            "description": "Bad request",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
-                }
-              }
-            }
-          },
           "401": {
             "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
@@ -4258,6 +4319,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/CourtAppearanceOutcome"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FieldErrorErrorResponse"
                 }
               }
             }
@@ -5790,6 +5861,68 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/PrisonerSentenceEnvelopes"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/person/{prisonerId}/next-court-appearance": {
+      "get": {
+        "tags": [
+          "person-controller"
+        ],
+        "summary": "retrieve the first next court appearance",
+        "description": "This endpoint will retrieve the first next court appearance for the future",
+        "operationId": "firstNextCourtAppearance",
+        "parameters": [
+          {
+            "name": "prisonerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns next court appearance for person",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonNextCourtAppearance"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonNextCourtAppearance"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden, requires an appropriate role",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonNextCourtAppearance"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No next court appearance",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PersonNextCourtAppearance"
                 }
               }
             }
@@ -7733,8 +7866,8 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorised, requires a valid Oauth2 token",
+          "404": {
+            "description": "Appearance type not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -7743,8 +7876,8 @@
               }
             }
           },
-          "404": {
-            "description": "Appearance type not found",
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
               "application/json": {
                 "schema": {
@@ -8102,8 +8235,8 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorised, requires a valid Oauth2 token",
+          "404": {
+            "description": "Appearance type not found",
             "content": {
               "application/json": {
                 "schema": {
@@ -8112,8 +8245,8 @@
               }
             }
           },
-          "404": {
-            "description": "Appearance type not found",
+          "401": {
+            "description": "Unauthorised, requires a valid Oauth2 token",
             "content": {
               "application/json": {
                 "schema": {
@@ -9256,7 +9389,6 @@
         },
         "required": [
           "eventType",
-          "isBreach",
           "prisonerId"
         ]
       },
@@ -9410,7 +9542,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "outcomeDispositionCode": {
             "type": [
@@ -10098,7 +10230,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "courtCode": {
             "type": "string"
@@ -10797,6 +10929,54 @@
         "required": [
           "isRecallPossible",
           "sentenceIds"
+        ]
+      },
+      "PeopleStatusRequest": {
+        "type": "object",
+        "description": "Status indicators for a list of people",
+        "properties": {
+          "personIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "personIds"
+        ]
+      },
+      "PeopleStatus": {
+        "type": "object",
+        "description": "Status indicators for a map of people and their status",
+        "properties": {
+          "peopleStatus": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PersonStatus"
+            }
+          }
+        },
+        "required": [
+          "peopleStatus"
+        ]
+      },
+      "PersonStatus": {
+        "type": "object",
+        "description": "Status indicators for a person",
+        "properties": {
+          "isOnRemand": {
+            "type": "boolean"
+          },
+          "isCurrentlyOnRecall": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "isCurrentlyOnRecall",
+          "isOnRemand"
         ]
       },
       "FixSingleSentenceMultipleChargesPeople": {
@@ -13128,7 +13308,9 @@
           },
           "metadata": {
             "type": "object",
-            "additionalProperties": {}
+            "additionalProperties": {
+
+            }
           }
         },
         "required": [
@@ -13664,6 +13846,12 @@
               "boolean",
               "null"
             ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -13699,7 +13887,9 @@
         "properties": {
           "body": {
             "type": "object",
-            "additionalProperties": {}
+            "additionalProperties": {
+
+            }
           },
           "messageId": {
             "type": "string"
@@ -13855,18 +14045,6 @@
           "sentenceUuid"
         ]
       },
-      "PersonStatus": {
-        "type": "object",
-        "description": "Status indicators for a person",
-        "properties": {
-          "isOnRemand": {
-            "type": "boolean"
-          }
-        },
-        "required": [
-          "isOnRemand"
-        ]
-      },
       "AppearanceToChainTo": {
         "type": "object",
         "properties": {
@@ -13944,11 +14122,24 @@
                 "type": "null"
               }
             ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "periodLengths": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeriodLength"
+            }
           }
         },
         "required": [
           "chargeUuid",
           "offenceCode",
+          "periodLengths",
           "sentenceUuid"
         ]
       },
@@ -14356,7 +14547,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "courtCode": {
             "type": "string"
@@ -14365,7 +14556,10 @@
             "$ref": "#/components/schemas/AppearanceType"
           },
           "futureSkeletonAppearanceUuid": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "uuid"
           },
           "courtAppearanceSubType": {
@@ -14389,8 +14583,7 @@
         "required": [
           "appearanceDate",
           "appearanceType",
-          "courtCode",
-          "futureSkeletonAppearanceUuid"
+          "courtCode"
         ]
       },
       "PrisonerSentenceEnvelope": {
@@ -14619,6 +14812,42 @@
           "sentenceEnvelopes"
         ]
       },
+      "PersonNextCourtAppearance": {
+        "type": "object",
+        "properties": {
+          "caseReference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "courtCode": {
+            "type": "string"
+          },
+          "appearanceType": {
+            "$ref": "#/components/schemas/AppearanceType"
+          },
+          "courtAppearanceSubType": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CourtAppearanceSubtype"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "dateTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "appearanceType",
+          "courtCode",
+          "dateTime"
+        ]
+      },
       "HasSentenceToChainToResponse": {
         "type": "object",
         "properties": {
@@ -14806,10 +15035,20 @@
                 "type": "null"
               }
             ]
+          },
+          "appearanceDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "appearanceCreatedAt": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "required": [
           "aggravatingFactors",
+          "appearanceCreatedAt",
+          "appearanceDate",
           "chargeUuid",
           "offenceCode"
         ]
@@ -15621,6 +15860,12 @@
                 "type": "null"
               }
             ]
+          },
+          "value": {
+            "type": [
+              "number",
+              "null"
+            ]
           }
         },
         "required": [
@@ -15644,7 +15889,7 @@
           },
           "appearanceTime": {
             "type": "string",
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "nomisOutcomeCode": {
             "type": [
@@ -15761,7 +16006,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "courtId": {
             "type": "string"
@@ -15983,7 +16228,7 @@
           },
           "appearanceTime": {
             "type": "string",
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "charges": {
             "type": "array",
@@ -16041,7 +16286,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "courtId": {
             "type": "string"
@@ -16395,6 +16640,12 @@
           "findingOfDomesticAbuse": {
             "type": [
               "boolean",
+              "null"
+            ]
+          },
+          "value": {
+            "type": [
+              "number",
               "null"
             ]
           }
@@ -16984,7 +17235,7 @@
               "string",
               "null"
             ],
-            "example": "06:44:44.357631772"
+            "example": "13:26:18.45992323"
           },
           "courtCode": {
             "type": [
@@ -17002,14 +17253,16 @@
             ]
           },
           "futureSkeletonAppearanceUuid": {
-            "type": "string",
+            "type": [
+              "string",
+              "null"
+            ],
             "format": "uuid"
           }
         },
         "required": [
           "appearanceDate",
-          "appearanceTypeDescription",
-          "futureSkeletonAppearanceUuid"
+          "appearanceTypeDescription"
         ]
       },
       "PagedSentence": {
@@ -17244,11 +17497,11 @@
             "type": "integer",
             "format": "int32"
           },
-          "first": {
-            "type": "boolean"
-          },
           "sort": {
             "$ref": "#/components/schemas/SortObject"
+          },
+          "first": {
+            "type": "boolean"
           },
           "numberOfElements": {
             "type": "integer",

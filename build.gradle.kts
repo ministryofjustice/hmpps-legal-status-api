@@ -113,7 +113,7 @@ tasks.register<GenerateTask>("buildRemandAndSentencingApiModel") {
   description = "Generate model from Remand and Sentencing API YAML definition"
   validateSpec.set(true)
   generatorName.set("kotlin-spring")
-  inputSpec.set("$projectDir/src/main/resources/static/openapi/remand-and-sentencing-api-2026-11-03.json")
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/remand-and-sentencing-api-2026-11-12.json")
   outputDir.set("$buildDirectory/generated")
   modelPackage.set("uk.gov.justice.digital.hmpps.remandandsentencing.resource.model")
   configOptions.set(

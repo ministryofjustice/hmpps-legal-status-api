@@ -32,6 +32,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPer
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
 
@@ -247,6 +248,8 @@ class LegacyDataServiceTest {
     outcome = outcome,
     legacyData = legacyData,
     sentence = sentence,
+    appearanceDate = LocalDate.now(),
+    appearanceCreatedAt = OffsetDateTime.now(),
   )
 
   private fun aRasChargeOutcome(nomisCode: String) = ChargeOutcome(
