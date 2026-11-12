@@ -116,3 +116,6 @@ springdoc:
 slack:
   # Turned off until the Slack app's webhook URL is available
   enabled: false
+
+imprisonment-status:
+  duration-before-recalculation-required: 10s

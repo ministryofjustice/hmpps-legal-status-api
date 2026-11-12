@@ -2,13 +2,18 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowableOfType
+import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 import org.mockito.Mockito.mock
 import org.mockito.kotlin.any
 import org.mockito.kotlin.anyOrNull
 import org.mockito.kotlin.given
 import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
+import org.springframework.transaction.PlatformTransactionManager
+import org.springframework.transaction.support.SimpleTransactionStatus
+import org.springframework.transaction.support.TransactionTemplate
 import tools.jackson.databind.json.JsonMapper
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerNotFoundException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
@@ -16,7 +21,9 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.Prisone
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.assertThat
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.PrisonerCharges
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.ImprisonmentStatusCalculatedAtEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.ChargeLegacyData
@@ -30,13 +37,19 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceT
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails.Classification.STANDARD
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonPeriodLength
 import java.time.Clock
+import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class LegacyDataServiceTest {
+
+  private val durationBeforeRecalculationRequired = Duration.ofSeconds(10)
+
+  private val imprisonmentStatusCalculatedAtRepository: ImprisonmentStatusCalculatedAtRepository = mock()
 
   private val prisonerSearchApiClient: PrisonerSearchApiClient = mock()
 
@@ -51,14 +64,27 @@ class LegacyDataServiceTest {
 
   private val jsonMapper = JsonMapper.builder().build()
 
+  private val transactionManager: PlatformTransactionManager = mock()
+
   private val legacyDataService = LegacyDataService(
+    durationBeforeRecalculationRequired,
+    imprisonmentStatusCalculatedAtRepository,
     prisonerSearchApiClient,
     remandAndSentencingApiClient,
     sentenceTypeDetailsProvider,
     clock,
     imprisonmentStatusCalculator,
     jsonMapper,
+    TransactionTemplate(transactionManager),
   )
+
+  @BeforeAll
+  fun beforeAll() {
+    given(transactionManager.getTransaction(anyOrNull())).willReturn(SimpleTransactionStatus())
+    given(imprisonmentStatusCalculatedAtRepository.save(any<ImprisonmentStatusCalculatedAtEntity>())).willAnswer {
+      it.arguments[0]
+    }
+  }
 
   @Test
   fun `should calculate Imprisonment Status from all of the prisoner's RaS charges`() {

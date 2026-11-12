@@ -1,10 +1,16 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import mu.KotlinLogging
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.dao.DataAccessException
+import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
+import org.springframework.transaction.support.TransactionTemplate
 import tools.jackson.databind.json.JsonMapper
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.ImprisonmentStatusCalculatedAtEntity
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.LegacySentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
@@ -12,6 +18,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCha
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence.Status.ACTIVE
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import java.time.Clock
+import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
 import java.util.UUID
@@ -23,12 +30,15 @@ private val log = KotlinLogging.logger {}
  */
 @Service
 class LegacyDataService(
+  @param:Value("\${imprisonment-status.duration-before-recalculation-required:10s}") private val durationBeforeRecalculationRequired: Duration,
+  private val imprisonmentStatusCalculatedAtRepository: ImprisonmentStatusCalculatedAtRepository,
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
   private val remandAndSentencingApiClient: RemandAndSentencingApiClient,
   private val sentenceTypeDetailsProvider: SentenceTypeDetailsProvider,
   private val clock: Clock,
   private val imprisonmentStatusCalculator: ImprisonmentStatusCalculator,
   private val jsonMapper: JsonMapper,
+  private val transactionTemplate: TransactionTemplate,
 ) {
 
   /**
@@ -58,8 +68,29 @@ class LegacyDataService(
    *
    * @param prisonNumber The prison number of the prisoner.
    * @return The calculation, its inputs, and the NOMIS Imprisonment Status.
+   * @throws DataAccessException subclasses when creating or updating the Imprisonment Status Calculated At,
+   *   typically caused by multiple threads/consumers trying to update the record at the same time.
+   * @throws RecentImprisonmentStatusExistsException
    */
   fun calculate(prisonNumber: String): LegacyImprisonmentStatusResult {
+    transactionTemplate.execute {
+      imprisonmentStatusCalculatedAtRepository.findByIdOrNull(prisonNumber)
+        ?.also {
+          if (it.isWithin(durationBeforeRecalculationRequired)) {
+            // Imprisonment Status was calculated recently, within the calculation TTL
+            throw RecentImprisonmentStatusExistsException(prisonNumber, it.calculatedAt)
+          }
+          it.calculatedAt = Instant.now(clock)
+          imprisonmentStatusCalculatedAtRepository.save(it)
+        }
+        ?: imprisonmentStatusCalculatedAtRepository.save(
+          ImprisonmentStatusCalculatedAtEntity(
+            prisonNumber = prisonNumber,
+            calculatedAt = Instant.now(clock),
+          ),
+        )
+    }
+
     // Step 1
     val prisoner = getPrisoner(prisonNumber)
 
@@ -196,4 +227,6 @@ class LegacyDataService(
     log.debug { "No outcome code for charge [$chargeUuid]" }
     return null
   }
+
+  private fun ImprisonmentStatusCalculatedAtEntity.isWithin(threshold: Duration): Boolean = Duration.between(this.calculatedAt, Instant.now(clock)).abs().toMillis() <= threshold.toMillis()
 }
