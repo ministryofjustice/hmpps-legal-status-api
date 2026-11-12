@@ -3,6 +3,11 @@ server:
 
 # No caching, so that tests can stub different reference data (e.g. offence severities) for the same values
 spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        generate_statistics: true
   cache:
     type: none
 

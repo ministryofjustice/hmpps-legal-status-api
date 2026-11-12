@@ -29,4 +29,24 @@ class ImprisonmentStatusCalculatedAtEntityAssert(actual: ImprisonmentStatusCalcu
     }
     return this
   }
+
+  fun wasCalculatedAfter(instant: Instant): ImprisonmentStatusCalculatedAtEntityAssert {
+    isNotNull
+    with(actual!!) {
+      if (!calculatedAt.isAfter(instant)) {
+        failWithMessage("Expected calculatedAt to be after $instant, but it was $calculatedAt")
+      }
+    }
+    return this
+  }
+
+  fun hasVersion(expected: Int): ImprisonmentStatusCalculatedAtEntityAssert {
+    isNotNull
+    with(actual!!) {
+      if (version != expected) {
+        failWithMessage("Expected version to be $expected, but it was $version")
+      }
+    }
+    return this
+  }
 }
