@@ -6,56 +6,60 @@
     "personCharges": {
       "charges": [
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "1116",
-            "outcomeName": "Community order",
-            "outcomeType": "NON_CUSTODIAL",
-            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
-            "displayOrder": 10,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "398f8a76-571d-464e-9443-c1d297b19bb1",
+          "offenceCode": "PH97004",
+          "offenceStartDate": "2026-10-05",
+          "offenceEndDate": "2026-10-07",
+          "outcome": {
+            "outcomeUuid": "c3a0e1a2-5a7c-4a56-8f3f-2a4d8c78d611",
+            "outcomeName": "Community order",
+            "nomisCode": "1116",
+            "outcomeType": "NON_CUSTODIAL",
+            "displayOrder": 10,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
           "legacyData": {
             "postedDate": "2026-10-30",
             "nomisOutcomeCode": null,
-            "offenceDescription": "Harassment without violence",
             "outcomeDescription": null,
+            "outcomeDispositionCode": null,
             "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
+            "offenceDescription": "Harassment without violence"
           },
-          "offenceCode": "PH97004",
-          "offenceEndDate": "2026-10-07",
-          "offenceStartDate": "2026-10-05",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-29",
+          "appearanceCreatedAt": "2026-10-09T10:55:36.213417Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4012",
-            "outcomeName": "Remittal for sentence in custody",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
-            "displayOrder": 585,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "398f8a76-571d-464e-9443-c1d297b19bb1",
+          "offenceCode": "PH97004",
+          "offenceStartDate": "2026-10-05",
+          "offenceEndDate": "2026-10-07",
+          "outcome": {
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "outcomeName": "Remittal for sentence in custody",
+            "nomisCode": "4012",
+            "outcomeType": "REMAND",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
           "legacyData": {
             "postedDate": "2026-10-09",
             "nomisOutcomeCode": null,
-            "offenceDescription": "Harassment without violence",
             "outcomeDescription": null,
+            "outcomeDispositionCode": null,
             "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
+            "offenceDescription": "Harassment without violence"
           },
-          "offenceCode": "PH97004",
-          "offenceEndDate": "2026-10-07",
-          "offenceStartDate": "2026-10-05",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-08",
+          "appearanceCreatedAt": "2026-10-09T10:49:47.972365Z"
         }
       ]
     },

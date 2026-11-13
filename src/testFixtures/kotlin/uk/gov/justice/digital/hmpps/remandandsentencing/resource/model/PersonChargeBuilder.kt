@@ -1,6 +1,8 @@
 package uk.gov.justice.digital.hmpps.remandandsentencing.resource.model
 
 import uk.gov.justice.digital.hmpps.legalstatusapi.aValidReference
+import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.util.*
 
 fun aValidPersonCharge(
@@ -10,6 +12,8 @@ fun aValidPersonCharge(
   outcome: ChargeOutcome? = aValidChargeOutcome(), // Used in calculation
   legacyData: ChargeLegacyData? = aValidChargeLegacyData(), // Used in calculation
   sentence: PersonSentence? = aValidPersonSentence(), // Used in calculation
+  appearanceDate: LocalDate = LocalDate.now(),
+  appearanceCreatedAt: OffsetDateTime = OffsetDateTime.now(),
 ): PersonCharge = PersonCharge(
   chargeUuid = chargeUuid,
   offenceCode = offenceCode,
@@ -17,4 +21,6 @@ fun aValidPersonCharge(
   outcome = outcome,
   legacyData = legacyData,
   sentence = sentence,
+  appearanceDate = appearanceDate,
+  appearanceCreatedAt = appearanceCreatedAt,
 )

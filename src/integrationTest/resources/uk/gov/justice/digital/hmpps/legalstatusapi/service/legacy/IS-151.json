@@ -6,24 +6,6 @@
     "personCharges": {
       "charges": [
         {
-          "chargeUuid": "395627dc-657e-4ba9-96d1-769c56b13ca4",
-          "offenceCode": "TH68023",
-          "offenceStartDate": "2020-10-18",
-          "offenceEndDate": null,
-          "outcome": null,
-          "aggravatingFactors": [],
-          "legacyData": {
-            "postedDate": "2026-11-05",
-            "nomisOutcomeCode": "1501",
-            "outcomeDescription": "Recall to Prison",
-            "outcomeDispositionCode": "F",
-            "outcomeConvictionFlag": true,
-            "offenceDescription": "Robbery"
-          },
-          "findingOfDomesticAbuse": null,
-          "sentence": null
-        },
-        {
           "chargeUuid": "acfab417-276c-4c5e-ab8d-e8491c2780a3",
           "offenceCode": "CD71039",
           "offenceStartDate": "2026-10-30",
@@ -78,7 +60,9 @@
                 "periodLengthUuid": "66babee1-0a94-420f-a1c6-39925f15f053"
               }
             ]
-          }
+          },
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-11-05T11:50:59.523251Z"
         },
         {
           "chargeUuid": "0c6031ab-9775-4949-abcf-8e151a86d222",
@@ -97,7 +81,9 @@
           "aggravatingFactors": [],
           "legacyData": null,
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-11-05T11:50:59.523251Z"
         },
         {
           "chargeUuid": "f81e9f9d-ab69-4115-a1ca-54682fd8a03d",
@@ -154,7 +140,29 @@
                 "periodLengthUuid": "b9fa2fcd-2b80-42d3-84d2-fe52d36b4bed"
               }
             ]
-          }
+          },
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-11-05T11:50:59.523251Z"
+        },
+        {
+          "chargeUuid": "395627dc-657e-4ba9-96d1-769c56b13ca4",
+          "offenceCode": "TH68023",
+          "offenceStartDate": "2020-10-18",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-11-05",
+            "nomisOutcomeCode": "1501",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Robbery"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-11-05T11:42:00.396855Z"
         }
       ]
     },
