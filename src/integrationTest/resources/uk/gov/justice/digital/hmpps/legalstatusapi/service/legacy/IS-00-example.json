@@ -70,7 +70,9 @@
                 "periodLengthUuid": "7ae9fa94-8859-4f6d-b664-aca3cb0503b8"
               }
             ]
-          }
+          },
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "50785540-b253-435d-9346-8b8c622b25f1",
@@ -137,7 +139,9 @@
                 "periodLengthUuid": "6f1d570b-c662-4c5c-831a-dc1ab893b22e"
               }
             ]
-          }
+          },
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "22deca13-a047-4ab3-b1c9-a5fd7753d2c1",
@@ -204,7 +208,9 @@
                 "periodLengthUuid": "09fbb533-72e7-4521-92a7-f0451e200886"
               }
             ]
-          }
+          },
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "88f9c2ef-7719-4ffc-b3af-3201200dae33",
@@ -230,7 +236,9 @@
             "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "75722d2f-a692-4e94-b26a-6f200797d869",
@@ -256,7 +264,9 @@
             "offenceDescription": "Control prostitution for gain - SOA 2003"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
@@ -282,7 +292,9 @@
             "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
@@ -308,7 +320,9 @@
             "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
@@ -334,7 +348,9 @@
             "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "50785540-b253-435d-9346-8b8c622b25f1",
@@ -360,7 +376,9 @@
             "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "22deca13-a047-4ab3-b1c9-a5fd7753d2c1",
@@ -386,7 +404,9 @@
             "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "88f9c2ef-7719-4ffc-b3af-3201200dae33",
@@ -412,7 +432,9 @@
             "offenceDescription": "Conspire to commit indictable / either way offence outside England and Wales in relation to immigration offences"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "75722d2f-a692-4e94-b26a-6f200797d869",
@@ -438,7 +460,9 @@
             "offenceDescription": "Control prostitution for gain - SOA 2003"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "6859653a-b498-42fb-a660-a9992ae09fcf",
@@ -464,7 +488,9 @@
             "offenceDescription": "Arrange / facilitate travel of a person within the United Kingdom for exploitation"
           },
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         },
         {
           "chargeUuid": "6816000f-9ab9-43f8-8b18-17943b4be542",
@@ -483,7 +509,9 @@
           "aggravatingFactors": [],
           "legacyData": null,
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         }
       ]
     },

@@ -6,118 +6,130 @@
     "personCharges": {
       "charges": [
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4530",
-            "outcomeName": "Remand on conditional bail",
-            "outcomeType": "NON_CUSTODIAL",
-            "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
-            "displayOrder": 110,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "55ba50f9-936b-4334-9934-0aa22d3d86a3",
-          "legacyData": null,
           "offenceCode": "SC15004",
-          "offenceEndDate": "2026-10-27",
           "offenceStartDate": "2024-11-01",
+          "offenceEndDate": "2026-10-27",
+          "outcome": {
+            "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+            "outcomeName": "Remand on conditional bail",
+            "nomisCode": "4530",
+            "outcomeType": "NON_CUSTODIAL",
+            "displayOrder": 110,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-10-30T13:16:01.412947Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4530",
-            "outcomeName": "Remand on conditional bail",
-            "outcomeType": "NON_CUSTODIAL",
-            "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
-            "displayOrder": 110,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "277e6ea1-6f93-46ee-bee0-c9f7f6912909",
-          "legacyData": null,
           "offenceCode": "SC15005",
-          "offenceEndDate": "2026-06-30",
           "offenceStartDate": "2024-03-01",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
-        },
-        {
+          "offenceEndDate": "2026-06-30",
           "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4530",
-            "outcomeName": "Remand on conditional bail",
-            "outcomeType": "NON_CUSTODIAL",
             "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+            "outcomeName": "Remand on conditional bail",
+            "nomisCode": "4530",
+            "outcomeType": "NON_CUSTODIAL",
             "displayOrder": 110,
-            "dispositionCode": "INTERIM"
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
           },
-          "sentence": null,
-          "chargeUuid": "e6ba1d73-8fd0-446c-8c84-5f85d6af2721",
-          "legacyData": null,
-          "offenceCode": "OF61131",
-          "offenceEndDate": null,
-          "offenceStartDate": "2026-10-26",
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-10-30T13:16:01.412947Z"
         },
         {
+          "chargeUuid": "e6ba1d73-8fd0-446c-8c84-5f85d6af2721",
+          "offenceCode": "OF61131",
+          "offenceStartDate": "2026-10-26",
+          "offenceEndDate": null,
           "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4534",
-            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
-            "displayOrder": 571,
-            "dispositionCode": "INTERIM"
+            "outcomeUuid": "8c2f8c29-3b3d-4c8e-9ad4-a0e3df2de6c0",
+            "outcomeName": "Remand on conditional bail",
+            "nomisCode": "4530",
+            "outcomeType": "NON_CUSTODIAL",
+            "displayOrder": 110,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
           },
+          "aggravatingFactors": [],
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
           "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-10-30T13:16:01.412947Z"
+        },
+        {
           "chargeUuid": "55ba50f9-936b-4334-9934-0aa22d3d86a3",
-          "legacyData": null,
           "offenceCode": "SC15004",
-          "offenceEndDate": "2026-10-27",
           "offenceStartDate": "2024-11-01",
+          "offenceEndDate": "2026-10-27",
+          "outcome": {
+            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+            "nomisCode": "4534",
+            "outcomeType": "REMAND",
+            "displayOrder": 571,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-28",
+          "appearanceCreatedAt": "2026-10-29T10:06:57.072362Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4534",
-            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
-            "displayOrder": 571,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "277e6ea1-6f93-46ee-bee0-c9f7f6912909",
-          "legacyData": null,
           "offenceCode": "SC15005",
-          "offenceEndDate": "2026-06-30",
           "offenceStartDate": "2024-03-01",
+          "offenceEndDate": "2026-06-30",
+          "outcome": {
+            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+            "nomisCode": "4534",
+            "outcomeType": "REMAND",
+            "displayOrder": 571,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-28",
+          "appearanceCreatedAt": "2026-10-29T10:06:57.072362Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4534",
-            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
-            "displayOrder": 571,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "e6ba1d73-8fd0-446c-8c84-5f85d6af2721",
-          "legacyData": null,
           "offenceCode": "OF61131",
-          "offenceEndDate": null,
           "offenceStartDate": "2026-10-26",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "eba52800-5aad-4c79-b2a7-78fc51f89849",
+            "outcomeName": "Remand in Custody after Bail Appeal by Prosecutor",
+            "nomisCode": "4534",
+            "outcomeType": "REMAND",
+            "displayOrder": 571,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-28",
+          "appearanceCreatedAt": "2026-10-29T10:06:57.072362Z"
         }
       ]
     },

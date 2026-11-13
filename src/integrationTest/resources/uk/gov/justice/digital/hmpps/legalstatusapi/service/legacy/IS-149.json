@@ -6,78 +6,86 @@
     "personCharges": {
       "charges": [
         {
-          "outcome": null,
-          "sentence": null,
           "chargeUuid": "e62fa73d-568c-4cf8-9591-30b1599b1d8b",
+          "offenceCode": "CJ88116",
+          "offenceStartDate": "2026-10-27",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
           "legacyData": {
             "postedDate": "2026-10-30",
             "nomisOutcomeCode": "4575",
-            "offenceDescription": "Assault by beating",
             "outcomeDescription": "Warrant for Offence Backed for Bail (Dated)",
+            "outcomeDispositionCode": "I",
             "outcomeConvictionFlag": false,
-            "outcomeDispositionCode": "I"
+            "offenceDescription": "Assault by beating"
           },
-          "offenceCode": "CJ88116",
-          "offenceEndDate": null,
-          "offenceStartDate": "2026-10-27",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-10-30T10:30:24.343996Z"
         },
         {
-          "outcome": null,
-          "sentence": null,
           "chargeUuid": "4faa8f38-85ce-4334-acf5-0f1fb83332c7",
+          "offenceCode": "CJ88116",
+          "offenceStartDate": "2026-10-27",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
           "legacyData": {
             "postedDate": "2026-10-30",
             "nomisOutcomeCode": "4575",
-            "offenceDescription": "Assault by beating",
             "outcomeDescription": "Warrant for Offence Backed for Bail (Dated)",
+            "outcomeDispositionCode": "I",
             "outcomeConvictionFlag": false,
-            "outcomeDispositionCode": "I"
+            "offenceDescription": "Assault by beating"
           },
-          "offenceCode": "CJ88116",
-          "offenceEndDate": null,
-          "offenceStartDate": "2026-10-27",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-30",
+          "appearanceCreatedAt": "2026-10-30T10:30:24.343996Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4531",
-            "outcomeName": "Remand in custody",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
-            "displayOrder": 570,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "e62fa73d-568c-4cf8-9591-30b1599b1d8b",
-          "legacyData": null,
           "offenceCode": "CJ88116",
-          "offenceEndDate": null,
           "offenceStartDate": "2026-10-27",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "outcomeName": "Remand in custody",
+            "nomisCode": "4531",
+            "outcomeType": "REMAND",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-29",
+          "appearanceCreatedAt": "2026-10-30T10:30:24.348541Z"
         },
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4531",
-            "outcomeName": "Remand in custody",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
-            "displayOrder": 570,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "4faa8f38-85ce-4334-acf5-0f1fb83332c7",
-          "legacyData": null,
           "offenceCode": "CJ88116",
-          "offenceEndDate": null,
           "offenceStartDate": "2026-10-27",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "outcomeName": "Remand in custody",
+            "nomisCode": "4531",
+            "outcomeType": "REMAND",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": null,
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-29",
+          "appearanceCreatedAt": "2026-10-30T10:30:24.348541Z"
         }
       ]
     },

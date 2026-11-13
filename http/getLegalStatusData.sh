@@ -36,15 +36,15 @@ read -r -p "Enter choice [1-3]: " choice
 case "$choice" in
   1)
     NAMESPACE="hmpps-legal-status-dev"
-	API_HOST_SUFFIX="-dev"
+    API_HOST_SUFFIX="-dev"
     ;;
   2)
     NAMESPACE="hmpps-legal-status-preprod"
-	API_HOST_SUFFIX="-preprod"
+    API_HOST_SUFFIX="-preprod"
     ;;
   3)
     NAMESPACE="hmpps-legal-status-prod"
-	API_HOST_SUFFIX=""
+    API_HOST_SUFFIX=""
     ;;
   *)
     echo "Invalid selection. Exiting." >&2
@@ -65,23 +65,24 @@ case "$choice" in
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
     read -r -p "Enter the response fields (comma delimited): " -i "prisonerNumber,receptionDate,imprisonmentStatus" -e RESPONSE_FIELDS
     API_URL="https://prisoner-search$API_HOST_SUFFIX.prison.service.justice.gov.uk/prisoner/$PRISON_NUMBER?responseFields=$RESPONSE_FIELDS"
-	API="PRISONER_SEARCH_API"
+    API="PRISONER_SEARCH_API"
     ;;
   2)
     read -r -p "Enter the offence codes (comma delimited): " -i "CL67011,RR84216,RT88136" -e OFFENCE_CODES
     API_URL="https://manage-offences-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/offences/severity-ratings?offenceCodes=$OFFENCE_CODES"
-	API="MANAGE_OFFENCES_API"
+    API="MANAGE_OFFENCES_API"
     ;;
   3)
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
-    read -r -p "Enter the fromDate (no value will not filter by date): " -i "2026-01-20" -e FROM_DATE
-    API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/person/$PRISON_NUMBER/charges?fromDate=$FROM_DATE"
-	API="REMAND_AND_SENTENCING_API"
+    read -r -p "Enter the fromDate (no value will not apply a fromDate filter): " -i "2026-01-20" -e FROM_DATE
+    read -r -p "Enter the toDate (no value will not apply a toDate filter): " TO_DATE
+    API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/person/$PRISON_NUMBER/charges?fromDate=$FROM_DATE&toDate=$TO_DATE"
+    API="REMAND_AND_SENTENCING_API"
     ;;
   4)
     read -r -p "Enter the sentence type ID (a UUID): " SENTENCE_TYPE_ID
     API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/sentence-type/$SENTENCE_TYPE_ID/details"
-	API="REMAND_AND_SENTENCING_API"
+    API="REMAND_AND_SENTENCING_API"
     ;;
   *)
     echo "Invalid selection. Exiting." >&2

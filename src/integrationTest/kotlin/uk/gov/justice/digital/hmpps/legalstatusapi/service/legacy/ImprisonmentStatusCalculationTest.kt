@@ -1,7 +1,6 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import org.springframework.beans.factory.annotation.Autowired
@@ -28,7 +27,6 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
 
   val today: LocalDate = LocalDate.now()
 
-  @Disabled("Temporary measure before deciding how to fix it.")
   @ParameterizedTest
   @CsvSource(
     value = [

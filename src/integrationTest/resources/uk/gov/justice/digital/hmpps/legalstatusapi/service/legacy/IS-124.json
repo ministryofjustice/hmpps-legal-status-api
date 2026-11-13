@@ -6,186 +6,194 @@
     "personCharges": {
       "charges": [
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "1510",
-            "outcomeName": "Imprisonment in default of a fine",
-            "outcomeType": "SENTENCING",
-            "outcomeUuid": "cc7efcbd-88a1-4cfd-99aa-8e8eacc8e8cb",
-            "displayOrder": 20,
-            "dispositionCode": "FINAL"
-          },
-          "sentence": {
-            "status": "ACTIVE",
-            "hasRecall": false,
-            "latestRecallType": null,
-            "fineAmount": {
-              "fineAmount": 1155.6
-            },
-            "legacyData": {
-              "active": true,
-              "bookingId": 3043993,
-              "postedDate": "2025-12-04T14:26:50.448336",
-              "sentenceCalcType": null,
-              "sentenceCategory": null,
-              "sentenceTypeDesc": null,
-              "nomisLineReference": "3"
-            },
-            "chargeNumber": null,
-            "sentenceType": {
-              "hintText": null,
-              "description": "Imprisonment in Default of Fine",
-              "displayOrder": 110,
-              "classification": "FINE",
-              "sentenceTypeUuid": "c71ceefe-932b-4a69-b87c-7c1294e37cf7"
-            },
-            "sentenceUuid": "bfa59bed-bda6-46c2-afed-4ad6e8edb87f",
-            "periodLengths": [
-              {
-                "days": 30,
-                "weeks": null,
-                "years": null,
-                "months": null,
-                "legacyData": {
-                  "lifeSentence": false,
-                  "sentenceTermCode": "IMP",
-                  "sentenceTermDescription": "Imprisonment"
-                },
-                "periodOrder": "years,months,weeks,days",
-                "periodLengthType": "TERM_LENGTH",
-                "periodLengthUuid": "10b64481-0ab2-407e-851e-0917f1f7b9c6"
-              }
-            ],
-            "convictionDate": null,
-            "sentenceServeType": "CONCURRENT",
-            "consecutiveToSentenceUuid": null
-          },
-          "chargeUuid": "047e31be-e02a-4796-ad04-a4d03ec0f867",
-          "legacyData": {
-            "postedDate": "2026-01-18",
-            "nomisOutcomeCode": null,
-            "offenceDescription": "CIVIL : Other Non-Payment",
-            "outcomeDescription": null,
-            "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
-          },
-          "offenceCode": "ZZ01008",
-          "offenceEndDate": "2025-09-02",
-          "offenceStartDate": "2025-04-09",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
-        },
-        {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "4012",
-            "outcomeName": "Remittal for sentence in custody",
-            "outcomeType": "REMAND",
-            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
-            "displayOrder": 585,
-            "dispositionCode": "INTERIM"
-          },
-          "sentence": null,
           "chargeUuid": "b95007f9-7757-4824-b056-8d5ce567e060",
-          "legacyData": {
-            "postedDate": "2026-01-18",
-            "nomisOutcomeCode": null,
-            "offenceDescription": "Wound / inflict grievous bodily harm without intent",
-            "outcomeDescription": null,
-            "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
-          },
           "offenceCode": "OF61131",
-          "offenceEndDate": null,
           "offenceStartDate": "2025-09-07",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
-        },
-        {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "1002",
-            "outcomeName": "Imprisonment",
-            "outcomeType": "SENTENCING",
-            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
-            "displayOrder": 10,
-            "dispositionCode": "FINAL"
-          },
-          "sentence": {
-            "status": "ACTIVE",
-            "hasRecall": true,
-            "latestRecallType": "FTR_56",
-            "fineAmount": null,
-            "legacyData": {
-              "active": null,
-              "bookingId": 3043993,
-              "postedDate": "2025-10-17T15:02:30.300601",
-              "sentenceCalcType": null,
-              "sentenceCategory": null,
-              "sentenceTypeDesc": null,
-              "nomisLineReference": "1"
-            },
-            "chargeNumber": null,
-            "sentenceType": {
-              "hintText": null,
-              "description": "SDS (Standard Determinate Sentence)",
-              "displayOrder": 10,
-              "classification": "STANDARD",
-              "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e"
-            },
-            "sentenceUuid": "4ae4768c-7877-4214-b36f-1744e40f90a0",
-            "periodLengths": [
-              {
-                "days": null,
-                "weeks": null,
-                "years": 2,
-                "months": null,
-                "legacyData": {
-                  "lifeSentence": false,
-                  "sentenceTermCode": "IMP",
-                  "sentenceTermDescription": "Imprisonment"
-                },
-                "periodOrder": "years,months,weeks,days",
-                "periodLengthType": "SENTENCE_LENGTH",
-                "periodLengthUuid": "08627380-a090-4cce-923d-d9485ba44e12"
-              }
-            ],
-            "convictionDate": null,
-            "sentenceServeType": "CONCURRENT",
-            "consecutiveToSentenceUuid": null
-          },
-          "chargeUuid": "b95007f9-7757-4824-b056-8d5ce567e060",
-          "legacyData": {
-            "postedDate": "2026-01-18",
-            "nomisOutcomeCode": null,
-            "offenceDescription": "Wound / inflict grievous bodily harm without intent",
-            "outcomeDescription": null,
-            "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
-          },
-          "offenceCode": "OF61131",
           "offenceEndDate": null,
-          "offenceStartDate": "2025-09-07",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
-        },
-        {
           "outcome": null,
-          "sentence": null,
-          "chargeUuid": "b95007f9-7757-4824-b056-8d5ce567e060",
+          "aggravatingFactors": [],
           "legacyData": {
             "postedDate": "2026-10-30",
             "nomisOutcomeCode": "1501",
-            "offenceDescription": "Wound / inflict grievous bodily harm without intent",
             "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
             "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": "F"
+            "offenceDescription": "Wound / inflict grievous bodily harm without intent"
           },
-          "offenceCode": "OF61131",
-          "offenceEndDate": null,
-          "offenceStartDate": "2025-09-07",
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-16",
+          "appearanceCreatedAt": "2026-10-30T12:59:50.01459Z"
+        },
+        {
+          "chargeUuid": "047e31be-e02a-4796-ad04-a4d03ec0f867",
+          "offenceCode": "ZZ01008",
+          "offenceStartDate": "2025-04-09",
+          "offenceEndDate": "2025-09-02",
+          "outcome": {
+            "outcomeUuid": "cc7efcbd-88a1-4cfd-99aa-8e8eacc8e8cb",
+            "outcomeName": "Imprisonment in default of a fine",
+            "nomisCode": "1510",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 20,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
           "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "legacyData": {
+            "postedDate": "2026-11-09",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "CIVIL : Other Non-Payment"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": {
+            "sentenceUuid": "bfa59bed-bda6-46c2-afed-4ad6e8edb87f",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "c71ceefe-932b-4a69-b87c-7c1294e37cf7",
+              "description": "Imprisonment in Default of Fine",
+              "classification": "FINE",
+              "hintText": null,
+              "displayOrder": 110
+            },
+            "convictionDate": null,
+            "fineAmount": {
+              "fineAmount": 1155.60
+            },
+            "legacyData": {
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "postedDate": "2025-12-04T14:26:50.448336",
+              "active": true,
+              "nomisLineReference": "3",
+              "bookingId": 3043993
+            },
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": false,
+            "latestRecallType": null,
+            "status": "ACTIVE",
+            "periodLengths": [
+              {
+                "years": null,
+                "months": null,
+                "weeks": null,
+                "days": 30,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "TERM_LENGTH",
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodLengthUuid": "10b64481-0ab2-407e-851e-0917f1f7b9c6"
+              }
+            ]
+          },
+          "appearanceDate": "2025-12-02",
+          "appearanceCreatedAt": "2026-01-18T11:23:39.719922Z"
+        },
+        {
+          "chargeUuid": "b95007f9-7757-4824-b056-8d5ce567e060",
+          "offenceCode": "OF61131",
+          "offenceStartDate": "2025-09-07",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "outcomeName": "Imprisonment",
+            "nomisCode": "1002",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Wound / inflict grievous bodily harm without intent"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": {
+            "sentenceUuid": "4ae4768c-7877-4214-b36f-1744e40f90a0",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "02fe3513-40a6-47e9-a72d-9dafdd936a0e",
+              "description": "SDS (Standard Determinate Sentence)",
+              "classification": "STANDARD",
+              "hintText": null,
+              "displayOrder": 10
+            },
+            "convictionDate": null,
+            "fineAmount": null,
+            "legacyData": {
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "postedDate": "2025-10-17T15:02:30.300601",
+              "active": null,
+              "nomisLineReference": "1",
+              "bookingId": 3043993
+            },
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": true,
+            "latestRecallType": "FTR_56",
+            "status": "ACTIVE",
+            "periodLengths": [
+              {
+                "years": 2,
+                "months": null,
+                "weeks": null,
+                "days": null,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodLengthUuid": "08627380-a090-4cce-923d-d9485ba44e12"
+              }
+            ]
+          },
+          "appearanceDate": "2025-10-15",
+          "appearanceCreatedAt": "2026-01-18T11:23:39.797085Z"
+        },
+        {
+          "chargeUuid": "b95007f9-7757-4824-b056-8d5ce567e060",
+          "offenceCode": "OF61131",
+          "offenceStartDate": "2025-09-07",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "outcomeName": "Remittal for sentence in custody",
+            "nomisCode": "4012",
+            "outcomeType": "REMAND",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Wound / inflict grievous bodily harm without intent"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2025-09-08",
+          "appearanceCreatedAt": "2026-01-18T11:23:39.786196Z"
         }
       ]
     },

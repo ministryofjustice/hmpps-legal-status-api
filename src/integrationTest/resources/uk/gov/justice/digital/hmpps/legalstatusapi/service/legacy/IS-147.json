@@ -6,90 +6,94 @@
     "personCharges": {
       "charges": [
         {
-          "outcome": {
-            "status": "ACTIVE",
-            "nomisCode": "1002",
-            "outcomeName": "Imprisonment",
-            "outcomeType": "SENTENCING",
-            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
-            "displayOrder": 10,
-            "dispositionCode": "FINAL"
+          "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
+          "offenceCode": "SX03204",
+          "offenceStartDate": "2026-07-12",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-10-30",
+            "nomisOutcomeCode": "1501",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003"
           },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-10-28",
+          "appearanceCreatedAt": "2026-10-30T13:17:45.597422Z"
+        },
+        {
+          "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
+          "offenceCode": "SX03204",
+          "offenceStartDate": "2026-07-12",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "outcomeName": "Imprisonment",
+            "nomisCode": "1002",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003"
+          },
+          "findingOfDomesticAbuse": null,
           "sentence": {
-            "status": "ACTIVE",
-            "hasRecall": true,
-            "latestRecallType": "FTR_56",
+            "sentenceUuid": "a76b334f-5a3a-4581-9e48-0d546399311c",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e",
+              "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
+              "classification": "STANDARD",
+              "hintText": null,
+              "displayOrder": 40
+            },
+            "convictionDate": null,
             "fineAmount": null,
             "legacyData": {
-              "active": null,
-              "bookingId": 3026962,
-              "postedDate": "2026-07-16T14:41:13.292864",
               "sentenceCalcType": null,
               "sentenceCategory": null,
               "sentenceTypeDesc": null,
-              "nomisLineReference": "10"
+              "postedDate": "2026-07-16T14:41:13.292864",
+              "active": null,
+              "nomisLineReference": "10",
+              "bookingId": 3026962
             },
-            "chargeNumber": null,
-            "sentenceType": {
-              "hintText": null,
-              "description": "ORA SDS (Offender rehabilitation act standard determinate sentence)",
-              "displayOrder": 40,
-              "classification": "STANDARD",
-              "sentenceTypeUuid": "e138374d-810f-4718-a81a-1c9d4745031e"
-            },
-            "sentenceUuid": "a76b334f-5a3a-4581-9e48-0d546399311c",
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": true,
+            "latestRecallType": "FTR_56",
+            "status": "ACTIVE",
             "periodLengths": [
               {
-                "days": null,
-                "weeks": 24,
                 "years": null,
                 "months": null,
+                "weeks": 24,
+                "days": null,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
                 "legacyData": {
                   "lifeSentence": false,
                   "sentenceTermCode": "IMP",
                   "sentenceTermDescription": "Imprisonment"
                 },
-                "periodOrder": "years,months,weeks,days",
-                "periodLengthType": "SENTENCE_LENGTH",
                 "periodLengthUuid": "54dc44d3-b6d4-4229-84bd-050b4b859334"
               }
-            ],
-            "convictionDate": null,
-            "sentenceServeType": "CONCURRENT",
-            "consecutiveToSentenceUuid": null
+            ]
           },
-          "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
-          "legacyData": {
-            "postedDate": "2026-07-16",
-            "nomisOutcomeCode": null,
-            "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003",
-            "outcomeDescription": null,
-            "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": null
-          },
-          "offenceCode": "SX03204",
-          "offenceEndDate": null,
-          "offenceStartDate": "2026-07-12",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
-        },
-        {
-          "outcome": null,
-          "sentence": null,
-          "chargeUuid": "614636c8-02c5-4b7f-add0-d62af8e117ec",
-          "legacyData": {
-            "postedDate": "2026-10-30",
-            "nomisOutcomeCode": "1501",
-            "offenceDescription": "Sex offenders register - fail comply with notification requirements - SOA 2003",
-            "outcomeDescription": "Recall to Prison",
-            "outcomeConvictionFlag": true,
-            "outcomeDispositionCode": "F"
-          },
-          "offenceCode": "SX03204",
-          "offenceEndDate": null,
-          "offenceStartDate": "2026-07-12",
-          "aggravatingFactors": [],
-          "findingOfDomesticAbuse": null
+          "appearanceDate": "2026-07-15",
+          "appearanceCreatedAt": "2026-07-16T13:40:30.067045Z"
         }
       ]
     },

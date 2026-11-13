@@ -22,7 +22,9 @@
           "aggravatingFactors": [],
           "legacyData": null,
           "findingOfDomesticAbuse": null,
-          "sentence": null
+          "sentence": null,
+          "appearanceDate": "2026-06-23",
+          "appearanceCreatedAt": "2026-06-23T11:42:00.396855Z"
         }
       ]
     },
