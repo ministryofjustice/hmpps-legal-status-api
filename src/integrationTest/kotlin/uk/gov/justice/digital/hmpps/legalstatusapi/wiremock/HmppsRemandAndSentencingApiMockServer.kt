@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import com.github.tomakehurst.wiremock.WireMockServer
 import com.github.tomakehurst.wiremock.client.ResponseDefinitionBuilder.responseDefinition
+import com.github.tomakehurst.wiremock.client.WireMock.absent
 import com.github.tomakehurst.wiremock.client.WireMock.equalTo
 import com.github.tomakehurst.wiremock.client.WireMock.get
 import com.github.tomakehurst.wiremock.client.WireMock.urlPathMatching
@@ -51,14 +52,9 @@ class HmppsRemandAndSentencingApiMockServer : WireMockServer(WIREMOCK_PORT) {
   fun stubGetPrisonerCharges(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?, response: PersonCharges) {
     stubFor(
       get(urlPathMatching("/person/$prisonNumber/charges"))
-        .withQueryParam(
-          "fromDate",
-          equalTo(ISO_DATE.format(fromDate)),
-        )
-        .withQueryParam(
-          "toDate",
-          equalTo(ISO_DATE.format(toDate)),
-        )
+        // A null date must not be sent as a query parameter. RaS then uses its default date.
+        .withQueryParam("fromDate", fromDate?.let { equalTo(ISO_DATE.format(it)) } ?: absent())
+        .withQueryParam("toDate", toDate?.let { equalTo(ISO_DATE.format(it)) } ?: absent())
         .willReturn(
           responseDefinition()
             .withStatus(200)

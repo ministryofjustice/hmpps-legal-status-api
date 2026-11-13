@@ -19,11 +19,13 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtensio
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPersonLocationApiExtension
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPersonLocationApiExtension.Companion.hmppsPersonLocationApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension.Companion.hmppsPrisonerSearchApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.PeriodOfCustody
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
@@ -74,6 +76,8 @@ abstract class IntegrationTestBase {
   fun stubGetTokenFromHmppsAuth() = hmppsAuth.stubGrantToken()
 
   fun stubGetPrisonerFromPrisonerSearchApi(response: Prisoner) = hmppsPrisonerSearchApi.stubGetPrisoner(response.prisonerNumber!!, response)
+
+  fun stubGetLatestPeriodOfCustodyFromPersonLocationApi(prisonNumber: String, response: PeriodOfCustody) = hmppsPersonLocationApi.stubGetLatestPeriodOfCustody(prisonNumber, response)
 
   fun stubGetChargesFromRemandAndSentencingApi(prisonNumber: String, fromDate: LocalDate?, toDate: LocalDate?, response: PersonCharges) = hmppsRemandAndSentencingApi.stubGetPrisonerCharges(prisonNumber, fromDate, toDate, response)
 
