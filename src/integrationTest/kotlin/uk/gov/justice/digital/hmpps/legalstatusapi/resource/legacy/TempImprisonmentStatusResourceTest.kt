@@ -24,7 +24,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPer
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceTypeDetails
 import java.time.LocalDate
-import java.time.OffsetDateTime
+import java.time.LocalDateTime
 import java.util.UUID
 
 /**
@@ -112,7 +112,7 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
     hmppsPrisonerSearchApi.stubGetPrisoner(prisonNumber, aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate))
     hmppsPersonLocationApi.stubGetLatestPeriodOfCustody(
       prisonNumber,
-      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = OffsetDateTime.parse("2025-01-20T09:00:00Z"))),
+      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00"))),
     )
     val sentenceTypeUuid = UUID.randomUUID()
     hmppsRemandAndSentencingApi.stubGetPrisonerCharges(

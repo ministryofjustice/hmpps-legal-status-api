@@ -4,12 +4,13 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.Im
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 fun aLegacyImprisonmentStatusResult(
   prisonNumber: String = randomValidPrisonNumber(),
   nomisImprisonmentStatus: String? = "SENT03",
   receptionDate: LocalDate? = LocalDate.now().minusMonths(6),
-  previousPeriodConcludedAt: Instant? = Instant.parse("2025-01-20T09:00:00Z"),
+  previousPeriodConcludedAt: LocalDateTime? = LocalDateTime.parse("2025-01-20T09:00:00"),
   chargesWindowStart: LocalDate? = LocalDate.parse("2025-01-21"),
   sentencingData: LegacySentencingData = LegacySentencingData(
     sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),

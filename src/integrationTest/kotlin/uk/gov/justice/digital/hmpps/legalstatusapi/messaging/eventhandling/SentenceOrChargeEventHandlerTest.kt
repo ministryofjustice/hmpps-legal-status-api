@@ -27,7 +27,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPer
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceTypeDetails
 import java.time.Instant
 import java.time.LocalDate
-import java.time.OffsetDateTime
+import java.time.LocalDateTime
 import java.time.temporal.ChronoUnit
 import java.util.concurrent.CompletableFuture
 
@@ -59,7 +59,7 @@ class SentenceOrChargeEventHandlerTest : IntegrationTestBase() {
 
     stubGetLatestPeriodOfCustodyFromPersonLocationApi(
       prisonNumber,
-      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = OffsetDateTime.parse("2025-01-20T09:00:00Z"))),
+      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00"))),
     )
 
     val personCharges = PersonCharges(listOf(aValidPersonCharge()))

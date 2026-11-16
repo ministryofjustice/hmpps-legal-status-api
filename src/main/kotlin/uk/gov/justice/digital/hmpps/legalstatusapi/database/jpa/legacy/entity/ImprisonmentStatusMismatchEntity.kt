@@ -15,6 +15,7 @@ import org.hibernate.type.SqlTypes
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.util.UUID
 
 /**
@@ -24,7 +25,7 @@ import java.util.UUID
  * The [id] is the reference sent to Slack (and so the resulting Jira ticket).
  *
  * @property previousPeriodConcludedAt When the prisoner's previous period of custody concluded, from the Person Location
- * API, or null if there is no previous period of custody.
+ * API, or null if there is no previous period of custody. A local date and time, with no offset, as the API returns it.
  * @property chargesWindowStart The start of the date range used to get the prisoner's charges from RaS (the RaS
  * `fromDate`), or null if no `fromDate` was used. It is selected from [previousPeriodConcludedAt].
  * @property rasData The raw Remand and Sentencing API responses used in the calculation.
@@ -49,7 +50,7 @@ class ImprisonmentStatusMismatchEntity(
   val receptionDate: LocalDate? = null,
 
   @Column(name = "PREVIOUS_PERIOD_CONCLUDED_AT", nullable = true, updatable = false)
-  val previousPeriodConcludedAt: Instant? = null,
+  val previousPeriodConcludedAt: LocalDateTime? = null,
 
   @Column(name = "CHARGES_WINDOW_START", nullable = true, updatable = false)
   val chargesWindowStart: LocalDate? = null,
