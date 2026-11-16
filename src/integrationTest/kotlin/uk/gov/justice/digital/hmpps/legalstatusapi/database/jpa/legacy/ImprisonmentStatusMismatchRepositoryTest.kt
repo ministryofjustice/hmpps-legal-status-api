@@ -10,6 +10,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repositor
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 
 /**
  * Temporary test class for ImprisonmentStatusMismatchRepository whilst we do not have any other tests that test the
@@ -44,7 +45,7 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
       assertThat(prisonNumber).isEqualTo("A1234BC")
       assertThat(bookingId).isEqualTo("1234567")
       assertThat(receptionDate).isEqualTo(LocalDate.of(2026, 9, 1))
-      assertThat(previousPeriodConcludedAt).isEqualTo(Instant.parse("2025-01-20T09:00:00Z"))
+      assertThat(previousPeriodConcludedAt).isEqualTo(LocalDateTime.parse("2025-01-20T09:00:00"))
       assertThat(chargesWindowStart).isEqualTo(LocalDate.of(2025, 1, 21))
       assertThat(nomisImprisonmentStatus).isEqualTo("SENT03")
       assertThat(nomisCalculatedAt).isEqualTo(Instant.parse("2026-10-26T09:00:00Z"))
@@ -118,7 +119,7 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     nomisImprisonmentStatus: String = "SENT03",
     bookingId: String? = "1234567",
     receptionDate: LocalDate? = LocalDate.of(2026, 9, 1),
-    previousPeriodConcludedAt: Instant? = Instant.parse("2025-01-20T09:00:00Z"),
+    previousPeriodConcludedAt: LocalDateTime? = LocalDateTime.parse("2025-01-20T09:00:00"),
     chargesWindowStart: LocalDate? = LocalDate.of(2025, 1, 21),
     nomisCalculatedAt: Instant? = Instant.parse("2026-10-26T09:00:00Z"),
     dpsMainOffenceCode: String? = "TH68010",

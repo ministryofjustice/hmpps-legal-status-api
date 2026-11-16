@@ -48,6 +48,7 @@ import java.time.Clock
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
@@ -110,7 +111,7 @@ class LegacyDataServiceTest {
     val prisonNumber = randomValidPrisonNumber()
     given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
     given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
-      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = OffsetDateTime.parse("2025-01-20T09:00:00Z"))),
+      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00"))),
     )
 
     val sentenceTypeUuid = UUID.randomUUID()
@@ -155,7 +156,7 @@ class LegacyDataServiceTest {
     val receptionDate = LocalDate.now().minusMonths(3)
     given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate, imprisonmentStatus = "LR"))
     given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
-      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = OffsetDateTime.parse("2025-01-20T09:00:00Z"))),
+      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00"))),
     )
     given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(
       aRasPrisonerCharges(aRasCharge(offenceCode = "TH68010", outcome = aRasChargeOutcome(nomisCode = "1002"))),
@@ -170,7 +171,7 @@ class LegacyDataServiceTest {
     assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
     assertThat(actual.nomisImprisonmentStatus).isEqualTo("LR")
     assertThat(actual.receptionDate).isEqualTo(receptionDate)
-    assertThat(actual.previousPeriodConcludedAt).isEqualTo(Instant.parse("2025-01-20T09:00:00Z"))
+    assertThat(actual.previousPeriodConcludedAt).isEqualTo(LocalDateTime.parse("2025-01-20T09:00:00"))
     assertThat(actual.chargesWindowStart).isEqualTo(LocalDate.parse("2025-01-21"))
     assertThat(actual.calculation).isEqualTo(calculation)
     assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(offences = listOf(Offence(offenceCode = "TH68010", outcomeCode = "1002"))))

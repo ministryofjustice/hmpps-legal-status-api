@@ -150,7 +150,7 @@ class LegacyDataService(
       prisonNumber = prisonNumber,
       nomisImprisonmentStatus = prisoner.imprisonmentStatus,
       receptionDate = prisoner.receptionDate,
-      previousPeriodConcludedAt = periodOfCustody.previousPeriod?.concludedAt?.toInstant(),
+      previousPeriodConcludedAt = periodOfCustody.previousPeriod?.concludedAt,
       chargesWindowStart = chargesWindowStart,
       sentencingData = sentencingData,
       calculation = calculation,

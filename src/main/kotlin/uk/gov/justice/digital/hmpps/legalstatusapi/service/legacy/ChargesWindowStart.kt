@@ -2,9 +2,6 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.PeriodOfCustody
 import java.time.LocalDate
-import java.time.ZoneId
-
-private val UK_ZONE: ZoneId = ZoneId.of("Europe/London")
 
 /**
  * Returns the start of the date range for the prisoner's charges: the `fromDate` to use when we get the charges from
@@ -31,9 +28,12 @@ private val UK_ZONE: ZoneId = ZoneId.of("Europe/London")
  *   calculation can give a mismatch. This is a known limit. The earlier `fromDate` (the Prisoner Search
  *   `receptionDate`) had the same limit.
  *
+ * Time zone: the Person Location API returns the date and time with no offset (for example "2026-05-30T18:00:29").
+ * We take its date as it is, with no time zone conversion. We assume that it is the UK local date and time, the same
+ * as NOMIS, so that it agrees with the RaS court appearance dates (which are UK dates).
+ *
  * Known limit: if a prisoner is released and then remanded on a new matter on the same day, that hearing is excluded.
  */
 fun chargesWindowStart(periodOfCustody: PeriodOfCustody): LocalDate? = periodOfCustody.previousPeriod?.concludedAt
-  ?.atZoneSameInstant(UK_ZONE)
   ?.toLocalDate()
   ?.plusDays(1)

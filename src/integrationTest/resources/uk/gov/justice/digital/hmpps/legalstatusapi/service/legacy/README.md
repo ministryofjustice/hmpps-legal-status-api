@@ -54,8 +54,8 @@ Each json file must have the following properties:
 * `receptionDate`  
   The receptionDate property for the prisoner from prisoner-search-api. It is not used in the calculation.
 * `previousPeriodConcludedAt` (optional)  
-  When the prisoner's previous period of custody concluded, from the Person Location API, as an ISO instant (for example
-  `2025-01-20T09:00:00Z`). The test gives the prisoner a period of custody with this previous period. The calculation
+  When the prisoner's previous period of custody concluded, from the Person Location API, as a local date and time with
+  no offset (for example `2025-01-20T09:00:00`), the same as the API returns it. The test gives the prisoner a period of custody with this previous period. The calculation
   selects the start of the date range for the RaS charges from it. Copy the contents of the
   `previous_period_concluded_at` database field into this property. If the field is null, or the mismatch was recorded
   before IS-162, leave this property out. Then there is no previous period, and the RaS API is called with no

@@ -27,6 +27,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.ZoneId
 import java.util.UUID
 
@@ -103,7 +104,7 @@ class ImprisonmentStatusComparisonServiceTest {
     // Given
     val prisonNumber = randomValidPrisonNumber()
     val receptionDate = LocalDate.parse("2026-01-12")
-    val previousPeriodConcludedAt = Instant.parse("2025-01-20T09:00:00Z")
+    val previousPeriodConcludedAt = LocalDateTime.parse("2025-01-20T09:00:00")
     val chargesWindowStart = LocalDate.parse("2025-01-21")
     val dpsCalculatedAt = Instant.parse("2026-04-17T09:13:20Z")
     val nomisCalculatedAt = Instant.parse("2026-04-17T09:13:01Z")

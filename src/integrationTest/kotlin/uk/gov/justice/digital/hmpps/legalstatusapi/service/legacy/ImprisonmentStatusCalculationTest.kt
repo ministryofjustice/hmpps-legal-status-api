@@ -12,9 +12,8 @@ import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPrevious
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
-import java.time.Instant
 import java.time.LocalDate
-import java.time.ZoneOffset
+import java.time.LocalDateTime
 import java.util.UUID
 
 /**
@@ -71,7 +70,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
 
     // With no previousPeriodConcludedAt, there is no previous period of custody
     val periodOfCustody = aValidPeriodOfCustody(
-      previousPeriod = scenario.previousPeriodConcludedAt?.let { aValidPreviousPeriod(concludedAt = it.atOffset(ZoneOffset.UTC)) },
+      previousPeriod = scenario.previousPeriodConcludedAt?.let { aValidPreviousPeriod(concludedAt = it) },
     )
     stubGetLatestPeriodOfCustodyFromPersonLocationApi(prisonNumber, periodOfCustody)
 
@@ -94,7 +93,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
   data class Scenario(
     val jiraReference: String,
     val receptionDate: LocalDate,
-    val previousPeriodConcludedAt: Instant? = null,
+    val previousPeriodConcludedAt: LocalDateTime? = null,
     val expectedStatus: String,
     val rasData: RasData,
     val offenceSeverities: Map<String, Int>,

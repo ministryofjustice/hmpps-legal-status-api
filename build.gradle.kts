@@ -187,6 +187,13 @@ tasks.register<GenerateTask>("buildPersonLocationApiModel") {
       "models" to "PeriodOfCustody, PeriodsOfCustody, CodedDescription, PreviousPeriod, ErrorResponse",
     ),
   )
+  // The spec declares the period of custody dates as date-time (with an offset), but the API returns them without an
+  // offset (for example "2026-03-30T13:48:03"). So they are generated as LocalDateTime, not OffsetDateTime.
+  typeMappings.set(
+    mapOf(
+      "DateTime" to "LocalDateTime",
+    ),
+  )
 }
 
 tasks {

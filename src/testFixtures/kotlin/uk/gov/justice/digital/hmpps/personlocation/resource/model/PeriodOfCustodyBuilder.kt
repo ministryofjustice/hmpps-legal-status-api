@@ -1,11 +1,11 @@
 package uk.gov.justice.digital.hmpps.personlocation.resource.model
 
-import java.time.OffsetDateTime
+import java.time.LocalDateTime
 
 fun aValidPeriodOfCustody(
-  commencedAt: OffsetDateTime = OffsetDateTime.parse("2026-03-01T10:15:00Z"),
+  commencedAt: LocalDateTime = LocalDateTime.parse("2026-03-01T10:15:00"),
   status: CodedDescription = aValidCodedDescription(),
-  concludedAt: OffsetDateTime? = null, // null means the period of custody is current
+  concludedAt: LocalDateTime? = null, // null means the period of custody is current
   previousPeriod: PreviousPeriod? = null,
 ): PeriodOfCustody = PeriodOfCustody(
   commencedAt = commencedAt,
@@ -24,7 +24,7 @@ fun aValidCodedDescription(
 )
 
 fun aValidPreviousPeriod(
-  concludedAt: OffsetDateTime = OffsetDateTime.parse("2025-01-20T09:00:00Z"),
+  concludedAt: LocalDateTime = LocalDateTime.parse("2025-01-20T09:00:00"),
 ): PreviousPeriod = PreviousPeriod(
   concludedAt = concludedAt,
 )
