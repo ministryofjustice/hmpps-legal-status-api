@@ -7,10 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPeriodOfCustody
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPreviousPeriod
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
+import java.time.Instant
 import java.time.LocalDate
+import java.time.ZoneOffset
 import java.util.UUID
 
 /**
@@ -65,9 +69,15 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val prisoner = aValidPrisoner(prisonNumber, receptionDate = scenario.receptionDate)
     stubGetPrisonerFromPrisonerSearchApi(prisoner)
 
+    // With no previousPeriodConcludedAt, there is no previous period of custody
+    val periodOfCustody = aValidPeriodOfCustody(
+      previousPeriod = scenario.previousPeriodConcludedAt?.let { aValidPreviousPeriod(concludedAt = it.atOffset(ZoneOffset.UTC)) },
+    )
+    stubGetLatestPeriodOfCustodyFromPersonLocationApi(prisonNumber, periodOfCustody)
+
     stubGetChargesFromRemandAndSentencingApi(
       prisonNumber = prisonNumber,
-      fromDate = scenario.receptionDate,
+      fromDate = chargesWindowStart(periodOfCustody),
       toDate = today,
       response = scenario.rasData.personCharges,
     )
@@ -84,6 +94,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
   data class Scenario(
     val jiraReference: String,
     val receptionDate: LocalDate,
+    val previousPeriodConcludedAt: Instant? = null,
     val expectedStatus: String,
     val rasData: RasData,
     val offenceSeverities: Map<String, Int>,

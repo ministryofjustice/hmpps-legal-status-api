@@ -3,10 +3,13 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy
 import mu.KotlinLogging
 import org.springframework.stereotype.Service
 import tools.jackson.databind.json.JsonMapper
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.personlocation.PeriodOfCustodyNotFoundException
+import uk.gov.justice.digital.hmpps.legalstatusapi.client.personlocation.PersonLocationApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.LegacySentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.PeriodOfCustody
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.Prisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence.Status.ACTIVE
@@ -24,6 +27,7 @@ private val log = KotlinLogging.logger {}
 @Service
 class LegacyDataService(
   private val prisonerSearchApiClient: PrisonerSearchApiClient,
+  private val personLocationApiClient: PersonLocationApiClient,
   private val remandAndSentencingApiClient: RemandAndSentencingApiClient,
   private val sentenceTypeDetailsProvider: SentenceTypeDetailsProvider,
   private val clock: Clock,
@@ -44,17 +48,20 @@ class LegacyDataService(
    * with the inputs used and the Imprisonment Status that NOMIS holds.
    *
    * Steps:
-   * 1. Retrieve the prisoner's receptionDate (which we assume at this point to be the booking start date)
-   * 2. Get the prisoner's sentence(s) and offence(s) from RaS, using the prisonNumber to identify the prisoner along
-   *    with a date range comprised of receptionDate to current date
-   * 3. Choose the sentence that determines the status: lowest status rank, then longest, then most severe offence
+   * 1. Retrieve the prisoner from Prisoner Search, for the Imprisonment Status that NOMIS holds and the bookingId
+   * 2. Get the prisoner's latest period of custody from the Person Location API, and select the start of the date
+   *    range for RaS from it (see [chargesWindowStart]). If there is no period of custody, throw
+   *    [PeriodOfCustodyNotFoundException]
+   * 3. Get the prisoner's sentence(s) and offence(s) from RaS, using the prisonNumber to identify the prisoner along
+   *    with a date range comprised of the date from step 2 (if any) to current date
+   * 4. Choose the sentence that determines the status: lowest status rank, then longest, then most severe offence
    *    1. If there are no sentences (or none has a mapping), choose the main offence instead: lowest status rank (from
    *       its outcome code), then most severe offence
-   * 4. Use the sentenceCategory and sentenceCalcType, or the offence's outcomeCode, to look up the Imprisonment Status
+   * 5. Use the sentenceCategory and sentenceCalcType, or the offence's outcomeCode, to look up the Imprisonment Status
    *    Mapping
-   * 5. Return the Imprisonment Status from the Imprisonment Status Mapping record (or UNKNOWN)
+   * 6. Return the Imprisonment Status from the Imprisonment Status Mapping record (or UNKNOWN)
    *
-   * Steps 3 to 5 are implemented by [ImprisonmentStatusCalculator].
+   * Steps 4 to 6 are implemented by [ImprisonmentStatusCalculator].
    *
    * @param prisonNumber The prison number of the prisoner.
    * @return The calculation, its inputs, and the NOMIS Imprisonment Status.
@@ -64,9 +71,16 @@ class LegacyDataService(
     val prisoner = getPrisoner(prisonNumber)
 
     // Step 2
+    val periodOfCustody = getLatestPeriodOfCustody(prisonNumber)
+    val chargesWindowStart = chargesWindowStart(periodOfCustody)
+      .also {
+        log.info { "Selected charges window start (RaS fromDate) [${it ?: "none"}] for prisoner [$prisonNumber] (${if (it == null) "no previous period of custody" else "day after the previous period of custody concluded"})" }
+      }
+
+    // Step 3
     val prisonerCharges = remandAndSentencingApiClient.getPrisonerCharges(
       prisonNumber = prisonNumber,
-      fromDate = prisoner.receptionDate,
+      fromDate = chargesWindowStart,
       toDate = LocalDate.now(clock),
     )
 
@@ -98,13 +112,15 @@ class LegacyDataService(
       offences = offences,
     )
 
-    // Steps 3 to 5
+    // Steps 4 to 6
     val calculation = imprisonmentStatusCalculator.calculate(sentencingData)
 
     return LegacyImprisonmentStatusResult(
       prisonNumber = prisonNumber,
       nomisImprisonmentStatus = prisoner.imprisonmentStatus,
       receptionDate = prisoner.receptionDate,
+      previousPeriodConcludedAt = periodOfCustody.previousPeriod?.concludedAt?.toInstant(),
+      chargesWindowStart = chargesWindowStart,
       sentencingData = sentencingData,
       calculation = calculation,
       rasData = rasData(prisonerCharges.rawJson, sentenceTypeDetailsByUuid),
@@ -116,6 +132,14 @@ class LegacyDataService(
   private fun getPrisoner(prisonNumber: String): Prisoner = prisonerSearchApiClient.getPrisoner(prisonNumber)
     .also {
       log.info { "Retrieved prisoner [$prisonNumber] from Prisoner Search API" }
+    }
+
+  private fun getLatestPeriodOfCustody(prisonNumber: String): PeriodOfCustody = (
+    personLocationApiClient.getLatestPeriodOfCustody(prisonNumber)
+      ?: throw PeriodOfCustodyNotFoundException(prisonNumber)
+    )
+    .also {
+      log.info { "Retrieved latest period of custody for prisoner [$prisonNumber] from Person Location API" }
     }
 
   // The raw charges response is read as a tree rather than into our models, so that no fields are lost

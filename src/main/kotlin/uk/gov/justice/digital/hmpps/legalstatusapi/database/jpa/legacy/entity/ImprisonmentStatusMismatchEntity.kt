@@ -23,6 +23,10 @@ import java.util.UUID
  *
  * The [id] is the reference sent to Slack (and so the resulting Jira ticket).
  *
+ * @property previousPeriodConcludedAt When the prisoner's previous period of custody concluded, from the Person Location
+ * API, or null if there is no previous period of custody.
+ * @property chargesWindowStart The start of the date range used to get the prisoner's charges from RaS (the RaS
+ * `fromDate`), or null if no `fromDate` was used. It is selected from [previousPeriodConcludedAt].
  * @property rasData The raw Remand and Sentencing API responses used in the calculation.
  * @property offenceSeverities The Manage Offences severity ranking of each offence used in the calculation. Offences
  * with no known severity are not in the map.
@@ -43,6 +47,12 @@ class ImprisonmentStatusMismatchEntity(
 
   @Column(name = "RECEPTION_DATE", nullable = true, updatable = false)
   val receptionDate: LocalDate? = null,
+
+  @Column(name = "PREVIOUS_PERIOD_CONCLUDED_AT", nullable = true, updatable = false)
+  val previousPeriodConcludedAt: Instant? = null,
+
+  @Column(name = "CHARGES_WINDOW_START", nullable = true, updatable = false)
+  val chargesWindowStart: LocalDate? = null,
 
   // A NOMIS code rather than an ImprisonmentStatus, as NOMIS may return statuses that are not in IMPRISONMENT_STATUS
   @Column(name = "NOMIS_IMPRISONMENT_STATUS", nullable = false, updatable = false)

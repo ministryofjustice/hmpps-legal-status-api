@@ -44,6 +44,8 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
       assertThat(prisonNumber).isEqualTo("A1234BC")
       assertThat(bookingId).isEqualTo("1234567")
       assertThat(receptionDate).isEqualTo(LocalDate.of(2026, 9, 1))
+      assertThat(previousPeriodConcludedAt).isEqualTo(Instant.parse("2025-01-20T09:00:00Z"))
+      assertThat(chargesWindowStart).isEqualTo(LocalDate.of(2025, 1, 21))
       assertThat(nomisImprisonmentStatus).isEqualTo("SENT03")
       assertThat(nomisCalculatedAt).isEqualTo(Instant.parse("2026-10-26T09:00:00Z"))
       assertThat(dpsImprisonmentStatus.id).isEqualTo("RECEP_REM")
@@ -77,6 +79,8 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     val mismatch = aValidImprisonmentStatusMismatch(
       bookingId = null,
       receptionDate = null,
+      previousPeriodConcludedAt = null,
+      chargesWindowStart = null,
       nomisCalculatedAt = null,
       dpsMainOffenceCode = null,
     )
@@ -89,6 +93,8 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     with(actual) {
       assertThat(bookingId).isNull()
       assertThat(receptionDate).isNull()
+      assertThat(previousPeriodConcludedAt).isNull()
+      assertThat(chargesWindowStart).isNull()
       assertThat(nomisCalculatedAt).isNull()
       assertThat(dpsMainOffenceCode).isNull()
     }
@@ -112,12 +118,16 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     nomisImprisonmentStatus: String = "SENT03",
     bookingId: String? = "1234567",
     receptionDate: LocalDate? = LocalDate.of(2026, 9, 1),
+    previousPeriodConcludedAt: Instant? = Instant.parse("2025-01-20T09:00:00Z"),
+    chargesWindowStart: LocalDate? = LocalDate.of(2025, 1, 21),
     nomisCalculatedAt: Instant? = Instant.parse("2026-10-26T09:00:00Z"),
     dpsMainOffenceCode: String? = "TH68010",
   ) = ImprisonmentStatusMismatchEntity(
     prisonNumber = "A1234BC",
     bookingId = bookingId,
     receptionDate = receptionDate,
+    previousPeriodConcludedAt = previousPeriodConcludedAt,
+    chargesWindowStart = chargesWindowStart,
     nomisImprisonmentStatus = nomisImprisonmentStatus,
     nomisCalculatedAt = nomisCalculatedAt,
     dpsImprisonmentStatus = imprisonmentStatusRepository.findById("RECEP_REM").get(),

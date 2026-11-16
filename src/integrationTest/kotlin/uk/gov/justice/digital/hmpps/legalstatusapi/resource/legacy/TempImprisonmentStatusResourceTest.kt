@@ -10,9 +10,12 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.aLegacySentenc
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.anOffence
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsAuthApiExtension.Companion.hmppsAuth
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsManageOffencesApiExtension.Companion.hmppsManageOffencesApi
+import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPersonLocationApiExtension.Companion.hmppsPersonLocationApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsPrisonerSearchApiExtension.Companion.hmppsPrisonerSearchApi
 import uk.gov.justice.digital.hmpps.legalstatusapi.wiremock.HmppsRemandAndSentencingApiExtension.Companion.hmppsRemandAndSentencingApi
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPeriodOfCustody
+import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPreviousPeriod
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonCharges
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidChargeOutcome
@@ -21,6 +24,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPer
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidSentenceTypeDetails
 import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.util.UUID
 
 /**
@@ -106,10 +110,15 @@ class TempImprisonmentStatusResourceTest : IntegrationTestBase() {
     val prisonNumber = randomValidPrisonNumber()
     val receptionDate = LocalDate.now().minusMonths(3)
     hmppsPrisonerSearchApi.stubGetPrisoner(prisonNumber, aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate))
+    hmppsPersonLocationApi.stubGetLatestPeriodOfCustody(
+      prisonNumber,
+      aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = OffsetDateTime.parse("2025-01-20T09:00:00Z"))),
+    )
     val sentenceTypeUuid = UUID.randomUUID()
     hmppsRemandAndSentencingApi.stubGetPrisonerCharges(
       prisonNumber,
-      fromDate = receptionDate,
+      // The day after the previous period of custody concluded
+      fromDate = LocalDate.parse("2025-01-21"),
       toDate = LocalDate.now(),
       response = PersonCharges(
         charges = listOf(

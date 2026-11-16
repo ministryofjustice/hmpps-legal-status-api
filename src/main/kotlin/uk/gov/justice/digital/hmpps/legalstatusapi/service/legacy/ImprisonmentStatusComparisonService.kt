@@ -81,6 +81,8 @@ class ImprisonmentStatusComparisonService(
           prisonNumber = prisonNumber,
           bookingId = result.bookingId,
           receptionDate = result.receptionDate,
+          previousPeriodConcludedAt = result.previousPeriodConcludedAt,
+          chargesWindowStart = result.chargesWindowStart,
           nomisImprisonmentStatus = nomisStatus,
           nomisCalculatedAt = nomisCalculatedAt,
           dpsImprisonmentStatus = imprisonmentStatusRepository.getReferenceById(dpsStatus),
