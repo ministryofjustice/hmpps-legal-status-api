@@ -49,7 +49,6 @@ import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
-import java.time.OffsetDateTime
 import java.time.ZoneId
 import java.util.UUID
 
@@ -359,7 +358,7 @@ class LegacyDataServiceTest {
     legacyData = legacyData,
     sentence = sentence,
     appearanceDate = LocalDate.now(),
-    appearanceCreatedAt = OffsetDateTime.now(),
+    appearanceCreatedAt = LocalDateTime.now(),
   )
 
   private fun aRasChargeOutcome(nomisCode: String) = ChargeOutcome(
