@@ -58,8 +58,9 @@ echo "1) prisoner-search-api        -  get prisoner by PRN"
 echo "2) manage-offences-api        -  get offence severity by offence code"
 echo "3) remand-and-sentencing-api  -  get charge data by PRN and fromDate"
 echo "4) remand-and-sentencing-api  -  get sentence details by sentence type ID"
+echo "5) person-location-api        -  get latest period of custody for a prisoner"
 echo
-read -r -p "Enter choice [1-4]: " choice
+read -r -p "Enter choice [1-5]: " choice
 case "$choice" in
   1)
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
@@ -83,6 +84,11 @@ case "$choice" in
     read -r -p "Enter the sentence type ID (a UUID): " SENTENCE_TYPE_ID
     API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/sentence-type/$SENTENCE_TYPE_ID/details"
     API="REMAND_AND_SENTENCING_API"
+    ;;
+  5)
+    read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
+    API_URL="https://person-location-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/integrations/people/$PRISON_NUMBER/periods-of-custody/latest"
+    API="PERSON_LOCATION_API"
     ;;
   *)
     echo "Invalid selection. Exiting." >&2
