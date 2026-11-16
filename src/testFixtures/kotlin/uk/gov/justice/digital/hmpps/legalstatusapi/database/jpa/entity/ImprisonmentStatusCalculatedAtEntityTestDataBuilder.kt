@@ -5,9 +5,8 @@ import java.time.Instant
 
 fun anImprisonmentStatusCalculatedAtEntity(
   prisonNumber: String = randomValidPrisonNumber(),
-  calculatedAt: Instant? = null,
+  calculatedAt: Instant = Instant.now(),
 ): ImprisonmentStatusCalculatedAtEntity = ImprisonmentStatusCalculatedAtEntity(
   prisonNumber = prisonNumber,
-).apply {
-  calculatedAt?.also { this.calculatedAt = it }
-}
+  calculatedAt = calculatedAt,
+)
