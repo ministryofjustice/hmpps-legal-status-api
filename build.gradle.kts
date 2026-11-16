@@ -80,15 +80,13 @@ tasks.named<Test>("integrationTest") {
   dependsOn("copyAgent")
 }
 
-tasks.register<GenerateTask>("buildManageOffencesApiModel") {
+// Properties for all instances of the OpenAPI code generation task. Tasks for specific swagger specs can override and add properties as necessary
+tasks.withType(GenerateTask::class) {
   dependsOn("processResources")
   group = "openapi tools"
-  description = "Generate model from Manage Offences API YAML definition"
   validateSpec.set(true)
   generatorName.set("kotlin-spring")
-  inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-15.json")
   outputDir.set("$buildDirectory/generated")
-  modelPackage.set("uk.gov.justice.digital.hmpps.manageoffences.resource.model")
   configOptions.set(
     mapOf(
       "dateLibrary" to "java8",
@@ -105,55 +103,29 @@ tasks.register<GenerateTask>("buildManageOffencesApiModel") {
       "models" to "",
     ),
   )
+  typeMappings.set(
+    mapOf(
+      "DateTime" to "LocalDateTime",
+    ),
+  )
+}
+
+tasks.register<GenerateTask>("buildManageOffencesApiModel") {
+  description = "Generate model from Manage Offences API YAML definition"
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-15.json")
+  modelPackage.set("uk.gov.justice.digital.hmpps.manageoffences.resource.model")
 }
 
 tasks.register<GenerateTask>("buildRemandAndSentencingApiModel") {
-  dependsOn("processResources")
-  group = "openapi tools"
   description = "Generate model from Remand and Sentencing API YAML definition"
-  validateSpec.set(true)
-  generatorName.set("kotlin-spring")
   inputSpec.set("$projectDir/src/main/resources/static/openapi/remand-and-sentencing-api-2026-11-12.json")
-  outputDir.set("$buildDirectory/generated")
   modelPackage.set("uk.gov.justice.digital.hmpps.remandandsentencing.resource.model")
-  configOptions.set(
-    mapOf(
-      "dateLibrary" to "java8",
-      "serializationLibrary" to "jackson",
-      "useBeanValidation" to "true",
-      "useSpringBoot4" to "true",
-      "useJackson3" to "true",
-      "openApiNullable" to "false",
-      "enumPropertyNaming" to "UPPERCASE",
-    ),
-  )
-  globalProperties.set(
-    mapOf(
-      "models" to "",
-    ),
-  )
 }
 
 tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
-  dependsOn("processResources")
-  group = "openapi tools"
   description = "Generate model from Prisoner Search API YAML definition"
-  validateSpec.set(true)
-  generatorName.set("kotlin-spring")
   inputSpec.set("$projectDir/src/main/resources/static/openapi/prisoner-search-api-2026-10-13.json")
-  outputDir.set("$buildDirectory/generated")
   modelPackage.set("uk.gov.justice.digital.hmpps.prisonersearch.resource.model")
-  configOptions.set(
-    mapOf(
-      "dateLibrary" to "java8",
-      "serializationLibrary" to "jackson",
-      "useBeanValidation" to "true",
-      "useSpringBoot4" to "true",
-      "useJackson3" to "true",
-      "openApiNullable" to "false",
-      "enumPropertyNaming" to "UPPERCASE",
-    ),
-  )
   globalProperties.set(
     mapOf(
       "models" to "Prisoner, PersonalCareNeed, Language, PrisonerAlias, PrisonerAlert, MainOffence, Offence, CurrentIncentive, IncentiveLevel, BodyPartDetail, Address, EmailAddress, PhoneNumber, Identifier",
@@ -162,36 +134,13 @@ tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
 }
 
 tasks.register<GenerateTask>("buildPersonLocationApiModel") {
-  dependsOn("processResources")
-  group = "openapi tools"
   description = "Generate model from Person Location API YAML definition"
-  validateSpec.set(true)
-  generatorName.set("kotlin-spring")
   inputSpec.set("$projectDir/src/main/resources/static/openapi/person-location-api-2026-11-04.json")
-  outputDir.set("$buildDirectory/generated")
   modelPackage.set("uk.gov.justice.digital.hmpps.personlocation.resource.model")
-  configOptions.set(
-    mapOf(
-      "dateLibrary" to "java8",
-      "serializationLibrary" to "jackson",
-      "useBeanValidation" to "true",
-      "useSpringBoot4" to "true",
-      "useJackson3" to "true",
-      "openApiNullable" to "false",
-      "enumPropertyNaming" to "UPPERCASE",
-    ),
-  )
   globalProperties.set(
     mapOf(
       // Only the models used by the periods-of-custody endpoints. The spec's polymorphic sync models are not needed.
       "models" to "PeriodOfCustody, PeriodsOfCustody, CodedDescription, PreviousPeriod, ErrorResponse",
-    ),
-  )
-  // The spec declares the period of custody dates as date-time (with an offset), but the API returns them without an
-  // offset (for example "2026-03-30T13:48:03"). So they are generated as LocalDateTime, not OffsetDateTime.
-  typeMappings.set(
-    mapOf(
-      "DateTime" to "LocalDateTime",
     ),
   )
 }
