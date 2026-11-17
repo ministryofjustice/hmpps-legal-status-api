@@ -302,22 +302,23 @@ class LegacyDataServiceTest {
   }
 
   @Test
-  fun `should not calculate Imprisonment Status given the prisoner has no period of custody`() {
+  fun `should calculate Imprisonment Status given the prisoner has no period of custody at all`() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
     given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
-    given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(null)
+    given(personLocationApiClient.getLatestPeriodOfCustody(any())).willThrow(
+      PeriodOfCustodyNotFoundException(prisonNumber),
+    )
+    given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+    given(imprisonmentStatusCalculator.calculate(any())).willReturn(ImprisonmentStatusCalculation(ImprisonmentStatus.UNKNOWN, null, CalculatedFrom.CHARGE_OUTCOME))
 
     // When
-    val actual = catchThrowableOfType(PeriodOfCustodyNotFoundException::class.java) {
-      legacyDataService.calculateImprisonmentStatus(prisonNumber)
-    }
+    val actual = legacyDataService.calculate(prisonNumber)
 
     // Then
-    assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
-    assertThat(actual).hasMessage("Period of custody for prisoner [$prisonNumber] not returned by Person Location API")
-    verify(personLocationApiClient).getLatestPeriodOfCustody(prisonNumber)
-    verifyNoInteractions(remandAndSentencingApiClient)
+    verify(remandAndSentencingApiClient).getPrisonerCharges(prisonNumber, null, LocalDate.now(clock))
+    assertThat(actual.previousPeriodConcludedAt).isNull()
+    assertThat(actual.chargesWindowStart).isNull()
   }
 
   @Test

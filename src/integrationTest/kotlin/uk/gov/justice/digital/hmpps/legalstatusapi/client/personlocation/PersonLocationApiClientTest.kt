@@ -73,10 +73,12 @@ class PersonLocationApiClientTest : IntegrationTestBase() {
   }
 
   @Test
-  fun `returns null when the prisoner has no period of custody`() {
+  fun `throws PeriodOfCustodyNotFoundException when the prisoner has no period of custody`() {
     hmppsPersonLocationApi.stubGetLatestPeriodOfCustodyNotFound(prisonNumber)
 
-    assertThat(personLocationApiClient.getLatestPeriodOfCustody(prisonNumber)).isNull()
+    assertThatThrownBy { personLocationApiClient.getLatestPeriodOfCustody(prisonNumber) }
+      .isInstanceOf(PeriodOfCustodyNotFoundException::class.java)
+      .hasMessageContaining(prisonNumber)
   }
 
   @Test
