@@ -103,7 +103,7 @@ class LegacyDataService(
 
     // Step 2
     val periodOfCustody = getLatestPeriodOfCustody(prisonNumber)
-    val chargesWindowStart = chargesWindowStart(periodOfCustody)
+    val chargesWindowStart = periodOfCustody?.let { chargesWindowStart(it) }
       .also {
         log.info { "Selected charges window start (RaS fromDate) [${it ?: "none"}] for prisoner [$prisonNumber] (${if (it == null) "no previous period of custody" else "day after the previous period of custody concluded"})" }
       }
@@ -150,7 +150,7 @@ class LegacyDataService(
       prisonNumber = prisonNumber,
       nomisImprisonmentStatus = prisoner.imprisonmentStatus,
       receptionDate = prisoner.receptionDate,
-      previousPeriodConcludedAt = periodOfCustody.previousPeriod?.concludedAt,
+      previousPeriodConcludedAt = periodOfCustody?.previousPeriod?.concludedAt,
       chargesWindowStart = chargesWindowStart,
       sentencingData = sentencingData,
       calculation = calculation,
@@ -165,13 +165,15 @@ class LegacyDataService(
       log.info { "Retrieved prisoner [$prisonNumber] from Prisoner Search API" }
     }
 
-  private fun getLatestPeriodOfCustody(prisonNumber: String): PeriodOfCustody = (
+  private fun getLatestPeriodOfCustody(prisonNumber: String): PeriodOfCustody? = try {
     personLocationApiClient.getLatestPeriodOfCustody(prisonNumber)
-      ?: throw PeriodOfCustodyNotFoundException(prisonNumber)
-    )
-    .also {
-      log.info { "Retrieved latest period of custody for prisoner [$prisonNumber] from Person Location API" }
-    }
+      .also {
+        log.info { "Retrieved latest period of custody for prisoner [$prisonNumber] from Person Location API" }
+      }
+  } catch (e: PeriodOfCustodyNotFoundException) {
+    log.info { "No period of custody returned for prisoner [$prisonNumber] from Person Location API" }
+    null
+  }
 
   // The raw charges response is read as a tree rather than into our models, so that no fields are lost
   private fun rasData(rawPrisonerCharges: String, sentenceTypeDetailsByUuid: Map<UUID, SentenceTypeDetails>): String = jsonMapper.writeValueAsString(
