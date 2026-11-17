@@ -21,9 +21,9 @@ val testContainersVersion = "2.0.5"
 val springdocOpenapiVersion = "3.2.0"
 val hmppsKotlinSpringBootStarterVersion = "3.1.0"
 val awaitilityVersion = "4.3.0"
-val swaggerParserVersion = "2.1.48"
+val swaggerParserVersion = "2.1.49"
 val wiremockVersion = "3.13.2"
-val hmppsSqsStarterVersion = "7.4.1"
+val hmppsSqsStarterVersion = "7.6.0"
 
 dependencies {
   implementation("uk.gov.justice.service.hmpps:hmpps-kotlin-spring-boot-starter:$hmppsKotlinSpringBootStarterVersion")
