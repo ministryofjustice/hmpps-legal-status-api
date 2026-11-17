@@ -8,6 +8,9 @@
   "instrumentation": {
     "logging": {
       "level": "DEBUG"
+    },
+    "springScheduling": {
+      "enabled": false
     }
   },
   "selfDiagnostics": {
@@ -21,11 +24,44 @@
         "attributes": [
           {
             "key": "http.url",
-            "value": "https?://[^/]+/health.*",
+            "value": "https?://[^/]+/health/?.*",
             "matchType": "regexp"
           }
         ],
-        "percentage": 10
+        "percentage": 0
+      },
+      {
+        "telemetryType": "request",
+        "attributes": [
+          {
+            "key": "http.url",
+            "value": "https?://.+/info/?.*",
+            "matchType": "regexp"
+          }
+        ],
+        "percentage": 0
+      },
+      {
+        "telemetryType": "request",
+        "attributes": [
+          {
+            "key": "http.url",
+            "value": "https?://[^/]+/queue-admin/?.*",
+            "matchType": "regexp"
+          }
+        ],
+        "percentage": 0
+      },
+      {
+        "telemetryType": "exception",
+        "attributes": [
+          {
+            "key": "exception.type",
+            "value": "java.util.concurrent.CompletionException",
+            "matchType": "strict"
+          }
+        ],
+        "percentage": 0
       }
     ]
   }
