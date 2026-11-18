@@ -207,8 +207,8 @@ class LegacyDataService(
       sentenceTypeDetailsByUuid.getOrPut(sentenceTypeUuid) { sentenceTypeDetailsProvider.getSentenceTypeDetails(sentenceTypeUuid) }.let {
         RasSentence(
           classification = it.classification,
-          legacySentenceCalcType = it.nomisSentenceCalcType,
-          legacySentenceCategory = it.nomisCjaCode,
+          legacySentenceCalcType = if (personSentence.hasRecall && personSentence.legacyData?.sentenceCalcType != null) personSentence.legacyData.sentenceCalcType else it.nomisSentenceCalcType,
+          legacySentenceCategory = if (personSentence.hasRecall && personSentence.legacyData?.sentenceCategory != null) personSentence.legacyData.sentenceCategory else it.nomisCjaCode,
           offence = offence(),
           sentenceLengthDays = sentenceLengthDays,
           latestRecallType = sentence.latestRecallType,
