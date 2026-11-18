@@ -24,6 +24,7 @@ val awaitilityVersion = "4.3.0"
 val swaggerParserVersion = "2.1.49"
 val wiremockVersion = "3.13.2"
 val hmppsSqsStarterVersion = "7.6.0"
+val sentryVersion = "8.64.0"
 
 dependencies {
   implementation("uk.gov.justice.service.hmpps:hmpps-kotlin-spring-boot-starter:$hmppsKotlinSpringBootStarterVersion")
@@ -37,6 +38,8 @@ dependencies {
   implementation("org.springframework.boot:spring-boot-starter-flyway")
 
   implementation("io.github.microutils:kotlin-logging:$kotlinLoggingVersion")
+
+  implementation("io.sentry:sentry-spring-boot-4:$sentryVersion")
 
   runtimeOnly("org.flywaydb:flyway-database-postgresql")
   runtimeOnly("org.postgresql:postgresql:$postgresqlVersion")

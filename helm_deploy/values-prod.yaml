@@ -7,6 +7,7 @@ generic-service:
     # modsecurity_enabled: true
 
   env:
+    SENTRY_ENVIRONMENT: prod
     HMPPS_AUTH_URL: "https://sign-in.hmpps.service.justice.gov.uk/auth"
     MANAGE_OFFENCES_API_URL: "https://manage-offences-api.hmpps.service.justice.gov.uk"
     PRISONER_SEARCH_API_URL: https://prisoner-search.prison.service.justice.gov.uk

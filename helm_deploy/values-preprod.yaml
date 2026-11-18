@@ -9,6 +9,7 @@ generic-service:
     # modsecurity_enabled: true
 
   env:
+    SENTRY_ENVIRONMENT: preprod
     APPLICATIONINSIGHTS_CONFIGURATION_FILE: "applicationinsights.dev.json"
     HMPPS_AUTH_URL: "https://sign-in-preprod.hmpps.service.justice.gov.uk/auth"
     MANAGE_OFFENCES_API_URL: "https://manage-offences-api-preprod.hmpps.service.justice.gov.uk"
