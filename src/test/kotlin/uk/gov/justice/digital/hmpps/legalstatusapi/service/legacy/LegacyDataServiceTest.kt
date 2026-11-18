@@ -4,30 +4,34 @@ import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowableOfType
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
+import org.mockito.ArgumentCaptor
 import org.mockito.Mockito
 import org.mockito.Mockito.mock
 import org.mockito.kotlin.any
 import org.mockito.kotlin.anyOrNull
+import org.mockito.kotlin.firstValue
 import org.mockito.kotlin.given
+import org.mockito.kotlin.never
+import org.mockito.kotlin.secondValue
 import org.mockito.kotlin.times
 import org.mockito.kotlin.verify
 import org.mockito.kotlin.verifyNoInteractions
+import org.mockito.kotlin.verifyNoMoreInteractions
 import org.springframework.transaction.PlatformTransactionManager
 import org.springframework.transaction.support.SimpleTransactionStatus
 import org.springframework.transaction.support.TransactionTemplate
 import tools.jackson.databind.json.JsonMapper
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.personlocation.PeriodOfCustodyNotFoundException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.personlocation.PersonLocationApiClient
-import uk.gov.justice.digital.hmpps.legalstatusapi.client.personlocation.PersonLocationApiException
-import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerNotFoundException
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.PrisonerSearchApiException
-import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.assertThat
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.PrisonerCharges
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.ImprisonmentStatusCalculatedAtEntity
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.anImprisonmentStatusCalculatedAtEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
@@ -43,6 +47,7 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceL
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceType
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceTypeDetails.Classification.STANDARD
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonCharge
 import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.aValidPersonPeriodLength
 import java.time.Clock
 import java.time.Duration
@@ -50,6 +55,8 @@ import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.temporal.ChronoUnit
+import java.util.Optional
 import java.util.UUID
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -100,7 +107,12 @@ class LegacyDataServiceTest {
   // By default, the prisoner has a period of custody with no previous period, so RaS is called with no fromDate
   @BeforeEach
   fun setUp() {
-    Mockito.reset(remandAndSentencingApiClient)
+    Mockito.reset(
+      remandAndSentencingApiClient,
+      prisonerSearchApiClient,
+      personLocationApiClient,
+      imprisonmentStatusCalculatedAtRepository,
+    )
     given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(aValidPeriodOfCustody(previousPeriod = null))
   }
 
@@ -187,7 +199,7 @@ class LegacyDataServiceTest {
     given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(
       aRasPrisonerCharges(
         aRasCharge(offenceCode = "TH68010", sentence = aRasSentence(sentenceType = aRasSentenceType(sentenceTypeUuid), periodLengths = listOf(aValidPersonPeriodLength(years = 2)))),
-        aRasCharge(
+        aValidPersonCharge(
           offenceCode = "CJ88116",
           sentence = aRasSentence(
             legacyData = SentenceLegacyData(postedDate = "2026-01-01", sentenceCalcType = "ADIMP_ORA", sentenceCategory = "2020"),
@@ -247,43 +259,6 @@ class LegacyDataServiceTest {
   }
 
   @Test
-  fun `should not calculate Imprisonment Status given prisoner-search throws not found exception`() {
-    // Given
-    val prisonNumber = randomValidPrisonNumber()
-
-    given(prisonerSearchApiClient.getPrisoner(any())).willThrow(PrisonerNotFoundException(prisonNumber))
-
-    // When
-    val actual = catchThrowableOfType(PrisonerNotFoundException::class.java) {
-      legacyDataService.calculateImprisonmentStatus(prisonNumber)
-    }
-
-    // Then
-    assertThat(actual).hasPrisonNumber(prisonNumber)
-    verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
-  }
-
-  @Test
-  fun `should not calculate Imprisonment Status given prisoner-search throws API exception`() {
-    // Given
-    val prisonNumber = randomValidPrisonNumber()
-
-    val cause = RuntimeException("Some exception thrown by the API")
-    given(prisonerSearchApiClient.getPrisoner(any())).willThrow(PrisonerSearchApiException("Error retrieving prisoner by prisonNumber $prisonNumber", cause))
-
-    // When
-    val actual = catchThrowableOfType(PrisonerSearchApiException::class.java) {
-      legacyDataService.calculateImprisonmentStatus(prisonNumber)
-    }
-
-    // Then
-    assertThat(actual)
-      .hasMessage("Error retrieving prisoner by prisonNumber $prisonNumber")
-      .hasCause(cause)
-    verify(prisonerSearchApiClient).getPrisoner(prisonNumber)
-  }
-
-  @Test
   fun `should call RaS with no fromDate given the prisoner has no previous period of custody`() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
@@ -321,24 +296,116 @@ class LegacyDataServiceTest {
     assertThat(actual.chargesWindowStart).isNull()
   }
 
-  @Test
-  fun `should not calculate Imprisonment Status given person-location throws API exception`() {
-    // Given
-    val prisonNumber = randomValidPrisonNumber()
-    given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
-    val cause = RuntimeException("Some exception thrown by the API")
-    given(personLocationApiClient.getLatestPeriodOfCustody(any())).willThrow(PersonLocationApiException("Error retrieving latest period of custody for prisonNumber $prisonNumber", cause))
+  @Nested
+  inner class SadPathTests {
+    @Test
+    fun `should not calculate Imprisonment Status given the prisoner has not had an imprisonment status calculated before and an API throws an exception`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
 
-    // When
-    val actual = catchThrowableOfType(PersonLocationApiException::class.java) {
-      legacyDataService.calculateImprisonmentStatus(prisonNumber)
+      // It doesn't matter which API throws. The behaviour that we are asserting will be the same
+      given(prisonerSearchApiClient.getPrisoner(any())).willThrow(
+        PrisonerSearchApiException("Error retrieving prisoner by prisonNumber $prisonNumber", RuntimeException("Some nested error")),
+      )
+
+      // Prisoner has never had an Imprisonment Status calculated before
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber)).willReturn(Optional.empty())
+
+      // When
+      runCatching {
+        legacyDataService.calculateImprisonmentStatus(prisonNumber)
+      }
+
+      // Then
+      verify(imprisonmentStatusCalculatedAtRepository).findById(prisonNumber)
+
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository).save(saveArgumentCaptor.capture())
+      val saveArgument = saveArgumentCaptor.value
+      assertThat(saveArgument.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(saveArgument.calculatedAt).isEqualTo(Instant.now(clock))
+
+      verify(imprisonmentStatusCalculatedAtRepository).deleteById(prisonNumber)
     }
 
-    // Then
-    assertThat(actual)
-      .hasMessage("Error retrieving latest period of custody for prisonNumber $prisonNumber")
-      .hasCause(cause)
-    verifyNoInteractions(remandAndSentencingApiClient)
+    @Test
+    fun `should not calculate Imprisonment Status given the prisoner has had an imprisonment status calculated before and an API throws an exception`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val now = Instant.now(clock)
+
+      // It doesn't matter which API throws. The behaviour that we are asserting will be the same
+      given(prisonerSearchApiClient.getPrisoner(any())).willThrow(
+        PrisonerSearchApiException("Error retrieving prisoner by prisonNumber $prisonNumber", RuntimeException("Some nested error")),
+      )
+
+      // Prisoner has had an Imprisonment Status calculated before. It was calculated yesterday
+      val previousCalculatedAt = now.minus(1, ChronoUnit.DAYS)
+      val previousImprisonmentStatusCalculatedAtEntity = anImprisonmentStatusCalculatedAtEntity(
+        prisonNumber = prisonNumber,
+        calculatedAt = previousCalculatedAt,
+      )
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber))
+        .willReturn(Optional.of(previousImprisonmentStatusCalculatedAtEntity))
+
+      val updatedImprisonmentStatusCalculatedAtEntity = anImprisonmentStatusCalculatedAtEntity(
+        prisonNumber = prisonNumber,
+        calculatedAt = now,
+      )
+      given(imprisonmentStatusCalculatedAtRepository.getReferenceById(prisonNumber))
+        .willReturn(updatedImprisonmentStatusCalculatedAtEntity)
+
+      // When
+      runCatching {
+        legacyDataService.calculateImprisonmentStatus(prisonNumber)
+      }
+
+      // Then
+      verify(imprisonmentStatusCalculatedAtRepository).findById(prisonNumber)
+      verify(imprisonmentStatusCalculatedAtRepository).getReferenceById(prisonNumber)
+
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository, times(2)).save(saveArgumentCaptor.capture())
+      // assert that the first save was to set the calculatedAt time to now
+      val firstSaveArgument = saveArgumentCaptor.firstValue
+      assertThat(firstSaveArgument.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(firstSaveArgument.calculatedAt).isEqualTo(now)
+      // assert that the second save was to set the calculatedAt time back to the previous value
+      val secondSaveArgument = saveArgumentCaptor.secondValue
+      assertThat(secondSaveArgument.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(secondSaveArgument.calculatedAt).isEqualTo(previousCalculatedAt)
+
+      verify(imprisonmentStatusCalculatedAtRepository, never()).deleteById(prisonNumber)
+    }
+
+    @Test
+    fun `should not calculate Imprisonment Status given the prisoner has had an imprisonment status calculated within the threshold`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val now = Instant.now(clock)
+
+      // Prisoner has had an Imprisonment Status calculated before. It was calculated recently within the threshold
+      val previousCalculatedAt = now.minus(1, ChronoUnit.SECONDS)
+      val previousImprisonmentStatusCalculatedAtEntity = anImprisonmentStatusCalculatedAtEntity(
+        prisonNumber = prisonNumber,
+        calculatedAt = previousCalculatedAt,
+      )
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber))
+        .willReturn(Optional.of(previousImprisonmentStatusCalculatedAtEntity))
+
+      // When
+      val actual = catchThrowableOfType(RecentImprisonmentStatusExistsException::class.java, {
+        legacyDataService.calculateImprisonmentStatus(prisonNumber)
+      })
+
+      // Then
+      assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(actual.lastCalculatedAt).isEqualTo(previousCalculatedAt)
+
+      verify(imprisonmentStatusCalculatedAtRepository).findById(prisonNumber)
+      verifyNoMoreInteractions(imprisonmentStatusCalculatedAtRepository)
+      verifyNoInteractions(prisonerSearchApiClient, personLocationApiClient, remandAndSentencingApiClient)
+    }
   }
 
   private fun aRasPrisonerCharges(vararg charges: PersonCharge) = PrisonerCharges(

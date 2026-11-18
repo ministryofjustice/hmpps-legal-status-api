@@ -80,84 +80,111 @@ class LegacyDataService(
    * @throws RecentImprisonmentStatusExistsException
    */
   fun calculate(prisonNumber: String): LegacyImprisonmentStatusResult {
-    transactionTemplate.execute {
+    // Optimistic locking on the prisoner's ImprisonmentStatusCalculatedAtEntity record
+    // We need to keep state of the previous calculatedAt value so that in the catch for the main functionality of this
+    // method we can revert it back if we need to.
+    val previousCalculatedAt: Instant? = transactionTemplate.execute {
       imprisonmentStatusCalculatedAtRepository.findByIdOrNull(prisonNumber)
         ?.also {
+          // Prisoner has an ImprisonmentStatusCalculatedAtEntity - check when it was last calculated
           if (it.isWithin(durationBeforeRecalculationRequired)) {
             // Imprisonment Status was calculated recently, within the calculation TTL
             throw RecentImprisonmentStatusExistsException(prisonNumber, it.calculatedAt)
           }
+          // Update when it was last calculated
+          val previousCalculatedAt = it.calculatedAt
           it.calculatedAt = Instant.now(clock)
           imprisonmentStatusCalculatedAtRepository.save(it)
+          return@execute previousCalculatedAt // return the previous calculatedAt value
         }
-        ?: imprisonmentStatusCalculatedAtRepository.save(
-          ImprisonmentStatusCalculatedAtEntity(
-            prisonNumber = prisonNumber,
-            calculatedAt = Instant.now(clock),
-          ),
-        )
+
+      // The prisoner does not yet have an ImprisonmentStatusCalculatedAtEntity. Create a new one
+      imprisonmentStatusCalculatedAtRepository.save(
+        ImprisonmentStatusCalculatedAtEntity(
+          prisonNumber = prisonNumber,
+          calculatedAt = Instant.now(clock),
+        ),
+      )
+      return@execute null // return null as the previous version of the record
     }
 
-    // Step 1
-    val prisoner = getPrisoner(prisonNumber)
+    return try {
+      // Step 1
+      val prisoner = getPrisoner(prisonNumber)
 
-    // Step 2
-    val periodOfCustody = getLatestPeriodOfCustody(prisonNumber)
-    val chargesWindowStart = periodOfCustody?.let { chargesWindowStart(it) }
-      .also {
-        log.info { "Selected charges window start (RaS fromDate) [${it ?: "none"}] for prisoner [$prisonNumber] (${if (it == null) "no previous period of custody" else "day after the previous period of custody concluded"})" }
+      // Step 2
+      val periodOfCustody = getLatestPeriodOfCustody(prisonNumber)
+      val chargesWindowStart = periodOfCustody?.let { chargesWindowStart(it) }
+        .also {
+          log.info { "Selected charges window start (RaS fromDate) [${it ?: "none"}] for prisoner [$prisonNumber] (${if (it == null) "no previous period of custody" else "day after the previous period of custody concluded"})" }
+        }
+
+      // Step 3
+      val prisonerCharges = remandAndSentencingApiClient.getPrisonerCharges(
+        prisonNumber = prisonNumber,
+        fromDate = chargesWindowStart,
+        toDate = LocalDate.now(clock),
+      )
+
+      // The sentence types looked up, recorded so that they can be stored with a mismatched calculation
+      val sentenceTypeDetailsByUuid = mutableMapOf<UUID, SentenceTypeDetails>()
+      val sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) }
+
+      // The charges array contains charges, each with a single outcome. If a charge has multiple outcomes
+      // there will be multiple charges with the same chargeUuid, one for each of the outcomes.
+      // To get the list of offences we need to group all charges by the chargeUuid.
+      // For each chargeUuid we will then have a list of charges.
+      // The NOMIS algorithm for Imprisonment Status uses the first outcome for each. In order to use the same outcome
+      // as NOMIS, we need to sort the outcomes by `displayOrder` and then select the first. This will give us the outcome
+      // code that we need for the Imprisonment Status mapping.
+      // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
+      // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
+      // current NOMIS algorithm.
+      // TODO - sorting on displayOrder is not the correct approach, but is the best we have at the moment and allows
+      // current mismatch case tests to pass. The RaS API will be updated with more suitable fields to sort on, at which
+      // point we have IS-160 which will update this code and the fields it sorts on.
+      val offences = prisonerCharges.charges
+        .groupBy { it.chargeUuid }
+        .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
+        .values
+        .map { it.offence() }
+
+      val sentencingData = LegacySentencingData(
+        sentences = sentences,
+        offences = offences,
+      )
+
+      // Steps 4 to 6
+      val calculation = imprisonmentStatusCalculator.calculate(sentencingData)
+
+      LegacyImprisonmentStatusResult(
+        prisonNumber = prisonNumber,
+        nomisImprisonmentStatus = prisoner.imprisonmentStatus,
+        receptionDate = prisoner.receptionDate,
+        previousPeriodConcludedAt = periodOfCustody?.previousPeriod?.concludedAt,
+        chargesWindowStart = chargesWindowStart,
+        sentencingData = sentencingData,
+        calculation = calculation,
+        rasData = rasData(prisonerCharges.rawJson, sentenceTypeDetailsByUuid),
+        calculatedAt = Instant.now(clock),
+        bookingId = prisoner.bookingId,
+      )
+    } catch (e: Exception) {
+      // An exception was thrown during the calculation. Revert the previous state of the ImprisonmentStatusCalculatedAtEntity
+      transactionTemplate.execute {
+        if (previousCalculatedAt != null) {
+          // Get the current record and set it's calculatedAt date back to the previous value
+          imprisonmentStatusCalculatedAtRepository.getReferenceById(prisonNumber).also {
+            it.calculatedAt = previousCalculatedAt
+            imprisonmentStatusCalculatedAtRepository.save(it)
+          }
+        } else {
+          // There was no previous record so we should delete the record created earlier
+          imprisonmentStatusCalculatedAtRepository.deleteById(prisonNumber)
+        }
       }
-
-    // Step 3
-    val prisonerCharges = remandAndSentencingApiClient.getPrisonerCharges(
-      prisonNumber = prisonNumber,
-      fromDate = chargesWindowStart,
-      toDate = LocalDate.now(clock),
-    )
-
-    // The sentence types looked up, recorded so that they can be stored with a mismatched calculation
-    val sentenceTypeDetailsByUuid = mutableMapOf<UUID, SentenceTypeDetails>()
-    val sentences = prisonerCharges.charges.mapNotNull { it.sentence(sentenceTypeDetailsByUuid) }
-
-    // The charges array contains charges, each with a single outcome. If a charge has multiple outcomes
-    // there will be multiple charges with the same chargeUuid, one for each of the outcomes.
-    // To get the list of offences we need to group all charges by the chargeUuid.
-    // For each chargeUuid we will then have a list of charges.
-    // The NOMIS algorithm for Imprisonment Status uses the first outcome for each. In order to use the same outcome
-    // as NOMIS, we need to sort the outcomes by `displayOrder` and then select the first. This will give us the outcome
-    // code that we need for the Imprisonment Status mapping.
-    // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
-    // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
-    // current NOMIS algorithm.
-    // TODO - sorting on displayOrder is not the correct approach, but is the best we have at the moment and allows
-    // current mismatch case tests to pass. The RaS API will be updated with more suitable fields to sort on, at which
-    // point we have IS-160 which will update this code and the fields it sorts on.
-    val offences = prisonerCharges.charges
-      .groupBy { it.chargeUuid }
-      .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
-      .values
-      .map { it.offence() }
-
-    val sentencingData = LegacySentencingData(
-      sentences = sentences,
-      offences = offences,
-    )
-
-    // Steps 4 to 6
-    val calculation = imprisonmentStatusCalculator.calculate(sentencingData)
-
-    return LegacyImprisonmentStatusResult(
-      prisonNumber = prisonNumber,
-      nomisImprisonmentStatus = prisoner.imprisonmentStatus,
-      receptionDate = prisoner.receptionDate,
-      previousPeriodConcludedAt = periodOfCustody?.previousPeriod?.concludedAt,
-      chargesWindowStart = chargesWindowStart,
-      sentencingData = sentencingData,
-      calculation = calculation,
-      rasData = rasData(prisonerCharges.rawJson, sentenceTypeDetailsByUuid),
-      calculatedAt = Instant.now(clock),
-      bookingId = prisoner.bookingId,
-    )
+      throw e // rethrow the exception
+    }
   }
 
   private fun getPrisoner(prisonNumber: String): Prisoner = prisonerSearchApiClient.getPrisoner(prisonNumber)
