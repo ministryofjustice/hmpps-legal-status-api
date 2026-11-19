@@ -59,19 +59,22 @@ echo "2) manage-offences-api        -  get offence severity by offence code"
 echo "3) remand-and-sentencing-api  -  get charge data by PRN and fromDate"
 echo "4) remand-and-sentencing-api  -  get sentence details by sentence type ID"
 echo "5) person-location-api        -  get latest period of custody for a prisoner"
+echo "6) legal-status-api           -  calculate the Imprisonment Status for a prisoner"
 echo
-read -r -p "Enter choice [1-5]: " choice
+read -r -p "Enter choice [1-6]: " choice
 case "$choice" in
   1)
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
     read -r -p "Enter the response fields (comma delimited): " -i "prisonerNumber,receptionDate,imprisonmentStatus" -e RESPONSE_FIELDS
     API_URL="https://prisoner-search$API_HOST_SUFFIX.prison.service.justice.gov.uk/prisoner/$PRISON_NUMBER?responseFields=$RESPONSE_FIELDS"
     API="PRISONER_SEARCH_API"
+    RESPONSE_TYPE="application/json"
     ;;
   2)
     read -r -p "Enter the offence codes (comma delimited): " -i "CL67011,RR84216,RT88136" -e OFFENCE_CODES
     API_URL="https://manage-offences-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/offences/severity-ratings?offenceCodes=$OFFENCE_CODES"
     API="MANAGE_OFFENCES_API"
+    RESPONSE_TYPE="application/json"
     ;;
   3)
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
@@ -79,16 +82,25 @@ case "$choice" in
     read -r -p "Enter the toDate (no value will not apply a toDate filter): " TO_DATE
     API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/person/$PRISON_NUMBER/charges?fromDate=$FROM_DATE&toDate=$TO_DATE"
     API="REMAND_AND_SENTENCING_API"
+    RESPONSE_TYPE="application/json"
     ;;
   4)
     read -r -p "Enter the sentence type ID (a UUID): " SENTENCE_TYPE_ID
     API_URL="https://remand-and-sentencing-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/sentence-type/$SENTENCE_TYPE_ID/details"
     API="REMAND_AND_SENTENCING_API"
+    RESPONSE_TYPE="application/json"
     ;;
   5)
     read -r -p "Enter the PRN of the prisoner whose data you want to retrieve: " PRISON_NUMBER
     API_URL="https://person-location-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/integrations/people/$PRISON_NUMBER/periods-of-custody/latest"
     API="PERSON_LOCATION_API"
+    RESPONSE_TYPE="application/json"
+    ;;
+  6)
+    read -r -p "Enter the PRN of the prisoner whose Imprisonment Status you want to calculate: " PRISON_NUMBER
+    API_URL="https://legal-status-api$API_HOST_SUFFIX.hmpps.service.justice.gov.uk/temp/legacy/imprisonment-status/$PRISON_NUMBER"
+    API="MANAGE_OFFENCES_API"
+    RESPONSE_TYPE="text/plan"
     ;;
   *)
     echo "Invalid selection. Exiting." >&2
@@ -132,8 +144,13 @@ echo "Requesting data from API via pod..."
 API_RESPONSE=$(
   kubectl -n $NAMESPACE exec $POD -- \
     curl -s $API_URL \
-      -H "Accept: application/json" \
+      -H "Accept: $RESPONSE_TYPE" \
       -H "Authorization: Bearer $AUTH_TOKEN"
 )
-echo $API_RESPONSE | jq .
+
+if [ $RESPONSE_TYPE = "application/json" ]; then
+  echo $API_RESPONSE | jq .
+else
+  echo $API_RESPONSE
+fi
 

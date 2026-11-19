@@ -1,0 +1,306 @@
+{
+  "jiraReference": "IS-189",
+  "receptionDate": "2021-01-23",
+  "previousPeriodConcludedAt": "2026-07-27T09:13:21.000000",
+  "expectedStatus": "FTR_56ORA",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "chargeUuid": "111b3f0b-a049-4f20-92a9-c36828a3e373",
+          "offenceCode": "FI68042",
+          "offenceStartDate": "2021-01-17",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-11-17",
+            "nomisOutcomeCode": "1501",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess prohibited ammunition"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-09-16",
+          "appearanceCreatedAt": "2026-11-17T11:01:15.65049Z"
+        },
+        {
+          "chargeUuid": "3dd203a5-aa72-441a-ad82-66defac61c0a",
+          "offenceCode": "FI68001",
+          "offenceStartDate": "2021-01-17",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-11-17",
+            "nomisOutcomeCode": "1501",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess a firearm without a certificate"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-09-16",
+          "appearanceCreatedAt": "2026-11-17T11:01:15.65049Z"
+        },
+        {
+          "chargeUuid": "0ff053c3-5dfa-4330-8b17-cb0097573aaf",
+          "offenceCode": "CJ88117",
+          "offenceStartDate": "2019-07-09",
+          "offenceEndDate": null,
+          "outcome": null,
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-11-17",
+            "nomisOutcomeCode": "1501",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeDispositionCode": "F",
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess knife blade or sharp pointed article"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": null,
+          "appearanceDate": "2026-09-16",
+          "appearanceCreatedAt": "2026-11-17T11:01:15.65049Z"
+        },
+        {
+          "chargeUuid": "3dd203a5-aa72-441a-ad82-66defac61c0a",
+          "offenceCode": "FI68001",
+          "offenceStartDate": "2021-01-17",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "outcomeName": "Imprisonment",
+            "nomisCode": "1002",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess a firearm without a certificate"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": {
+            "sentenceUuid": "3be6a6e2-e9fc-43a3-8537-bc48cedbe1ce",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+              "description": "Unknown pre-recall sentence",
+              "classification": "LEGACY_RECALL",
+              "hintText": null,
+              "displayOrder": 0
+            },
+            "convictionDate": null,
+            "fineAmount": null,
+            "legacyData": {
+              "sentenceCalcType": "LR",
+              "sentenceCategory": "2020",
+              "sentenceTypeDesc": "Licence Recall",
+              "postedDate": "2025-06-25T09:13:09.378662",
+              "active": null,
+              "nomisLineReference": "5",
+              "bookingId": 2680481
+            },
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": true,
+            "latestRecallType": "FTR_56",
+            "status": "ACTIVE",
+            "periodLengths": [
+              {
+                "years": null,
+                "months": 72,
+                "weeks": null,
+                "days": null,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodLengthUuid": "b5c437f0-5685-47f5-99b3-018709732e40"
+              }
+            ]
+          },
+          "appearanceDate": "2021-11-03",
+          "appearanceCreatedAt": "2026-01-18T13:24:19.084331Z"
+        },
+        {
+          "chargeUuid": "0ff053c3-5dfa-4330-8b17-cb0097573aaf",
+          "offenceCode": "CJ88117",
+          "offenceStartDate": "2019-07-09",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "outcomeName": "Imprisonment",
+            "nomisCode": "1002",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess knife blade or sharp pointed article"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": {
+            "sentenceUuid": "c2b3d41c-cb17-4a3a-8498-fe67e6bf73de",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+              "description": "Unknown pre-recall sentence",
+              "classification": "LEGACY_RECALL",
+              "hintText": null,
+              "displayOrder": 0
+            },
+            "convictionDate": null,
+            "fineAmount": null,
+            "legacyData": {
+              "sentenceCalcType": "LR",
+              "sentenceCategory": "2020",
+              "sentenceTypeDesc": "Licence Recall",
+              "postedDate": "2025-06-25T09:14:24.313336",
+              "active": null,
+              "nomisLineReference": "7",
+              "bookingId": 2680481
+            },
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": true,
+            "latestRecallType": "FTR_56",
+            "status": "ACTIVE",
+            "periodLengths": [
+              {
+                "years": null,
+                "months": 1,
+                "weeks": null,
+                "days": null,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodLengthUuid": "3f98867d-0840-44a0-81b5-63f52353dc2d"
+              }
+            ]
+          },
+          "appearanceDate": "2021-11-03",
+          "appearanceCreatedAt": "2026-01-18T13:24:19.084331Z"
+        },
+        {
+          "chargeUuid": "111b3f0b-a049-4f20-92a9-c36828a3e373",
+          "offenceCode": "FI68042",
+          "offenceStartDate": "2021-01-17",
+          "offenceEndDate": null,
+          "outcome": {
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "outcomeName": "Imprisonment",
+            "nomisCode": "1002",
+            "outcomeType": "SENTENCING",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL",
+            "status": "ACTIVE"
+          },
+          "aggravatingFactors": [],
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "outcomeDescription": null,
+            "outcomeDispositionCode": null,
+            "outcomeConvictionFlag": true,
+            "offenceDescription": "Possess prohibited ammunition"
+          },
+          "findingOfDomesticAbuse": null,
+          "sentence": {
+            "sentenceUuid": "e2f9ff5d-ad0b-4b65-b3a2-57de60b0052f",
+            "chargeNumber": null,
+            "sentenceServeType": "CONCURRENT",
+            "sentenceType": {
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+              "description": "Unknown pre-recall sentence",
+              "classification": "LEGACY_RECALL",
+              "hintText": null,
+              "displayOrder": 0
+            },
+            "convictionDate": null,
+            "fineAmount": null,
+            "legacyData": {
+              "sentenceCalcType": "LR",
+              "sentenceCategory": "2020",
+              "sentenceTypeDesc": "Licence Recall",
+              "postedDate": "2025-06-25T09:13:47.425068",
+              "active": null,
+              "nomisLineReference": "6",
+              "bookingId": 2680481
+            },
+            "consecutiveToSentenceUuid": null,
+            "hasRecall": true,
+            "latestRecallType": "FTR_56",
+            "status": "ACTIVE",
+            "periodLengths": [
+              {
+                "years": null,
+                "months": 36,
+                "weeks": null,
+                "days": null,
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodLengthUuid": "d55ce963-a6ea-4e66-9b41-7ec62e51deb2"
+              }
+            ]
+          },
+          "appearanceDate": "2021-11-03",
+          "appearanceCreatedAt": "2026-01-18T13:24:19.084331Z"
+        }
+      ]
+    },
+    "sentenceTypeDetails": {
+      "f9a1551e-86b1-425b-96f7-23465a0f05fc": {
+        "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+        "description": "Unknown pre-recall sentence",
+        "minAgeInclusive": null,
+        "maxAgeExclusive": null,
+        "minDateInclusive": null,
+        "maxDateExclusive": null,
+        "minOffenceDateInclusive": null,
+        "maxOffenceDateExclusive": null,
+        "classification": "LEGACY_RECALL",
+        "hintText": null,
+        "nomisCjaCode": "UNKNOWN",
+        "nomisSentenceCalcType": "UNKNOWN",
+        "displayOrder": 0,
+        "status": "ACTIVE",
+        "isRecallable": true
+      }
+    }
+  },
+  "offenceSeverities": {
+    "CJ88117": 8,
+    "FI68042": 81,
+    "FI68001": 81
+  }
+}
