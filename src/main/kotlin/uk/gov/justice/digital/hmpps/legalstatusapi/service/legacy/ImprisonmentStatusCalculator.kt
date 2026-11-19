@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 
 private val log = KotlinLogging.logger {}
 
@@ -55,9 +56,7 @@ class ImprisonmentStatusCalculator(
 
       with(sentence) {
         (
-          if (legacySentenceCategoryForImprisonmentStatusCalculation != "UNKNOWN") {
-            imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(legacySentenceCategoryForImprisonmentStatusCalculation, legacySentenceCalcTypeForImprisonmentStatusCalculation)
-          } else {
+          if (this is RasSentence && isRecallForUnknownSentenceCategory()) {
             log.warn { "RaS API has returned the sentenceCategory for this sentence as UNKNOWN. This may not produce the correct ImprisonmentStatus if there are multiple ImprisonmentStatusMappings for sentenceCalcType [$legacySentenceCalcTypeForImprisonmentStatusCalculation]" }
             imprisonmentStatusMappingRepository.findBySentenceCalcTypeOrderBySentenceCategoryDesc(legacySentenceCalcTypeForImprisonmentStatusCalculation)
               .also {
@@ -68,6 +67,8 @@ class ImprisonmentStatusCalculator(
                 }
               }
               .firstOrNull()
+          } else {
+            imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(legacySentenceCategoryForImprisonmentStatusCalculation, legacySentenceCalcTypeForImprisonmentStatusCalculation)
           }
           )
           ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[offence.offenceCode]) }
