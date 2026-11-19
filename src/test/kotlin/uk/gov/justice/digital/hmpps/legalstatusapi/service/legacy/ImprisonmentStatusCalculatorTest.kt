@@ -82,7 +82,7 @@ class ImprisonmentStatusCalculatorTest {
     }
 
     @Test
-    fun `should choose the longest sentence given statuses with the same rank`() {
+    fun `should choose the shortest sentence given statuses with the same rank`() {
       // Given
       givenSentenceMapping("2003", "ADIMP", SENT03) // rank 110
       givenSentenceMapping("2020", "ADIMP_ORA", ADIMP_ORA20) // rank 110
@@ -98,7 +98,7 @@ class ImprisonmentStatusCalculatorTest {
       val actual = calculator.calculate(sentencingData)
 
       // Then
-      assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(ADIMP_ORA20, "OFF002", SENTENCE))
+      assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(SENT03, "OFF001", SENTENCE))
     }
 
     @Test
