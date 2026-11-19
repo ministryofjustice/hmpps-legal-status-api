@@ -29,6 +29,8 @@ generic-service:
   env:
     SERVER_PORT: "8080"
     APPLICATIONINSIGHTS_CONFIGURATION_FILE: applicationinsights.json
+    SENTRY_TRACES_SAMPLE_RATE: "0.05"
+    SENTRY_IGNORED_EXCEPTIONS_FOR_TYPE: "org.apache.catalina.connector.ClientAbortException,org.springframework.web.servlet.resource.NoResourceFoundException,org.springframework.web.context.request.async.AsyncRequestNotUsableException"
     DB_SSL_MODE: "verify-full"
     HMPPS_SQS_ENABLED: "true"
     # JAVA_TOOL_OPTIONS is set in the base image (hmpps-eclipse-temurin) with:
@@ -72,7 +74,10 @@ generic-service:
     # Webhook URL for posting slack notifications
     slack-notifications:
       SLACK_WEBHOOK_URL: "webhook_url"
-
+    # Sentry
+    hmpps-legal-status-api-sentry:
+      SENTRY_DSN: SENTRY_DSN
+      SENTRY_AUTH_TOKEN: SENTRY_AUTH_TOKEN
 generic-prometheus-alerts:
   targetApplication: hmpps-legal-status-api
   sqsAlertsTotalMessagesThreshold: "0"

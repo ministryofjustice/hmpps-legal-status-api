@@ -1,6 +1,7 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 
 import io.awspring.cloud.sqs.annotation.SqsListener
+import io.sentry.Sentry
 import mu.KotlinLogging
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
@@ -31,7 +32,12 @@ class InboundEventsListener(
     log.debug { "Inbound event message: ${sqsMessage.type}" }
 
     when (sqsMessage.type) {
-      NOTIFICATION -> inboundEventsService.process(jsonMapper.readValue(sqsMessage.message, HmppsDomainEvent::class.java))
+      NOTIFICATION -> try {
+        inboundEventsService.process(jsonMapper.readValue(sqsMessage.message, HmppsDomainEvent::class.java))
+      } catch (e: Exception) {
+        Sentry.captureException(e)
+        throw e
+      }
       else -> log.info { "Unrecognised message type: ${sqsMessage.type}" }
     }
   }
