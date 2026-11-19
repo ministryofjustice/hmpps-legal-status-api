@@ -80,6 +80,8 @@ class LegacyDataService(
    * @throws RecentImprisonmentStatusExistsException
    */
   fun calculate(prisonNumber: String): LegacyImprisonmentStatusResult {
+    log.info { "Starting Imprisonment Status calculation for [$prisonNumber]" }
+
     // Optimistic locking on the prisoner's ImprisonmentStatusCalculatedAtEntity record
     // We need to keep state of the previous calculatedAt value so that in the catch for the main functionality of this
     // method we can revert it back if we need to.
@@ -107,6 +109,7 @@ class LegacyDataService(
       )
       return@execute null // return null as the previous version of the record
     }
+    log.debug { "Optimistic lock acquired for Imprisonment Status calculation for [$prisonNumber]" }
 
     return try {
       // Step 1
