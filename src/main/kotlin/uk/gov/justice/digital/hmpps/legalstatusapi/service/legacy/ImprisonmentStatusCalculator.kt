@@ -115,7 +115,7 @@ class ImprisonmentStatusCalculator(
      */
     val SENTENCE_PRECEDENCE: Comparator<SentenceCandidate> =
       compareBy<SentenceCandidate> { it.status.rank }
-        .thenBy(nullsLast(reverseOrder())) { it.sentence.sentenceLengthDays }
+        .thenBy(nullsLast()) { it.sentence.sentenceLengthDays }
         .thenBy(nullsLast()) { it.severity }
 
     /*
