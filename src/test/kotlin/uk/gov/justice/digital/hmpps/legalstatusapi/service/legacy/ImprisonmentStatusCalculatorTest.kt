@@ -211,6 +211,8 @@ class ImprisonmentStatusCalculatorTest {
 
       // Then
       assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(SENT03, "OFF002", SENTENCE))
+      verify(imprisonmentStatusMappingRepository).findBySentenceCategoryAndSentenceCalcType("2003", "UNMAPPED")
+      verify(imprisonmentStatusMappingRepository).findBySentenceCategoryAndSentenceCalcType("2003", "ADIMP")
     }
 
     @Test
@@ -227,6 +229,25 @@ class ImprisonmentStatusCalculatorTest {
 
       // Then
       assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(TRL, "TH68010", CHARGE_OUTCOME))
+    }
+
+    @Test
+    fun `should get mappings by sentenceCalcType only given sentence has unknown sentenceCategory`() {
+      // Given
+      givenSentenceMapping("ADIMP", SENT03)
+      givenSeverities("OFF001" to 1)
+      val sentencingData = LegacySentencingData(
+        sentences = listOf(
+          aRasSentence(legacySentenceCategory = "UNKNOWN", legacySentenceCalcType = "ADIMP", offence = anOffence(offenceCode = "OFF001")),
+        ),
+      )
+
+      // When
+      val actual = calculator.calculate(sentencingData)
+
+      // Then
+      assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(SENT03, "OFF001", SENTENCE))
+      verify(imprisonmentStatusMappingRepository).findBySentenceCalcTypeOrderBySentenceCategoryDesc("ADIMP")
     }
   }
 
@@ -363,6 +384,11 @@ class ImprisonmentStatusCalculatorTest {
   private fun givenSentenceMapping(sentenceCategory: String, sentenceCalcType: String, status: ImprisonmentStatus) {
     given(imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(sentenceCategory, sentenceCalcType))
       .willReturn(aMapping(status, sentenceCategory = sentenceCategory, sentenceCalcType = sentenceCalcType))
+  }
+
+  private fun givenSentenceMapping(sentenceCalcType: String, status: ImprisonmentStatus) {
+    given(imprisonmentStatusMappingRepository.findBySentenceCalcTypeOrderBySentenceCategoryDesc(sentenceCalcType))
+      .willReturn(listOf(aMapping(status, sentenceCategory = "2020", sentenceCalcType = sentenceCalcType)))
   }
 
   private fun givenResultCodeMapping(resultCode: String, status: ImprisonmentStatus) {
