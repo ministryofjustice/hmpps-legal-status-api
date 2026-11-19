@@ -7,6 +7,8 @@ import java.util.UUID
 
 @Repository
 interface ImprisonmentStatusMappingRepository : JpaRepository<ImprisonmentStatusMappingEntity, UUID> {
+  fun findBySentenceCalcTypeOrderBySentenceCategoryDesc(sentenceCalcType: String): List<ImprisonmentStatusMappingEntity>
+
   fun findBySentenceCategoryAndSentenceCalcType(sentenceCategory: String, sentenceCalcType: String): ImprisonmentStatusMappingEntity?
 
   fun findByOffenceResultCode(offenceResultCode: String): ImprisonmentStatusMappingEntity?
