@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 
 private val log = KotlinLogging.logger {}
 
@@ -52,9 +53,27 @@ class ImprisonmentStatusCalculator(
    */
   private fun calculateFromSentences(sentences: List<Sentence>, severities: Map<String, Int>): ImprisonmentStatusCalculation? {
     val candidates = sentences.mapNotNull { sentence ->
-      imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(sentence.legacySentenceCategoryForImprisonmentStatusCalculation, sentence.legacySentenceCalcTypeForImprisonmentStatusCalculation)
-        ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[sentence.offence.offenceCode]) }
-        .also { if (it == null) log.info { "No Imprisonment Status Mapping for sentence with category [${sentence.legacySentenceCategoryForImprisonmentStatusCalculation}] and calc type [${sentence.legacySentenceCalcTypeForImprisonmentStatusCalculation}]" } }
+
+      with(sentence) {
+        (
+          if (this is RasSentence && isRecallForUnknownSentenceCategory()) {
+            log.warn { "RaS API has returned the sentenceCategory for this sentence as UNKNOWN. This may not produce the correct ImprisonmentStatus if there are multiple ImprisonmentStatusMappings for sentenceCalcType [$legacySentenceCalcTypeForImprisonmentStatusCalculation]" }
+            imprisonmentStatusMappingRepository.findBySentenceCalcTypeOrderBySentenceCategoryDesc(legacySentenceCalcTypeForImprisonmentStatusCalculation)
+              .also {
+                if (it.size > 1) {
+                  log.warn {
+                    "Multiple ImprisonmentStatusMapping records [${it.size}] returned for sentenceCalcType [$legacySentenceCalcTypeForImprisonmentStatusCalculation]. Returning the first [${it.first()}]"
+                  }
+                }
+              }
+              .firstOrNull()
+          } else {
+            imprisonmentStatusMappingRepository.findBySentenceCategoryAndSentenceCalcType(legacySentenceCategoryForImprisonmentStatusCalculation, legacySentenceCalcTypeForImprisonmentStatusCalculation)
+          }
+          )
+          ?.let { SentenceCandidate(sentence, it.imprisonmentStatus, severities[offence.offenceCode]) }
+          .also { if (it == null) log.info { "No Imprisonment Status Mapping for sentence with category [$legacySentenceCategoryForImprisonmentStatusCalculation] and calc type [$legacySentenceCalcTypeForImprisonmentStatusCalculation]" } }
+      }
     }
 
     return candidates.minWithOrNull(SENTENCE_PRECEDENCE)?.let {

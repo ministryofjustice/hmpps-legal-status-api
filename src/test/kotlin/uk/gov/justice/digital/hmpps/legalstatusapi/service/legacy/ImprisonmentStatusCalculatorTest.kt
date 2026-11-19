@@ -15,6 +15,7 @@ import org.mockito.quality.Strictness
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.ADIMP_ORA20
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.ALP
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.FTR_56ORA
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.LR
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.SENT03
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus.TRL
@@ -24,6 +25,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.Im
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMappingRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom.CHARGE_OUTCOME
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom.SENTENCE
+import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.PersonSentence.LatestRecallType.FTR_56
 import java.util.UUID
 
 @ExtendWith(MockitoExtension::class)
@@ -211,6 +213,8 @@ class ImprisonmentStatusCalculatorTest {
 
       // Then
       assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(SENT03, "OFF002", SENTENCE))
+      verify(imprisonmentStatusMappingRepository).findBySentenceCategoryAndSentenceCalcType("2003", "UNMAPPED")
+      verify(imprisonmentStatusMappingRepository).findBySentenceCategoryAndSentenceCalcType("2003", "ADIMP")
     }
 
     @Test
@@ -227,6 +231,25 @@ class ImprisonmentStatusCalculatorTest {
 
       // Then
       assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(TRL, "TH68010", CHARGE_OUTCOME))
+    }
+
+    @Test
+    fun `should get mappings by sentenceCalcType only given sentence is a recall with an unknown sentenceCategory`() {
+      // Given
+      givenSentenceMapping("FTR_56ORA", FTR_56ORA)
+      givenSeverities("OFF001" to 1)
+      val sentencingData = LegacySentencingData(
+        sentences = listOf(
+          aRasSentence(legacySentenceCategory = "UNKNOWN", legacySentenceCalcType = "UNKNOWN", offence = anOffence(offenceCode = "OFF001"), latestRecallType = FTR_56),
+        ),
+      )
+
+      // When
+      val actual = calculator.calculate(sentencingData)
+
+      verify(imprisonmentStatusMappingRepository).findBySentenceCalcTypeOrderBySentenceCategoryDesc("FTR_56ORA")
+      // Then
+      assertThat(actual).isEqualTo(ImprisonmentStatusCalculation(FTR_56ORA, "OFF001", SENTENCE))
     }
   }
 
@@ -365,6 +388,11 @@ class ImprisonmentStatusCalculatorTest {
       .willReturn(aMapping(status, sentenceCategory = sentenceCategory, sentenceCalcType = sentenceCalcType))
   }
 
+  private fun givenSentenceMapping(sentenceCalcType: String, status: ImprisonmentStatus) {
+    given(imprisonmentStatusMappingRepository.findBySentenceCalcTypeOrderBySentenceCategoryDesc(sentenceCalcType))
+      .willReturn(listOf(aMapping(status, sentenceCategory = "2020", sentenceCalcType = sentenceCalcType)))
+  }
+
   private fun givenResultCodeMapping(resultCode: String, status: ImprisonmentStatus) {
     given(imprisonmentStatusMappingRepository.findByOffenceResultCode(resultCode))
       .willReturn(aMapping(status, offenceResultCode = resultCode))
@@ -389,6 +417,6 @@ class ImprisonmentStatusCalculatorTest {
 
   private companion object {
     // The real RANK_VALUEs from the IMPRISONMENT_STATUS reference data
-    val RANKS = mapOf(ALP to 10, SENT03 to 110, ADIMP_ORA20 to 110, LR to 200, TRL to 560)
+    val RANKS = mapOf(ALP to 10, SENT03 to 110, ADIMP_ORA20 to 110, LR to 200, TRL to 560, FTR_56ORA to 202)
   }
 }
