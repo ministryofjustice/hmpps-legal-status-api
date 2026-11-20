@@ -3,7 +3,7 @@ import org.jlleitschuh.gradle.ktlint.tasks.KtLintFormatTask
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.0.15"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.1.1"
   kotlin("plugin.spring") version "2.4.21"
   kotlin("plugin.jpa") version "2.4.21"
 
@@ -24,7 +24,7 @@ val awaitilityVersion = "4.3.0"
 val swaggerParserVersion = "2.1.49"
 val wiremockVersion = "3.13.2"
 val hmppsSqsStarterVersion = "7.6.0"
-val sentryVersion = "8.64.0"
+val sentryVersion = "8.65.0"
 
 dependencies {
   implementation("uk.gov.justice.service.hmpps:hmpps-kotlin-spring-boot-starter:$hmppsKotlinSpringBootStarterVersion")
