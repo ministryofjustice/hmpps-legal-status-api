@@ -1,0 +1,578 @@
+{
+  "jiraReference": "IS-190",
+  "receptionDate": "2023-06-16",
+  "previousPeriodConcludedAt": "2026-10-15T12:03:14.000000",
+  "expectedStatus": "FTR_56ORA",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "e97a8126-683d-42cc-b61f-9b17d9e7eea2",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Burglary dwelling and theft - no violence",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "TH68036",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": null,
+          "offenceStartDate": "2024-01-24",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.461721Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "51b86c38-06d5-40d4-ac29-01a83da29a34",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Burglary dwelling - theft / attempt theft with violence",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "TH68044",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": null,
+          "offenceStartDate": "2024-01-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.335398Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "3a9d4398-0073-4d2e-8c67-26b7f3b157ed",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Receiving stolen goods",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "TH68072",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": "2023-06-15",
+          "offenceStartDate": "2023-05-29",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.323439Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "f9e24ddd-e728-472f-ba0d-28e72bb77141",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Theft from the person of another",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "TH68001",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-08-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.279698Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "af38d2f0-c640-43c6-bcdf-6707f12ca4a9",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Theft from the person of another",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "TH68001",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-07-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.279698Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "68dbbc5a-0acf-4eb5-a7ba-c527b308f89f",
+          "legacyData": {
+            "postedDate": "2026-11-19",
+            "nomisOutcomeCode": "1501",
+            "offenceDescription": "Drive whilst disqualified",
+            "outcomeDescription": "Recall to Prison",
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": "F"
+          },
+          "offenceCode": "RT88333",
+          "appearanceDate": "2026-11-17",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-09-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-19T12:44:27.279698Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-08-24T12:17:34.397305",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "10"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "e1c7d7e7-eb95-4cc3-9082-0319d500446f",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 27,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "2960f61a-7eef-4321-adc5-77a744988619"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONCURRENT",
+            "consecutiveToSentenceUuid": null
+          },
+          "chargeUuid": "51b86c38-06d5-40d4-ac29-01a83da29a34",
+          "legacyData": {
+            "postedDate": "2026-08-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Burglary dwelling - theft / attempt theft with violence",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68044",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2024-01-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-24T11:13:30.223108Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-06-29T14:37:29.534893",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "6"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "4ed8de98-7cf4-4feb-8216-5010327c7a02",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 27,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "df23d142-fd4b-44d2-bb09-afa3032c3d2b"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONCURRENT",
+            "consecutiveToSentenceUuid": null
+          },
+          "chargeUuid": "e97a8126-683d-42cc-b61f-9b17d9e7eea2",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Burglary dwelling and theft - no violence",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68036",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2024-01-24",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T11:54:51.241113Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-04-14T14:07:14.912901",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "2"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "579015bd-babd-41d4-ac8b-5a44946b683a",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 12,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "f4f49e07-3cd0-4e84-85c4-086aae228d62"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONSECUTIVE",
+            "consecutiveToSentenceUuid": "71d636e7-fbf0-46b5-afef-a65216cdc385"
+          },
+          "chargeUuid": "3a9d4398-0073-4d2e-8c67-26b7f3b157ed",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Receiving stolen goods",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68072",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": "2023-06-15",
+          "offenceStartDate": "2023-05-29",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T11:54:51.13454Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-07-08T03:35:55.315275",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "9"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "3e92e288-7179-4779-bc94-b62f20eef9d4",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 6,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "35919308-ae81-47cb-85a5-15d6a371f67b"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONSECUTIVE",
+            "consecutiveToSentenceUuid": "4ed8de98-7cf4-4feb-8216-5010327c7a02"
+          },
+          "chargeUuid": "af38d2f0-c640-43c6-bcdf-6707f12ca4a9",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from the person of another",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68001",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-07-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T11:54:50.999337Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-06-29T14:43:58.679094",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "7"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "53346f3e-bb04-4c86-a611-6e2a3ead7215",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 6,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "9e7cc4e0-2d98-4491-bf04-a8722eb7219f"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONCURRENT",
+            "consecutiveToSentenceUuid": null
+          },
+          "chargeUuid": "f9e24ddd-e728-472f-ba0d-28e72bb77141",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from the person of another",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68001",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-08-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T11:54:50.999337Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "1002",
+            "outcomeName": "Imprisonment",
+            "outcomeType": "SENTENCING",
+            "outcomeUuid": "f17328cf-ceaa-43c2-930a-26cf74480e18",
+            "displayOrder": 10,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": {
+            "status": "ACTIVE",
+            "hasRecall": true,
+            "fineAmount": null,
+            "legacyData": {
+              "active": null,
+              "bookingId": 2850897,
+              "postedDate": "2026-07-08T03:35:55.184184",
+              "sentenceCalcType": null,
+              "sentenceCategory": null,
+              "sentenceTypeDesc": null,
+              "nomisLineReference": "8"
+            },
+            "chargeNumber": null,
+            "sentenceType": {
+              "hintText": null,
+              "description": "Unknown pre-recall sentence",
+              "displayOrder": 0,
+              "classification": "LEGACY_RECALL",
+              "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc"
+            },
+            "sentenceUuid": "71d636e7-fbf0-46b5-afef-a65216cdc385",
+            "periodLengths": [
+              {
+                "days": null,
+                "weeks": null,
+                "years": null,
+                "months": 3,
+                "legacyData": {
+                  "lifeSentence": false,
+                  "sentenceTermCode": "IMP",
+                  "sentenceTermDescription": "Imprisonment"
+                },
+                "periodOrder": "years,months,weeks,days",
+                "periodLengthType": "SENTENCE_LENGTH",
+                "periodLengthUuid": "da9bed7b-f49e-4a5f-9ae2-60e5f3d48a7b"
+              }
+            ],
+            "convictionDate": null,
+            "latestRecallType": "FTR_56",
+            "sentenceServeType": "CONSECUTIVE",
+            "consecutiveToSentenceUuid": "3e92e288-7179-4779-bc94-b62f20eef9d4"
+          },
+          "chargeUuid": "68dbbc5a-0acf-4eb5-a7ba-c527b308f89f",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Drive whilst disqualified",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "RT88333",
+          "appearanceDate": "2024-05-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2022-09-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T11:54:50.999337Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {
+      "f9a1551e-86b1-425b-96f7-23465a0f05fc": {
+        "status": "ACTIVE",
+        "hintText": null,
+        "description": "Unknown pre-recall sentence",
+        "displayOrder": 0,
+        "isRecallable": true,
+        "nomisCjaCode": "UNKNOWN",
+        "classification": "LEGACY_RECALL",
+        "maxAgeExclusive": null,
+        "minAgeInclusive": null,
+        "maxDateExclusive": null,
+        "minDateInclusive": null,
+        "sentenceTypeUuid": "f9a1551e-86b1-425b-96f7-23465a0f05fc",
+        "nomisSentenceCalcType": "UNKNOWN",
+        "maxOffenceDateExclusive": null,
+        "minOffenceDateInclusive": null
+      }
+    }
+  },
+  "offenceSeverities": {
+    "RT88333": 807,
+    "TH68001": 39,
+    "TH68036": 28,
+    "TH68044": 28,
+    "TH68072": 54
+  }
+}

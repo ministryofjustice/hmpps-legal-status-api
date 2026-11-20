@@ -7,6 +7,8 @@ import uk.gov.justice.digital.hmpps.remandandsentencing.resource.model.SentenceT
 
 private val log = KotlinLogging.logger {}
 
+private const val UNKNOWN = "UNKNOWN"
+
 /**
  * Abstract class representing a single prisoner sentence, encapsulating just the fields that are needed to
  * calculate an Imprisonment Status.
@@ -64,6 +66,8 @@ sealed class Sentence(
     val legacySentenceCategory: String,
     val latestRecallType: PersonSentence.LatestRecallType? = null,
   ) : Sentence(offence, sentenceLengthDays) {
+
+    fun isRecallForUnknownSentenceCategory() = latestRecallType != null && legacySentenceCategory == UNKNOWN
 
     /**
      * Returns the legacy sentence calc type to be used in the Imprisonment Status calculation
