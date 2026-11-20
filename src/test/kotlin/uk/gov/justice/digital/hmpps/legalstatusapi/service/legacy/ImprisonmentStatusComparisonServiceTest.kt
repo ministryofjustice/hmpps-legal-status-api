@@ -141,7 +141,7 @@ class ImprisonmentStatusComparisonServiceTest {
     assertThat(mismatch.chargesWindowStart).isEqualTo(chargesWindowStart)
     assertThat(mismatch.nomisImprisonmentStatus).isEqualTo("LR")
     assertThat(mismatch.nomisCalculatedAt).isEqualTo(nomisCalculatedAt)
-    assertThat(mismatch.dpsImprisonmentStatus.id).isEqualTo("UNKNOWN")
+    assertThat(mismatch.dpsImprisonmentStatus?.id).isEqualTo("UNKNOWN")
     assertThat(mismatch.dpsMainOffenceCode).isEqualTo("CJ88116")
     assertThat(mismatch.dpsCalculatedFrom).isEqualTo(CalculatedFrom.CHARGE_OUTCOME)
     assertThat(mismatch.dpsCalculatedAt).isEqualTo(dpsCalculatedAt)
@@ -296,6 +296,72 @@ class ImprisonmentStatusComparisonServiceTest {
   }
 
   @Test
+  fun `should record a not calculated row without notifying Slack given RaS returned no charges`() {
+    // Given
+    val prisonNumber = randomValidPrisonNumber()
+    val receptionDate = LocalDate.parse("2026-01-12")
+    val previousPeriodConcludedAt = LocalDateTime.parse("2025-01-20T09:00:00")
+    val chargesWindowStart = LocalDate.parse("2025-01-21")
+    val dpsCalculatedAt = Instant.parse("2026-04-17T09:13:20Z")
+    val nomisCalculatedAt = Instant.parse("2026-04-17T09:13:01Z")
+    val rasData = """{"personCharges": {"charges": []}, "sentenceTypeDetails": {}}"""
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(
+        prisonNumber = prisonNumber,
+        nomisImprisonmentStatus = "SENT03",
+        receptionDate = receptionDate,
+        previousPeriodConcludedAt = previousPeriodConcludedAt,
+        chargesWindowStart = chargesWindowStart,
+        sentencingData = LegacySentencingData(sentences = emptyList(), offences = emptyList()),
+        calculation = null,
+        rasData = rasData,
+        calculatedAt = dpsCalculatedAt,
+        bookingId = "1226669",
+      ),
+    )
+
+    // When
+    val actual = imprisonmentStatusComparisonService.compare(prisonNumber, nomisCalculatedAt)
+
+    // Then
+    assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.NotCalculated(savedMismatchId, "SENT03", NotCalculatedReason.NO_RAS_CHARGES))
+    val record = argumentCaptor<ImprisonmentStatusMismatchEntity>().apply { verify(imprisonmentStatusMismatchRepository).saveAndFlush(capture()) }.firstValue
+    assertThat(record.id).isNull()
+    assertThat(record.prisonNumber).isEqualTo(prisonNumber)
+    assertThat(record.bookingId).isEqualTo("1226669")
+    assertThat(record.receptionDate).isEqualTo(receptionDate)
+    assertThat(record.previousPeriodConcludedAt).isEqualTo(previousPeriodConcludedAt)
+    assertThat(record.chargesWindowStart).isEqualTo(chargesWindowStart)
+    assertThat(record.nomisImprisonmentStatus).isEqualTo("SENT03")
+    assertThat(record.nomisCalculatedAt).isEqualTo(nomisCalculatedAt)
+    assertThat(record.notCalculatedReason).isEqualTo(NotCalculatedReason.NO_RAS_CHARGES)
+    assertThat(record.dpsImprisonmentStatus).isNull()
+    assertThat(record.dpsMainOffenceCode).isNull()
+    assertThat(record.dpsCalculatedFrom).isNull()
+    assertThat(record.dpsCalculatedAt).isEqualTo(dpsCalculatedAt)
+    assertThat(record.rasData).isEqualTo(rasData)
+    assertThat(record.offenceSeverities).isEmpty()
+    assertThat(record.nomisData).isEqualTo("{}")
+    assertThat(record.createdAt).isEqualTo(fixedTimestamp)
+    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusRepository, slackApiClient)
+  }
+
+  @Test
+  fun `should not compare or record given Prisoner Search has no NOMIS Imprisonment Status and RaS returned no charges`() {
+    // Given
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(nomisImprisonmentStatus = null, calculation = null),
+    )
+
+    // When
+    val actual = imprisonmentStatusComparisonService.compare(randomValidPrisonNumber())
+
+    // Then
+    assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.NoNomisStatus)
+    verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient, transactionManager)
+  }
+
+  @Test
   fun `should throw the error given the Imprisonment Status cannot be calculated`() {
     // Given
     val prisonNumber = randomValidPrisonNumber()
@@ -339,6 +405,7 @@ class ImprisonmentStatusComparisonServiceTest {
     dpsMainOffenceCode = dpsMainOffenceCode,
     dpsCalculatedFrom = dpsCalculatedFrom,
     dpsCalculatedAt = dpsCalculatedAt,
+    notCalculatedReason = notCalculatedReason,
     rasData = rasData,
     offenceSeverities = offenceSeverities,
     nomisData = nomisData,

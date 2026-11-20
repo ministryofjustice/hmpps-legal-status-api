@@ -19,6 +19,18 @@ sealed interface ImprisonmentStatusComparisonResult {
   ) : ImprisonmentStatusComparisonResult
 
   /**
+   * We did not calculate the Imprisonment Status, so there was nothing to compare. It is recorded in
+   * IMPRISONMENT_STATUS_MISMATCH, flagged with the [reason], and Slack is not notified.
+   *
+   * @property mismatchId The ID of the flagged IMPRISONMENT_STATUS_MISMATCH record.
+   */
+  data class NotCalculated(
+    val mismatchId: UUID,
+    val nomisImprisonmentStatus: String,
+    val reason: NotCalculatedReason,
+  ) : ImprisonmentStatusComparisonResult
+
+  /**
    * Prisoner Search has no Imprisonment Status for the prisoner, so there was nothing to compare with.
    */
   data object NoNomisStatus : ImprisonmentStatusComparisonResult

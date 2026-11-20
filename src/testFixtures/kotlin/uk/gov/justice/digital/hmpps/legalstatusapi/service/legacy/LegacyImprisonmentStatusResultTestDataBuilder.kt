@@ -16,7 +16,7 @@ fun aLegacyImprisonmentStatusResult(
     sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),
     offences = listOf(anOffence(offenceCode = "TH68010"), anOffence(offenceCode = "CJ88116", outcomeCode = "4565")),
   ),
-  calculation: ImprisonmentStatusCalculation = ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE),
+  calculation: ImprisonmentStatusCalculation? = ImprisonmentStatusCalculation(ImprisonmentStatus.SENT03, "TH68010", CalculatedFrom.SENTENCE),
   rasData: String = """{"personCharges": {"charges": []}, "sentenceTypeDetails": {}}""",
   calculatedAt: Instant = Instant.now(),
   bookingId: String? = "1226669",

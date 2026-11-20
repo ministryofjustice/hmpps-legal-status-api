@@ -13,6 +13,7 @@ import org.hibernate.Hibernate
 import org.hibernate.annotations.JdbcTypeCode
 import org.hibernate.type.SqlTypes
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -24,6 +25,10 @@ import java.util.UUID
  *
  * The [id] is the reference sent to Slack (and so the resulting Jira ticket).
  *
+ * A row can also be flagged as "not calculated" (IS-181): [notCalculatedReason] is set, and [dpsImprisonmentStatus] and
+ * [dpsCalculatedFrom] are null. A flagged row is not a mismatch, and is not sent to Slack. A database check constraint
+ * makes sure that a row is either a normal mismatch or a flagged row.
+ *
  * @property previousPeriodConcludedAt When the prisoner's previous period of custody concluded, from the Person Location
  * API, or null if there is no previous period of custody. A local date and time, with no offset, as the API returns it.
  * @property chargesWindowStart The start of the date range used to get the prisoner's charges from RaS (the RaS
@@ -32,6 +37,9 @@ import java.util.UUID
  * @property offenceSeverities The Manage Offences severity ranking of each offence used in the calculation. Offences
  * with no known severity are not in the map.
  * @property nomisData The NOMIS sentence and offence data at the time of the mismatch, to compare with [rasData].
+ * @property notCalculatedReason Null for a normal mismatch. Otherwise, why the Imprisonment Status was not calculated.
+ * @property dpsImprisonmentStatus The Imprisonment Status we calculated, or null if [notCalculatedReason] is set.
+ * @property dpsCalculatedFrom What the status was calculated from, or null if [notCalculatedReason] is set.
  */
 @Entity(name = "IMPRISONMENT_STATUS_MISMATCH")
 class ImprisonmentStatusMismatchEntity(
@@ -62,19 +70,23 @@ class ImprisonmentStatusMismatchEntity(
   @Column(name = "NOMIS_CALCULATED_AT", nullable = true, updatable = false)
   val nomisCalculatedAt: Instant? = null,
 
-  @ManyToOne(optional = false)
-  @JoinColumn(name = "DPS_IMPRISONMENT_STATUS", nullable = false, updatable = false)
-  val dpsImprisonmentStatus: ImprisonmentStatusEntity,
+  @ManyToOne(optional = true)
+  @JoinColumn(name = "DPS_IMPRISONMENT_STATUS", nullable = true, updatable = false)
+  val dpsImprisonmentStatus: ImprisonmentStatusEntity?,
 
   @Column(name = "DPS_MAIN_OFFENCE_CODE", nullable = true, updatable = false)
   val dpsMainOffenceCode: String? = null,
 
   @Enumerated(EnumType.STRING)
-  @Column(name = "DPS_CALCULATED_FROM", nullable = false, updatable = false)
-  val dpsCalculatedFrom: CalculatedFrom,
+  @Column(name = "DPS_CALCULATED_FROM", nullable = true, updatable = false)
+  val dpsCalculatedFrom: CalculatedFrom?,
 
   @Column(name = "DPS_CALCULATED_AT", nullable = false, updatable = false)
   val dpsCalculatedAt: Instant,
+
+  @Enumerated(EnumType.STRING)
+  @Column(name = "NOT_CALCULATED_REASON", nullable = true, updatable = false)
+  val notCalculatedReason: NotCalculatedReason? = null,
 
   @JdbcTypeCode(SqlTypes.JSON)
   @Column(name = "RAS_DATA", nullable = false, updatable = false)
@@ -103,5 +115,5 @@ class ImprisonmentStatusMismatchEntity(
   override fun hashCode(): Int = javaClass.hashCode()
 
   // The JSON snapshots are deliberately excluded as they are large and contain offence data
-  override fun toString(): String = this::class.simpleName + "(id = $id, prisonNumber = $prisonNumber, nomisImprisonmentStatus = $nomisImprisonmentStatus, dpsImprisonmentStatus = ${dpsImprisonmentStatus.id})"
+  override fun toString(): String = this::class.simpleName + "(id = $id, prisonNumber = $prisonNumber, nomisImprisonmentStatus = $nomisImprisonmentStatus, dpsImprisonmentStatus = ${dpsImprisonmentStatus?.id}, notCalculatedReason = $notCalculatedReason)"
 }
