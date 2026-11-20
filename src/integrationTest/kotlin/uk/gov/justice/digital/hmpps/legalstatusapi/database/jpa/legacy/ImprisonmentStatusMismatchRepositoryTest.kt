@@ -1,13 +1,17 @@
 package uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy
 
 import org.assertj.core.api.Assertions.assertThat
+import org.assertj.core.api.Assertions.assertThatThrownBy
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.dao.DataIntegrityViolationException
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusMismatchEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMismatchRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.CalculatedFrom
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -49,7 +53,8 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
       assertThat(chargesWindowStart).isEqualTo(LocalDate.of(2025, 1, 21))
       assertThat(nomisImprisonmentStatus).isEqualTo("SENT03")
       assertThat(nomisCalculatedAt).isEqualTo(Instant.parse("2026-10-26T09:00:00Z"))
-      assertThat(dpsImprisonmentStatus.id).isEqualTo("RECEP_REM")
+      assertThat(dpsImprisonmentStatus?.id).isEqualTo("RECEP_REM")
+      assertThat(notCalculatedReason).isNull()
       assertThat(dpsMainOffenceCode).isEqualTo("TH68010")
       assertThat(dpsCalculatedFrom).isEqualTo(CalculatedFrom.CHARGE_OUTCOME)
       assertThat(dpsCalculatedAt).isEqualTo(Instant.parse("2026-10-26T09:00:05Z"))
@@ -115,6 +120,48 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     assertThat(actual.nomisImprisonmentStatus).isEqualTo(inactiveNomisStatus)
   }
 
+  @Test
+  fun `should save and retrieve a row flagged as not calculated`() {
+    // Given
+    val notCalculated = aValidImprisonmentStatusMismatch(
+      dpsImprisonmentStatus = null,
+      dpsMainOffenceCode = null,
+      dpsCalculatedFrom = null,
+      notCalculatedReason = NotCalculatedReason.NO_RAS_CHARGES,
+    )
+
+    // When
+    val saved = repository.save(notCalculated)
+    val actual = repository.findById(saved.id!!).get()
+
+    // Then
+    with(actual) {
+      assertThat(notCalculatedReason).isEqualTo(NotCalculatedReason.NO_RAS_CHARGES)
+      assertThat(dpsImprisonmentStatus).isNull()
+      assertThat(dpsMainOffenceCode).isNull()
+      assertThat(dpsCalculatedFrom).isNull()
+      assertThat(nomisImprisonmentStatus).isEqualTo("SENT03")
+    }
+  }
+
+  @Test
+  fun `should not save a row with a not calculated reason and a DPS Imprisonment Status`() {
+    // Given
+    val invalid = aValidImprisonmentStatusMismatch(notCalculatedReason = NotCalculatedReason.NO_RAS_CHARGES)
+
+    // When / Then
+    assertThatThrownBy { repository.saveAndFlush(invalid) }.isInstanceOf(DataIntegrityViolationException::class.java)
+  }
+
+  @Test
+  fun `should not save a row with no not calculated reason and no DPS Imprisonment Status`() {
+    // Given
+    val invalid = aValidImprisonmentStatusMismatch(dpsImprisonmentStatus = null, dpsCalculatedFrom = null)
+
+    // When / Then
+    assertThatThrownBy { repository.saveAndFlush(invalid) }.isInstanceOf(DataIntegrityViolationException::class.java)
+  }
+
   private fun aValidImprisonmentStatusMismatch(
     nomisImprisonmentStatus: String = "SENT03",
     bookingId: String? = "1234567",
@@ -123,6 +170,9 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     chargesWindowStart: LocalDate? = LocalDate.of(2025, 1, 21),
     nomisCalculatedAt: Instant? = Instant.parse("2026-10-26T09:00:00Z"),
     dpsMainOffenceCode: String? = "TH68010",
+    dpsImprisonmentStatus: ImprisonmentStatusEntity? = imprisonmentStatusRepository.findById("RECEP_REM").get(),
+    dpsCalculatedFrom: CalculatedFrom? = CalculatedFrom.CHARGE_OUTCOME,
+    notCalculatedReason: NotCalculatedReason? = null,
   ) = ImprisonmentStatusMismatchEntity(
     prisonNumber = "A1234BC",
     bookingId = bookingId,
@@ -131,10 +181,11 @@ class ImprisonmentStatusMismatchRepositoryTest : IntegrationTestBase() {
     chargesWindowStart = chargesWindowStart,
     nomisImprisonmentStatus = nomisImprisonmentStatus,
     nomisCalculatedAt = nomisCalculatedAt,
-    dpsImprisonmentStatus = imprisonmentStatusRepository.findById("RECEP_REM").get(),
+    dpsImprisonmentStatus = dpsImprisonmentStatus,
     dpsMainOffenceCode = dpsMainOffenceCode,
-    dpsCalculatedFrom = CalculatedFrom.CHARGE_OUTCOME,
+    dpsCalculatedFrom = dpsCalculatedFrom,
     dpsCalculatedAt = Instant.parse("2026-10-26T09:00:05Z"),
+    notCalculatedReason = notCalculatedReason,
     rasData = RAS_DATA,
     offenceSeverities = mapOf("TH68010" to 3, "SX56025" to 1),
     nomisData = NOMIS_DATA,

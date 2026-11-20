@@ -296,6 +296,103 @@ class LegacyDataServiceTest {
     assertThat(actual.chargesWindowStart).isNull()
   }
 
+  // IS-181: we assume that an empty list of charges from RaS is never valid, so the status is not calculated
+  @Nested
+  inner class EmptyRasChargesTests {
+    @BeforeEach
+    fun setUp() {
+      Mockito.clearInvocations(imprisonmentStatusCalculator, sentenceTypeDetailsProvider)
+    }
+
+    @Test
+    fun `should return no calculation with its inputs and the NOMIS Imprisonment Status given RaS returns no charges`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val receptionDate = LocalDate.now().minusMonths(3)
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate, imprisonmentStatus = "SENT03"))
+      given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
+        aValidPeriodOfCustody(previousPeriod = aValidPreviousPeriod(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00"))),
+      )
+      given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber)).willReturn(Optional.empty())
+
+      // When
+      val actual = legacyDataService.calculate(prisonNumber)
+
+      // Then
+      assertThat(actual.calculation).isNull()
+      assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(actual.nomisImprisonmentStatus).isEqualTo("SENT03")
+      assertThat(actual.receptionDate).isEqualTo(receptionDate)
+      assertThat(actual.previousPeriodConcludedAt).isEqualTo(LocalDateTime.parse("2025-01-20T09:00:00"))
+      assertThat(actual.chargesWindowStart).isEqualTo(LocalDate.parse("2025-01-21"))
+      assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(sentences = emptyList(), offences = emptyList()))
+      assertThat(jsonMapper.readTree(actual.rasData)).isEqualTo(jsonMapper.readTree("""{"personCharges": {"charges": []}, "sentenceTypeDetails": {}}"""))
+      assertThat(actual.calculatedAt).isEqualTo(fixedTimestamp)
+      verifyNoInteractions(imprisonmentStatusCalculator, sentenceTypeDetailsProvider)
+    }
+
+    @Test
+    fun `should return NOT_CALCULATED from calculateImprisonmentStatus given RaS returns no charges`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber)).willReturn(Optional.empty())
+
+      // When
+      val actual = legacyDataService.calculateImprisonmentStatus(prisonNumber)
+
+      // Then
+      assertThat(actual).isEqualTo(NOT_CALCULATED)
+    }
+
+    @Test
+    fun `should release the lock record given the prisoner has not had an imprisonment status calculated before and RaS returns no charges`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber)).willReturn(Optional.empty())
+
+      // When
+      legacyDataService.calculate(prisonNumber)
+
+      // Then
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository).save(saveArgumentCaptor.capture())
+      assertThat(saveArgumentCaptor.value.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(saveArgumentCaptor.value.calculatedAt).isEqualTo(Instant.now(clock))
+      verify(imprisonmentStatusCalculatedAtRepository).deleteById(prisonNumber)
+    }
+
+    @Test
+    fun `should release the lock record given the prisoner has had an imprisonment status calculated before and RaS returns no charges`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val now = Instant.now(clock)
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+
+      val previousCalculatedAt = now.minus(1, ChronoUnit.DAYS)
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber))
+        .willReturn(Optional.of(anImprisonmentStatusCalculatedAtEntity(prisonNumber = prisonNumber, calculatedAt = previousCalculatedAt)))
+      given(imprisonmentStatusCalculatedAtRepository.getReferenceById(prisonNumber))
+        .willReturn(anImprisonmentStatusCalculatedAtEntity(prisonNumber = prisonNumber, calculatedAt = now))
+
+      // When
+      legacyDataService.calculate(prisonNumber)
+
+      // Then
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository, times(2)).save(saveArgumentCaptor.capture())
+      // The first save takes the lock, the second save sets calculatedAt back to the previous value
+      assertThat(saveArgumentCaptor.firstValue.calculatedAt).isEqualTo(now)
+      assertThat(saveArgumentCaptor.secondValue.calculatedAt).isEqualTo(previousCalculatedAt)
+      verify(imprisonmentStatusCalculatedAtRepository, never()).deleteById(prisonNumber)
+    }
+  }
+
   @Nested
   inner class SadPathTests {
     @Test

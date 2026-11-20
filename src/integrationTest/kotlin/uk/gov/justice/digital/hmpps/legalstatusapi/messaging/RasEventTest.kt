@@ -12,9 +12,11 @@ import org.springframework.transaction.support.TransactionTemplate
 import uk.gov.justice.digital.hmpps.legalstatusapi.IntegrationTestBase
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.ImprisonmentStatusCalculatedAtEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.assertThat
+import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMismatchRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason
 import uk.gov.justice.digital.hmpps.manageoffences.resource.model.OffenceSeverityRating
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPeriodOfCustody
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPreviousPeriod
@@ -39,6 +41,9 @@ class RasEventTest : IntegrationTestBase() {
   private lateinit var imprisonmentStatusCalculatedAtRepository: ImprisonmentStatusCalculatedAtRepository
 
   @Autowired
+  private lateinit var imprisonmentStatusMismatchRepository: ImprisonmentStatusMismatchRepository
+
+  @Autowired
   private lateinit var transactionTemplate: TransactionTemplate
 
   private lateinit var prisonNumber: String
@@ -47,6 +52,7 @@ class RasEventTest : IntegrationTestBase() {
   fun beforeEach() {
     messagingHelper.purgeDomainEventsQueues()
     imprisonmentStatusCalculatedAtRepository.deleteAll()
+    imprisonmentStatusMismatchRepository.deleteAll()
 
     stubGetTokenFromHmppsAuth()
 
@@ -167,6 +173,43 @@ class RasEventTest : IntegrationTestBase() {
       assertThat(imprisonmentStatusCalculatedAtRepository.getReferenceById(prisonNumber))
         .hasVersion(0)
         .wasCalculatedAt(originalCalculatedAt)
+    }
+  }
+
+  @Test
+  fun `should record Imprisonment Status as not calculated and release the lock given RaS returns no charges`() {
+    // Given
+    stubGetChargesFromRemandAndSentencingApi(
+      prisonNumber = prisonNumber,
+      fromDate = LocalDate.parse("2025-01-21"),
+      toDate = LocalDate.now(clock),
+      response = PersonCharges(emptyList()),
+    )
+
+    val sqsMessage = aValidHmppsDomainEventsSqsMessage(
+      prisonNumber = prisonNumber,
+      eventType = SENTENCE_UPDATED,
+    )
+
+    // When
+    messagingHelper.sendDomainEvent(sqsMessage)
+
+    // Then
+    await untilCallTo { imprisonmentStatusMismatchRepository.count() } matches { it == 1L }
+    await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
+    assertThat(messagingHelper.messagesOnDomainEventsDlq()).isZero()
+
+    transactionTemplate.execute {
+      with(imprisonmentStatusMismatchRepository.findAll().single()) {
+        assertThat(this.prisonNumber).isEqualTo(this@RasEventTest.prisonNumber)
+        assertThat(notCalculatedReason).isEqualTo(NotCalculatedReason.NO_RAS_CHARGES)
+        assertThat(nomisImprisonmentStatus).isEqualTo("AFIXED")
+        assertThat(dpsImprisonmentStatus).isNull()
+        assertThat(dpsCalculatedFrom).isNull()
+        assertThat(chargesWindowStart).isEqualTo(LocalDate.parse("2025-01-21"))
+      }
+      // The lock record was created and then released, so the next event is not skipped
+      assertThat(imprisonmentStatusCalculatedAtRepository.count()).isZero()
     }
   }
 }

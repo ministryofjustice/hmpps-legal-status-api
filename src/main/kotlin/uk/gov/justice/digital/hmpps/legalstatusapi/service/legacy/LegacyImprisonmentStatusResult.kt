@@ -18,6 +18,10 @@ import java.time.LocalDateTime
  * [chargesWindowStart].
  * @property rasData The Remand and Sentencing API data used in the calculation, as JSON: the raw charges response
  * (`personCharges`) and the details of each sentence type looked up (`sentenceTypeDetails`).
+ * @property calculation The calculated Imprisonment Status, or null if it was not calculated because RaS returned no
+ * charges ([NotCalculatedReason.NO_RAS_CHARGES]). ASSUMPTION (IS-181): an empty list of charges is never valid, so it
+ * means that the RaS data is not complete. See [LegacyDataService.calculate].
+ * @property calculatedAt When the calculation was done, or attempted if [calculation] is null.
  */
 data class LegacyImprisonmentStatusResult(
   val prisonNumber: String,
@@ -26,7 +30,7 @@ data class LegacyImprisonmentStatusResult(
   val previousPeriodConcludedAt: LocalDateTime?,
   val chargesWindowStart: LocalDate?,
   val sentencingData: LegacySentencingData,
-  val calculation: ImprisonmentStatusCalculation,
+  val calculation: ImprisonmentStatusCalculation?,
   val rasData: String,
   val calculatedAt: Instant,
   val bookingId: String?,

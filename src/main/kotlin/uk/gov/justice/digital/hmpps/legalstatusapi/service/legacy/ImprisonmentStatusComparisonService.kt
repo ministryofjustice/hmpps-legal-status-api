@@ -28,6 +28,10 @@ private val log = KotlinLogging.logger {}
  *
  * Slack notifications can be turned off with `slack.enabled`, e.g. until the webhook URL is available. The mismatch is
  * still recorded.
+ *
+ * If the status was not calculated (RaS returned no charges, IS-181), there is nothing to compare. The row is recorded
+ * in IMPRISONMENT_STATUS_MISMATCH flagged with a NOT_CALCULATED_REASON, with no DPS status, and Slack is not notified.
+ * No exception is thrown, so that the message is not retried or sent to the DLQ.
  */
 @Service
 class ImprisonmentStatusComparisonService(
@@ -58,12 +62,15 @@ class ImprisonmentStatusComparisonService(
 
     val result = legacyDataService.calculate(prisonNumber)
     val nomisStatus = result.nomisImprisonmentStatus
-    val dpsStatus = result.calculation.imprisonmentStatus.nomisCode
 
     if (nomisStatus == null) {
       log.warn { "Not comparing Imprisonment Status for prisoner [$prisonNumber] as Prisoner Search has no NOMIS Imprisonment Status" }
       return ImprisonmentStatusComparisonResult.NoNomisStatus
     }
+
+    val calculation = result.calculation
+      ?: return recordNotCalculated(result, nomisStatus, nomisCalculatedAt, NotCalculatedReason.NO_RAS_CHARGES)
+    val dpsStatus = calculation.imprisonmentStatus.nomisCode
 
     if (nomisStatus == dpsStatus) {
       log.info { "Imprisonment Status [$dpsStatus] for prisoner [$prisonNumber] matches NOMIS" }
@@ -86,8 +93,8 @@ class ImprisonmentStatusComparisonService(
           nomisImprisonmentStatus = nomisStatus,
           nomisCalculatedAt = nomisCalculatedAt,
           dpsImprisonmentStatus = imprisonmentStatusRepository.getReferenceById(dpsStatus),
-          dpsMainOffenceCode = result.calculation.mainOffenceCode,
-          dpsCalculatedFrom = result.calculation.calculatedFrom,
+          dpsMainOffenceCode = calculation.mainOffenceCode,
+          dpsCalculatedFrom = calculation.calculatedFrom,
           dpsCalculatedAt = result.calculatedAt,
           rasData = result.rasData,
           offenceSeverities = offenceSeverities,
@@ -101,6 +108,44 @@ class ImprisonmentStatusComparisonService(
     log.info { "Imprisonment Status [$dpsStatus] for prisoner [$prisonNumber] does not match NOMIS [$nomisStatus], recorded as mismatch [$mismatchId]" }
 
     return ImprisonmentStatusComparisonResult.Mismatch(mismatchId, nomisStatus, dpsStatus)
+  }
+
+  /**
+   * Records a calculation that was not done as a flagged row in IMPRISONMENT_STATUS_MISMATCH, with no DPS status. It is
+   * not a mismatch, so Slack is not notified.
+   */
+  private fun recordNotCalculated(
+    result: LegacyImprisonmentStatusResult,
+    nomisStatus: String,
+    nomisCalculatedAt: Instant?,
+    reason: NotCalculatedReason,
+  ): ImprisonmentStatusComparisonResult.NotCalculated {
+    val prisonNumber = result.prisonNumber
+    val recordId = transactionTemplate.execute {
+      imprisonmentStatusMismatchRepository.saveAndFlush(
+        ImprisonmentStatusMismatchEntity(
+          prisonNumber = prisonNumber,
+          bookingId = result.bookingId,
+          receptionDate = result.receptionDate,
+          previousPeriodConcludedAt = result.previousPeriodConcludedAt,
+          chargesWindowStart = result.chargesWindowStart,
+          nomisImprisonmentStatus = nomisStatus,
+          nomisCalculatedAt = nomisCalculatedAt,
+          dpsImprisonmentStatus = null,
+          dpsMainOffenceCode = null,
+          dpsCalculatedFrom = null,
+          dpsCalculatedAt = result.calculatedAt,
+          notCalculatedReason = reason,
+          rasData = result.rasData,
+          offenceSeverities = emptyMap(),
+          nomisData = "{}",
+          createdAt = Instant.now(clock),
+        ),
+      ).id!!
+    }
+    log.warn { "Imprisonment Status for prisoner [$prisonNumber] not calculated ([$reason]). NOMIS Imprisonment Status is [$nomisStatus]. Recorded as not calculated [$recordId]" }
+
+    return ImprisonmentStatusComparisonResult.NotCalculated(recordId, nomisStatus, reason)
   }
 
   private fun notifySlack(prisonNumber: String, nomisStatus: String, dpsStatus: String, mismatchId: UUID) {
