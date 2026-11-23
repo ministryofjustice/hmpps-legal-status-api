@@ -24,7 +24,7 @@ import java.time.Clock
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
-import java.util.UUID
+import java.util.*
 
 private val log = KotlinLogging.logger {}
 
@@ -197,17 +197,14 @@ class LegacyDataService(
     // To get the list of offences we need to group all charges by the chargeUuid.
     // For each chargeUuid we will then have a list of charges.
     // The NOMIS algorithm for Imprisonment Status uses the first outcome for each. In order to use the same outcome
-    // as NOMIS, we need to sort the outcomes by `displayOrder` and then select the first. This will give us the outcome
-    // code that we need for the Imprisonment Status mapping.
+    // as NOMIS, we need to sort the outcomes by `appearanceDate` and `appearanceCreatedAt` and then select the first.
+    // This will give us the outcome code that we need for the Imprisonment Status mapping.
     // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
     // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
     // current NOMIS algorithm.
-    // TODO - sorting on displayOrder is not the correct approach, but is the best we have at the moment and allows
-    // current mismatch case tests to pass. The RaS API will be updated with more suitable fields to sort on, at which
-    // point we have IS-160 which will update this code and the fields it sorts on.
     val offences = prisonerCharges.charges
       .groupBy { it.chargeUuid }
-      .mapValues { (_, list) -> list.sortedBy { it.outcome?.displayOrder }.first() }
+      .mapValues { (_, list) -> list.sortedWith(compareBy({ it.appearanceDate }, { it.appearanceCreatedAt })).first() }
       .values
       .map { it.offence() }
 
