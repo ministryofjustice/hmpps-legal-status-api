@@ -1,0 +1,2183 @@
+{
+  "jiraReference": "IS-201",
+  "receptionDate": "2025-12-29",
+  "previousPeriodConcludedAt": null,
+  "expectedStatus": "SEC38",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-11-23",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.75856Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-09-14",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-15T12:08:48.763604Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-09-11",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-09-10",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-11T11:38:21.901744Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": "2026-01-22",
+          "offenceStartDate": "2026-01-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:28:17.637563Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-08-03",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-31",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-08-03T10:25:09.559568Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-07-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-28T09:01:01.810606Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-07-27",
+          "offenceEndDate": "2026-01-22",
+          "offenceStartDate": "2026-01-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-05-07T08:27:29.241933Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:08:39.792924Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2026-01-22",
+          "offenceStartDate": "2026-01-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:06:05.241582Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-07-16",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-07-23",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-16T09:51:22.317993Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-07-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": "2026-01-22",
+          "offenceStartDate": "2026-01-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-07-24T09:05:25.937533Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-06-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-06-18",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-06-19T09:16:28.243369Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-05-07",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-05-06",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-03-30T10:26:17.158016Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-04-29",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-04-28",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-04-29T09:50:33.129587Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-03-30",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-03-27",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-03-30T10:25:44.408402Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "68a3e3f4-333a-4b90-9cf1-d3cd7f9de9a7",
+          "legacyData": {
+            "postedDate": "2026-03-02",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Commit an act / series of acts with intent to pervert the course of public justice",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "COML030",
+          "appearanceDate": "2026-02-27",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-03-02T09:29:22.767963Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-02-24",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-02-23",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-24T12:23:05.143298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-01-28",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2026-01-26",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-28T09:51:38.393084Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "4bddf6de-a29b-4529-b892-461a0e32981b",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": "2025-12-15",
+          "offenceStartDate": "2025-10-31",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "66f47516-ebe3-40e2-8988-fac01150e850",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-25",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "44c8098c-03fd-41ae-93b1-2233a2fa539f",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Engage in controlling / coercive behaviour in an intimate / family relationship",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SC15004",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": "2025-12-29",
+          "offenceStartDate": "2023-01-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ba4c52da-1795-44d1-ade1-fdff69425728",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": "2025-01-01",
+          "offenceStartDate": "2024-11-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "1199a25b-a07b-4b99-85ff-eebb0068ba35",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Criminal damage to property - value under £5000",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "CD71039",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": null,
+          "offenceStartDate": "2025-12-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "e367099b-c56b-4a88-af04-939edafcd5ed",
+          "legacyData": {
+            "postedDate": "2026-01-18",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Rape a woman 16 years of age or over - SOA 2003",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "SX03002",
+          "appearanceDate": "2025-12-30",
+          "offenceEndDate": "2023-06-01",
+          "offenceStartDate": "2023-02-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-01-18T15:03:38.466012Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
+  },
+  "offenceSeverities": {
+    "CD71039": 149,
+    "COML030": 79,
+    "SC15004": 8,
+    "SX03002": 19
+  }
+}
