@@ -1,0 +1,207 @@
+{
+  "jiraReference": "IS-202",
+  "receptionDate": "2026-09-02",
+  "previousPeriodConcludedAt": "2026-07-09T10:59:41.000000",
+  "expectedStatus": "SEC39",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b7c8fb37-dc7d-4c52-9314-b78a7f1fe0db",
+          "legacyData": null,
+          "offenceCode": "SX03204",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-13",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-23T11:34:35.083512Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "a51d0619-df12-4e91-b7a2-894426b511eb",
+          "legacyData": null,
+          "offenceCode": "SX03007",
+          "appearanceDate": "2026-11-20",
+          "offenceEndDate": null,
+          "offenceStartDate": "2024-03-08",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-23T11:34:35.083512Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "c3c89e50-854f-4305-8f0e-33a88bc38531",
+          "legacyData": null,
+          "offenceCode": "SX03244",
+          "appearanceDate": "2026-11-06",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-09T12:49:17.053536Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "2051",
+            "outcomeName": "Withdrawn",
+            "outcomeType": "NON_CUSTODIAL",
+            "outcomeUuid": "6d2eb21d-ec02-48fa-9fcd-02e73b8e45ca",
+            "displayOrder": 150,
+            "dispositionCode": "FINAL"
+          },
+          "sentence": null,
+          "chargeUuid": "ec25abf4-90e4-4b83-bed5-8178be952dcc",
+          "legacyData": null,
+          "offenceCode": "SX03204",
+          "appearanceDate": "2026-10-12",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-13T09:33:15.187001Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "c3c89e50-854f-4305-8f0e-33a88bc38531",
+          "legacyData": null,
+          "offenceCode": "SX03244",
+          "appearanceDate": "2026-10-12",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-13T09:33:15.187001Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ec25abf4-90e4-4b83-bed5-8178be952dcc",
+          "legacyData": null,
+          "offenceCode": "SX03204",
+          "appearanceDate": "2026-10-09",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-13T09:31:47.175918Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "c3c89e50-854f-4305-8f0e-33a88bc38531",
+          "legacyData": null,
+          "offenceCode": "SX03244",
+          "appearanceDate": "2026-10-09",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-13T09:31:47.175918Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ec25abf4-90e4-4b83-bed5-8178be952dcc",
+          "legacyData": null,
+          "offenceCode": "SX03204",
+          "appearanceDate": "2026-09-30",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-01T10:22:42.380897Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4016",
+            "outcomeName": "Commit to Crown Court for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "daed8a56-a5e7-4bba-807a-ede788f2f078",
+            "displayOrder": 530,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "ec25abf4-90e4-4b83-bed5-8178be952dcc",
+          "legacyData": null,
+          "offenceCode": "SX03204",
+          "appearanceDate": "2026-09-02",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-08-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-09-03T09:27:53.601302Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
+  },
+  "offenceSeverities": {
+    "SX03007": 20,
+    "SX03204": 66,
+    "SX03244": 68
+  }
+}
