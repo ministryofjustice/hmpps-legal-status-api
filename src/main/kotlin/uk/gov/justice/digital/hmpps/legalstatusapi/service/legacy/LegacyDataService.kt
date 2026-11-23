@@ -24,7 +24,7 @@ import java.time.Clock
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
-import java.util.*
+import java.util.UUID
 
 private val log = KotlinLogging.logger {}
 
@@ -204,7 +204,13 @@ class LegacyDataService(
     // current NOMIS algorithm.
     val offences = prisonerCharges.charges
       .groupBy { it.chargeUuid }
-      .mapValues { (_, list) -> list.sortedWith(compareBy({ it.appearanceDate }, { it.appearanceCreatedAt })).first() }
+      .mapValues { (_, list) ->
+        list.sortedWith(
+          compareBy<PersonCharge, LocalDate>(reverseOrder()) { it.appearanceDate }
+            .thenBy(reverseOrder()) { it.appearanceCreatedAt },
+        )
+          .first()
+      }
       .values
       .map { it.offence() }
 
