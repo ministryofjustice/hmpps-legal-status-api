@@ -1,0 +1,1692 @@
+{
+  "jiraReference": "IS-206",
+  "receptionDate": "2026-10-15",
+  "previousPeriodConcludedAt": "2026-09-01T09:04:18.000000",
+  "expectedStatus": "RX",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "0d708634-1752-43bb-aa54-aab9df7379b6",
+          "legacyData": {
+            "postedDate": "2026-10-22",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-15",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:09:32.083133Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-18T11:08:19.398697Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-10-19",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-28T16:59:09.387006Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d708634-1752-43bb-aa54-aab9df7379b6",
+          "legacyData": {
+            "postedDate": "2026-10-22",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-11-18",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-15",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-22T09:15:51.248728Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-28",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-21T16:01:16.118298Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4531",
+            "outcomeName": "Remand in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "315280e5-d53e-43b3-8ba6-44da25676ce2",
+            "displayOrder": 570,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d708634-1752-43bb-aa54-aab9df7379b6",
+          "legacyData": {
+            "postedDate": "2026-10-22",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-22",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-15",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-22T09:14:09.544788Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4012",
+            "outcomeName": "Remittal for sentence in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "fda77ebe-2218-4401-815f-4feba11abea8",
+            "displayOrder": 585,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-21",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:21:08.331957Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-16",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:20:43.131977Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6ee83475-9882-47fc-b0bc-64da7a4942ee",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-30",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "25e27a84-31f3-4b0a-94e3-49e296750b35",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "88f78e8a-1e53-4202-a983-ccd31db781cd",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-28",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "0d87286d-dd1b-4dd8-9865-962213ff8043",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-22",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "5f3c2eea-42e5-40b7-9f52-095abbc4265e",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-05",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6b350e19-802a-42b7-934e-47738abc8dbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-11",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b72619c4-0b12-4ab7-b677-ea449d301f0c",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-16",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f489dd3e-c0d3-4e0f-bd19-e6485df431a1",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-01",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "6c842295-9b2e-49b1-97cf-f10d358fedbb",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-07-20",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "d97ca946-f74d-428c-b85d-053d139f63b6",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Theft from a shop",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "TH68010",
+          "appearanceDate": "2026-10-15",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-10-03",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-10-19T09:16:45.798396Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
+  },
+  "offenceSeverities": {
+    "TH68010": 46
+  }
+}

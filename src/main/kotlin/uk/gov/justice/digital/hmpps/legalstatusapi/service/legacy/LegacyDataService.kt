@@ -197,7 +197,8 @@ class LegacyDataService(
     // To get the list of offences we need to group all charges by the chargeUuid.
     // For each chargeUuid we will then have a list of charges.
     // The NOMIS algorithm for Imprisonment Status uses the first outcome for each. In order to use the same outcome
-    // as NOMIS, we need to sort the outcomes by `appearanceDate` and `appearanceCreatedAt` and then select the first.
+    // as NOMIS, we need to sort the outcomes by `appearanceDate` and `appearanceCreatedAt` and then select the first
+    // that either has a RaS outcome or has a legacy NOMIS outcome code.
     // This will give us the outcome code that we need for the Imprisonment Status mapping.
     // NOTE: Selecting the first outcome per charge is current NOMIS behaviour. If there is a decision to change this
     // logic to use most recent outcome per charge this is where we would do it, but it would be a deviation from the
@@ -209,7 +210,7 @@ class LegacyDataService(
           compareBy<PersonCharge, LocalDate>(reverseOrder()) { it.appearanceDate }
             .thenBy(reverseOrder()) { it.appearanceCreatedAt },
         )
-          .first()
+          .minBy { it.outcome == null && it.legacyData?.nomisOutcomeCode == null } // equiv of "select the first of the already sorted charges (by appearanceDate) where there is either an outcome or a nomis outcome code"
       }
       .values
       .map { it.offence() }
