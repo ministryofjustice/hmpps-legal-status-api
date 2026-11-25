@@ -14,4 +14,6 @@ enum class NotCalculatedReason {
    * make this assumption wrong.
    */
   NO_RAS_CHARGES,
+
+  CURRENT_PERIOD_OF_CUSTODY_CONCLUDED,
 }

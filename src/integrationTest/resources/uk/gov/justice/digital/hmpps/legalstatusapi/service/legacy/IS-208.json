@@ -1,0 +1,38 @@
+{
+  "jiraReference": "IS-208",
+  "receptionDate": "2026-04-09",
+  "previousPeriodConcludedAt": "2026-11-19T11:15:22.000000",
+  "currentPeriodConcludedAt": "2026-11-24T11:15:22.000000",
+  "expectedStatus": "NOT_CALCULATED",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4560",
+            "outcomeName": "Commit to Crown Court for trial in custody",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "dd912c55-ca0d-4a68-8b0d-ba0a5e73b471",
+            "displayOrder": 540,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "b5fc650d-9e07-4065-adb3-b805cb191456",
+          "legacyData": null,
+          "offenceCode": "TH68036",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": null,
+          "offenceStartDate": "2026-09-21",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-25T09:22:28.851275Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
+  },
+  "offenceSeverities": {
+    "TH68036": 28
+  }
+}

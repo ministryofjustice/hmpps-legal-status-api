@@ -69,7 +69,12 @@ class ImprisonmentStatusComparisonService(
     }
 
     val calculation = result.calculation
-      ?: return recordNotCalculated(result, nomisStatus, nomisCalculatedAt, NotCalculatedReason.NO_RAS_CHARGES)
+      ?: return recordNotCalculated(
+        result = result,
+        nomisStatus = nomisStatus,
+        nomisCalculatedAt = nomisCalculatedAt,
+        reason = result.notCalculatedReason!!,
+      )
     val dpsStatus = calculation.imprisonmentStatus.nomisCode
 
     if (nomisStatus == dpsStatus) {
@@ -89,6 +94,7 @@ class ImprisonmentStatusComparisonService(
           bookingId = result.bookingId,
           receptionDate = result.receptionDate,
           previousPeriodConcludedAt = result.previousPeriodConcludedAt,
+          currentPeriodConcludedAt = result.currentPeriodConcludedAt,
           chargesWindowStart = result.chargesWindowStart,
           nomisImprisonmentStatus = nomisStatus,
           nomisCalculatedAt = nomisCalculatedAt,
