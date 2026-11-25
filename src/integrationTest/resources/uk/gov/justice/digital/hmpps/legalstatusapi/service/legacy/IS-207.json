@@ -1,0 +1,140 @@
+{
+  "jiraReference": "IS-207",
+  "receptionDate": "2026-02-05",
+  "previousPeriodConcludedAt": null,
+  "expectedStatus": "JR",
+  "rasData": {
+    "personCharges": {
+      "charges": [
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "21e2e652-b7a9-47ad-8d59-6a0f72cfe4fc",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Conspire to supply a class A controlled drug - cocaine",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71130C",
+          "appearanceDate": "2026-11-25",
+          "offenceEndDate": "2026-02-05",
+          "offenceStartDate": "2020-07-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-25T09:12:07.644658Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": null,
+          "sentence": null,
+          "chargeUuid": "f8324fe5-b63c-410b-9d50-0ceebfaee8dd",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Conspire to supply a class A controlled drug - cocaine",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": null,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71130C",
+          "appearanceDate": "2026-11-25",
+          "offenceEndDate": "2026-02-04",
+          "offenceStartDate": "2020-07-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-25T09:12:07.644658Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4004",
+            "outcomeName": "Convicted awaiting sentence",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+            "displayOrder": 550,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "21e2e652-b7a9-47ad-8d59-6a0f72cfe4fc",
+          "legacyData": {
+            "postedDate": "2026-11-25",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Conspire to supply a class A controlled drug - cocaine",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71130C",
+          "appearanceDate": "2026-11-24",
+          "offenceEndDate": "2026-02-05",
+          "offenceStartDate": "2020-07-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-11-25T09:06:41.332742Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4004",
+            "outcomeName": "Convicted awaiting sentence",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "ec2499bb-4413-4601-86f3-3fe70fe6f8a8",
+            "displayOrder": 550,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "21e2e652-b7a9-47ad-8d59-6a0f72cfe4fc",
+          "legacyData": {
+            "postedDate": "2026-03-04",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Conspire to supply a class A controlled drug - cocaine",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": true,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71130C",
+          "appearanceDate": "2026-03-03",
+          "offenceEndDate": "2026-02-05",
+          "offenceStartDate": "2020-07-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-03-04T10:46:49.302012Z",
+          "findingOfDomesticAbuse": null
+        },
+        {
+          "outcome": {
+            "status": "ACTIVE",
+            "nomisCode": "4565",
+            "outcomeName": "Send to Crown Court for trial ",
+            "outcomeType": "REMAND",
+            "outcomeUuid": "8976a19b-ab84-4881-b8c7-cf7b1978a262",
+            "displayOrder": 600,
+            "dispositionCode": "INTERIM"
+          },
+          "sentence": null,
+          "chargeUuid": "f8324fe5-b63c-410b-9d50-0ceebfaee8dd",
+          "legacyData": {
+            "postedDate": "2026-02-06",
+            "nomisOutcomeCode": null,
+            "offenceDescription": "Conspire to supply a class A controlled drug - cocaine",
+            "outcomeDescription": null,
+            "outcomeConvictionFlag": false,
+            "outcomeDispositionCode": null
+          },
+          "offenceCode": "MD71130C",
+          "appearanceDate": "2026-02-05",
+          "offenceEndDate": "2026-02-04",
+          "offenceStartDate": "2020-07-14",
+          "aggravatingFactors": [],
+          "appearanceCreatedAt": "2026-02-06T14:36:11.146255Z",
+          "findingOfDomesticAbuse": null
+        }
+      ]
+    },
+    "sentenceTypeDetails": {}
+  },
+  "offenceSeverities": {
+    "MD71130C": 92
+  }
+}
