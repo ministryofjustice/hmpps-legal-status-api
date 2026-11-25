@@ -1,0 +1,46 @@
+openapi: 3.1.1
+info:
+  title: Legal Status API
+  version: '0.0.1'
+  description: Legal Status API
+  contact:
+    name: Move & Improve team
+    email: moveandimprove@justice.gov.uk
+servers:
+  - url: https://legal-status-api-dev.hmpps.service.justice.gov.uk
+    description: Development
+  - url: https://legal-status-api-preprod.hmpps.service.justice.gov.uk
+    description: Pre-Production
+  - url: https://legal-status-api.hmpps.service.justice.gov.uk
+    description: Production
+  - url: http://localhost:8080
+    description: Local
+
+security:
+  - bearerAuth: [ ]
+
+paths:
+  '/temp/legacy/imprisonment-status/{prisonNumber}':
+    parameters:
+      - $ref: "#/components/parameters/prisonNumberPathParameter"
+    get:
+      tags:
+        - temporary
+
+components:
+  parameters:
+    prisonNumberPathParameter:
+      name: prisonNumber
+      description: The NOMIS Prison Reference Number of the Prisoner that the operation is being performed on.
+      schema:
+        type: string
+        pattern: "^[A-Z]\\d{4}[A-Z]{2}$"
+      example: 'A1234BC'
+      in: path
+      required: true
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

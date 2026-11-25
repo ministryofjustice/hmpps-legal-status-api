@@ -113,20 +113,26 @@ tasks.withType(GenerateTask::class) {
   )
 }
 
+tasks.register<GenerateTask>("buildLegalStatusApiModel") {
+  description = "Generate model from Legal Status API definition"
+  inputSpec.set("$projectDir/src/main/resources/static/openapi/legal-status-api.yml")
+  modelPackage.set("uk.gov.justice.digital.hmpps.legalstatusapi.resource.model")
+}
+
 tasks.register<GenerateTask>("buildManageOffencesApiModel") {
-  description = "Generate model from Manage Offences API YAML definition"
+  description = "Generate model from Manage Offences API definition"
   inputSpec.set("$projectDir/src/main/resources/static/openapi/manage-offences-api-2026-10-15.json")
   modelPackage.set("uk.gov.justice.digital.hmpps.manageoffences.resource.model")
 }
 
 tasks.register<GenerateTask>("buildRemandAndSentencingApiModel") {
-  description = "Generate model from Remand and Sentencing API YAML definition"
+  description = "Generate model from Remand and Sentencing API definition"
   inputSpec.set("$projectDir/src/main/resources/static/openapi/remand-and-sentencing-api-2026-11-12.json")
   modelPackage.set("uk.gov.justice.digital.hmpps.remandandsentencing.resource.model")
 }
 
 tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
-  description = "Generate model from Prisoner Search API YAML definition"
+  description = "Generate model from Prisoner Search API definition"
   inputSpec.set("$projectDir/src/main/resources/static/openapi/prisoner-search-api-2026-10-13.json")
   modelPackage.set("uk.gov.justice.digital.hmpps.prisonersearch.resource.model")
   globalProperties.set(
@@ -137,7 +143,7 @@ tasks.register<GenerateTask>("buildPrisonerSearchApiModel") {
 }
 
 tasks.register<GenerateTask>("buildPersonLocationApiModel") {
-  description = "Generate model from Person Location API YAML definition"
+  description = "Generate model from Person Location API definition"
   inputSpec.set("$projectDir/src/main/resources/static/openapi/person-location-api-2026-11-04.json")
   modelPackage.set("uk.gov.justice.digital.hmpps.personlocation.resource.model")
   globalProperties.set(

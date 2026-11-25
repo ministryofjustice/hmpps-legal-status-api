@@ -108,10 +108,10 @@ management:
         time-to-live: 2000ms
 
 springdoc:
-  api-docs:
-    enabled: false
+  # swagger specification file served via /swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
   swagger-ui:
-    enabled: false
+    url: '/openapi/legal-status-api.yml'
+    tags-sorter: alpha
 
 slack:
   # Turned off until the Slack app's webhook URL is available
