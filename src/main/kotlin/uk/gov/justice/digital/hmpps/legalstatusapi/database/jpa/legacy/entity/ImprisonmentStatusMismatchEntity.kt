@@ -60,6 +60,9 @@ class ImprisonmentStatusMismatchEntity(
   @Column(name = "PREVIOUS_PERIOD_CONCLUDED_AT", nullable = true, updatable = false)
   val previousPeriodConcludedAt: LocalDateTime? = null,
 
+  @Column(name = "CURRENT_PERIOD_CONCLUDED_AT", nullable = true, updatable = false)
+  val currentPeriodConcludedAt: LocalDateTime? = null,
+
   @Column(name = "CHARGES_WINDOW_START", nullable = true, updatable = false)
   val chargesWindowStart: LocalDate? = null,
 

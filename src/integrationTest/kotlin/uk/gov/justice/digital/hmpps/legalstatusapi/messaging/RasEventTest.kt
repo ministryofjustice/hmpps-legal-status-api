@@ -212,4 +212,38 @@ class RasEventTest : IntegrationTestBase() {
       assertThat(imprisonmentStatusCalculatedAtRepository.count()).isZero()
     }
   }
+
+  @Test
+  fun `should record Imprisonment Status as not calculated and release the lock given current period of custody is concluded`() {
+    // Given
+    stubGetLatestPeriodOfCustodyFromPersonLocationApi(
+      prisonNumber,
+      aValidPeriodOfCustody(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00")),
+    )
+
+    val sqsMessage = aValidHmppsDomainEventsSqsMessage(
+      prisonNumber = prisonNumber,
+      eventType = SENTENCE_UPDATED,
+    )
+
+    // When
+    messagingHelper.sendDomainEvent(sqsMessage)
+
+    // Then
+    await untilCallTo { imprisonmentStatusMismatchRepository.count() } matches { it == 1L }
+    await untilCallTo { messagingHelper.messagesOnDomainEventsQueue() } matches { it == 0 }
+    assertThat(messagingHelper.messagesOnDomainEventsDlq()).isZero()
+
+    transactionTemplate.execute {
+      with(imprisonmentStatusMismatchRepository.findAll().single()) {
+        assertThat(this.prisonNumber).isEqualTo(this@RasEventTest.prisonNumber)
+        assertThat(notCalculatedReason).isEqualTo(NotCalculatedReason.CURRENT_PERIOD_OF_CUSTODY_CONCLUDED)
+        assertThat(nomisImprisonmentStatus).isEqualTo("AFIXED")
+        assertThat(dpsImprisonmentStatus).isNull()
+        assertThat(dpsCalculatedFrom).isNull()
+      }
+      // The lock record was created and then released, so the next event is not skipped
+      assertThat(imprisonmentStatusCalculatedAtRepository.count()).isZero()
+    }
+  }
 }

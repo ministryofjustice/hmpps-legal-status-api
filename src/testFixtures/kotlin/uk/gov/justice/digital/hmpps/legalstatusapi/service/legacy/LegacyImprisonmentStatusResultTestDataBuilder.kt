@@ -8,9 +8,11 @@ import java.time.LocalDateTime
 
 fun aLegacyImprisonmentStatusResult(
   prisonNumber: String = randomValidPrisonNumber(),
+  notCalculatedReason: NotCalculatedReason? = null,
   nomisImprisonmentStatus: String? = "SENT03",
   receptionDate: LocalDate? = LocalDate.now().minusMonths(6),
   previousPeriodConcludedAt: LocalDateTime? = LocalDateTime.parse("2025-01-20T09:00:00"),
+  currentPeriodConcludedAt: LocalDateTime? = null,
   chargesWindowStart: LocalDate? = LocalDate.parse("2025-01-21"),
   sentencingData: LegacySentencingData = LegacySentencingData(
     sentences = listOf(aLegacySentence(offence = anOffence(offenceCode = "TH68010"))),
@@ -22,9 +24,11 @@ fun aLegacyImprisonmentStatusResult(
   bookingId: String? = "1226669",
 ): LegacyImprisonmentStatusResult = LegacyImprisonmentStatusResult(
   prisonNumber = prisonNumber,
+  notCalculatedReason = notCalculatedReason,
   nomisImprisonmentStatus = nomisImprisonmentStatus,
   receptionDate = receptionDate,
   previousPeriodConcludedAt = previousPeriodConcludedAt,
+  currentPeriodConcludedAt = currentPeriodConcludedAt,
   chargesWindowStart = chargesWindowStart,
   sentencingData = sentencingData,
   calculation = calculation,
