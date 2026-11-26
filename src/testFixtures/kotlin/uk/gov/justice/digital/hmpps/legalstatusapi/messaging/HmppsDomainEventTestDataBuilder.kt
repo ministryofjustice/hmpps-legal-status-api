@@ -5,7 +5,6 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_DE
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_INSERTED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
-import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_COMPUTABLE
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_DELETED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_INSERTED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_UPDATED
@@ -22,7 +21,6 @@ fun aHmppsDomainEvent(
     when (eventType) {
       IMPRISONMENT_STATUS_CHANGED -> aValidImprisonmentStatusChangedAdditionalInformation()
       SENTENCE_INSERTED, SENTENCE_DELETED, SENTENCE_UPDATED, CHARGE_INSERTED, CHARGE_DELETED, CHARGE_UPDATED -> aValidSentenceAdditionalInformation()
-      IMPRISONMENT_STATUS_COMPUTABLE -> aValidImprisonmentStatusComputableAdditionalInformation()
     },
 ): HmppsDomainEvent = HmppsDomainEvent(
   eventType = eventType,

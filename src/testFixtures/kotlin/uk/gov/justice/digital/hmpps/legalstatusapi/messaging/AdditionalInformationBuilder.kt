@@ -3,7 +3,6 @@ package uk.gov.justice.digital.hmpps.legalstatusapi.messaging
 import uk.gov.justice.digital.hmpps.legalstatusapi.aValidReference
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.AdditionalInformation.ChargeAdditionalInformation
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.AdditionalInformation.ImprisonmentStatusChangedAdditionalInformation
-import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.AdditionalInformation.ImprisonmentStatusComputableAdditionalInformation
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.AdditionalInformation.SentenceAdditionalInformation
 import java.util.UUID
 
@@ -44,5 +43,3 @@ fun aValidChargeAdditionalInformation(
   isOnFutureAppearance = isOnFutureAppearance,
   isBreach = isBreach,
 )
-
-fun aValidImprisonmentStatusComputableAdditionalInformation(): ImprisonmentStatusComputableAdditionalInformation = ImprisonmentStatusComputableAdditionalInformation()
