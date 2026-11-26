@@ -24,6 +24,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.Im
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatusMismatchEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.repository.ImprisonmentStatusMismatchRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason.CURRENT_PERIOD_OF_CUSTODY_CONCLUDED
 import java.time.Clock
 import java.time.Instant
 import java.time.LocalDate
@@ -308,6 +309,7 @@ class ImprisonmentStatusComparisonServiceTest {
     given(legacyDataService.calculate(any())).willReturn(
       aLegacyImprisonmentStatusResult(
         prisonNumber = prisonNumber,
+        notCalculatedReason = NotCalculatedReason.NO_RAS_CHARGES,
         nomisImprisonmentStatus = "SENT03",
         receptionDate = receptionDate,
         previousPeriodConcludedAt = previousPeriodConcludedAt,
@@ -347,7 +349,7 @@ class ImprisonmentStatusComparisonServiceTest {
   }
 
   @Test
-  fun `should not compare or record given Prisoner Search has no NOMIS Imprisonment Status and RaS returned no charges`() {
+  fun `should not record a mismatch given Prisoner Search has no NOMIS Imprisonment Status`() {
     // Given
     given(legacyDataService.calculate(any())).willReturn(
       aLegacyImprisonmentStatusResult(nomisImprisonmentStatus = null, calculation = null),
@@ -359,6 +361,48 @@ class ImprisonmentStatusComparisonServiceTest {
     // Then
     assertThat(actual).isEqualTo(ImprisonmentStatusComparisonResult.NoNomisStatus)
     verifyNoInteractions(offenceSeverityProvider, imprisonmentStatusMismatchRepository, slackApiClient, transactionManager)
+  }
+
+  @Test
+  fun `should record a mismatch given RaS returned no charges`() {
+    // Given
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(notCalculatedReason = NotCalculatedReason.NO_RAS_CHARGES, nomisImprisonmentStatus = "SENT03", calculation = null),
+    )
+
+    // When
+    val actual = imprisonmentStatusComparisonService.compare(randomValidPrisonNumber())
+
+    // Then
+    assertThat(actual).isEqualTo(
+      ImprisonmentStatusComparisonResult.NotCalculated(
+        mismatchId = savedMismatchId,
+        nomisImprisonmentStatus = "SENT03",
+        reason = NotCalculatedReason.NO_RAS_CHARGES,
+      ),
+    )
+    verifyNoInteractions(offenceSeverityProvider, slackApiClient)
+  }
+
+  @Test
+  fun `should record a mismatch given prisoner's period of custody is concluded - IE they are released`() {
+    // Given
+    given(legacyDataService.calculate(any())).willReturn(
+      aLegacyImprisonmentStatusResult(notCalculatedReason = CURRENT_PERIOD_OF_CUSTODY_CONCLUDED, nomisImprisonmentStatus = "SENT03", calculation = null),
+    )
+
+    // When
+    val actual = imprisonmentStatusComparisonService.compare(randomValidPrisonNumber())
+
+    // Then
+    assertThat(actual).isEqualTo(
+      ImprisonmentStatusComparisonResult.NotCalculated(
+        mismatchId = savedMismatchId,
+        nomisImprisonmentStatus = "SENT03",
+        reason = CURRENT_PERIOD_OF_CUSTODY_CONCLUDED,
+      ),
+    )
+    verifyNoInteractions(offenceSeverityProvider, slackApiClient)
   }
 
   @Test

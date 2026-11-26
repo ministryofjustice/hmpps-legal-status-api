@@ -13,6 +13,8 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.client.prisonersearch.Prisone
 import uk.gov.justice.digital.hmpps.legalstatusapi.client.remandandsentencing.RemandAndSentencingApiClient
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.ImprisonmentStatusCalculatedAtEntity
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason.CURRENT_PERIOD_OF_CUSTODY_CONCLUDED
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason.NO_RAS_CHARGES
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.LegacySentence
 import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.Sentence.RasSentence
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.PeriodOfCustody
@@ -24,7 +26,7 @@ import java.time.Clock
 import java.time.Duration
 import java.time.Instant
 import java.time.LocalDate
-import java.util.UUID
+import java.util.*
 
 private val log = KotlinLogging.logger {}
 
@@ -164,6 +166,24 @@ class LegacyDataService(
         log.info { "Selected charges window start (RaS fromDate) [${it ?: "none"}] for prisoner [$prisonNumber] (${if (it == null) "no previous period of custody" else "day after the previous period of custody concluded"})" }
       }
 
+    if (periodOfCustody?.concludedAt != null) {
+      log.warn { "Current Period of Custody concluded at [${periodOfCustody.concludedAt}] for prisoner [$prisonNumber], bookingId [${prisoner.bookingId}]). Imprisonment Status not calculated. NOMIS Imprisonment Status is [${prisoner.imprisonmentStatus}]" }
+      return LegacyImprisonmentStatusResult(
+        prisonNumber = prisonNumber,
+        notCalculatedReason = CURRENT_PERIOD_OF_CUSTODY_CONCLUDED,
+        nomisImprisonmentStatus = prisoner.imprisonmentStatus,
+        receptionDate = prisoner.receptionDate,
+        previousPeriodConcludedAt = periodOfCustody.previousPeriod?.concludedAt,
+        currentPeriodConcludedAt = periodOfCustody.concludedAt,
+        chargesWindowStart = chargesWindowStart,
+        sentencingData = LegacySentencingData(sentences = emptyList(), offences = emptyList()),
+        calculation = null,
+        rasData = rasData("""{ "charges" : [] }""", emptyMap()),
+        calculatedAt = Instant.now(clock),
+        bookingId = prisoner.bookingId,
+      )
+    }
+
     // Step 3
     val prisonerCharges = remandAndSentencingApiClient.getPrisonerCharges(
       prisonNumber = prisonNumber,
@@ -176,6 +196,7 @@ class LegacyDataService(
       log.warn { "RaS returned no charges for prisoner [$prisonNumber] (fromDate [${chargesWindowStart ?: "none"}], toDate [${LocalDate.now(clock)}], bookingId [${prisoner.bookingId}]). Imprisonment Status not calculated. NOMIS Imprisonment Status is [${prisoner.imprisonmentStatus}]" }
       return LegacyImprisonmentStatusResult(
         prisonNumber = prisonNumber,
+        notCalculatedReason = NO_RAS_CHARGES,
         nomisImprisonmentStatus = prisoner.imprisonmentStatus,
         receptionDate = prisoner.receptionDate,
         previousPeriodConcludedAt = periodOfCustody?.previousPeriod?.concludedAt,

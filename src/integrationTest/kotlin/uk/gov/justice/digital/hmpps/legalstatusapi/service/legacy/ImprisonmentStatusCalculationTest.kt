@@ -55,6 +55,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
       "IS-202",
       "IS-206",
       "IS-207",
+      "IS-208",
     ],
   )
   fun `should calculate Imprisonment Status`(jiraReference: String) {
@@ -76,6 +77,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
 
     // With no previousPeriodConcludedAt, there is no previous period of custody
     val periodOfCustody = aValidPeriodOfCustody(
+      concludedAt = scenario.currentPeriodConcludedAt,
       previousPeriod = scenario.previousPeriodConcludedAt?.let { aValidPreviousPeriod(concludedAt = it) },
     )
     stubGetLatestPeriodOfCustodyFromPersonLocationApi(prisonNumber, periodOfCustody)
@@ -100,6 +102,7 @@ class ImprisonmentStatusCalculationTest : IntegrationTestBase() {
     val jiraReference: String,
     val receptionDate: LocalDate,
     val previousPeriodConcludedAt: LocalDateTime? = null,
+    val currentPeriodConcludedAt: LocalDateTime? = null,
     val expectedStatus: String,
     val rasData: RasData,
     val offenceSeverities: Map<String, Int>,

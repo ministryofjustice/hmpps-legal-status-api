@@ -35,6 +35,7 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.entity.anImpriso
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.legacy.entity.ImprisonmentStatus
 import uk.gov.justice.digital.hmpps.legalstatusapi.database.jpa.repository.ImprisonmentStatusCalculatedAtRepository
 import uk.gov.justice.digital.hmpps.legalstatusapi.randomValidPrisonNumber
+import uk.gov.justice.digital.hmpps.legalstatusapi.service.legacy.NotCalculatedReason.CURRENT_PERIOD_OF_CUSTODY_CONCLUDED
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPeriodOfCustody
 import uk.gov.justice.digital.hmpps.personlocation.resource.model.aValidPreviousPeriod
 import uk.gov.justice.digital.hmpps.prisonersearch.resource.model.aValidPrisoner
@@ -322,6 +323,7 @@ class LegacyDataServiceTest {
       // Then
       assertThat(actual.calculation).isNull()
       assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(actual.notCalculatedReason).isEqualTo(NotCalculatedReason.NO_RAS_CHARGES)
       assertThat(actual.nomisImprisonmentStatus).isEqualTo("SENT03")
       assertThat(actual.receptionDate).isEqualTo(receptionDate)
       assertThat(actual.previousPeriodConcludedAt).isEqualTo(LocalDateTime.parse("2025-01-20T09:00:00"))
@@ -373,6 +375,106 @@ class LegacyDataServiceTest {
       val now = Instant.now(clock)
       given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
       given(remandAndSentencingApiClient.getPrisonerCharges(any(), anyOrNull(), anyOrNull())).willReturn(aRasPrisonerCharges())
+
+      val previousCalculatedAt = now.minus(1, ChronoUnit.DAYS)
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber))
+        .willReturn(Optional.of(anImprisonmentStatusCalculatedAtEntity(prisonNumber = prisonNumber, calculatedAt = previousCalculatedAt)))
+      given(imprisonmentStatusCalculatedAtRepository.getReferenceById(prisonNumber))
+        .willReturn(anImprisonmentStatusCalculatedAtEntity(prisonNumber = prisonNumber, calculatedAt = now))
+
+      // When
+      legacyDataService.calculate(prisonNumber)
+
+      // Then
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository, times(2)).save(saveArgumentCaptor.capture())
+      // The first save takes the lock, the second save sets calculatedAt back to the previous value
+      assertThat(saveArgumentCaptor.firstValue.calculatedAt).isEqualTo(now)
+      assertThat(saveArgumentCaptor.secondValue.calculatedAt).isEqualTo(previousCalculatedAt)
+      verify(imprisonmentStatusCalculatedAtRepository, never()).deleteById(prisonNumber)
+    }
+  }
+
+  // IS-210: A prisoner whose current period of custody is concluded is released and we should not recalculate the status in this case
+  @Nested
+  inner class CurrentPeriodOfCustodyConcludedTests {
+    @BeforeEach
+    fun setUp() {
+      Mockito.clearInvocations(imprisonmentStatusCalculator, sentenceTypeDetailsProvider)
+    }
+
+    @Test
+    fun `should return no calculation with its inputs and the NOMIS Imprisonment Status given the prisoners current period of custody is concluded`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val receptionDate = LocalDate.now().minusMonths(3)
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber, receptionDate = receptionDate, imprisonmentStatus = "SENT03"))
+      given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
+        aValidPeriodOfCustody(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00")),
+      )
+
+      // When
+      val actual = legacyDataService.calculate(prisonNumber)
+
+      // Then
+      assertThat(actual.calculation).isNull()
+      assertThat(actual.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(actual.notCalculatedReason).isEqualTo(CURRENT_PERIOD_OF_CUSTODY_CONCLUDED)
+      assertThat(actual.nomisImprisonmentStatus).isEqualTo("SENT03")
+      assertThat(actual.receptionDate).isEqualTo(receptionDate)
+      assertThat(actual.chargesWindowStart).isNull()
+      assertThat(actual.sentencingData).isEqualTo(LegacySentencingData(sentences = emptyList(), offences = emptyList()))
+      assertThat(jsonMapper.readTree(actual.rasData)).isEqualTo(jsonMapper.readTree("""{"personCharges": {"charges": []}, "sentenceTypeDetails": {}}"""))
+      assertThat(actual.calculatedAt).isEqualTo(fixedTimestamp)
+      verifyNoInteractions(imprisonmentStatusCalculator, sentenceTypeDetailsProvider)
+    }
+
+    @Test
+    fun `should return NOT_CALCULATED from calculateImprisonmentStatus given given the prisoners current period of custody is concluded`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
+        aValidPeriodOfCustody(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00")),
+      )
+
+      // When
+      val actual = legacyDataService.calculateImprisonmentStatus(prisonNumber)
+
+      // Then
+      assertThat(actual).isEqualTo(NOT_CALCULATED)
+    }
+
+    @Test
+    fun `should release the lock record given the prisoner has not had an imprisonment status calculated before and the prisoners current period of custody is concluded`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
+        aValidPeriodOfCustody(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00")),
+      )
+      given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber)).willReturn(Optional.empty())
+
+      // When
+      legacyDataService.calculate(prisonNumber)
+
+      // Then
+      val saveArgumentCaptor = ArgumentCaptor.forClass(ImprisonmentStatusCalculatedAtEntity::class.java)
+      verify(imprisonmentStatusCalculatedAtRepository).save(saveArgumentCaptor.capture())
+      assertThat(saveArgumentCaptor.value.prisonNumber).isEqualTo(prisonNumber)
+      assertThat(saveArgumentCaptor.value.calculatedAt).isEqualTo(Instant.now(clock))
+      verify(imprisonmentStatusCalculatedAtRepository).deleteById(prisonNumber)
+    }
+
+    @Test
+    fun `should release the lock record given the prisoner has had an imprisonment status calculated before and the prisoners current period of custody is concluded`() {
+      // Given
+      val prisonNumber = randomValidPrisonNumber()
+      val now = Instant.now(clock)
+      given(prisonerSearchApiClient.getPrisoner(any())).willReturn(aValidPrisoner(prisonNumber = prisonNumber))
+      given(personLocationApiClient.getLatestPeriodOfCustody(any())).willReturn(
+        aValidPeriodOfCustody(concludedAt = LocalDateTime.parse("2025-01-20T09:00:00")),
+      )
 
       val previousCalculatedAt = now.minus(1, ChronoUnit.DAYS)
       given(imprisonmentStatusCalculatedAtRepository.findById(prisonNumber))
