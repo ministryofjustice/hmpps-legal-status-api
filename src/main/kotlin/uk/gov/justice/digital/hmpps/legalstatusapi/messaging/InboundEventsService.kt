@@ -6,13 +6,11 @@ import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_DE
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_INSERTED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.CHARGE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_CHANGED
-import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.IMPRISONMENT_STATUS_COMPUTABLE
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_DELETED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_INSERTED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.EventType.SENTENCE_UPDATED
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.HmppsDomainEventHandler
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.ImprisonmentStatusChangedEventHandler
-import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.ImprisonmentStatusComputableEventHandler
 import uk.gov.justice.digital.hmpps.legalstatusapi.messaging.eventhandling.SentenceOrChargeEventHandler
 
 private val log = KotlinLogging.logger {}
@@ -24,7 +22,6 @@ private val log = KotlinLogging.logger {}
 class InboundEventsService(
   private val imprisonmentStatusChangedEventHandler: ImprisonmentStatusChangedEventHandler,
   private val sentenceOrChargeEventHandler: SentenceOrChargeEventHandler,
-  private val imprisonmentStatusComputableEventHandler: ImprisonmentStatusComputableEventHandler,
 ) {
 
   fun process(domainEvent: HmppsDomainEvent) = with(domainEvent) {
@@ -37,10 +34,6 @@ class InboundEventsService(
 
       SENTENCE_INSERTED, SENTENCE_DELETED, SENTENCE_UPDATED, CHARGE_INSERTED, CHARGE_DELETED, CHARGE_UPDATED -> {
         sentenceOrChargeEventHandler.handle(domainEvent)
-      }
-
-      IMPRISONMENT_STATUS_COMPUTABLE -> {
-        imprisonmentStatusComputableEventHandler.handle(domainEvent)
       }
     }
   }

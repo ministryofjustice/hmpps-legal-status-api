@@ -13,7 +13,4 @@ enum class EventType(@JsonValue val eventType: String) {
   CHARGE_INSERTED("charge.inserted"),
   CHARGE_DELETED("charge.deleted"),
   CHARGE_UPDATED("charge.updated"),
-
-  // Internal event type, emitted to indicate a prisoner's Imprisonment Status is ready to be calculated/computed
-  IMPRISONMENT_STATUS_COMPUTABLE("internal.legal-status.imprisonment-status.computable"),
 }
