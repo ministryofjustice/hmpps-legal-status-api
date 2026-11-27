@@ -157,16 +157,16 @@ tasks.register<GenerateTask>("buildPersonLocationApiModel") {
 tasks {
   withType<KtLintCheckTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
+    mustRunAfter("buildLegalStatusApiModel", "buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
   }
   withType<KtLintFormatTask> {
     // We must declare the dependency here, even if we're not going to be linting the model
-    mustRunAfter("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
+    mustRunAfter("buildLegalStatusApiModel", "buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
   }
 }
 
 tasks.named("compileKotlin") {
-  dependsOn("buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
+  dependsOn("buildLegalStatusApiModel", "buildManageOffencesApiModel", "buildRemandAndSentencingApiModel", "buildPrisonerSearchApiModel", "buildPersonLocationApiModel")
 }
 
 tasks.named("test") {
