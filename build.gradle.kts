@@ -3,11 +3,11 @@ import org.jlleitschuh.gradle.ktlint.tasks.KtLintFormatTask
 import org.openapitools.generator.gradle.plugin.tasks.GenerateTask
 
 plugins {
-  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.1.1"
+  id("uk.gov.justice.hmpps.gradle-spring-boot") version "11.1.2"
   kotlin("plugin.spring") version "2.4.21"
   kotlin("plugin.jpa") version "2.4.21"
 
-  id("org.openapi.generator") version "7.27.0"
+  id("org.openapi.generator") version "7.28.0"
 
   id("name.remal.integration-tests") version "5.0.9"
   `java-test-fixtures`
@@ -15,16 +15,16 @@ plugins {
 
 val buildDirectory: Directory = layout.buildDirectory.get()
 
-val postgresqlVersion = "42.7.14"
+val postgresqlVersion = "42.7.15"
 val kotlinLoggingVersion = "3.0.5"
 val testContainersVersion = "2.0.5"
-val springdocOpenapiVersion = "3.2.0"
+val springdocOpenapiVersion = "3.2.1"
 val hmppsKotlinSpringBootStarterVersion = "3.1.0"
-val awaitilityVersion = "4.3.0"
+val awaitilityVersion = "4.4.0"
 val swaggerParserVersion = "2.1.49"
 val wiremockVersion = "3.13.2"
 val hmppsSqsStarterVersion = "7.6.0"
-val sentryVersion = "8.65.0"
+val sentryVersion = "8.66.0"
 
 dependencies {
   implementation("uk.gov.justice.service.hmpps:hmpps-kotlin-spring-boot-starter:$hmppsKotlinSpringBootStarterVersion")
