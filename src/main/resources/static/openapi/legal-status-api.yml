@@ -27,6 +27,27 @@ paths:
       tags:
         - temporary
 
+  '/sync/{legacyImprisonmentStatusId}':
+    parameters:
+      - $ref: "#/components/parameters/legacyImprisonmentStatusIdPathParameter"
+    delete:
+      summary: Deletes a single Imprisonment Status by UUID.
+      description: |
+        Hard-deletes the specified Imprisonment Status.
+        
+        **Role Requirements:**
+        Access to this endpoint requires one of the following roles:
+          - `ROLE_LEGAL_STATUS__SYNC__RW` (Read-Write)
+      tags:
+        - Sync
+      operationId: sync-delete-imprisonmentStatus
+      responses:
+        '204':
+          description: Successfully deleted Imprisonment Status.
+        '404':
+          description: Imprisonment status with specified UUID not found.
+
+
 components:
   parameters:
     prisonNumberPathParameter:
@@ -36,6 +57,15 @@ components:
         type: string
         pattern: "^[A-Z]\\d{4}[A-Z]{2}$"
       example: 'A1234BC'
+      in: path
+      required: true
+    legacyImprisonmentStatusIdPathParameter:
+      name: legacyImprisonmentStatusId
+      description: The UUID of the Imprisonment Status that the operation is being performed on.
+      schema:
+        type: string
+        format: uuid
+      example: c88a6c48-97e2-4c04-93b5-98619966447b
       in: path
       required: true
 
