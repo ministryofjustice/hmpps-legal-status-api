@@ -1,8 +1,16 @@
 openapi: 3.1.1
 info:
   title: Legal Status API
-  version: '0.0.2'
-  description: Legal Status API
+  version: '0.0.3'
+  summary: Legal Status API
+  description: | 
+    REST API documentation for the HMPPS Legal Status service.
+    
+    Notes:
+    - Unless otherwise noted `date-time` properties in all request and response schemas are without a timezone, but are 
+    assumed to be UTC. Internally all `date-time` properties are processed and stored as UTC. Clients must ensure that
+    they process all `date-time` properties as UTC.
+
   contact:
     name: Move & Improve team
     email: moveandimprove@justice.gov.uk
@@ -55,8 +63,9 @@ paths:
       requestBody:
         $ref: '#/components/requestBodies/SyncCreateImprisonmentStatus'
       responses:
-        '204':
+        '201':
           $ref: '#/components/responses/SyncCreateImprisonmentStatus'
+          description: The created Imprisonment Status
         '400':
           $ref: '#/components/responses/400Error'
           description: There was a problem with the request or request body, such as a validation error.
@@ -93,6 +102,46 @@ components:
       type: string
       pattern: "^[A-Z]\\d{4}[A-Z]{2}$"
       example: 'A1234BC'
+    PrisonId:
+      title: PrisonId
+      description: The ID of the prison.
+      type: string
+      pattern: "^[A-Z]{3}$"
+      example: "BXI"
+    SourceSystem:
+      type: string
+      description: An enumeration of source systems.
+      enum:
+        - DPS
+        - LEGACY
+
+    AuditedResource:
+      title: AuditedResource
+      type: object
+      properties:
+        createdBy:
+          type: string
+          description: The identifier of the user or system that created this resource.
+          example: 'AUSER'
+        createdAt:
+          type: string
+          format: date-time
+          description: An ISO-8601 timestamp representing when this resource was created.
+          example: '2023-06-19T09:39:44Z'
+        updatedBy:
+          type: string
+          description: The identifier of the user or system that last updated this resource.
+          example: 'AUSER'
+        updatedAt:
+          type: string
+          format: date-time
+          description: An ISO-8601 timestamp representing when this resource was last updated. This will be the same as the created date if it has not yet been updated.
+          example: '2023-06-19T09:39:44Z'
+      required:
+        - createdBy
+        - createdAt
+        - updatedBy
+        - updatedAt
 
     ErrorResponse:
       title: ErrorResponse
@@ -122,23 +171,61 @@ components:
 
     CreateImprisonmentStatusRequest:
       title: CreateImprisonmentStatusRequest
-      description: Object describing a new Imprisonment Status to be created
-      todo: Add class properties
+      description: |
+        Object describing a new Imprisonment Status to be created.
       properties:
         prisonNumber:
           $ref: '#/components/schemas/PrisonNumber'
+        prisonId:
+          $ref: '#/components/schemas/PrisonId'
+        status:
+          type: string
+          description: The Imprisonment Status value
+          example: 'SENT03'
+        comment:
+          type: string
+          maxLength: 240
+          description: Optional comment text up to 240 characters in length.
       required:
         - prisonNumber
+        - prisonId
+        - status
+
+    SyncCreateImprisonmentStatusRequest:
+      title: SyncCreateImprisonmentStatusRequest
+      description: |
+        Object describing a new Imprisonment Status to be created by the Sync process.
+        This request object models additional fields specifically for Sync that are not present in the regular CreateImprisonmentStatusRequest object.
+      allOf:
+        - $ref: '#/components/schemas/CreateImprisonmentStatusRequest'
+        - $ref: '#/components/schemas/AuditedResource'
 
     ImprisonmentStatusResponse:
       title: ImprisonmentStatusResponse
       description: Object describing a single Imprisonment Status
-      todo: Add class properties
+      allOf:
+        - $ref: '#/components/schemas/AuditedResource'
       properties:
         prisonNumber:
           $ref: '#/components/schemas/PrisonNumber'
+        prisonId:
+          $ref: '#/components/schemas/PrisonId'
+        status:
+          type: string
+          description: The Imprisonment Status value
+          example: 'SENT03'
+        source:
+          $ref: '#/components/schemas/SourceSystem'
+          description: The source system that originally created this record.
+        comment:
+          type: string
+          maxLength: 240
+          description: Optional comment text up to 240 characters in length.
       required:
         - prisonNumber
+        - prisonId
+        - status
+        - source
 
   # --------------------------------------------------------------------------------
   # Request Body Definitions
@@ -149,7 +236,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/CreateImprisonmentStatusRequest'
+            $ref: '#/components/schemas/SyncCreateImprisonmentStatusRequest'
 
   # --------------------------------------------------------------------------------
   # Response Body Definitions
